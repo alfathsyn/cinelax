@@ -247,7 +247,7 @@ const heroSlides = [
     emoji: '⚔️',
     badge: '👑 Box Office Terlaris 2024',
     slug: 'deadpool-wolverine-2024',
-    imdbId: 'tt5177120',
+    imdbId: 'tt6263850',
     tmdbId: '533535',
     idlixUrl: 'https://z2.idlixku.com/movie/deadpool-wolverine-2024/',
     isUnavailable: false,
@@ -274,7 +274,7 @@ const heroSlides = [
     emoji: '🏛️',
     badge: '🏛️ Epik Bioskop Terbaik',
     slug: 'gladiator-2-2024',
-    imdbId: 'tt9660502',
+    imdbId: 'tt9218128',
     tmdbId: '558449',
     idlixUrl: 'https://z2.idlixku.com/movie/gladiator-2-2024/',
     isUnavailable: false,
@@ -424,8 +424,8 @@ heroSlides.forEach(slide => {
 
 const TOP_VIEW_DATABASE = {
   topview: [
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt5177120', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9660502', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
+    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
+    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
     { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Lee Byung-hun', episodeCount: 6, desc: 'Pembalasan dendam Gi-hun di arena maut permainan cumi-cumi.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
     { title: 'Alien: Romulus', year: 2024, rating: '8.5', genre: 'Horror', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt18412256', tmdbId: '945961', emoji: '👽', director: 'Fede Álvarez', cast: 'Cailee Spaeny, David Jonsson', desc: 'Remaja koloni luar angkasa berhadapan dengan monster Xenomorph paling mematikan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs' },
     { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Perang puncak di Kastil Tanpa Batas melawan Raja Iblis Muzan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' },
@@ -439,10 +439,10 @@ const TOP_VIEW_DATABASE = {
 
   trending: [
     { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Im Si-wan', episodeCount: 6, desc: 'Kelanjutan permainan bertahan hidup berhadiah 45.6 miliar won.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt5177120', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
+    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
     { title: 'Stranger Things Season 5', year: 2025, rating: '9.2', genre: 'Sci-Fi', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt4574334', tmdbId: '66732', emoji: '🚲', director: 'The Duffer Brothers', cast: 'Millie Bobby Brown, Finn Wolfhard', episodeCount: 8, desc: 'Pertempuran terakhir anak-anak Hawkins melawan Vecna dan Upside Down.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/sBEvEcpnG7k' },
     { title: 'The Last of Us Season 2', year: 2025, rating: '9.1', genre: 'Drama', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt3581920', tmdbId: '100088', emoji: '🍄', director: 'Craig Mazin', cast: 'Pedro Pascal, Bella Ramsey, Kaitlyn Dever', episodeCount: 7, desc: 'Tragedi dan balas dendam Ellie dan Abby di reruntuhan Seattle.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/k4hy9v-fL2M' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9660502', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
+    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
     { title: 'Wednesday Season 2', year: 2025, rating: '8.8', genre: 'Comedy', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt13443470', tmdbId: '119051', emoji: '🖤', director: 'Tim Burton', cast: 'Jenna Ortega, Steve Buscemi', episodeCount: 8, desc: 'Semester baru penuh kutukan dan misteri pembunuhan di Nevermore Academy.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/Di310BC80ew' },
     { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Petualangan lintas dimensi paling kocak dan absurd di multisemesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
     { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Perang puncak di Kastil Tanpa Batas melawan Raja Iblis Muzan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' },
@@ -452,17 +452,17 @@ const TOP_VIEW_DATABASE = {
 
   latest: [
     { title: 'Captain America: Brave New World', year: 2025, rating: '8.6', genre: 'Action', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt14513804', tmdbId: '822119', emoji: '🛡️', director: 'Julius Onah', cast: 'Anthony Mackie, Harrison Ford', desc: 'Sam Wilson memimpin pertarungan melawan konspirasi dunia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1pHDWnXmK7Y' },
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt5177120', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9660502', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
+    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
+    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
     { title: 'Alien: Romulus', year: 2024, rating: '8.5', genre: 'Horror', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt18412256', tmdbId: '945961', emoji: '👽', director: 'Fede Álvarez', cast: 'Cailee Spaeny, David Jonsson', desc: 'Remaja koloni luar angkasa berhadapan dengan monster Xenomorph paling mematikan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs' },
     { title: 'How to Train Your Dragon Live Action', year: 2025, rating: '8.8', genre: 'Adventure', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt26743210', tmdbId: '1084199', emoji: '🐉', director: 'Dean DeBlois', cast: 'Mason Thames, Nico Parker', desc: 'Adaptasi live action persahabatan Hiccup dan Toothless si naga Night Fury.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/5a09yJU-mCI' },
     { title: 'Wicked: Part One', year: 2024, rating: '8.8', genre: 'Fantasy', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt27448866', tmdbId: '611570', emoji: '🧙‍♀️', director: 'Jon M. Chu', cast: 'Ariana Grande, Cynthia Erivo', desc: 'Kisah magis penyihir hijau Elphaba dan Glinda di negeri Oz.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/6COmYeLsz4c' }
   ],
 
   popular: [
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt5177120', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Kolaborasi pahlawan super terlucu dan terbrutal dalam sejarah.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
+    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Kolaborasi pahlawan super terlucu dan terbrutal dalam sejarah.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
     { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Serial animasi dengan rating tertinggi dan jutaan penggemar setia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9660502', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Kelanjutan epik pertempuran arena Colosseum kekaisaran Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
+    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Kelanjutan epik pertempuran arena Colosseum kekaisaran Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
     { title: 'Wicked: Part One', year: 2024, rating: '8.8', genre: 'Fantasy', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt27448866', tmdbId: '611570', emoji: '🧙‍♀️', director: 'Jon M. Chu', cast: 'Ariana Grande, Cynthia Erivo', desc: 'Kisah magis penyihir hijau Elphaba dan Glinda di negeri Oz.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/6COmYeLsz4c' },
     { title: 'The Last of Us Season 2', year: 2025, rating: '9.1', genre: 'Drama', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt3581920', tmdbId: '100088', emoji: '🍄', director: 'Craig Mazin', cast: 'Pedro Pascal, Bella Ramsey', episodeCount: 7, desc: 'Kisah manusia di tengah kepunahan pandemi jamur Cordyceps.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/k4hy9v-fL2M' },
     { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Animasi pertarungan pedang terindah sepanjang masa.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' }
@@ -487,9 +487,9 @@ const TOP_VIEW_DATABASE = {
     { title: 'All of Us Are Dead Season 2', year: 2025, rating: '8.9', genre: 'Horror', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt14169960', tmdbId: '99966', emoji: '🧟‍♂️', director: 'Lee Jae-kyoo', cast: 'Park Ji-hu, Yoon Chan-young, Cho Yi-hyun', episodeCount: 8, desc: 'Kisah murid SMA bertahan dari wabah zombie berlanjut di kota Seoul.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/IN5TD4VRcSM' },
     { title: 'Moving Season 2', year: 2025, rating: '9.2', genre: 'Superhero', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt21609146', tmdbId: '124364', emoji: '🦸‍♀️', director: 'Park In-je', cast: 'Ryu Seung-ryong, Han Hyo-joo, Jo In-sung', episodeCount: 20, desc: 'Agen rahasia berkekuatan super terbang dan regenerasi melindungi anaknya.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1B1-18eHh04' },
     { title: 'Sweet Home Season 3', year: 2024, rating: '8.6', genre: 'Horror', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt11612120', tmdbId: '96580', emoji: '👹', director: 'Lee Eung-bok', cast: 'Song Kang, Lee Jin-uk, Lee Si-young', episodeCount: 8, desc: 'Babak akhir pertempuran Cha Hyun-su melawan monster hasrat manusia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/tMbgv44l-rM' },
-    { title: 'Queen of Tears', year: 2024, rating: '9.0', genre: 'Romance', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt26569106', tmdbId: '215079', emoji: '👑', director: 'Jang Young-woo', cast: 'Kim Soo-hyun, Kim Ji-won, Park Sung-hoon', episodeCount: 16, desc: 'Kisah cinta pernikahan pewaris konglomerat dan pengacara desa yang penuh haru.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/kYqjF3B5qGg' },
-    { title: 'Vincenzo', year: 2021, rating: '9.1', genre: 'Crime', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt13433802', tmdbId: '117376', emoji: '⚖️', director: 'Kim Hee-won', cast: 'Song Joong-ki, Jeon Yeo-been, Taecyeon', episodeCount: 20, desc: 'Pengacara mafia Italia pulang ke Korea membalas kejahatan konglomerat rakus.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/_J8tYxSB_LQ' },
-    { title: 'A Shop for Killers Season 2', year: 2025, rating: '8.8', genre: 'Action', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt28220000', tmdbId: '220000', emoji: '🔫', director: 'Lee Kwon', cast: 'Lee Dong-wook, Kim Hye-jun', episodeCount: 8, desc: 'Gadis muda mewarisi pusat perbelanjaan senjata rahasia milik pamannya.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/gWnLwWqCgV4' },
+    { title: 'Queen of Tears', year: 2024, rating: '9.0', genre: 'Romance', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt27668559', tmdbId: '215079', emoji: '👑', director: 'Jang Young-woo', cast: 'Kim Soo-hyun, Kim Ji-won, Park Sung-hoon', episodeCount: 16, desc: 'Kisah cinta pernikahan pewaris konglomerat dan pengacara desa yang penuh haru.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/kYqjF3B5qGg' },
+    { title: 'Vincenzo', year: 2021, rating: '9.1', genre: 'Crime', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt13433812', tmdbId: '117376', emoji: '⚖️', director: 'Kim Hee-won', cast: 'Song Joong-ki, Jeon Yeo-been, Taecyeon', episodeCount: 20, desc: 'Pengacara mafia Italia pulang ke Korea membalas kejahatan konglomerat rakus.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/_J8tYxSB_LQ' },
+    { title: 'A Shop for Killers Season 2', year: 2025, rating: '8.8', genre: 'Action', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt26450613', tmdbId: '220000', emoji: '🔫', director: 'Lee Kwon', cast: 'Lee Dong-wook, Kim Hye-jun', episodeCount: 8, desc: 'Gadis muda mewarisi pusat perbelanjaan senjata rahasia milik pamannya.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/gWnLwWqCgV4' },
     { title: 'Signal Season 2', year: 2025, rating: '9.4', genre: 'Mystery', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt5333198', tmdbId: '65942', emoji: '📻', director: 'Kim Eun-hee', cast: 'Lee Je-hoon, Kim Hye-soo, Cho Jin-woong', episodeCount: 16, desc: 'Detektif masa lalu dan masa kini terhubung melalui walkie-talkie memecahkan kasus dingin.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/n4sL8Qf2V3w' }
   ],
 
@@ -506,12 +506,11 @@ const TOP_VIEW_DATABASE = {
   ],
 
   indonesia: [
-    { title: 'Petualangan Sherina 3', year: 2025, rating: '8.7', genre: 'Adventure', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt12349006', tmdbId: '7006', emoji: '🎒', director: 'Riri Riza', cast: 'Sherina Munaf, Derby Romero', desc: 'Petualangan baru jurnalis Sherina dan Sadam melindungi hutan konservasi Indonesia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/wzX0h1hR1_A' },
-    { title: 'Jumbo: Petualangan Ajaib', year: 2025, rating: '8.9', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt12349008', tmdbId: '7008', emoji: '🐘', director: 'Ryan Adriandhy', cast: 'Pengisi Suara Selebriti Indonesia', desc: 'Film animasi karya animator lokal tentang keberanian anak bermimpi besar.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4a-uW7vA128' },
-    { title: 'Bumi Manusia 2: Anak Semua Bangsa', year: 2025, rating: '8.8', genre: 'Drama', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt12349009', tmdbId: '7009', emoji: '📜', director: 'Hanung Bramantyo', cast: 'Iqbaal Ramadhan, Mawar de Jongh', desc: 'Perjuangan Minke menuliskan perlawanan kaum tertindas di era kolonial Hindia Belanda.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/aM_e4aV0k3E' },
-    { title: 'The Big 4: Part 2', year: 2025, rating: '8.7', genre: 'Action', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt12349010', tmdbId: '7010', emoji: '💥', director: 'Timo Tjahjanto', cast: 'Abimana Aryasatya, Putri Marino, Arie Kriting', desc: 'Empat mantan pembunuh bayaran kembali beraksi dalam baku tembak komedi gila.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/bX4a7eB5c2U' },
-    { title: 'Qodrat 2: Ruqyah Terakhir', year: 2025, rating: '8.7', genre: 'Horror', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt12349011', tmdbId: '7011', emoji: '📖', director: 'Charles Gozali', cast: 'Vino G. Bastian, Marsha Timothy', desc: 'Ustadz Qodrat berhadapan dengan raja jin Assuala yang merasuki kota besar.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/g_pBwXGz6B0' },
-    { title: 'Agak Laen 2: Rumah Hantu Baru', year: 2025, rating: '8.8', genre: 'Comedy', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt12349012', tmdbId: '7012', emoji: '👻', director: 'Muhadkly Acho', cast: 'Boris Bokir, Indra Jegel, Oki Rengga, Bene Dion', desc: 'Kekonyolan empat sekawan membuka wahana horor baru yang kembali memakan korban.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/c0tG4a4rP2k' }
+    { title: 'Petualangan Sherina 2', year: 2023, rating: '8.7', genre: 'Adventure', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt23875888', tmdbId: '1047648', emoji: '🎒', director: 'Riri Riza', cast: 'Sherina Munaf, Derby Romero', desc: 'Petualangan baru jurnalis Sherina dan Sadam melindungi hutan konservasi Indonesia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/wzX0h1hR1_A' },
+    { title: 'Bumi Manusia', year: 2019, rating: '8.8', genre: 'Drama', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt8435132', tmdbId: '527588', emoji: '📜', director: 'Hanung Bramantyo', cast: 'Iqbaal Ramadhan, Mawar de Jongh', desc: 'Perjuangan Minke menuliskan perlawanan kaum tertindas di era kolonial Hindia Belanda.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/aM_e4aV0k3E' },
+    { title: 'The Big 4', year: 2022, rating: '8.7', genre: 'Action', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt18274950', tmdbId: '912916', emoji: '💥', director: 'Timo Tjahjanto', cast: 'Abimana Aryasatya, Putri Marino, Arie Kriting', desc: 'Empat mantan pembunuh bayaran kembali beraksi dalam baku tembak komedi gila.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/bX4a7eB5c2U' },
+    { title: 'Qodrat', year: 2022, rating: '8.7', genre: 'Horror', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt21966548', tmdbId: '986056', emoji: '📖', director: 'Charles Gozali', cast: 'Vino G. Bastian, Marsha Timothy', desc: 'Ustadz Qodrat berhadapan dengan raja jin Assuala yang merasuki kota besar.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/g_pBwXGz6B0' },
+    { title: 'Agak Laen', year: 2024, rating: '8.8', genre: 'Comedy', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt30829873', tmdbId: '1218524', emoji: '👻', director: 'Muhadkly Acho', cast: 'Boris Bokir, Indra Jegel, Oki Rengga, Bene Dion', desc: 'Kekonyolan empat sekawan membuka wahana horor baru yang memakan korban.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/c0tG4a4rP2k' }
   ]
 };
 
@@ -904,37 +903,47 @@ function initHeroSlider() {
 // ==========================================
 
 const STREAM_SERVERS = [
-  { id: 'server-1', name: 'Server 1 (Cinelax Ultra HD)', quality: '1080p Ultra Fast' },
-  { id: 'server-2', name: 'Server 2 (VidSrc VIP)', quality: 'Multi-Sub Indo' },
-  { id: 'server-3', name: 'Server 3 (Filemoon)', quality: 'Super Buffer' },
-  { id: 'server-4', name: 'Server 4 (Backup Cloud)', quality: '720p HD Clean' }
+  { id: 'server-1', name: 'Server 1 (Cinelax Ultra HD)', quality: '1080p Multi-Sub Indo' },
+  { id: 'server-2', name: 'Server 2 (AutoEmbed FHD)', quality: '1080p Ultra Fast' },
+  { id: 'server-3', name: 'Server 3 (2Embed VIP)', quality: '1080p Bufferless' },
+  { id: 'server-4', name: 'Server 4 (VidSrc Prime)', quality: '720p/1080p HD Clean' }
 ];
 
 function getStreamEmbedUrl(movie, serverIdx, seasonIdx, episodeIdx) {
+  if (!movie) return '';
   const isSeries = movie.type === 'series';
   const seasonNum = seasonIdx + 1;
   const epNum = episodeIdx + 1;
-  const imdbId = movie.imdbId || (isSeries ? 'tt2861424' : 'tt1757678');
-  const tmdbId = movie.tmdbId || (isSeries ? '60625' : '83533');
+  const imdbId = movie.imdbId;
+
+  // If no imdbId, fallback to trailer or blank
+  if (!imdbId) {
+    if (movie.trailerUrl) return movie.trailerUrl;
+    return 'about:blank';
+  }
 
   switch (serverIdx) {
     case 0:
+      // Server 1: VidSrc.to
       return isSeries 
         ? `https://vidsrc.to/embed/tv/${imdbId}/${seasonNum}/${epNum}`
         : `https://vidsrc.to/embed/movie/${imdbId}`;
     case 1:
+      // Server 2: AutoEmbed
       return isSeries 
-        ? `https://vidsrc.me/embed/tv?imdb=${imdbId}&season=${seasonNum}&episode=${epNum}`
-        : `https://vidsrc.me/embed/movie?imdb=${imdbId}`;
+        ? `https://autoembed.co/tv/imdb/${imdbId}-${seasonNum}-${epNum}`
+        : `https://autoembed.co/movie/imdb/${imdbId}`;
     case 2:
+      // Server 3: 2Embed
       return isSeries 
-        ? `https://embed.smashystream.com/playertv.php?tmdb=${tmdbId}&s=${seasonNum}&e=${epNum}`
-        : `https://embed.smashystream.com/playermovie.php?tmdb=${tmdbId}`;
+        ? `https://www.2embed.cc/embedtv/${imdbId}&s=${seasonNum}&e=${epNum}`
+        : `https://www.2embed.cc/embed/${imdbId}`;
     case 3:
     default:
+      // Server 4: VidSrc.in
       return isSeries 
-        ? `https://multiembed.mov/directstream.php?video_id=${imdbId}&s=${seasonNum}&e=${epNum}`
-        : `https://multiembed.mov/directstream.php?video_id=${imdbId}`;
+        ? `https://vidsrc.in/embed/tv/${imdbId}/${seasonNum}/${epNum}`
+        : `https://vidsrc.in/embed/movie/${imdbId}`;
   }
 }
 

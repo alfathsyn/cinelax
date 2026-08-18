@@ -1,17 +1,4 @@
-/* ============================================
-   CINELAX — Comprehensive Movie & Series Database
-   Total: 389 Titles (Movies, Series, Anime, KDrama)
-   Direct from IDLIX (z2.idlixku.com) & Blockbuster Catalogs
-   ============================================ */
-
-(function (root, factory) {
-  if (typeof module === 'object' && module.exports) {
-    module.exports = factory();
-  } else {
-    root.IDLIX_DATABASE = factory();
-  }
-}(typeof self !== 'undefined' ? self : this, function () {
-  return [
+window.IDLIX_DATABASE = [
   {
     "id": "series-a-shop-for-killers-2024",
     "title": "A Shop for Killers",
@@ -31,146 +18,12 @@
     "description": "A niece who lost her parents and grew up in the hands of an uncle who runs a shopping mall faces a new truth after her uncle's sudden death.",
     "poster": "https://image.tmdb.org/t/p/w1280/roloBL49yL5l0SRhacswX2Qja7h.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/roloBL49yL5l0SRhacswX2Qja7h.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "a-shop-for-killers-2024",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "A Shop for Killers — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "A Shop for Killers — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "A Shop for Killers — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "A Shop for Killers — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "A Shop for Killers — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "A Shop for Killers — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "A Shop for Killers — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "A Shop for Killers — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "A Shop for Killers — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "A Shop for Killers — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "A Shop for Killers — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "A Shop for Killers — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "A Shop for Killers — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "A Shop for Killers — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "A Shop for Killers — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "A Shop for Killers — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "A Shop for Killers — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "A Shop for Killers — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "A Shop for Killers — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "A Shop for Killers — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "A Shop for Killers — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "A Shop for Killers — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "A Shop for Killers — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "A Shop for Killers — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/a-shop-for-killers-2024",
+    "imdbId": "tt26450613"
   },
   {
     "id": "series-our-sticky-love-2026",
@@ -191,101 +44,12 @@
     "description": "An ambitious prosecutor loses her memory and moves in with a boxing coach who claims to be her boyfriend. Can this sticky situation turn into real love?",
     "poster": "https://image.tmdb.org/t/p/w1280/mp2AFsWsuyxCzenJh3DTKw7z4jG.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mp2AFsWsuyxCzenJh3DTKw7z4jG.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "our-sticky-love-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Our Sticky Love — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Our Sticky Love — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Our Sticky Love — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Our Sticky Love — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Our Sticky Love — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Our Sticky Love — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Our Sticky Love — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Our Sticky Love — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Our Sticky Love — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Our Sticky Love — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Our Sticky Love — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Our Sticky Love — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Our Sticky Love — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Our Sticky Love — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Our Sticky Love — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Our Sticky Love — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/our-sticky-love-2026",
+    "imdbId": "tt36955608"
   },
   {
     "id": "series-reacher-2022",
@@ -306,236 +70,12 @@
     "description": "Jack Reacher, a veteran military police investigator, has just recently entered civilian life. Reacher is a drifter, carrying no phone and the barest of e…",
     "poster": "https://image.tmdb.org/t/p/w1280/pF0qkRsrHkdYadPWY9AMeFZfcwk.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pF0qkRsrHkdYadPWY9AMeFZfcwk.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "reacher-2022",
-    "episode": "S4 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Reacher — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Reacher — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Reacher — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Reacher — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Reacher — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Reacher — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Reacher — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Reacher — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Reacher — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Reacher — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Reacher — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Reacher — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Reacher — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Reacher — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Reacher — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Reacher — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Reacher — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Reacher — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Reacher — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Reacher — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Reacher — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Reacher — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Reacher — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Reacher — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 4,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Reacher — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Reacher — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Reacher — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Reacher — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Reacher — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Reacher — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Reacher — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Reacher — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Reacher — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Reacher — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Reacher — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Reacher — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Reacher — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Reacher — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Reacher — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Reacher — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 4,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/reacher-2022",
+    "imdbId": "tt9288030"
   },
   {
     "id": "movie-spider-man-brand-new-day-2026",
@@ -557,14 +97,12 @@
     "description": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change…",
     "poster": "https://image.tmdb.org/t/p/w1280/qeQJx07rK2xm8SD2sJxFKhE7gs0.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/qeQJx07rK2xm8SD2sJxFKhE7gs0.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "spider-man-brand-new-day-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/spider-man-brand-new-day-2026",
+    "imdbId": "tt22084616"
   },
   {
     "id": "series-a-bona-fide-killer-2026",
@@ -586,101 +124,12 @@
     "description": "A seemingly ordinary working mother secretly lives as a legendary sniper who delivers justice where the law fails. After returning from a three-year hiatu…",
     "poster": "https://image.tmdb.org/t/p/w1280/j9AqsMJxuq7NEYJX4Q1vSfKb5CG.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/j9AqsMJxuq7NEYJX4Q1vSfKb5CG.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "a-bona-fide-killer-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "A Bona Fide Killer — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "A Bona Fide Killer — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "A Bona Fide Killer — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "A Bona Fide Killer — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "A Bona Fide Killer — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "A Bona Fide Killer — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "A Bona Fide Killer — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "A Bona Fide Killer — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "A Bona Fide Killer — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "A Bona Fide Killer — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "A Bona Fide Killer — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "A Bona Fide Killer — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "A Bona Fide Killer — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "A Bona Fide Killer — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "A Bona Fide Killer — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "A Bona Fide Killer — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/a-bona-fide-killer-2026",
+    "imdbId": "tt43616775"
   },
   {
     "id": "series-spooky-in-love-2026",
@@ -701,101 +150,12 @@
     "description": "When a ghost-seeing heir and an ace prosecutor learn that a single touch makes them a strangely effective duo, they team up to crack unsolved murders.",
     "poster": "https://image.tmdb.org/t/p/w1280/p9tpGftvG18M5y5wsBmPrQpVBsd.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/p9tpGftvG18M5y5wsBmPrQpVBsd.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "spooky-in-love-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Spooky in Love — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Spooky in Love — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Spooky in Love — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Spooky in Love — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Spooky in Love — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Spooky in Love — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Spooky in Love — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Spooky in Love — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Spooky in Love — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Spooky in Love — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Spooky in Love — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Spooky in Love — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Spooky in Love — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Spooky in Love — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Spooky in Love — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Spooky in Love — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/spooky-in-love-2026",
+    "imdbId": "tt40247521"
   },
   {
     "id": "series-the-mentalist-2008",
@@ -817,371 +177,12 @@
     "description": "Patrick Jane, a former celebrity psychic medium, uses his razor sharp skills of observation and expertise at \"reading\" people to solve serious crimes with…",
     "poster": "https://image.tmdb.org/t/p/w1280/q3pCsNvJ7CmdJUz2sJEEUY3pOPC.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/q3pCsNvJ7CmdJUz2sJEEUY3pOPC.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "the-mentalist-2008",
-    "episode": "S7 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Mentalist — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Mentalist — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Mentalist — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Mentalist — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Mentalist — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Mentalist — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Mentalist — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Mentalist — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Mentalist — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Mentalist — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Mentalist — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Mentalist — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Mentalist — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Mentalist — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Mentalist — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Mentalist — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Mentalist — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Mentalist — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Mentalist — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Mentalist — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Mentalist — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Mentalist — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Mentalist — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Mentalist — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 4,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Mentalist — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Mentalist — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Mentalist — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Mentalist — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Mentalist — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Mentalist — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Mentalist — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Mentalist — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 5,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Mentalist — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Mentalist — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Mentalist — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Mentalist — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Mentalist — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Mentalist — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Mentalist — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Mentalist — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 6,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Mentalist — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Mentalist — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Mentalist — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Mentalist — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Mentalist — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Mentalist — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Mentalist — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Mentalist — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 7,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Mentalist — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Mentalist — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Mentalist — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Mentalist — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Mentalist — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Mentalist — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Mentalist — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Mentalist — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Mentalist — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Mentalist — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Mentalist — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Mentalist — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Mentalist — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Mentalist — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Mentalist — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Mentalist — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 7,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-mentalist-2008",
+    "imdbId": "tt1196946"
   },
   {
     "id": "series-agent-kim-reactivated-2026",
@@ -1202,101 +203,12 @@
     "description": "When an unassuming dad's daughter goes missing, he dusts off his old black-ops skills to track her down — only to attract the wrong kind of attention.",
     "poster": "https://image.tmdb.org/t/p/w1280/uXOEBhDVFbpQGo4wg2pl8f2uZKN.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/uXOEBhDVFbpQGo4wg2pl8f2uZKN.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "agent-kim-reactivated-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Agent Kim Reactivated — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Agent Kim Reactivated — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Agent Kim Reactivated — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Agent Kim Reactivated — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Agent Kim Reactivated — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Agent Kim Reactivated — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Agent Kim Reactivated — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Agent Kim Reactivated — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Agent Kim Reactivated — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Agent Kim Reactivated — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Agent Kim Reactivated — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Agent Kim Reactivated — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Agent Kim Reactivated — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Agent Kim Reactivated — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Agent Kim Reactivated — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Agent Kim Reactivated — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/agent-kim-reactivated-2026",
+    "imdbId": "tt42127457"
   },
   {
     "id": "series-flex-x-cop-2024",
@@ -1317,146 +229,12 @@
     "description": "A chaebol cop joins forces with a gritty detective to take down criminals with a touch of wealth and a whole lot of wit.",
     "poster": "https://image.tmdb.org/t/p/w1280/zKruyrpu45wgs1PNBmgASAMVMXe.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zKruyrpu45wgs1PNBmgASAMVMXe.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "flex-x-cop-2024",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Flex x Cop — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Flex x Cop — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Flex x Cop — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Flex x Cop — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Flex x Cop — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Flex x Cop — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Flex x Cop — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Flex x Cop — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Flex x Cop — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Flex x Cop — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Flex x Cop — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Flex x Cop — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Flex x Cop — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Flex x Cop — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Flex x Cop — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Flex x Cop — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Flex x Cop — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Flex x Cop — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Flex x Cop — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Flex x Cop — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Flex x Cop — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Flex x Cop — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Flex x Cop — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Flex x Cop — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/flex-x-cop-2024",
+    "imdbId": "tt30413181"
   },
   {
     "id": "movie-the-odyssey-2026",
@@ -1479,14 +257,12 @@
     "description": "Odysseus, the legendary King of Ithaca, embarks on a long and perilous journey home following the Trojan War. Throughout his voyage, he is forced to confr…",
     "poster": "https://image.tmdb.org/t/p/w1280/twiVn9oFXOVR0uoYgawyEBlnFu8.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/twiVn9oFXOVR0uoYgawyEBlnFu8.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "the-odyssey-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-odyssey-2026",
+    "imdbId": "tt33764258"
   },
   {
     "id": "series-young-sherlock-2026",
@@ -1507,101 +283,12 @@
     "description": "Sherlock Holmes is a disgraced young man, raw and unfiltered, when he finds himself wrapped up in a murder case that threatens his liberty. His first ever…",
     "poster": "https://image.tmdb.org/t/p/w1280/8mmDLb108DoFZlE8sfc64TRqLvm.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8mmDLb108DoFZlE8sfc64TRqLvm.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "young-sherlock-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Young Sherlock — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Young Sherlock — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Young Sherlock — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Young Sherlock — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Young Sherlock — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Young Sherlock — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Young Sherlock — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Young Sherlock — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Young Sherlock — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Young Sherlock — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Young Sherlock — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Young Sherlock — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Young Sherlock — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Young Sherlock — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Young Sherlock — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Young Sherlock — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/young-sherlock-2026",
+    "imdbId": "tt8599532"
   },
   {
     "id": "series-tom-clancys-jack-ryan-2018",
@@ -1622,236 +309,12 @@
     "description": "When CIA analyst Jack Ryan stumbles upon a suspicious series of bank transfers his search for answers pulls him from the safety of his desk job and catapu…",
     "poster": "https://image.tmdb.org/t/p/w1280/2y2TbzeKZHYqTN5gb4nBv9dKk1f.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2y2TbzeKZHYqTN5gb4nBv9dKk1f.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "tom-clancys-jack-ryan-2018",
-    "episode": "S4 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Tom Clancy's Jack Ryan — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Tom Clancy's Jack Ryan — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Tom Clancy's Jack Ryan — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Tom Clancy's Jack Ryan — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Tom Clancy's Jack Ryan — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Tom Clancy's Jack Ryan — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Tom Clancy's Jack Ryan — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Tom Clancy's Jack Ryan — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Tom Clancy's Jack Ryan — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Tom Clancy's Jack Ryan — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Tom Clancy's Jack Ryan — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Tom Clancy's Jack Ryan — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Tom Clancy's Jack Ryan — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Tom Clancy's Jack Ryan — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Tom Clancy's Jack Ryan — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Tom Clancy's Jack Ryan — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Tom Clancy's Jack Ryan — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Tom Clancy's Jack Ryan — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Tom Clancy's Jack Ryan — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Tom Clancy's Jack Ryan — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Tom Clancy's Jack Ryan — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Tom Clancy's Jack Ryan — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Tom Clancy's Jack Ryan — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Tom Clancy's Jack Ryan — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 4,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Tom Clancy's Jack Ryan — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Tom Clancy's Jack Ryan — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Tom Clancy's Jack Ryan — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Tom Clancy's Jack Ryan — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Tom Clancy's Jack Ryan — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Tom Clancy's Jack Ryan — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Tom Clancy's Jack Ryan — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Tom Clancy's Jack Ryan — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Tom Clancy's Jack Ryan — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Tom Clancy's Jack Ryan — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Tom Clancy's Jack Ryan — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Tom Clancy's Jack Ryan — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Tom Clancy's Jack Ryan — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Tom Clancy's Jack Ryan — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Tom Clancy's Jack Ryan — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Tom Clancy's Jack Ryan — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 4,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/tom-clancys-jack-ryan-2018",
+    "imdbId": "tt5057054"
   },
   {
     "id": "series-spring-fever-2026",
@@ -1872,101 +335,12 @@
     "description": "After moving to a quiet rural town to heal from past heartbreak, a withdrawn teacher slowly rediscovers warmth and joy through her unexpected connection w…",
     "poster": "https://image.tmdb.org/t/p/w1280/nRxbtO6OchyepUL2Zr4dpMZsdsX.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/nRxbtO6OchyepUL2Zr4dpMZsdsX.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "spring-fever-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Spring Fever — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Spring Fever — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Spring Fever — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Spring Fever — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Spring Fever — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Spring Fever — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Spring Fever — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Spring Fever — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Spring Fever — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Spring Fever — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Spring Fever — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Spring Fever — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Spring Fever — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Spring Fever — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Spring Fever — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Spring Fever — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/spring-fever-2026",
+    "imdbId": "tt39137681"
   },
   {
     "id": "movie-masters-of-the-universe-2026",
@@ -1988,14 +362,12 @@
     "description": "After being separated for 15 years, the Sword of Power leads Prince Adam back to Eternia, where he discovers his home shattered under the fiendish rule of…",
     "poster": "https://image.tmdb.org/t/p/w1280/piV2OnzTZCyGBP9JCjlHIgKGlfo.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/piV2OnzTZCyGBP9JCjlHIgKGlfo.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "masters-of-the-universe-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/masters-of-the-universe-2026",
+    "imdbId": "tt0427340"
   },
   {
     "id": "movie-the-sheep-detectives-2026",
@@ -2017,14 +389,12 @@
     "description": "George Hardy is a shepherd who reads detective novels to his beloved sheep every night, assuming they can't possibly understand. But when a mysterious inc…",
     "poster": "https://image.tmdb.org/t/p/w1280/t6O6XWelu27BD0OmIDCCufZZT6d.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/t6O6XWelu27BD0OmIDCCufZZT6d.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "the-sheep-detectives-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-sheep-detectives-2026",
+    "imdbId": "tt32565993"
   },
   {
     "id": "series-nippon-sangoku-the-three-nations-of-the-crimson-sun-2026",
@@ -2045,101 +415,12 @@
     "description": "A revolution sparked by nuclear war, natural disaster, and misrule leads to the collapse of Japanese society. The country splits into three nations vying…",
     "poster": "https://image.tmdb.org/t/p/w1280/seKQ4siIyJZAt3Xubijt5iXfjvA.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/seKQ4siIyJZAt3Xubijt5iXfjvA.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "nippon-sangoku-the-three-nations-of-the-crimson-sun-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "NIPPON SANGOKU: The Three Nations of the Crimson Sun — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/nippon-sangoku-the-three-nations-of-the-crimson-sun-2026",
+    "imdbId": "tt40548519"
   },
   {
     "id": "series-invincible-2021",
@@ -2160,236 +441,12 @@
     "description": "Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday…",
     "poster": "https://image.tmdb.org/t/p/w1280/9qrroces8C6R9aKr08hACNPVXdZ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/9qrroces8C6R9aKr08hACNPVXdZ.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "invincible-2021",
-    "episode": "S4 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Invincible — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Invincible — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Invincible — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Invincible — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Invincible — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Invincible — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Invincible — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Invincible — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Invincible — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Invincible — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Invincible — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Invincible — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Invincible — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Invincible — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Invincible — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Invincible — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Invincible — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Invincible — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Invincible — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Invincible — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Invincible — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Invincible — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Invincible — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Invincible — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 4,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Invincible — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Invincible — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Invincible — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Invincible — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Invincible — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Invincible — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Invincible — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Invincible — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Invincible — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Invincible — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Invincible — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Invincible — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Invincible — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Invincible — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Invincible — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Invincible — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 4,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/invincible-2021",
+    "imdbId": "tt6741278"
   },
   {
     "id": "movie-your-fault-london-2026",
@@ -2411,14 +468,12 @@
     "description": "Nick and Noah are both embarking on life-changing adventures that are threatening to pull them apart—Nick in business with his father and Noah starting a…",
     "poster": "https://image.tmdb.org/t/p/w1280/uWnBAqtQlSTTYUMehyvL9CoZrTq.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/uWnBAqtQlSTTYUMehyvL9CoZrTq.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "your-fault-london-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/your-fault-london-2026",
+    "imdbId": "tt36958376"
   },
   {
     "id": "series-maxton-hall-the-world-between-us-2024",
@@ -2439,146 +494,12 @@
     "description": "When Ruby unwittingly witnesses an explosive secret at Maxton Hall private school, the arrogant millionaire heir James Beaufort has to deal with the quick…",
     "poster": "https://image.tmdb.org/t/p/w1280/dkhjP3GK44gkxmKzrgYzHs8hbtf.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dkhjP3GK44gkxmKzrgYzHs8hbtf.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "maxton-hall-the-world-between-us-2024",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Maxton Hall – The World Between Us — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Maxton Hall – The World Between Us — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Maxton Hall – The World Between Us — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Maxton Hall – The World Between Us — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Maxton Hall – The World Between Us — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Maxton Hall – The World Between Us — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Maxton Hall – The World Between Us — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Maxton Hall – The World Between Us — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Maxton Hall – The World Between Us — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Maxton Hall – The World Between Us — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Maxton Hall – The World Between Us — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Maxton Hall – The World Between Us — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Maxton Hall – The World Between Us — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Maxton Hall – The World Between Us — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Maxton Hall – The World Between Us — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Maxton Hall – The World Between Us — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Maxton Hall – The World Between Us — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Maxton Hall – The World Between Us — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Maxton Hall – The World Between Us — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Maxton Hall – The World Between Us — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Maxton Hall – The World Between Us — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Maxton Hall – The World Between Us — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Maxton Hall – The World Between Us — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Maxton Hall – The World Between Us — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/maxton-hall-the-world-between-us-2024",
+    "imdbId": "tt27792190"
   },
   {
     "id": "series-elle-2026",
@@ -2599,101 +520,12 @@
     "description": "Before Elle Woods was a fish-out-of-water at Harvard, we meet her in 1995 in the tumultuous waters of high school where she encounters tricky friendships,…",
     "poster": "https://image.tmdb.org/t/p/w1280/siQzmCYGNqXmZeih4Ml6P90ZtM6.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/siQzmCYGNqXmZeih4Ml6P90ZtM6.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "elle-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Elle — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Elle — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Elle — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Elle — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Elle — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Elle — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Elle — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Elle — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Elle — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Elle — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Elle — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Elle — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Elle — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Elle — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Elle — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Elle — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/elle-2026",
+    "imdbId": "tt32020831"
   },
   {
     "id": "series-duang-with-you-2026",
@@ -2714,101 +546,12 @@
     "description": "After a festival confession, art student Duang sets out to win over a guarded music major, slowly turning first love into a safe haven for them both.",
     "poster": "https://image.tmdb.org/t/p/w1280/ychH8vLDbBDKVWgZ6WC68iYNIzi.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ychH8vLDbBDKVWgZ6WC68iYNIzi.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "duang-with-you-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Duang with You — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Duang with You — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Duang with You — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Duang with You — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Duang with You — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Duang with You — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Duang with You — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Duang with You — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Duang with You — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Duang with You — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Duang with You — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Duang with You — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Duang with You — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Duang with You — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Duang with You — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Duang with You — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/duang-with-you-2026",
+    "imdbId": "tt35932199"
   },
   {
     "id": "movie-mansuang-2023",
@@ -2830,14 +573,12 @@
     "description": "In a fight for their lives, two dancers infiltrate a high-profile social club and seek the help of a newfound ally to unmask traitors to Siam.",
     "poster": "https://image.tmdb.org/t/p/w1280/otwAm9hRE7KHRBeRbuPBOmpMtOb.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/otwAm9hRE7KHRBeRbuPBOmpMtOb.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "mansuang-2023",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/mansuang-2023",
+    "imdbId": "tt28686328"
   },
   {
     "id": "movie-slr-2022",
@@ -2859,14 +600,12 @@
     "description": "A photography major assigned to take pictures with a mysterious camera causes catastrophic consequences to the subjects captured by its lens.",
     "poster": "https://image.tmdb.org/t/p/w1280/rUBScppfTCURtGKKxZLviqnJfJ5.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/rUBScppfTCURtGKKxZLviqnJfJ5.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "slr-2022",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/slr-2022",
+    "imdbId": "tt18259846"
   },
   {
     "id": "series-f4-thailand-boys-over-flowers-2021",
@@ -2887,101 +626,12 @@
     "description": "Gorya, a girl from a poor family, is happy to enter an elite high school. However, things take a turn when she is bullied by a group of rich spoiled boys…",
     "poster": "https://image.tmdb.org/t/p/w1280/3sUd661CAPLfiOs5gCm7nOQnHMe.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/3sUd661CAPLfiOs5gCm7nOQnHMe.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "f4-thailand-boys-over-flowers-2021",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "F4 Thailand: Boys Over Flowers — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "F4 Thailand: Boys Over Flowers — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "F4 Thailand: Boys Over Flowers — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "F4 Thailand: Boys Over Flowers — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "F4 Thailand: Boys Over Flowers — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "F4 Thailand: Boys Over Flowers — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "F4 Thailand: Boys Over Flowers — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "F4 Thailand: Boys Over Flowers — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "F4 Thailand: Boys Over Flowers — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "F4 Thailand: Boys Over Flowers — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "F4 Thailand: Boys Over Flowers — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "F4 Thailand: Boys Over Flowers — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "F4 Thailand: Boys Over Flowers — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "F4 Thailand: Boys Over Flowers — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "F4 Thailand: Boys Over Flowers — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "F4 Thailand: Boys Over Flowers — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/f4-thailand-boys-over-flowers-2021",
+    "imdbId": "tt13660288"
   },
   {
     "id": "series-kinnporsche-the-series-2022",
@@ -3002,101 +652,12 @@
     "description": "Porsche agrees to guard mafia heir Kinn for his family's sake, but fighting off danger soon turns into fighting his own feelings.",
     "poster": "https://image.tmdb.org/t/p/w1280/wTgDY1izbDCbdgsNS1ujLk7lepG.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/wTgDY1izbDCbdgsNS1ujLk7lepG.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "kinnporsche-the-series-2022",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "KinnPorsche: The Series — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "KinnPorsche: The Series — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "KinnPorsche: The Series — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "KinnPorsche: The Series — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "KinnPorsche: The Series — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "KinnPorsche: The Series — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "KinnPorsche: The Series — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "KinnPorsche: The Series — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "KinnPorsche: The Series — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "KinnPorsche: The Series — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "KinnPorsche: The Series — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "KinnPorsche: The Series — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "KinnPorsche: The Series — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "KinnPorsche: The Series — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "KinnPorsche: The Series — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "KinnPorsche: The Series — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/kinnporsche-the-series-2022",
+    "imdbId": "tt19370256"
   },
   {
     "id": "series-ticket-to-heaven-2026",
@@ -3117,101 +678,12 @@
     "description": "A grieving student pursuing priesthood faces a crisis of faith when he falls for a troubled new classmate in a world ruled by strict dogma.",
     "poster": "https://image.tmdb.org/t/p/w1280/AqAGgoAlvWGBVAlEvIXTvcETzVG.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/AqAGgoAlvWGBVAlEvIXTvcETzVG.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "ticket-to-heaven-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Ticket to Heaven — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Ticket to Heaven — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Ticket to Heaven — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Ticket to Heaven — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Ticket to Heaven — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Ticket to Heaven — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Ticket to Heaven — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Ticket to Heaven — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Ticket to Heaven — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Ticket to Heaven — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Ticket to Heaven — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Ticket to Heaven — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Ticket to Heaven — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Ticket to Heaven — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Ticket to Heaven — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Ticket to Heaven — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/ticket-to-heaven-2026",
+    "imdbId": "tt34930106"
   },
   {
     "id": "movie-one-for-the-road-2022",
@@ -3232,14 +704,12 @@
     "description": "Boss, an elusive bar owner living in New York, reunites with his estranged best friend, Aood, for a roadtrip in Thailand after Aood has been diagnosed wit…",
     "poster": "https://image.tmdb.org/t/p/w1280/d2SwXmLhTSJCryPoumvtLiT5H4X.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/d2SwXmLhTSJCryPoumvtLiT5H4X.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "one-for-the-road-2022",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/one-for-the-road-2022",
+    "imdbId": "tt28103733"
   },
   {
     "id": "movie-jan-dara-2001",
@@ -3261,14 +731,12 @@
     "description": "Jan is a boy growing up in 1930s Siam in a wealthy, dysfunctional family where sex has a huge impact on everyone's lives. Jan is viewed by his father as c…",
     "poster": "https://image.tmdb.org/t/p/w1280/vvEt03Fzgc4NujpknFfR1LrXgno.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/vvEt03Fzgc4NujpknFfR1LrXgno.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "jan-dara-2001",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/jan-dara-2001",
+    "imdbId": "tt0282628"
   },
   {
     "id": "series-girl-from-nowhere-the-reset-2026",
@@ -3289,101 +757,12 @@
     "description": "In a new universe, the mysterious Nanno poses as a transfer student, exposing cruelty by turning power, guilt and desire against those who abuse them.",
     "poster": "https://image.tmdb.org/t/p/w1280/pJert4hRVNzagvtFr3vTYnpgBMH.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pJert4hRVNzagvtFr3vTYnpgBMH.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "girl-from-nowhere-the-reset-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Girl from Nowhere: The Reset — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Girl from Nowhere: The Reset — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Girl from Nowhere: The Reset — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Girl from Nowhere: The Reset — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Girl from Nowhere: The Reset — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Girl from Nowhere: The Reset — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Girl from Nowhere: The Reset — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Girl from Nowhere: The Reset — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Girl from Nowhere: The Reset — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Girl from Nowhere: The Reset — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Girl from Nowhere: The Reset — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Girl from Nowhere: The Reset — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Girl from Nowhere: The Reset — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Girl from Nowhere: The Reset — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Girl from Nowhere: The Reset — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Girl from Nowhere: The Reset — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/girl-from-nowhere-the-reset-2026",
+    "imdbId": "tt39366412"
   },
   {
     "id": "movie-everybody-loves-me-when-im-dead-2025",
@@ -3405,14 +784,12 @@
     "description": "Two bank employees steal from a dead woman's account and unwittingly entangle themselves in Pattaya's criminal underworld.",
     "poster": "https://image.tmdb.org/t/p/w1280/uBSAkQNDh9INECJlVEkUc2Q5uZ2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/uBSAkQNDh9INECJlVEkUc2Q5uZ2.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🌸",
     "slug": "everybody-loves-me-when-im-dead-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/everybody-loves-me-when-im-dead-2025",
+    "imdbId": "tt35669054"
   },
   {
     "id": "movie-mystery-arena-2026",
@@ -3433,14 +810,12 @@
     "description": "Six contestants compete in a high-stakes live TV quiz show to solve a complex \"closed-circle\" murder mystery for a 10 billion yen jackpot.",
     "poster": "https://image.tmdb.org/t/p/w1280/5vqVfhc9XiyTb4kTzHoSpPOzQfG.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5vqVfhc9XiyTb4kTzHoSpPOzQfG.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "📻",
     "slug": "mystery-arena-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/mystery-arena-2026",
+    "imdbId": "tt42338585"
   },
   {
     "id": "movie-all-that-we-never-were-2026",
@@ -3462,14 +837,12 @@
     "description": "19-year-old Leah navigates a coming-of-age journey in the wake of a tragic car accident that claims her parents. Relocated to a coastal town under the car…",
     "poster": "https://image.tmdb.org/t/p/w1280/6cJUqJYfRu5HqLKPmG5NVUMOjuD.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/6cJUqJYfRu5HqLKPmG5NVUMOjuD.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🍄",
     "slug": "all-that-we-never-were-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/all-that-we-never-were-2026",
+    "imdbId": "tt37284855"
   },
   {
     "id": "movie-the-session-man-2025",
@@ -3491,14 +864,12 @@
     "description": "The story of highly gifted pianist and unsung hero, Nicky Hopkins, who played with the Beatles, the Rolling Stones, the Who, the Kinks and many more.",
     "poster": "https://image.tmdb.org/t/p/w1280/x17rkk3x3UvDus69jV6Lm4Cjrnh.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/x17rkk3x3UvDus69jV6Lm4Cjrnh.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🏛️",
     "slug": "the-session-man-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-session-man-2025",
+    "imdbId": "tt11353994"
   },
   {
     "id": "movie-hellcat-2025",
@@ -3520,14 +891,12 @@
     "description": "A woman wakes in the back of a moving camper trailer with a badly infected wound. A voice from the truck towing it tells her they must reach a doctor with…",
     "poster": "https://image.tmdb.org/t/p/w1280/8z7dSFZUge1JeboxpkvURHT1MeZ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8z7dSFZUge1JeboxpkvURHT1MeZ.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🖤",
     "slug": "hellcat-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/hellcat-2025",
+    "imdbId": "tt33045418"
   },
   {
     "id": "movie-to-the-max-2026",
@@ -3549,14 +918,12 @@
     "description": "A group of friends bonded by their love for extreme sports discovers BASE jumping in wingsuits — but feeling like flying carries the highest risks.",
     "poster": "https://image.tmdb.org/t/p/w1280/vIYxi7G0nK64cgiiVwSV0sFeQ7F.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/vIYxi7G0nK64cgiiVwSV0sFeQ7F.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "👽",
     "slug": "to-the-max-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/to-the-max-2026",
+    "imdbId": "tt12144176"
   },
   {
     "id": "movie-daddys-in-trouble-2026",
@@ -3577,14 +944,12 @@
     "description": "Roberta is tired of taking care of the house and the kids all by herself, so she decides to take a vacation, leaving her husband to look after the childre…",
     "poster": "https://image.tmdb.org/t/p/w1280/pt9wLsvNywyPT3485P30CPRICU.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pt9wLsvNywyPT3485P30CPRICU.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🏜️",
     "slug": "daddys-in-trouble-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/daddys-in-trouble-2026",
+    "imdbId": "tt43475091"
   },
   {
     "id": "movie-camp-rock-3-2026",
@@ -3607,14 +972,12 @@
     "description": "When Connect 3 loses their opening act for a major reunion tour, they return to their beloved Camp Rock to discover the next big thing. As campers vie for…",
     "poster": "https://image.tmdb.org/t/p/w1280/tpRYtzeEl1Vc7vYr5unWs7qBNMW.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/tpRYtzeEl1Vc7vYr5unWs7qBNMW.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🦍",
     "slug": "camp-rock-3-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/camp-rock-3-2026",
+    "imdbId": "tt6743524"
   },
   {
     "id": "movie-camp-rock-2-the-final-jam-2010",
@@ -3637,14 +1000,12 @@
     "description": "Mitchie can't wait to go back to Camp Rock and spend the summer making new music with her friends and superstar Shane Gray. But the slick new camp across…",
     "poster": "https://image.tmdb.org/t/p/w1280/tGgDjve3sY6me6JtefocFycCgyD.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/tGgDjve3sY6me6JtefocFycCgyD.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🧅",
     "slug": "camp-rock-2-the-final-jam-2010",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/camp-rock-2-the-final-jam-2010",
+    "imdbId": "tt1252380"
   },
   {
     "id": "movie-camp-rock-2008",
@@ -3666,14 +1027,12 @@
     "description": "When Mitchie gets a chance to attend Camp Rock, her life takes an unpredictable twist, and she learns just how important it is to be true to yourself.",
     "poster": "https://image.tmdb.org/t/p/w1280/zn97YrJ53q9V4z62dw7zKK17DlT.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zn97YrJ53q9V4z62dw7zKK17DlT.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🤠",
     "slug": "camp-rock-2008",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/camp-rock-2008",
+    "imdbId": "tt1055366"
   },
   {
     "id": "movie-the-birthday-party-2026",
@@ -3694,14 +1053,12 @@
     "description": "The late 1970s, somewhere in the Mediterranean: Marcos Timoleon, a tycoon, is throwing a lavish, extravagant birthday party for Sofia on his exclusive pri…",
     "poster": "https://image.tmdb.org/t/p/w1280/VhBMTmRt7lFKddjCqFTe0jRa1E.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/VhBMTmRt7lFKddjCqFTe0jRa1E.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🐉",
     "slug": "the-birthday-party-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-birthday-party-2026",
+    "imdbId": "tt33269988"
   },
   {
     "id": "series-workers-2020",
@@ -3722,101 +1079,12 @@
     "description": "A group of construction workers daydream about being rich. They resort to countless outrageous get-rich-quick schemes only to make fools out of themselves…",
     "poster": "https://image.tmdb.org/t/p/w1280/toEy2zD3kgJCOTHqvr75qPFUwfg.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/toEy2zD3kgJCOTHqvr75qPFUwfg.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "workers-2020",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Workers — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Workers — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Workers — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Workers — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Workers — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Workers — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Workers — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Workers — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Workers — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Workers — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Workers — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Workers — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Workers — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Workers — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Workers — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Workers — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/workers-2020",
+    "imdbId": "tt7529770"
   },
   {
     "id": "series-hells-kitchen-2005",
@@ -3837,191 +1105,12 @@
     "description": "Aspiring restaurateurs brave Ramsay and his fiery command of the kitchen as he puts the competitors through an intense culinary academy to prove they poss…",
     "poster": "https://image.tmdb.org/t/p/w1280/kitfuCa2TqX6oY5HvdFRjMMaLwc.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kitfuCa2TqX6oY5HvdFRjMMaLwc.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "hells-kitchen-2005",
-    "episode": "S3 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Hell's Kitchen — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Hell's Kitchen — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Hell's Kitchen — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Hell's Kitchen — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Hell's Kitchen — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Hell's Kitchen — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Hell's Kitchen — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Hell's Kitchen — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Hell's Kitchen — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Hell's Kitchen — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Hell's Kitchen — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Hell's Kitchen — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Hell's Kitchen — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Hell's Kitchen — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Hell's Kitchen — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Hell's Kitchen — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Hell's Kitchen — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Hell's Kitchen — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Hell's Kitchen — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Hell's Kitchen — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Hell's Kitchen — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Hell's Kitchen — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Hell's Kitchen — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Hell's Kitchen — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Hell's Kitchen — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Hell's Kitchen — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Hell's Kitchen — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Hell's Kitchen — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Hell's Kitchen — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Hell's Kitchen — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Hell's Kitchen — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Hell's Kitchen — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 3,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/hells-kitchen-2005",
+    "imdbId": "tt0437005"
   },
   {
     "id": "series-lanterns-2026",
@@ -4045,101 +1134,12 @@
     "description": "Two intergalactic cops, new recruit John Stewart and Lantern legend Hal Jordan, are drawn into a dark, earth-based mystery as they investigate a murder in…",
     "poster": "https://image.tmdb.org/t/p/w1280/mdbWfpbWhvxgG3k5MHpo90UgAUe.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mdbWfpbWhvxgG3k5MHpo90UgAUe.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "lanterns-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Lanterns — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Lanterns — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Lanterns — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Lanterns — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Lanterns — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Lanterns — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Lanterns — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Lanterns — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Lanterns — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Lanterns — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Lanterns — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Lanterns — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Lanterns — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Lanterns — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Lanterns — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Lanterns — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/lanterns-2026",
+    "imdbId": "tt26545992"
   },
   {
     "id": "series-class-of-09-2023",
@@ -4163,101 +1163,12 @@
     "description": "Set in three distinct points in time, follow a class of FBI agents who grapple with immense changes as the U.S. criminal justice system is altered by arti…",
     "poster": "https://image.tmdb.org/t/p/w1280/zhUA4iMufUZFaQmqGWXiwRUnld5.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zhUA4iMufUZFaQmqGWXiwRUnld5.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "class-of-09-2023",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Class of '09 — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Class of '09 — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Class of '09 — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Class of '09 — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Class of '09 — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Class of '09 — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Class of '09 — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Class of '09 — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Class of '09 — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Class of '09 — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Class of '09 — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Class of '09 — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Class of '09 — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Class of '09 — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Class of '09 — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Class of '09 — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/class-of-09-2023",
+    "imdbId": "tt14903834"
   },
   {
     "id": "series-the-f-ward-2026",
@@ -4278,101 +1189,12 @@
     "description": "Failed medical interns get their last shot at Sydney’s underfunded Pines Hospital, where they battle to overcome personal shortcomings and past mistakes i…",
     "poster": "https://image.tmdb.org/t/p/w1280/jldm5aI2QHjDXAuDVoGw1TCVAqt.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/jldm5aI2QHjDXAuDVoGw1TCVAqt.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "the-f-ward-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The F Ward — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The F Ward — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The F Ward — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The F Ward — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The F Ward — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The F Ward — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The F Ward — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The F Ward — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The F Ward — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The F Ward — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The F Ward — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The F Ward — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The F Ward — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The F Ward — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The F Ward — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The F Ward — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-f-ward-2026",
+    "imdbId": "tt38689352"
   },
   {
     "id": "series-moria-2026",
@@ -4393,101 +1215,12 @@
     "description": "Moria Casán transforms her life story into a symbolic spectacle of fame, controversy and ceaseless reinvention.",
     "poster": "https://image.tmdb.org/t/p/w1280/wCqQrj4536IkhFlxDSytf4p3H09.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/wCqQrj4536IkhFlxDSytf4p3H09.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "moria-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Moria — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Moria — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Moria — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Moria — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Moria — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Moria — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Moria — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Moria — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Moria — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Moria — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Moria — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Moria — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Moria — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Moria — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Moria — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Moria — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/moria-2026",
+    "imdbId": "tt41559147"
   },
   {
     "id": "series-genius-girlfriend-2026",
@@ -4508,101 +1241,12 @@
     "description": "A genius girl and her childhood sweetheart navigate life's challenges from campus to marriage in this heartwarming coming-of-age story filled with wit, wa…",
     "poster": "https://image.tmdb.org/t/p/w1280/tWhf5jkrMr9fInmW3VG6ZHhRLOP.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/tWhf5jkrMr9fInmW3VG6ZHhRLOP.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "genius-girlfriend-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Genius Girlfriend — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Genius Girlfriend — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Genius Girlfriend — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Genius Girlfriend — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Genius Girlfriend — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Genius Girlfriend — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Genius Girlfriend — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Genius Girlfriend — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Genius Girlfriend — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Genius Girlfriend — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Genius Girlfriend — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Genius Girlfriend — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Genius Girlfriend — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Genius Girlfriend — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Genius Girlfriend — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Genius Girlfriend — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/genius-girlfriend-2026",
+    "imdbId": "tt37831535"
   },
   {
     "id": "series-royal-betrothal-2026",
@@ -4623,101 +1267,12 @@
     "description": "Rescued from the brink of death a decade ago, Meng Tinghui has transformed from a nameless survivor into the Daping Dynasty’s first female scholar to ente…",
     "poster": "https://image.tmdb.org/t/p/w1280/qKGSZaLLbfCaoTbE88oOwdAsTm8.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/qKGSZaLLbfCaoTbE88oOwdAsTm8.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "royal-betrothal-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Royal Betrothal — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Royal Betrothal — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Royal Betrothal — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Royal Betrothal — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Royal Betrothal — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Royal Betrothal — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Royal Betrothal — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Royal Betrothal — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Royal Betrothal — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Royal Betrothal — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Royal Betrothal — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Royal Betrothal — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Royal Betrothal — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Royal Betrothal — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Royal Betrothal — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Royal Betrothal — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/royal-betrothal-2026",
+    "imdbId": "tt37937929"
   },
   {
     "id": "series-my-brilliant-career-2026",
@@ -4738,101 +1293,12 @@
     "description": "Restless, razor-sharp, and refusing to conform, Sybylla is dead set on writing her own story in an era that expects her to find a man and settle down.",
     "poster": "https://image.tmdb.org/t/p/w1280/5ErhLuuVrxlNa2JiRzXfo0U10uZ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5ErhLuuVrxlNa2JiRzXfo0U10uZ.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "my-brilliant-career-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "My Brilliant Career — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "My Brilliant Career — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "My Brilliant Career — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "My Brilliant Career — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "My Brilliant Career — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "My Brilliant Career — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "My Brilliant Career — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "My Brilliant Career — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "My Brilliant Career — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "My Brilliant Career — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "My Brilliant Career — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "My Brilliant Career — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "My Brilliant Career — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "My Brilliant Career — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "My Brilliant Career — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "My Brilliant Career — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/my-brilliant-career-2026",
+    "imdbId": "tt37352716"
   },
   {
     "id": "series-ms-koizumi-loves-ramen-noodles-2018",
@@ -4854,101 +1320,12 @@
     "description": "Koizumi is a mysterious and attractive high school student. But what most people don't know about her is that she's a ramen master who is always on the lo…",
     "poster": "https://image.tmdb.org/t/p/w1280/cybtvybUytUtoiK68dtWGhG4aYY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cybtvybUytUtoiK68dtWGhG4aYY.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "ms-koizumi-loves-ramen-noodles-2018",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Ms. Koizumi Loves Ramen Noodles — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Ms. Koizumi Loves Ramen Noodles — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Ms. Koizumi Loves Ramen Noodles — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Ms. Koizumi Loves Ramen Noodles — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Ms. Koizumi Loves Ramen Noodles — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Ms. Koizumi Loves Ramen Noodles — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Ms. Koizumi Loves Ramen Noodles — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Ms. Koizumi Loves Ramen Noodles — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Ms. Koizumi Loves Ramen Noodles — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Ms. Koizumi Loves Ramen Noodles — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Ms. Koizumi Loves Ramen Noodles — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Ms. Koizumi Loves Ramen Noodles — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Ms. Koizumi Loves Ramen Noodles — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Ms. Koizumi Loves Ramen Noodles — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Ms. Koizumi Loves Ramen Noodles — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Ms. Koizumi Loves Ramen Noodles — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/ms-koizumi-loves-ramen-noodles-2018",
+    "imdbId": "tt7829962"
   },
   {
     "id": "movie-run-and-gun-2022",
@@ -4970,14 +1347,12 @@
     "description": "After leaving a life of crime and violence, Ray is a reformed good guy, enjoying a quiet family life in the ‘burbs. But when his past is discovered, Ray i…",
     "poster": "https://image.tmdb.org/t/p/w1280/1FTw6A7FF45b40uzk0cPVlNbKS.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1FTw6A7FF45b40uzk0cPVlNbKS.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "run-and-gun-2022",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/run-and-gun-2022",
+    "imdbId": "tt14039086"
   },
   {
     "id": "movie-ip-man-kung-fu-legend-2026",
@@ -4998,14 +1373,12 @@
     "description": "In 1950s Hong Kong, British merchants and Chinese triads have joined forces to expand their territory, forcibly demolishing factories without regard for p…",
     "poster": "https://image.tmdb.org/t/p/w1280/6HBbzW5D7StUBRi0yO6ZEq9rNB5.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/6HBbzW5D7StUBRi0yO6ZEq9rNB5.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "ip-man-kung-fu-legend-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/ip-man-kung-fu-legend-2026",
+    "imdbId": "tt38682795"
   },
   {
     "id": "movie-jackass-3d-2010",
@@ -5028,14 +1401,12 @@
     "description": "Johnny Knoxville, Bam Margera, Steve-O, Wee Man and the rest of their fearless and foolhardy friends take part in another round of outrageous pranks and s…",
     "poster": "https://image.tmdb.org/t/p/w1280/2RmJI0jfXMFF0br3pXQsHiy3lgh.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2RmJI0jfXMFF0br3pXQsHiy3lgh.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "jackass-3d-2010",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/jackass-3d-2010",
+    "imdbId": "tt1116184"
   },
   {
     "id": "movie-jackass-number-two-2006",
@@ -5058,14 +1429,12 @@
     "description": "Jackass Number Two is a compilation of various stunts, pranks and skits, and essentially has no plot. Chris Pontius, Johnny Knoxville, Steve-O, Bam Marger…",
     "poster": "https://image.tmdb.org/t/p/w1280/eCP3PAiu442zkJWczdLdvALePNK.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/eCP3PAiu442zkJWczdLdvALePNK.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "jackass-number-two-2006",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/jackass-number-two-2006",
+    "imdbId": "tt0493430"
   },
   {
     "id": "movie-jackass-the-movie-2002",
@@ -5088,14 +1457,12 @@
     "description": "Johnny Knoxville and his band of maniacs perform a variety of stunts and gross-out gags on the big screen for the first time. They wander around Japan in…",
     "poster": "https://image.tmdb.org/t/p/w1280/zqd39GO0GdO5TaO8HxnkmWwu2p8.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zqd39GO0GdO5TaO8HxnkmWwu2p8.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "jackass-the-movie-2002",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/jackass-the-movie-2002",
+    "imdbId": "tt0322802"
   },
   {
     "id": "movie-jackass-best-and-last-2026",
@@ -5118,14 +1485,12 @@
     "description": "The fifth and final installment to Jackass franchise where the crew go on one last insane crusade.",
     "poster": "https://image.tmdb.org/t/p/w1280/dUbP1HNdI0aCq1zgRJw28PWSqmk.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dUbP1HNdI0aCq1zgRJw28PWSqmk.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "jackass-best-and-last-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/jackass-best-and-last-2026",
+    "imdbId": "tt39316472"
   },
   {
     "id": "movie-never-say-never-again-1983",
@@ -5148,14 +1513,12 @@
     "description": "James Bond returns as the secret agent 007 to battle the evil organization SPECTRE. Bond must defeat Largo, who has stolen two atomic warheads for nuclear…",
     "poster": "https://image.tmdb.org/t/p/w1280/45uCcAUB8Ljz3uKb1y1JHtT5aCT.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/45uCcAUB8Ljz3uKb1y1JHtT5aCT.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "never-say-never-again-1983",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/never-say-never-again-1983",
+    "imdbId": "tt0086006"
   },
   {
     "id": "movie-casino-royale-1967",
@@ -5178,14 +1541,12 @@
     "description": "Sir James Bond is called back out of retirement to stop SMERSH. In order to trick SMERSH, James thinks up the ultimate plan - that every agent will be nam…",
     "poster": "https://image.tmdb.org/t/p/w1280/bzd7Uph8qfAB3fi488rIE3x2pWg.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/bzd7Uph8qfAB3fi488rIE3x2pWg.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "casino-royale-1967",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/casino-royale-1967",
+    "imdbId": "tt0061452"
   },
   {
     "id": "movie-die-another-day-2002",
@@ -5208,14 +1569,12 @@
     "description": "James Bond is sent to investigate the connection between a North Korean terrorist and a diamond mogul, who is funding the development of an international…",
     "poster": "https://image.tmdb.org/t/p/w1280/ibJEhfV4CudcL3iaUgvhkBrfMCO.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ibJEhfV4CudcL3iaUgvhkBrfMCO.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "die-another-day-2002",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/die-another-day-2002",
+    "imdbId": "tt0246460"
   },
   {
     "id": "movie-the-world-is-not-enough-1999",
@@ -5238,14 +1597,12 @@
     "description": "Greed, revenge, world dominance and high-tech terrorism – it's all in a day's work for Bond, who's on a mission to protect a beautiful oil heiress from a…",
     "poster": "https://image.tmdb.org/t/p/w1280/n2jVDMcBEWsLFooO7W1ZkcMUtWS.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/n2jVDMcBEWsLFooO7W1ZkcMUtWS.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "the-world-is-not-enough-1999",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-world-is-not-enough-1999",
+    "imdbId": "tt0143145"
   },
   {
     "id": "movie-tomorrow-never-dies-1997",
@@ -5268,14 +1625,12 @@
     "description": "A deranged media mogul is staging international incidents to pit the world's superpowers against each other. Now James Bond must take on this evil masterm…",
     "poster": "https://image.tmdb.org/t/p/w1280/fesAgiKA0pc04vScDTAQe1f9nd4.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fesAgiKA0pc04vScDTAQe1f9nd4.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "tomorrow-never-dies-1997",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/tomorrow-never-dies-1997",
+    "imdbId": "tt0120347"
   },
   {
     "id": "movie-goldeneye-1995",
@@ -5298,14 +1653,12 @@
     "description": "When a powerful secret defense system is stolen, James Bond is assigned to stop a Russian crime syndicate from using it.",
     "poster": "https://image.tmdb.org/t/p/w1280/fIWsCpYR9iGDMSbMTSAzy8L7Kg5.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fIWsCpYR9iGDMSbMTSAzy8L7Kg5.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "goldeneye-1995",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/goldeneye-1995",
+    "imdbId": "tt0113189"
   },
   {
     "id": "movie-licence-to-kill-1989",
@@ -5328,14 +1681,12 @@
     "description": "After capturing the notorious drug lord Franz Sanchez, Bond's close friend and former CIA agent Felix Leiter is left for dead and his wife is murdered. Bo…",
     "poster": "https://image.tmdb.org/t/p/w1280/542y97Wv0i01MVpzzaNNHUAvplA.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/542y97Wv0i01MVpzzaNNHUAvplA.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "licence-to-kill-1989",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/licence-to-kill-1989",
+    "imdbId": "tt0097742"
   },
   {
     "id": "movie-the-living-daylights-1987",
@@ -5358,14 +1709,12 @@
     "description": "After a defecting Russian general reveals a plot to assassinate foreign spies, James Bond is assigned a secret mission to dispatch the new head of the KGB…",
     "poster": "https://image.tmdb.org/t/p/w1280/ebaq0ecL1Tu39rIExfHwE4ToFl2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ebaq0ecL1Tu39rIExfHwE4ToFl2.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "the-living-daylights-1987",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-living-daylights-1987",
+    "imdbId": "tt0093428"
   },
   {
     "id": "movie-a-view-to-a-kill-1985",
@@ -5388,14 +1737,12 @@
     "description": "A newly-developed microchip designed by Zorin Industries for the British Government that can survive the electromagnetic radiation caused by a nuclear exp…",
     "poster": "https://image.tmdb.org/t/p/w1280/hvGWyyC8wER1I8ExSXNtFBs7Mgd.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/hvGWyyC8wER1I8ExSXNtFBs7Mgd.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "a-view-to-a-kill-1985",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-view-to-a-kill-1985",
+    "imdbId": "tt0090264"
   },
   {
     "id": "movie-octopussy-1983",
@@ -5418,14 +1765,12 @@
     "description": "James Bond is sent to investigate after a fellow “00” agent is found dead with a priceless Fabergé egg. Bond follows the mystery and uncovers a smuggling…",
     "poster": "https://image.tmdb.org/t/p/w1280/xTS1qCmhzH3vq7cuextO5vQA6eW.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xTS1qCmhzH3vq7cuextO5vQA6eW.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "octopussy-1983",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/octopussy-1983",
+    "imdbId": "tt0086034"
   },
   {
     "id": "movie-for-your-eyes-only-1981",
@@ -5448,14 +1793,12 @@
     "description": "A British spy ship has sunk and on board was a hi-tech encryption device. James Bond is sent to find the device that holds British launching instructions…",
     "poster": "https://image.tmdb.org/t/p/w1280/z7Jp7HAsY7MqXzPYzTjJnmOQk2r.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/z7Jp7HAsY7MqXzPYzTjJnmOQk2r.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "for-your-eyes-only-1981",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/for-your-eyes-only-1981",
+    "imdbId": "tt0082398"
   },
   {
     "id": "movie-moonraker-1979",
@@ -5478,14 +1821,12 @@
     "description": "After Drax Industries' Moonraker space shuttle is hijacked, secret agent James Bond is assigned to investigate, traveling to California to meet the compan…",
     "poster": "https://image.tmdb.org/t/p/w1280/mrDC5DLx2wljt4HZGwgkmqlzfcF.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mrDC5DLx2wljt4HZGwgkmqlzfcF.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "moonraker-1979",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/moonraker-1979",
+    "imdbId": "tt0079574"
   },
   {
     "id": "movie-the-spy-who-loved-me-1977",
@@ -5508,14 +1849,12 @@
     "description": "Russian and British submarines with nuclear missiles on board both vanish from sight without a trace. England and Russia both blame each other as James Bo…",
     "poster": "https://image.tmdb.org/t/p/w1280/8lRdfsmJjUXQU3DMOOB3vVIhJxP.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8lRdfsmJjUXQU3DMOOB3vVIhJxP.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "the-spy-who-loved-me-1977",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-spy-who-loved-me-1977",
+    "imdbId": "tt0076752"
   },
   {
     "id": "movie-the-man-with-the-golden-gun-1974",
@@ -5538,14 +1877,12 @@
     "description": "Cool government operative James Bond searches for a stolen invention that can turn the sun's heat into a destructive weapon. He soon crosses paths with th…",
     "poster": "https://image.tmdb.org/t/p/w1280/3tpNEbRahT8smy7RraaWa0xg9Gv.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/3tpNEbRahT8smy7RraaWa0xg9Gv.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🌸",
     "slug": "the-man-with-the-golden-gun-1974",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-man-with-the-golden-gun-1974",
+    "imdbId": "tt0071807"
   },
   {
     "id": "movie-live-and-let-die-1973",
@@ -5568,14 +1905,12 @@
     "description": "James Bond must investigate a mysterious murder case of a British agent in New Orleans. Soon he finds himself up against a gangster boss named Mr. Big.",
     "poster": "https://image.tmdb.org/t/p/w1280/hzmmXx6UeYQeylioNbliFKjSbV7.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/hzmmXx6UeYQeylioNbliFKjSbV7.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "📻",
     "slug": "live-and-let-die-1973",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/live-and-let-die-1973",
+    "imdbId": "tt0070328"
   },
   {
     "id": "movie-diamonds-are-forever-1971",
@@ -5597,14 +1932,12 @@
     "description": "Diamonds are stolen only to be sold again in the international market. James Bond infiltrates a smuggling mission to find out who's guilty. The mission ta…",
     "poster": "https://image.tmdb.org/t/p/w1280/pyTDtQCn5sG8gi2zkM5ZylSNmtJ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pyTDtQCn5sG8gi2zkM5ZylSNmtJ.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🍄",
     "slug": "diamonds-are-forever-1971",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/diamonds-are-forever-1971",
+    "imdbId": "tt0066995"
   },
   {
     "id": "movie-on-her-majestys-secret-service-1969",
@@ -5627,14 +1960,12 @@
     "description": "With the help of Marc-Ange Draco, head of the Unione Corse crime syndicate, and Draco's troubled daughter Tracy, James Bond tracks his archnemesis, Ernst…",
     "poster": "https://image.tmdb.org/t/p/w1280/58pMrmwwcKamJIdjUlinE6QX1Fs.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/58pMrmwwcKamJIdjUlinE6QX1Fs.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🏛️",
     "slug": "on-her-majestys-secret-service-1969",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/on-her-majestys-secret-service-1969",
+    "imdbId": "tt0064757"
   },
   {
     "id": "movie-you-only-live-twice-1967",
@@ -5657,14 +1988,12 @@
     "description": "A mysterious spacecraft captures Russian and American space capsules and brings the two superpowers to the brink of war. James Bond investigates the case…",
     "poster": "https://image.tmdb.org/t/p/w1280/cpZAXIYA0lkZMpAt7d1MmH8ojNV.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cpZAXIYA0lkZMpAt7d1MmH8ojNV.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🖤",
     "slug": "you-only-live-twice-1967",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/you-only-live-twice-1967",
+    "imdbId": "tt0062512"
   },
   {
     "id": "movie-thunderball-1965",
@@ -5687,14 +2016,12 @@
     "description": "A criminal organization has obtained two nuclear bombs and are asking for a 100 million pound ransom in the form of diamonds in seven days or they will us…",
     "poster": "https://image.tmdb.org/t/p/w1280/7DLCXCQx52YLle1qTokrjROTwVV.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/7DLCXCQx52YLle1qTokrjROTwVV.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "👽",
     "slug": "thunderball-1965",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/thunderball-1965",
+    "imdbId": "tt0059800"
   },
   {
     "id": "movie-goldfinger-1964",
@@ -5717,14 +2044,12 @@
     "description": "Special agent 007 comes face to face with one of the most notorious villains of all time, and now he must outwit and outgun the powerful tycoon to prevent…",
     "poster": "https://image.tmdb.org/t/p/w1280/mM4WeXqJd2tu1gCF5GYyAZf2Npl.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mM4WeXqJd2tu1gCF5GYyAZf2Npl.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🏜️",
     "slug": "goldfinger-1964",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/goldfinger-1964",
+    "imdbId": "tt0058150"
   },
   {
     "id": "movie-from-russia-with-love-1963",
@@ -5747,14 +2072,12 @@
     "description": "Agent 007 is back in the second installment of the James Bond series, this time battling a secret crime organization known as SPECTRE. Russians Rosa Klebb…",
     "poster": "https://image.tmdb.org/t/p/w1280/8JMiQa0OqsCYvbNUrQIrMzwV7g2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8JMiQa0OqsCYvbNUrQIrMzwV7g2.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🦍",
     "slug": "from-russia-with-love-1963",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/from-russia-with-love-1963",
+    "imdbId": "tt0057076"
   },
   {
     "id": "movie-dr-no-1962",
@@ -5776,14 +2099,12 @@
     "description": "Agent 007 battles mysterious Dr. No, a scientific genius bent on destroying the U.S. space program. As the countdown to disaster begins, Bond must go to J…",
     "poster": "https://image.tmdb.org/t/p/w1280/srgq7bzZsuDw7NoGXdazRXp7Hl6.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/srgq7bzZsuDw7NoGXdazRXp7Hl6.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🧅",
     "slug": "dr-no-1962",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/dr-no-1962",
+    "imdbId": "tt0055928"
   },
   {
     "id": "movie-bleach-the-movie-hell-verse-2010",
@@ -5807,14 +2128,12 @@
     "description": "Hell – A place where beings that have committed mortal sins during their lifetime are sent. It is a realm where even Soul Reapers are forbidden to interfe…",
     "poster": "https://image.tmdb.org/t/p/w1280/nuQSpGRKJkxnLOMWzZD8UZ6E92B.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/nuQSpGRKJkxnLOMWzZD8UZ6E92B.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🤠",
     "slug": "bleach-the-movie-hell-verse-2010",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/bleach-the-movie-hell-verse-2010",
+    "imdbId": "tt1785394"
   },
   {
     "id": "movie-swiss-family-robinson-1960",
@@ -5836,14 +2155,12 @@
     "description": "After being shipwrecked, the Robinson family is marooned on an island inhabited only by an impressive array of wildlife. In true pioneer spirit, they quic…",
     "poster": "https://image.tmdb.org/t/p/w1280/vNijAksUUekLP0sMuuGctkSFK2L.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/vNijAksUUekLP0sMuuGctkSFK2L.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🐉",
     "slug": "swiss-family-robinson-1960",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/swiss-family-robinson-1960",
+    "imdbId": "tt0054357"
   },
   {
     "id": "movie-the-lord-of-the-rings-1978",
@@ -5866,14 +2183,12 @@
     "description": "Young Hobbit Frodo Baggins is thrown into an amazing adventure when he's tasked with destroying the One Ring, created by the dark lord Sauron. Frodo must…",
     "poster": "https://image.tmdb.org/t/p/w1280/TXSxV23MWYkezZ3219gtgcSX6n.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/TXSxV23MWYkezZ3219gtgcSX6n.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "the-lord-of-the-rings-1978",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-lord-of-the-rings-1978",
+    "imdbId": "tt0120737"
   },
   {
     "id": "movie-minions-and-monsters-2026",
@@ -5898,14 +2213,12 @@
     "description": "This is the rambunctious, ridiculous and totally true story of how the Minions conquered Hollywood, became movie stars, lost everything, unleashed monster…",
     "poster": "https://image.tmdb.org/t/p/w1280/1wpuKJr9c1ih2lvQXLxe28YtQsT.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1wpuKJr9c1ih2lvQXLxe28YtQsT.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "minions-and-monsters-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/minions-and-monsters-2026",
+    "imdbId": "tt32890033"
   },
   {
     "id": "series-burn-the-witch-2020",
@@ -5928,101 +2241,12 @@
     "description": "Historically 72% of all the deaths in London are related to dragons, fantastical beings invisible to the majority of the people. While unknown to most, so…",
     "poster": "https://image.tmdb.org/t/p/w1280/7R7BxbHz4RMId5YHEA3NqgZWXde.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/7R7BxbHz4RMId5YHEA3NqgZWXde.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "burn-the-witch-2020",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "BURN THE WITCH — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "BURN THE WITCH — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "BURN THE WITCH — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "BURN THE WITCH — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "BURN THE WITCH — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "BURN THE WITCH — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "BURN THE WITCH — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "BURN THE WITCH — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "BURN THE WITCH — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "BURN THE WITCH — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "BURN THE WITCH — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "BURN THE WITCH — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "BURN THE WITCH — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "BURN THE WITCH — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "BURN THE WITCH — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "BURN THE WITCH — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/burn-the-witch-2020",
+    "imdbId": "tt12011442"
   },
   {
     "id": "series-bobs-burgers-2011",
@@ -6044,191 +2268,12 @@
     "description": "Bob's Burgers follows a third-generation restaurateur, Bob, as he runs Bob's Burgers with the help of his wife and their three kids. Bob and his quirky fa…",
     "poster": "https://image.tmdb.org/t/p/w1280/rUABoTPO0OLq2wlHiFWezxpV6fo.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/rUABoTPO0OLq2wlHiFWezxpV6fo.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "bobs-burgers-2011",
-    "episode": "S3 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Bob's Burgers — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Bob's Burgers — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Bob's Burgers — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Bob's Burgers — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Bob's Burgers — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Bob's Burgers — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Bob's Burgers — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Bob's Burgers — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Bob's Burgers — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Bob's Burgers — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Bob's Burgers — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Bob's Burgers — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Bob's Burgers — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Bob's Burgers — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Bob's Burgers — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Bob's Burgers — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Bob's Burgers — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Bob's Burgers — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Bob's Burgers — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Bob's Burgers — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Bob's Burgers — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Bob's Burgers — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Bob's Burgers — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Bob's Burgers — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Bob's Burgers — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Bob's Burgers — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Bob's Burgers — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Bob's Burgers — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Bob's Burgers — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Bob's Burgers — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Bob's Burgers — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Bob's Burgers — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 3,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/bobs-burgers-2011",
+    "imdbId": "tt1561755"
   },
   {
     "id": "movie-barbie-princess-charm-school-2011",
@@ -6251,14 +2296,12 @@
     "description": "Barbie stars as Blair, a waitress in the kingdom of Gardania, who is chosen to go to Princess Charm School, a magical school where students learn to be a…",
     "poster": "https://image.tmdb.org/t/p/w1280/pR51tWHlUWUEnPUc5my9anqcDto.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pR51tWHlUWUEnPUc5my9anqcDto.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "barbie-princess-charm-school-2011",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/barbie-princess-charm-school-2011",
+    "imdbId": "tt2066832"
   },
   {
     "id": "movie-tamako-love-story-2014",
@@ -6281,14 +2324,12 @@
     "description": "Devoted to her family’s rice-cake–making business and the high school baton club, Tamako is a little slow when it comes to love. She’s oblivious to her ch…",
     "poster": "https://image.tmdb.org/t/p/w1280/6Nz34wS45PsHUpk1SPBjFGzbCBZ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/6Nz34wS45PsHUpk1SPBjFGzbCBZ.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "tamako-love-story-2014",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/tamako-love-story-2014",
+    "imdbId": "tt3413018"
   },
   {
     "id": "series-tamako-market-2013",
@@ -6310,101 +2351,12 @@
     "description": "Tamako is just a normal young girl whose family has been making mochi for generations. As her birthday approaches, she happens to meet a talking bird who…",
     "poster": "https://image.tmdb.org/t/p/w1280/z531YyZRH3vwpFdNmZSdxcv9poR.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/z531YyZRH3vwpFdNmZSdxcv9poR.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "tamako-market-2013",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Tamako Market — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Tamako Market — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Tamako Market — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Tamako Market — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Tamako Market — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Tamako Market — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Tamako Market — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Tamako Market — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Tamako Market — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Tamako Market — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Tamako Market — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Tamako Market — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Tamako Market — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Tamako Market — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Tamako Market — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Tamako Market — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/tamako-market-2013",
+    "imdbId": "tt2560604"
   },
   {
     "id": "movie-the-ribbon-hero-2026",
@@ -6428,14 +2380,12 @@
     "description": "The story of Sapphire as she overcomes loss and trauma to protect those she holds dear.",
     "poster": "https://image.tmdb.org/t/p/w1280/8SEb8rEZ9DYqBT7U3FI5nBOS1lV.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8SEb8rEZ9DYqBT7U3FI5nBOS1lV.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "the-ribbon-hero-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-ribbon-hero-2026",
+    "imdbId": "tt42186253"
   },
   {
     "id": "series-ricky-gervais-alley-cats-2026",
@@ -6457,101 +2407,12 @@
     "description": "Outrageous misadventures run wild as feral cats cause chaos on the streets in this no-holds-barred animated comedy from Ricky Gervais.",
     "poster": "https://image.tmdb.org/t/p/w1280/w7yWr1UM413lOAPt2XS7TVALWrg.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/w7yWr1UM413lOAPt2XS7TVALWrg.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "ricky-gervais-alley-cats-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Ricky Gervais Alley Cats — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Ricky Gervais Alley Cats — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Ricky Gervais Alley Cats — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Ricky Gervais Alley Cats — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Ricky Gervais Alley Cats — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Ricky Gervais Alley Cats — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Ricky Gervais Alley Cats — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Ricky Gervais Alley Cats — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Ricky Gervais Alley Cats — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Ricky Gervais Alley Cats — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Ricky Gervais Alley Cats — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Ricky Gervais Alley Cats — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Ricky Gervais Alley Cats — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Ricky Gervais Alley Cats — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Ricky Gervais Alley Cats — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Ricky Gervais Alley Cats — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/ricky-gervais-alley-cats-2026",
+    "imdbId": "tt38264832"
   },
   {
     "id": "series-star-wars-visions-presents-the-ninth-jedi-2026",
@@ -6573,101 +2434,12 @@
     "description": "Kara and her ragtag Jedi crew seek out to find worthy Jedi to fight against an increasingly powerful warlord.",
     "poster": "https://image.tmdb.org/t/p/w1280/8ln6DSOJKJUSt1IETsfHkFj6rMY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8ln6DSOJKJUSt1IETsfHkFj6rMY.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "star-wars-visions-presents-the-ninth-jedi-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Star Wars: Visions Presents - The Ninth Jedi — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/star-wars-visions-presents-the-ninth-jedi-2026",
+    "imdbId": "tt43337681"
   },
   {
     "id": "movie-another-world-2025",
@@ -6690,14 +2462,12 @@
     "description": "After death, before reincarnation, the souls of the deceased transit through a fantastical realm known as, Another World. Gudo is a spirit that helps to g…",
     "poster": "https://image.tmdb.org/t/p/w1280/eIAv8gvn1VJGIxGNZ88C8A0bkHl.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/eIAv8gvn1VJGIxGNZ88C8A0bkHl.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "another-world-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/another-world-2025",
+    "imdbId": "tt36639436"
   },
   {
     "id": "movie-unansweredbutterfly-2026",
@@ -6720,14 +2490,12 @@
     "description": "In Sword Art Online, the first full-dive VRMMO, dying in the game means dying in real life. Emirun and Rex, who knew each other before entering the game,…",
     "poster": "https://image.tmdb.org/t/p/w1280/5uuTwHfgGrP8QRZOjegZxCZxr3X.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5uuTwHfgGrP8QRZOjegZxCZxr3X.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "unansweredbutterfly-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/unansweredbutterfly-2026",
+    "imdbId": "tt43625959"
   },
   {
     "id": "series-black-clover-2017",
@@ -6749,101 +2517,12 @@
     "description": "Asta and Yuno are two orphans who want the same thing: to become the Wizard King. Locked in a friendly rivalry, they work hard towards their goal. While Y…",
     "poster": "https://image.tmdb.org/t/p/w1280/oUsm3pq6rUga7lVGQFS3g84etVE.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/oUsm3pq6rUga7lVGQFS3g84etVE.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "black-clover-2017",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Black Clover — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Black Clover — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Black Clover — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Black Clover — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Black Clover — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Black Clover — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Black Clover — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Black Clover — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Black Clover — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Black Clover — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Black Clover — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Black Clover — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Black Clover — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Black Clover — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Black Clover — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Black Clover — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/black-clover-2017",
+    "imdbId": "tt7441658"
   },
   {
     "id": "series-we-bare-bears-2015",
@@ -6864,236 +2543,12 @@
     "description": "Three brother bears awkwardly attempt to find their place in civilized  society, whether they're looking for food, trying to make human friends,  or schem…",
     "poster": "https://image.tmdb.org/t/p/w1280/zFdHbLQqkTgxd2eJyYbufwyE22M.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zFdHbLQqkTgxd2eJyYbufwyE22M.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "we-bare-bears-2015",
-    "episode": "S4 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "We Bare Bears — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "We Bare Bears — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "We Bare Bears — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "We Bare Bears — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "We Bare Bears — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "We Bare Bears — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "We Bare Bears — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "We Bare Bears — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "We Bare Bears — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "We Bare Bears — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "We Bare Bears — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "We Bare Bears — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "We Bare Bears — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "We Bare Bears — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "We Bare Bears — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "We Bare Bears — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "We Bare Bears — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "We Bare Bears — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "We Bare Bears — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "We Bare Bears — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "We Bare Bears — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "We Bare Bears — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "We Bare Bears — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "We Bare Bears — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 4,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "We Bare Bears — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "We Bare Bears — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "We Bare Bears — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "We Bare Bears — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "We Bare Bears — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "We Bare Bears — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "We Bare Bears — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "We Bare Bears — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "We Bare Bears — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "We Bare Bears — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "We Bare Bears — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "We Bare Bears — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "We Bare Bears — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "We Bare Bears — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "We Bare Bears — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "We Bare Bears — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 4,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/we-bare-bears-2015",
+    "imdbId": "tt4839610"
   },
   {
     "id": "series-blue-miburo-2024",
@@ -7114,146 +2569,12 @@
     "description": "The year is 1863, with the story being based in Kyoto. We follow a youth named Nio who is an honest and kind soul who's considerate of his family, yet he…",
     "poster": "https://image.tmdb.org/t/p/w1280/s2P0DYSeMrqNh4L7hGXP3Xs5kbA.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/s2P0DYSeMrqNh4L7hGXP3Xs5kbA.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "blue-miburo-2024",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Blue Miburo — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Blue Miburo — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Blue Miburo — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Blue Miburo — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Blue Miburo — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Blue Miburo — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Blue Miburo — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Blue Miburo — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Blue Miburo — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Blue Miburo — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Blue Miburo — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Blue Miburo — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Blue Miburo — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Blue Miburo — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Blue Miburo — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Blue Miburo — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Blue Miburo — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Blue Miburo — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Blue Miburo — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Blue Miburo — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Blue Miburo — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Blue Miburo — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Blue Miburo — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Blue Miburo — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/blue-miburo-2024",
+    "imdbId": "tt30523856"
   },
   {
     "id": "series-president-curtis-2026",
@@ -7274,101 +2595,12 @@
     "description": "Follow the Commander-in-Chief and his eccentric staff as they tackle the kind of crises that Rick Sanchez could never be bothered with - from interdimensi…",
     "poster": "https://image.tmdb.org/t/p/w1280/yoTP91XZZjSvE2gZgGvwNxVW96w.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/yoTP91XZZjSvE2gZgGvwNxVW96w.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "president-curtis-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "President Curtis — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "President Curtis — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "President Curtis — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "President Curtis — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "President Curtis — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "President Curtis — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "President Curtis — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "President Curtis — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "President Curtis — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "President Curtis — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "President Curtis — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "President Curtis — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "President Curtis — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "President Curtis — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "President Curtis — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "President Curtis — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/president-curtis-2026",
+    "imdbId": "tt37692332"
   },
   {
     "id": "movie-assassination-classroom-the-movie-our-time-2026",
@@ -7390,14 +2622,12 @@
     "description": "United by a common mission to eliminate their teacher, Koro-sensei, an alien creature with phenomenal strength, join Nagisa and his Class 3-E classmates i…",
     "poster": "https://image.tmdb.org/t/p/w1280/9y9HMou5hBGhRm8u9LvlEgEjDLv.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/9y9HMou5hBGhRm8u9LvlEgEjDLv.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "assassination-classroom-the-movie-our-time-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/assassination-classroom-the-movie-our-time-2026",
+    "imdbId": "tt38649153"
   },
   {
     "id": "series-great-teacher-onizuka-1999",
@@ -7418,101 +2648,12 @@
     "description": "A former gang member wants to be Japan's best teacher. When he's hired to supervise a class of hopeless cases, it's his chance to prove himself.",
     "poster": "https://image.tmdb.org/t/p/w1280/ab3lYlM9v6nwDpM0lUElZfpU01i.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ab3lYlM9v6nwDpM0lUElZfpU01i.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "great-teacher-onizuka-1999",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Great Teacher Onizuka — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Great Teacher Onizuka — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Great Teacher Onizuka — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Great Teacher Onizuka — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Great Teacher Onizuka — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Great Teacher Onizuka — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Great Teacher Onizuka — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Great Teacher Onizuka — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Great Teacher Onizuka — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Great Teacher Onizuka — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Great Teacher Onizuka — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Great Teacher Onizuka — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Great Teacher Onizuka — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Great Teacher Onizuka — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Great Teacher Onizuka — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Great Teacher Onizuka — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/great-teacher-onizuka-1999",
+    "imdbId": "tt0315008"
   },
   {
     "id": "series-cowboy-bebop-1998",
@@ -7534,101 +2675,12 @@
     "description": "In 2071, roughly fifty years after an accident with a hyperspace gateway made the Earth almost uninhabitable, humanity has colonized most of the rocky pla…",
     "poster": "https://image.tmdb.org/t/p/w1280/A4PHx94G7mvM3b8vsDJ5HEaQ6uv.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/A4PHx94G7mvM3b8vsDJ5HEaQ6uv.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "cowboy-bebop-1998",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Cowboy Bebop — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Cowboy Bebop — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Cowboy Bebop — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Cowboy Bebop — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Cowboy Bebop — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Cowboy Bebop — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Cowboy Bebop — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Cowboy Bebop — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Cowboy Bebop — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Cowboy Bebop — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Cowboy Bebop — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Cowboy Bebop — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Cowboy Bebop — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Cowboy Bebop — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Cowboy Bebop — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Cowboy Bebop — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/cowboy-bebop-1998",
+    "imdbId": "tt0213338"
   },
   {
     "id": "movie-bleach-thousand-year-blood-war-the-calamity-2026",
@@ -7650,14 +2702,12 @@
     "description": "The Soul Reapers and Quincies clash in a final battle as Yhwach breaches the Royal Palace. When the Soul King falls, reality begins collapsing. Former ene…",
     "poster": "https://image.tmdb.org/t/p/w1280/fwdosqd1BW1tDlvaF9qhMuERQGY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fwdosqd1BW1tDlvaF9qhMuERQGY.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "bleach-thousand-year-blood-war-the-calamity-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/bleach-thousand-year-blood-war-the-calamity-2026",
+    "imdbId": "tt43383343"
   },
   {
     "id": "series-adventure-time-distant-lands-2020",
@@ -7679,101 +2729,12 @@
     "description": "Based on the animated series Adventure Time, these four specials explore the unseen corners of the world with both familiar and exciting brand-new charact…",
     "poster": "https://image.tmdb.org/t/p/w1280/vgQnqlVgtlH8dpjX54ChjYZUjE.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/vgQnqlVgtlH8dpjX54ChjYZUjE.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "adventure-time-distant-lands-2020",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Adventure Time: Distant Lands — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Adventure Time: Distant Lands — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Adventure Time: Distant Lands — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Adventure Time: Distant Lands — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Adventure Time: Distant Lands — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Adventure Time: Distant Lands — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Adventure Time: Distant Lands — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Adventure Time: Distant Lands — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Adventure Time: Distant Lands — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Adventure Time: Distant Lands — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Adventure Time: Distant Lands — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Adventure Time: Distant Lands — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Adventure Time: Distant Lands — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Adventure Time: Distant Lands — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Adventure Time: Distant Lands — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Adventure Time: Distant Lands — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/adventure-time-distant-lands-2020",
+    "imdbId": "tt11165358"
   },
   {
     "id": "series-the-strongest-job-is-apparently-not-a-hero-or-a-sage-but-an-appraiser-provisional-2026",
@@ -7795,101 +2756,12 @@
     "description": "High schooler Hibiki is transported to a monster-filled fantasy world, where he possesses only non-combat skills. However, through key encounters, he disc…",
     "poster": "https://image.tmdb.org/t/p/w1280/8nKINQCBmp3uvA393G8VIc6wOub.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8nKINQCBmp3uvA393G8VIc6wOub.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "the-strongest-job-is-apparently-not-a-hero-or-a-sage-but-an-appraiser-provisional-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Strongest Job Is Apparently Not a Hero or a Sage, But an Appraiser (Provisional)! — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-strongest-job-is-apparently-not-a-hero-or-a-sage-but-an-appraiser-provisional-2026",
+    "imdbId": "tt38840807"
   },
   {
     "id": "series-the-klutzy-class-monitor-and-the-girl-with-the-short-skirt-2026",
@@ -7910,101 +2782,12 @@
     "description": "Every morning, Sakuradaimon-kun enforces the rules at the school gate, stopping Poem-chan for her too-short skirt. But when they’re thrown together in rem…",
     "poster": "https://image.tmdb.org/t/p/w1280/8EaA5ffwNJv4uBwmfUWT06WY5ee.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8EaA5ffwNJv4uBwmfUWT06WY5ee.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "the-klutzy-class-monitor-and-the-girl-with-the-short-skirt-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Klutzy Class Monitor and the Girl with the Short Skirt — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-klutzy-class-monitor-and-the-girl-with-the-short-skirt-2026",
+    "imdbId": "tt39443960"
   },
   {
     "id": "series-the-food-diary-of-miss-maid-2026",
@@ -8025,101 +2808,12 @@
     "description": "After a mysterious incident drives her from her job at a British mansion, Suzume moves into a small apartment and begins a new life in Japan. Curious abou…",
     "poster": "https://image.tmdb.org/t/p/w1280/z53MYSiEOGvQ3tcD51I3Sb35Frx.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/z53MYSiEOGvQ3tcD51I3Sb35Frx.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "the-food-diary-of-miss-maid-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Food Diary of Miss Maid — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Food Diary of Miss Maid — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Food Diary of Miss Maid — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Food Diary of Miss Maid — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Food Diary of Miss Maid — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Food Diary of Miss Maid — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Food Diary of Miss Maid — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Food Diary of Miss Maid — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Food Diary of Miss Maid — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Food Diary of Miss Maid — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Food Diary of Miss Maid — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Food Diary of Miss Maid — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Food Diary of Miss Maid — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Food Diary of Miss Maid — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Food Diary of Miss Maid — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Food Diary of Miss Maid — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-food-diary-of-miss-maid-2026",
+    "imdbId": "tt38040630"
   },
   {
     "id": "movie-jinsei-2025",
@@ -8141,14 +2835,12 @@
     "description": "Our hero (voiced by rapper ACE COOL), called by a different name in each chapter of his life, becomes a J-pop idol, an outcast, a leader, and an oracle in…",
     "poster": "https://image.tmdb.org/t/p/w1280/pPMrufPsXOJrbVG37r1UtgfUmWV.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pPMrufPsXOJrbVG37r1UtgfUmWV.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "jinsei-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/jinsei-2025",
+    "imdbId": "tt36639420"
   },
   {
     "id": "movie-toy-story-5-2026",
@@ -8170,14 +2862,12 @@
     "description": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when…",
     "poster": "https://image.tmdb.org/t/p/w1280/qjTqY5coNiz6sVtPng40IzltsoN.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/qjTqY5coNiz6sVtPng40IzltsoN.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "toy-story-5-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/toy-story-5-2026",
+    "imdbId": "tt29355505"
   },
   {
     "id": "series-release-that-witch-2026",
@@ -8198,101 +2888,12 @@
     "description": "Roland, a modern man reborn as a prince in the dangerous Border Town, rescues the witches Anna and Nana Pine from the Church. Harnessing their extraordina…",
     "poster": "https://image.tmdb.org/t/p/w1280/t1lGQIFl5lAwxJ6yWtuONYJcWFL.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/t1lGQIFl5lAwxJ6yWtuONYJcWFL.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "release-that-witch-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Release that Witch — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Release that Witch — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Release that Witch — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Release that Witch — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Release that Witch — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Release that Witch — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Release that Witch — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Release that Witch — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Release that Witch — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Release that Witch — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Release that Witch — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Release that Witch — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Release that Witch — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Release that Witch — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Release that Witch — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Release that Witch — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/release-that-witch-2026",
+    "imdbId": "tt40370555"
   },
   {
     "id": "series-monster-2004",
@@ -8315,101 +2916,12 @@
     "description": "Kenzou Tenma, a Japanese brain surgeon in Germany, finds his life in utter turmoil after getting involved with a psychopath that was once a former patient.",
     "poster": "https://image.tmdb.org/t/p/w1280/6T19aRp9zLMghZo1dTEwoNyreNZ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/6T19aRp9zLMghZo1dTEwoNyreNZ.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "monster-2004",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Monster — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Monster — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Monster — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Monster — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Monster — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Monster — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Monster — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Monster — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Monster — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Monster — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Monster — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Monster — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Monster — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Monster — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Monster — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Monster — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/monster-2004",
+    "imdbId": "tt0434706"
   },
   {
     "id": "movie-all-night-wrong-2026",
@@ -8432,14 +2944,12 @@
     "description": "Gary and Ell (a married man with an inferiority complex, and a grieving young widow) meet on a blind date only to wind up stealing a killer's car along wi…",
     "poster": "https://image.tmdb.org/t/p/w1280/mimPRWki5EOJDRw7ZH24fYnHwaX.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mimPRWki5EOJDRw7ZH24fYnHwaX.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "all-night-wrong-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/all-night-wrong-2026",
+    "imdbId": "tt18316986"
   },
   {
     "id": "movie-my-best-friend-his-girlfriend-and-me-2026",
@@ -8460,14 +2970,12 @@
     "description": "Olli and Matze are best friends living, working and planning to travel the world together — until Matze's romance with Rebecca turns it all upside down.",
     "poster": "https://image.tmdb.org/t/p/w1280/oAFBdUTyyJZ7EMImZAdMGuPvt6V.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/oAFBdUTyyJZ7EMImZAdMGuPvt6V.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🌸",
     "slug": "my-best-friend-his-girlfriend-and-me-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/my-best-friend-his-girlfriend-and-me-2026",
+    "imdbId": "tt38662472"
   },
   {
     "id": "movie-dont-say-good-luck-2026",
@@ -8490,14 +2998,12 @@
     "description": "Sophie Birenbaum is ready for the spotlight as the lead in her high school musical — until she's suddenly facing more drama at home than on the stage.",
     "poster": "https://image.tmdb.org/t/p/w1280/yzdMGn8IRHSGuV8AIzw19wkRU2W.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/yzdMGn8IRHSGuV8AIzw19wkRU2W.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "📻",
     "slug": "dont-say-good-luck-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/dont-say-good-luck-2026",
+    "imdbId": "tt36590417"
   },
   {
     "id": "movie-piranha-3dd-2012",
@@ -8520,14 +3026,12 @@
     "description": "After the events at Lake Victoria, the prehistoric school of blood-thirsty piranhas make their way into swimming pools, plumbing, and a newly opened water…",
     "poster": "https://image.tmdb.org/t/p/w1280/coqFt7FJqUJL1KyD5V2oBiDf2bd.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/coqFt7FJqUJL1KyD5V2oBiDf2bd.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🍄",
     "slug": "piranha-3dd-2012",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/piranha-3dd-2012",
+    "imdbId": "tt1714203"
   },
   {
     "id": "movie-make-me-shudder-3-2015",
@@ -8549,14 +3053,12 @@
     "description": "When a group of young children, Secondary 6/5, graduated from high school Therefore reunited with the younger generation to go to Phuket But from a fun tr…",
     "poster": "https://image.tmdb.org/t/p/w1280/fyM4Pwlq7RZvFN4iaPFY1uqWSnj.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fyM4Pwlq7RZvFN4iaPFY1uqWSnj.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🏛️",
     "slug": "make-me-shudder-3-2015",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/make-me-shudder-3-2015",
+    "imdbId": "tt4425458"
   },
   {
     "id": "movie-make-me-shudder-2-shudder-me-mae-nak-2014",
@@ -8578,14 +3080,12 @@
     "description": "When a group of young children decided to pay homage to the grandmother's court, but then unexpected things happened when everyone fell into the loop at t…",
     "poster": "https://image.tmdb.org/t/p/w1280/apHQGt2aqLvs6T7czWwmuRLxzTg.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/apHQGt2aqLvs6T7czWwmuRLxzTg.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🖤",
     "slug": "make-me-shudder-2-shudder-me-mae-nak-2014",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/make-me-shudder-2-shudder-me-mae-nak-2014",
+    "imdbId": "tt3612432"
   },
   {
     "id": "movie-make-me-shudder-2013",
@@ -8607,14 +3107,12 @@
     "description": "A group of student want to challenge themselves by entering the most haunted building of their school, which is forbidden.",
     "poster": "https://image.tmdb.org/t/p/w1280/dO5VnyCaaLopUKg29uAEaAAba1O.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dO5VnyCaaLopUKg29uAEaAAba1O.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "👽",
     "slug": "make-me-shudder-2013",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/make-me-shudder-2013",
+    "imdbId": "tt3175476"
   },
   {
     "id": "movie-acod-2013",
@@ -8635,14 +3133,12 @@
     "description": "A grown man is still caught in the crossfire of his parents' 15 year divorce. He discovers he was unknowingly part of a study on divorced children and is…",
     "poster": "https://image.tmdb.org/t/p/w1280/dOXYCfbKfHKRaQ3XU72vibXw3Ai.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dOXYCfbKfHKRaQ3XU72vibXw3Ai.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🏜️",
     "slug": "acod-2013",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/acod-2013",
+    "imdbId": "tt11348328"
   },
   {
     "id": "movie-practical-magic-1998",
@@ -8666,14 +3162,12 @@
     "description": "Sally and Gillian Owens, born into a magical family, have mostly avoided witchcraft themselves. But when Gillian's vicious boyfriend, Jimmy Angelov, dies…",
     "poster": "https://image.tmdb.org/t/p/w1280/mGznDQ8opBuRd004ChVWhDqjAyW.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mGznDQ8opBuRd004ChVWhDqjAyW.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🦍",
     "slug": "practical-magic-1998",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/practical-magic-1998",
+    "imdbId": "tt0120791"
   },
   {
     "id": "movie-gail-daughtry-and-the-celebrity-sex-pass-2026",
@@ -8694,14 +3188,12 @@
     "description": "Small-town Kansas hairdresser Gail Daughtry's fiancé uses his 'celebrity sex pass' on Jennifer Aniston, prompting Gail to travel to LA with her friend Ott…",
     "poster": "https://image.tmdb.org/t/p/w1280/id8sWbXYB9ieuSQdDSxLM4gbqG0.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/id8sWbXYB9ieuSQdDSxLM4gbqG0.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🧅",
     "slug": "gail-daughtry-and-the-celebrity-sex-pass-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/gail-daughtry-and-the-celebrity-sex-pass-2026",
+    "imdbId": "tt36834010"
   },
   {
     "id": "movie-our-hero-balthazar-2026",
@@ -8723,14 +3215,12 @@
     "description": "Eager to impress his activist crush, a wealthy New York teenager follows an online connection to Texas, where he's convinced he can stop an act of extreme…",
     "poster": "https://image.tmdb.org/t/p/w1280/wcXcAI1S9N9DG7SvjNTGGCxVlsF.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/wcXcAI1S9N9DG7SvjNTGGCxVlsF.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🤠",
     "slug": "our-hero-balthazar-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/our-hero-balthazar-2026",
+    "imdbId": "tt36589928"
   },
   {
     "id": "series-luckys-first-love-2019",
@@ -8752,101 +3242,12 @@
     "description": "A story about first love and romances from the perspective of three couples in the workplace. Because of the prosperous meaning behind her name, Xing Yun…",
     "poster": "https://image.tmdb.org/t/p/w1280/7IwQJRjADH7rvU3HXwsBuq51sMR.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/7IwQJRjADH7rvU3HXwsBuq51sMR.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🐉",
     "slug": "luckys-first-love-2019",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Lucky's First Love — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Lucky's First Love — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Lucky's First Love — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Lucky's First Love — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Lucky's First Love — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Lucky's First Love — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Lucky's First Love — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Lucky's First Love — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Lucky's First Love — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Lucky's First Love — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Lucky's First Love — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Lucky's First Love — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Lucky's First Love — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Lucky's First Love — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Lucky's First Love — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Lucky's First Love — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/luckys-first-love-2019",
+    "imdbId": "tt11137378"
   },
   {
     "id": "movie-the-invite-2026",
@@ -8869,14 +3270,12 @@
     "description": "Joe and Angela’s marriage is on thin ice. When they invite their enigmatic upstairs neighbors for a dinner party, the night spirals into unexpected places…",
     "poster": "https://image.tmdb.org/t/p/w1280/kLA1GqiOEyVgXxgNqLoCr7bYcqu.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kLA1GqiOEyVgXxgNqLoCr7bYcqu.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "the-invite-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-invite-2026",
+    "imdbId": "tt14173636"
   },
   {
     "id": "movie-holmes-and-watson-2018",
@@ -8899,14 +3298,12 @@
     "description": "Detective Sherlock Holmes and Dr. John Watson join forces to investigate a mysterious murder at Buckingham Palace. It seems like an open-and-shut case as…",
     "poster": "https://image.tmdb.org/t/p/w1280/5Zvu4SrY3p9qgnITkCn4jAQwKvB.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5Zvu4SrY3p9qgnITkCn4jAQwKvB.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "holmes-and-watson-2018",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/holmes-and-watson-2018",
+    "imdbId": "tt1255919"
   },
   {
     "id": "movie-mor-lam-rhythm-2026",
@@ -8929,14 +3326,12 @@
     "description": "A simple, hardworking young man who deeply loves his family lives a modest life with his little sister, whose dream is to become a mor lam dancer at least…",
     "poster": "https://image.tmdb.org/t/p/w1280/y2l2YsDVQIhNgsU46QiTzRPkXmn.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/y2l2YsDVQIhNgsU46QiTzRPkXmn.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "mor-lam-rhythm-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/mor-lam-rhythm-2026",
+    "imdbId": "tt41888974"
   },
   {
     "id": "movie-lost-2025",
@@ -8960,14 +3355,12 @@
     "description": "Tae-hwa receives a lung transplant from his father, who had committed a hit-and-run the night before the surgery. Riddled with guilt, Tae-hwa sets out to…",
     "poster": "https://image.tmdb.org/t/p/w1280/8290ozWyVgMW60zYRELbvR1ZnY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8290ozWyVgMW60zYRELbvR1ZnY.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "lost-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/lost-2025",
+    "imdbId": "tt21103218"
   },
   {
     "id": "movie-ashes-2026",
@@ -8989,14 +3382,12 @@
     "description": "After fleeing a drug deal gone bad, vet Matt Benning tries to escape, but finds his previous problems have followed him.",
     "poster": "https://image.tmdb.org/t/p/w1280/obTi281ZCd6VjLPuE1f8mNxn9dK.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/obTi281ZCd6VjLPuE1f8mNxn9dK.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "ashes-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/ashes-2026",
+    "imdbId": "tt36137249"
   },
   {
     "id": "movie-nando-between-two-worlds-a-sintonia-film-2026",
@@ -9019,14 +3410,12 @@
     "description": "Caught between family life and his obligations to the criminal underworld, Nando faces an impossible choice about where his true loyalties lie.",
     "poster": "https://image.tmdb.org/t/p/w1280/pWvYluV8GNWQJRC4IdrZuJPLwzO.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pWvYluV8GNWQJRC4IdrZuJPLwzO.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "nando-between-two-worlds-a-sintonia-film-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/nando-between-two-worlds-a-sintonia-film-2026",
+    "imdbId": "tt43640198"
   },
   {
     "id": "movie-manilas-finest-2025",
@@ -9048,14 +3437,12 @@
     "description": "Set during the first quarter storm in the 1970s, policemen Homer, Conrad, and Billy are consumed by the murder case of troublemaking teenagers in the slum…",
     "poster": "https://image.tmdb.org/t/p/w1280/kPkhJuZbH8wcziRTdNmLC1VkR5x.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kPkhJuZbH8wcziRTdNmLC1VkR5x.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "manilas-finest-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/manilas-finest-2025",
+    "imdbId": "tt38779530"
   },
   {
     "id": "series-criminal-minds-beyond-borders-2016",
@@ -9076,146 +3463,12 @@
     "description": "Criminal Minds: Beyond Borders is a drama about the specialized International Division of the FBI tasked with solving crimes and coming to the rescue of A…",
     "poster": "https://image.tmdb.org/t/p/w1280/C7UsPtDX8RpqYkto8DsR04j3Tb.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/C7UsPtDX8RpqYkto8DsR04j3Tb.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "criminal-minds-beyond-borders-2016",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Criminal Minds: Beyond Borders — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Criminal Minds: Beyond Borders — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Criminal Minds: Beyond Borders — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Criminal Minds: Beyond Borders — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Criminal Minds: Beyond Borders — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Criminal Minds: Beyond Borders — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Criminal Minds: Beyond Borders — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Criminal Minds: Beyond Borders — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Criminal Minds: Beyond Borders — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Criminal Minds: Beyond Borders — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Criminal Minds: Beyond Borders — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Criminal Minds: Beyond Borders — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Criminal Minds: Beyond Borders — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Criminal Minds: Beyond Borders — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Criminal Minds: Beyond Borders — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Criminal Minds: Beyond Borders — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Criminal Minds: Beyond Borders — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Criminal Minds: Beyond Borders — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Criminal Minds: Beyond Borders — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Criminal Minds: Beyond Borders — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Criminal Minds: Beyond Borders — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Criminal Minds: Beyond Borders — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Criminal Minds: Beyond Borders — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Criminal Minds: Beyond Borders — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/criminal-minds-beyond-borders-2016",
+    "imdbId": "tt4364202"
   },
   {
     "id": "series-criminal-minds-suspect-behavior-2011",
@@ -9236,101 +3489,12 @@
     "description": "Criminal Minds: Suspect Behavior was a short-lived American police procedural drama that aired on CBS. The show debuted in 2011 as a spin-off from the suc…",
     "poster": "https://image.tmdb.org/t/p/w1280/24Kr67DhRIDalcRvarQeQ9650RI.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/24Kr67DhRIDalcRvarQeQ9650RI.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "criminal-minds-suspect-behavior-2011",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Criminal Minds: Suspect Behavior — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Criminal Minds: Suspect Behavior — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Criminal Minds: Suspect Behavior — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Criminal Minds: Suspect Behavior — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Criminal Minds: Suspect Behavior — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Criminal Minds: Suspect Behavior — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Criminal Minds: Suspect Behavior — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Criminal Minds: Suspect Behavior — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Criminal Minds: Suspect Behavior — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Criminal Minds: Suspect Behavior — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Criminal Minds: Suspect Behavior — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Criminal Minds: Suspect Behavior — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Criminal Minds: Suspect Behavior — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Criminal Minds: Suspect Behavior — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Criminal Minds: Suspect Behavior — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Criminal Minds: Suspect Behavior — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/criminal-minds-suspect-behavior-2011",
+    "imdbId": "tt1703874"
   },
   {
     "id": "series-white-collar-2009",
@@ -9352,326 +3516,12 @@
     "description": "In exchange for his freedom, charming con artist Neal Caffrey provides his expertise to help straight-man FBI agent Peter Burke catch elusive white-collar…",
     "poster": "https://image.tmdb.org/t/p/w1280/xZZtRgSV2NnseOrTNfwJzitcGEt.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xZZtRgSV2NnseOrTNfwJzitcGEt.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "white-collar-2009",
-    "episode": "S6 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "White Collar — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "White Collar — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "White Collar — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "White Collar — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "White Collar — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "White Collar — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "White Collar — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "White Collar — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "White Collar — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "White Collar — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "White Collar — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "White Collar — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "White Collar — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "White Collar — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "White Collar — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "White Collar — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "White Collar — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "White Collar — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "White Collar — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "White Collar — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "White Collar — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "White Collar — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "White Collar — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "White Collar — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 4,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "White Collar — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "White Collar — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "White Collar — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "White Collar — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "White Collar — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "White Collar — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "White Collar — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "White Collar — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 5,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "White Collar — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "White Collar — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "White Collar — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "White Collar — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "White Collar — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "White Collar — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "White Collar — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "White Collar — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 6,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "White Collar — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "White Collar — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "White Collar — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "White Collar — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "White Collar — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "White Collar — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "White Collar — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "White Collar — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "White Collar — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "White Collar — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "White Collar — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "White Collar — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "White Collar — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "White Collar — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "White Collar — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "White Collar — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 6,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/white-collar-2009",
+    "imdbId": "tt1358522"
   },
   {
     "id": "series-the-affair-was-just-the-beginning-2026",
@@ -9692,101 +3542,12 @@
     "description": "A successful entrepreneur with a seemingly perfect life sees everything fall apart after discovering her husband covering up a murder allegedly committed…",
     "poster": "https://image.tmdb.org/t/p/w1280/463KX5md13Db6pIMCCnIZqtPWFK.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/463KX5md13Db6pIMCCnIZqtPWFK.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "the-affair-was-just-the-beginning-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Affair Was Just The Beginning — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Affair Was Just The Beginning — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Affair Was Just The Beginning — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Affair Was Just The Beginning — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Affair Was Just The Beginning — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Affair Was Just The Beginning — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Affair Was Just The Beginning — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Affair Was Just The Beginning — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Affair Was Just The Beginning — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Affair Was Just The Beginning — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Affair Was Just The Beginning — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Affair Was Just The Beginning — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Affair Was Just The Beginning — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Affair Was Just The Beginning — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Affair Was Just The Beginning — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Affair Was Just The Beginning — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-affair-was-just-the-beginning-2026",
+    "imdbId": "tt41785451"
   },
   {
     "id": "series-the-bombing-of-pan-am-103-2025",
@@ -9807,101 +3568,12 @@
     "description": "On December 21, 1988, Pan Am Flight 103 exploded over the small Scottish town of Lockerbie, killing 270 people. What followed was the largest murder inves…",
     "poster": "https://image.tmdb.org/t/p/w1280/5ZgPQjEsJqCwRtx6vsBBISxn389.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5ZgPQjEsJqCwRtx6vsBBISxn389.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "the-bombing-of-pan-am-103-2025",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Bombing of Pan Am 103 — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Bombing of Pan Am 103 — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Bombing of Pan Am 103 — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Bombing of Pan Am 103 — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Bombing of Pan Am 103 — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Bombing of Pan Am 103 — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Bombing of Pan Am 103 — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Bombing of Pan Am 103 — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Bombing of Pan Am 103 — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Bombing of Pan Am 103 — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Bombing of Pan Am 103 — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Bombing of Pan Am 103 — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Bombing of Pan Am 103 — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Bombing of Pan Am 103 — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Bombing of Pan Am 103 — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Bombing of Pan Am 103 — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-bombing-of-pan-am-103-2025",
+    "imdbId": "tt13592494"
   },
   {
     "id": "series-wrath-2026",
@@ -9922,101 +3594,12 @@
     "description": "A wounded amnesiac finds refuge with an MMA coach and steps into the ring, torn between hope for a new future and a dangerous past that keeps closing in.",
     "poster": "https://image.tmdb.org/t/p/w1280/kZ77s94jLBliHXDXXPegi6ZbbtN.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kZ77s94jLBliHXDXXPegi6ZbbtN.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "wrath-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Wrath — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Wrath — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Wrath — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Wrath — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Wrath — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Wrath — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Wrath — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Wrath — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Wrath — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Wrath — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Wrath — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Wrath — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Wrath — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Wrath — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Wrath — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Wrath — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/wrath-2026",
+    "imdbId": "tt43492801"
   },
   {
     "id": "movie-second-sister-2025",
@@ -10038,14 +3621,12 @@
     "description": "High school student 'Ji-eun' was the victim of the crime, but distorted online posts and malicious comments made her into the perpetrator in the public ey…",
     "poster": "https://image.tmdb.org/t/p/w1280/jFBUVrpq67plq2kF7vop9JMS1E9.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/jFBUVrpq67plq2kF7vop9JMS1E9.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "second-sister-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/second-sister-2025",
+    "imdbId": "tt40710413"
   },
   {
     "id": "series-furious-2026",
@@ -10066,101 +3647,12 @@
     "description": "FBI agent Alice Black is on the hunt for a mysterious and calculating female serial killer. Both walk their own paths toward justice, and as their lives s…",
     "poster": "https://image.tmdb.org/t/p/w1280/wtTZI7CwJDPAqTrq7pZq3sfTWv4.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/wtTZI7CwJDPAqTrq7pZq3sfTWv4.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "furious-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Furious — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Furious — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Furious — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Furious — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Furious — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Furious — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Furious — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Furious — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Furious — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Furious — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Furious — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Furious — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Furious — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Furious — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Furious — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Furious — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/furious-2026",
+    "imdbId": "tt36303968"
   },
   {
     "id": "movie-unidentified-2026",
@@ -10182,14 +3674,12 @@
     "description": "The body of a teenage girl is found in the heart of the desert, he raised many questions about the girl's personality, the lady decides to search for the…",
     "poster": "https://image.tmdb.org/t/p/w1280/zxQfDiSZAB68P1ehvNjqEbfshLc.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zxQfDiSZAB68P1ehvNjqEbfshLc.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "unidentified-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/unidentified-2026",
+    "imdbId": "tt32298366"
   },
   {
     "id": "series-the-prosecutors-proposal-2026",
@@ -10211,101 +3701,12 @@
     "description": "A victim’s son and a killer’s son reunite as a prosecutor and investigator, fighting systemic corruption while becoming each other's salvation.",
     "poster": "https://image.tmdb.org/t/p/w1280/feISh3qoREwIPWbSaLqqumbmh7m.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/feISh3qoREwIPWbSaLqqumbmh7m.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "the-prosecutors-proposal-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Prosecutor's Proposal — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Prosecutor's Proposal — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Prosecutor's Proposal — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Prosecutor's Proposal — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Prosecutor's Proposal — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Prosecutor's Proposal — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Prosecutor's Proposal — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Prosecutor's Proposal — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Prosecutor's Proposal — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Prosecutor's Proposal — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Prosecutor's Proposal — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Prosecutor's Proposal — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Prosecutor's Proposal — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Prosecutor's Proposal — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Prosecutor's Proposal — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Prosecutor's Proposal — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-prosecutors-proposal-2026",
+    "imdbId": "tt43592244"
   },
   {
     "id": "movie-newborn-2026",
@@ -10327,14 +3728,12 @@
     "description": "After serving seven years in solitary confinement, Chris Newborn seeks to rebuild his life and reconnect with his family only to find that freedom has bec…",
     "poster": "https://image.tmdb.org/t/p/w1280/skyvaf7uhxMrQNIy3NZSN77SswS.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/skyvaf7uhxMrQNIy3NZSN77SswS.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "newborn-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/newborn-2026",
+    "imdbId": "tt12308018"
   },
   {
     "id": "movie-the-debt-collector-2026",
@@ -10356,14 +3755,12 @@
     "description": "Haunted by guilt after prison, a former debt collector races against a terminal illness, returning to his old world to avenge loan shark victims.",
     "poster": "https://image.tmdb.org/t/p/w1280/5Va6qlwvpneo0XLzGFlvgYH5ncP.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5Va6qlwvpneo0XLzGFlvgYH5ncP.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "the-debt-collector-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-debt-collector-2026",
+    "imdbId": "tt39749953"
   },
   {
     "id": "series-elite-force-2026",
@@ -10384,101 +3781,12 @@
     "description": "Following an unprecedented attack on the GIGN, an officer—just as he is leaving the force—will carry out a mission that rivals the intensity of that attac…",
     "poster": "https://image.tmdb.org/t/p/w1280/tMpfa73LmKpeZ3Fix1QmFGIUrKI.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/tMpfa73LmKpeZ3Fix1QmFGIUrKI.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "elite-force-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Elite Force — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Elite Force — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Elite Force — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Elite Force — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Elite Force — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Elite Force — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Elite Force — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Elite Force — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Elite Force — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Elite Force — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Elite Force — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Elite Force — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Elite Force — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Elite Force — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Elite Force — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Elite Force — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/elite-force-2026",
+    "imdbId": "tt35495063"
   },
   {
     "id": "movie-elize-shadows-of-a-woman-2026",
@@ -10500,14 +3808,12 @@
     "description": "In this retelling of a real case, a former escort discovers her wealthy husband's infidelity and struggles to cope as betrayal poisons their marriage.",
     "poster": "https://image.tmdb.org/t/p/w1280/FzZ8NGlSDFYJ7g9f2aURPvItFt.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/FzZ8NGlSDFYJ7g9f2aURPvItFt.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "elize-shadows-of-a-woman-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/elize-shadows-of-a-woman-2026",
+    "imdbId": "tt37042085"
   },
   {
     "id": "series-lucky-2026",
@@ -10528,101 +3834,12 @@
     "description": "When a multi-million-dollar heist goes sideways, con artist Lucky is forced to go on the run. Pursued by both the FBI and a ruthless crime boss, Lucky mus…",
     "poster": "https://image.tmdb.org/t/p/w1280/hKXMOOvQwXiL01hfYG5nrkH0tEP.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/hKXMOOvQwXiL01hfYG5nrkH0tEP.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "lucky-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Lucky — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Lucky — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Lucky — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Lucky — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Lucky — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Lucky — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Lucky — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Lucky — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Lucky — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Lucky — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Lucky — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Lucky — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Lucky — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Lucky — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Lucky — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Lucky — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/lucky-2026",
+    "imdbId": "tt34866681"
   },
   {
     "id": "movie-sunset-strip-killers-2026",
@@ -10645,14 +3862,12 @@
     "description": "Based on a true story, in 1980s Los Angeles, nurse Carol Bundy falls for the charming but deadly Doug Clark. Drawn into his world of murder, obsession, an…",
     "poster": "https://image.tmdb.org/t/p/w1280/njzRgYxdvlVfxrponW24htVznCe.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/njzRgYxdvlVfxrponW24htVznCe.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "sunset-strip-killers-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/sunset-strip-killers-2026",
+    "imdbId": "tt37371014"
   },
   {
     "id": "series-the-apartment-job-2026",
@@ -10674,101 +3889,12 @@
     "description": "Desperate for cash, a former gang boss teams up with an aspiring lawyer to steal an apartment complex's reserve fund — only to uncover deep corruption.",
     "poster": "https://image.tmdb.org/t/p/w1280/stJcZWrpfT2DjY0K261Q2FpxUkS.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/stJcZWrpfT2DjY0K261Q2FpxUkS.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "the-apartment-job-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Apartment Job — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Apartment Job — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Apartment Job — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Apartment Job — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Apartment Job — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Apartment Job — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Apartment Job — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Apartment Job — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Apartment Job — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Apartment Job — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Apartment Job — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Apartment Job — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Apartment Job — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Apartment Job — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Apartment Job — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Apartment Job — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-apartment-job-2026",
+    "imdbId": "tt43357366"
   },
   {
     "id": "series-reverse-chase-2026",
@@ -10790,101 +3916,12 @@
     "description": "After discovering a woman's remains hidden for sixteen years, Xu Weizhang unexpectedly establishes contact with police officer Liu Xinjian in 1995. Togeth…",
     "poster": "https://image.tmdb.org/t/p/w1280/f1GP1ukzZPG3kYmnDtyXW3On9K6.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/f1GP1ukzZPG3kYmnDtyXW3On9K6.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "reverse-chase-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Reverse Chase — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Reverse Chase — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Reverse Chase — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Reverse Chase — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Reverse Chase — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Reverse Chase — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Reverse Chase — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Reverse Chase — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Reverse Chase — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Reverse Chase — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Reverse Chase — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Reverse Chase — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Reverse Chase — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Reverse Chase — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Reverse Chase — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Reverse Chase — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/reverse-chase-2026",
+    "imdbId": "tt43634830"
   },
   {
     "id": "movie-the-furious-2026",
@@ -10906,14 +3943,12 @@
     "description": "After Wang Wei's daughter is kidnapped by a criminal network and he receives no help from the corrupt police, Wei sets out to find her himself. His only a…",
     "poster": "https://image.tmdb.org/t/p/w1280/1AVF2fAevpfi2HP6AEpptG1kg8R.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1AVF2fAevpfi2HP6AEpptG1kg8R.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "the-furious-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-furious-2026",
+    "imdbId": "tt33311069"
   },
   {
     "id": "series-the-air-2026",
@@ -10934,101 +3969,12 @@
     "description": "When a violent coup erupts back home, Princess Catherine \"Blue\" De Lena becomes an assassination target while visiting Thailand. Her survival falls entire…",
     "poster": "https://image.tmdb.org/t/p/w1280/AkMY5XIGiru36sp1ZTNz1l6X6pI.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/AkMY5XIGiru36sp1ZTNz1l6X6pI.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "the-air-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Air — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Air — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Air — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Air — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Air — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Air — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Air — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Air — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Air — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Air — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Air — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Air — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Air — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Air — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Air — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Air — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-air-2026",
+    "imdbId": "tt18259538"
   },
   {
     "id": "movie-changing-lanes-2002",
@@ -11050,14 +3996,12 @@
     "description": "A rush-hour fender-bender on New York City's crowded FDR Drive, under most circumstances, wouldn't set off a chain reaction that could decimate two people…",
     "poster": "https://image.tmdb.org/t/p/w1280/lCPOmWoqtmVrI2yUNUw8iaOaTJn.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/lCPOmWoqtmVrI2yUNUw8iaOaTJn.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "changing-lanes-2002",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/changing-lanes-2002",
+    "imdbId": "tt0264472"
   },
   {
     "id": "movie-the-1517-to-paris-2018",
@@ -11079,14 +4023,12 @@
     "description": "On Aug. 21, 2015, the world watches in stunned silence as the media reports a thwarted terrorist attack on a train that's bound for Paris -- an attempt pr…",
     "poster": "https://image.tmdb.org/t/p/w1280/gkkBhctHPGg8hrmtWbO3ySZoj4z.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gkkBhctHPGg8hrmtWbO3ySZoj4z.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "the-1517-to-paris-2018",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-1517-to-paris-2018",
+    "imdbId": "tt6802308"
   },
   {
     "id": "movie-this-that-and-everything-in-between-2026",
@@ -11108,14 +4050,12 @@
     "description": "A TV writer returns home to her estranged mother, igniting chaos as they navigate painful secrets and the  complexities of their dysfunctional family.",
     "poster": "https://image.tmdb.org/t/p/w1280/6yLIoPWFKwXO2ChTTk6NyNT7Lk2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/6yLIoPWFKwXO2ChTTk6NyNT7Lk2.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🌸",
     "slug": "this-that-and-everything-in-between-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/this-that-and-everything-in-between-2026",
+    "imdbId": "tt39741670"
   },
   {
     "id": "movie-truly-naked-2026",
@@ -11137,14 +4077,12 @@
     "description": "An introverted teen, who has only ever experienced sex through the lens while working for his father’s pornography business, must step out from behind the…",
     "poster": "https://image.tmdb.org/t/p/w1280/tzskQHMwcRKraYzs1tlDWa2olre.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/tzskQHMwcRKraYzs1tlDWa2olre.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "📻",
     "slug": "truly-naked-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/truly-naked-2026",
+    "imdbId": "tt8760666"
   },
   {
     "id": "movie-whisperings-of-the-moon-2025",
@@ -11166,14 +4104,12 @@
     "description": "After the death of her father, theater actress Nisay returns to her hometown and reconnects with her former lover, Thida. On stage, their love finds its f…",
     "poster": "https://image.tmdb.org/t/p/w1280/pKNl6XrswFqBRGlLWBgBOiJLaw9.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pKNl6XrswFqBRGlLWBgBOiJLaw9.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🍄",
     "slug": "whisperings-of-the-moon-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/whisperings-of-the-moon-2025",
+    "imdbId": "tt37096242"
   },
   {
     "id": "series-yirans-silver-linings-2026",
@@ -11194,101 +4130,12 @@
     "description": "A wedding planner, her disaster-magnet mom, a wannabe star, and their gloriously messy squad—finding light in life’s chaotic comedy.",
     "poster": "https://image.tmdb.org/t/p/w1280/kUnxyoPSzuQPcPV5I7gwxUsyCSO.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kUnxyoPSzuQPcPV5I7gwxUsyCSO.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🏛️",
     "slug": "yirans-silver-linings-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Yiran's Silver Linings — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Yiran's Silver Linings — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Yiran's Silver Linings — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Yiran's Silver Linings — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Yiran's Silver Linings — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Yiran's Silver Linings — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Yiran's Silver Linings — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Yiran's Silver Linings — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Yiran's Silver Linings — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Yiran's Silver Linings — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Yiran's Silver Linings — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Yiran's Silver Linings — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Yiran's Silver Linings — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Yiran's Silver Linings — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Yiran's Silver Linings — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Yiran's Silver Linings — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/yirans-silver-linings-2026",
+    "imdbId": "tt43616159"
   },
   {
     "id": "movie-night-nurse-2026",
@@ -11310,14 +4157,12 @@
     "description": "As a series of perverse scam calls unsettles an idyllic retirement community, a starry-eyed nurse becomes entangled with her mysterious patient.",
     "poster": "https://image.tmdb.org/t/p/w1280/dcJFy0rtVZp4LqPw1aqyxa046VP.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dcJFy0rtVZp4LqPw1aqyxa046VP.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🖤",
     "slug": "night-nurse-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/night-nurse-2026",
+    "imdbId": "tt38906892"
   },
   {
     "id": "movie-young-washington-2026",
@@ -11339,14 +4184,12 @@
     "description": "Before he led a nation, George Washington was a young soldier thrown into a global conflict. With alliances crumbling and war closing in, he must choose w…",
     "poster": "https://image.tmdb.org/t/p/w1280/mj3RFamNUleZB94zMWgGnJkQCAH.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mj3RFamNUleZB94zMWgGnJkQCAH.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "👽",
     "slug": "young-washington-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/young-washington-2026",
+    "imdbId": "tt32104007"
   },
   {
     "id": "movie-laddaland-2011",
@@ -11368,14 +4211,12 @@
     "description": "A family moves into a neighborhood where they encounter a series of terrifying paranormal events that lead them to the edge of sanity.",
     "poster": "https://image.tmdb.org/t/p/w1280/1nF5id9N7kaLzWtu6tnHzeD5f0p.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1nF5id9N7kaLzWtu6tnHzeD5f0p.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🏜️",
     "slug": "laddaland-2011",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/laddaland-2011",
+    "imdbId": "tt2063782"
   },
   {
     "id": "movie-good-boy-2026",
@@ -11398,14 +4239,12 @@
     "description": "Tommy, a volatile 19-year-old, revels in drugs, parties and violence. After getting separated from his friends on a drunken bender, he is abducted by a sh…",
     "poster": "https://image.tmdb.org/t/p/w1280/zeCuk7kwfhzRZMN2KoYTYODgpU3.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zeCuk7kwfhzRZMN2KoYTYODgpU3.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🦍",
     "slug": "good-boy-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/good-boy-2026",
+    "imdbId": "tt34381258"
   },
   {
     "id": "series-overdo-2026",
@@ -11426,101 +4265,12 @@
     "description": "In Republican Shanghai, Murong Qingyi, a warlord’s son swapped at birth, endures years of torment. His life changes when Ren Susu saves him, but tragedy s…",
     "poster": "https://image.tmdb.org/t/p/w1280/mmXea9UCZ83TMhHaSkDAJCHKr0S.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mmXea9UCZ83TMhHaSkDAJCHKr0S.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🧅",
     "slug": "overdo-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Overdo — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Overdo — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Overdo — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Overdo — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Overdo — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Overdo — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Overdo — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Overdo — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Overdo — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Overdo — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Overdo — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Overdo — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Overdo — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Overdo — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Overdo — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Overdo — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/overdo-2026",
+    "imdbId": "tt37443650"
   },
   {
     "id": "movie-dragon-wars-d-war-2007",
@@ -11544,14 +4294,12 @@
     "description": "Ethan learns he carries the spirit of a warrior who battled dragons in 16th-century Korea -- and one day he'll find a tattooed girl carrying the spirit of…",
     "poster": "https://image.tmdb.org/t/p/w1280/5WWqrUIGrCb1QvZtYVaSfZgUG8n.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5WWqrUIGrCb1QvZtYVaSfZgUG8n.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🤠",
     "slug": "dragon-wars-d-war-2007",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/dragon-wars-d-war-2007",
+    "imdbId": "tt0372873"
   },
   {
     "id": "movie-la-chimera-2023",
@@ -11574,14 +4322,12 @@
     "description": "Everyone has their own Chimera, something they try to achieve but never manage to find. For Arthur, the Chimera looks like the woman he lost, Beniamina. I…",
     "poster": "https://image.tmdb.org/t/p/w1280/ovtTn2GkzOYsMvAVWl6Bt0jN4Ye.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ovtTn2GkzOYsMvAVWl6Bt0jN4Ye.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🐉",
     "slug": "la-chimera-2023",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/la-chimera-2023",
+    "imdbId": "tt14561712"
   },
   {
     "id": "series-sleepy-hollow-2013",
@@ -11603,236 +4349,12 @@
     "description": "Ichabod Crane is resurrected and pulled two and a half centuries through time to unravel a mystery that dates all the way back to the founding fathers.",
     "poster": "https://image.tmdb.org/t/p/w1280/jHkeqXYUU4khZEig88AFLMUOmep.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/jHkeqXYUU4khZEig88AFLMUOmep.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "sleepy-hollow-2013",
-    "episode": "S4 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Sleepy Hollow — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Sleepy Hollow — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Sleepy Hollow — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Sleepy Hollow — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Sleepy Hollow — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Sleepy Hollow — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Sleepy Hollow — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Sleepy Hollow — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Sleepy Hollow — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Sleepy Hollow — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Sleepy Hollow — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Sleepy Hollow — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Sleepy Hollow — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Sleepy Hollow — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Sleepy Hollow — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Sleepy Hollow — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Sleepy Hollow — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Sleepy Hollow — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Sleepy Hollow — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Sleepy Hollow — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Sleepy Hollow — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Sleepy Hollow — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Sleepy Hollow — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Sleepy Hollow — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 4,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Sleepy Hollow — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Sleepy Hollow — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Sleepy Hollow — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Sleepy Hollow — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Sleepy Hollow — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Sleepy Hollow — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Sleepy Hollow — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Sleepy Hollow — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Sleepy Hollow — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Sleepy Hollow — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Sleepy Hollow — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Sleepy Hollow — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Sleepy Hollow — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Sleepy Hollow — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Sleepy Hollow — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Sleepy Hollow — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 4,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/sleepy-hollow-2013",
+    "imdbId": "tt2647544"
   },
   {
     "id": "series-salem-2014",
@@ -11854,191 +4376,12 @@
     "description": "Set in the volatile world of 17th century Massachusetts, 'Salem' explores what really fueled the town's infamous witch trials and dares to uncover the dar…",
     "poster": "https://image.tmdb.org/t/p/w1280/tTekGhMOVcLrbRBrmRoa2KVnFfq.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/tTekGhMOVcLrbRBrmRoa2KVnFfq.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "salem-2014",
-    "episode": "S3 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Salem — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Salem — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Salem — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Salem — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Salem — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Salem — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Salem — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Salem — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Salem — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Salem — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Salem — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Salem — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Salem — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Salem — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Salem — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Salem — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Salem — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Salem — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Salem — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Salem — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Salem — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Salem — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Salem — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Salem — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Salem — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Salem — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Salem — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Salem — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Salem — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Salem — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Salem — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Salem — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 3,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/salem-2014",
+    "imdbId": "tt2963254"
   },
   {
     "id": "movie-mikael-pemburu-dua-alam-2026",
@@ -12062,14 +4405,12 @@
     "description": "An elite police officer who is also a jinn hunter, facing the threat of creatures from the supernatural while investigating a series of gruesome murders l…",
     "poster": "https://image.tmdb.org/t/p/w1280/xARODsZfG2mP95UGTi5ojGu2iF.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xARODsZfG2mP95UGTi5ojGu2iF.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "mikael-pemburu-dua-alam-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/mikael-pemburu-dua-alam-2026",
+    "imdbId": "tt36607196"
   },
   {
     "id": "movie-sixty-million-dollar-man-1995",
@@ -12091,14 +4432,12 @@
     "description": "A rich playboy gets blown up by a gangster when he flirts with the gangster's wife. Through a series of circumstances, his professor makes him a synthetic…",
     "poster": "https://image.tmdb.org/t/p/w1280/gFMLIRqHjgyvciMPNlGWKh50xAV.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gFMLIRqHjgyvciMPNlGWKh50xAV.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "sixty-million-dollar-man-1995",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/sixty-million-dollar-man-1995",
+    "imdbId": "tt0112446"
   },
   {
     "id": "series-time-2024",
@@ -12120,101 +4459,12 @@
     "description": "A wealthy and ambitious businesswoman is thrust one year into the future and learns that she has been declared missing, her family has fallen apart, and h…",
     "poster": "https://image.tmdb.org/t/p/w1280/cg8ZyewbBGjpBIAMPr7nIQTYNub.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cg8ZyewbBGjpBIAMPr7nIQTYNub.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "time-2024",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Time — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Time — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Time — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Time — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Time — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Time — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Time — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Time — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Time — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Time — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Time — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Time — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Time — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Time — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Time — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Time — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/time-2024",
+    "imdbId": "tt13138834"
   },
   {
     "id": "series-stuart-fails-to-save-the-universe-2026",
@@ -12235,101 +4485,12 @@
     "description": "After accidentally creating a new multiverse, comic book store owner Stuart Bloom must locate a quantum-interference device to restore reality.",
     "poster": "https://image.tmdb.org/t/p/w1280/2ngdvUiEKW8Q37ta8BBdydE2cuq.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2ngdvUiEKW8Q37ta8BBdydE2cuq.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "stuart-fails-to-save-the-universe-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Stuart Fails to Save the Universe — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Stuart Fails to Save the Universe — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Stuart Fails to Save the Universe — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Stuart Fails to Save the Universe — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Stuart Fails to Save the Universe — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Stuart Fails to Save the Universe — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Stuart Fails to Save the Universe — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Stuart Fails to Save the Universe — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Stuart Fails to Save the Universe — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Stuart Fails to Save the Universe — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Stuart Fails to Save the Universe — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Stuart Fails to Save the Universe — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Stuart Fails to Save the Universe — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Stuart Fails to Save the Universe — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Stuart Fails to Save the Universe — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Stuart Fails to Save the Universe — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/stuart-fails-to-save-the-universe-2026",
+    "imdbId": "tt27497393"
   },
   {
     "id": "movie-masters-of-the-universe-1987",
@@ -12351,14 +4512,12 @@
     "description": "When the evil Skeletor finds a mysterious power called the Cosmic Key, he becomes nearly invincible, seizing Castle Grayskull and the surrounding city. Th…",
     "poster": "https://image.tmdb.org/t/p/w1280/2O19YXjdom34ecJPwqGTvYGHvFy.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2O19YXjdom34ecJPwqGTvYGHvFy.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "masters-of-the-universe-1987",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/masters-of-the-universe-1987",
+    "imdbId": "tt0093507"
   },
   {
     "id": "series-the-vampire-lestat-2026",
@@ -12379,101 +4538,12 @@
     "description": "The Vampire Lestat goes on tour while being haunted by \"muses\" from his past. As the band's popularity grows, so does Lestat's influence over vampires & h…",
     "poster": "https://image.tmdb.org/t/p/w1280/iw1knpC8Jg5davMn2MPxNVxBF8N.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/iw1knpC8Jg5davMn2MPxNVxBF8N.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "the-vampire-lestat-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Vampire Lestat — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Vampire Lestat — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Vampire Lestat — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Vampire Lestat — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Vampire Lestat — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Vampire Lestat — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Vampire Lestat — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Vampire Lestat — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Vampire Lestat — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Vampire Lestat — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Vampire Lestat — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Vampire Lestat — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Vampire Lestat — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Vampire Lestat — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Vampire Lestat — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Vampire Lestat — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-vampire-lestat-2026",
+    "imdbId": "tt43717420"
   },
   {
     "id": "movie-the-mandalorian-and-grogu-2026",
@@ -12496,14 +4566,12 @@
     "description": "The evil Empire has fallen, and Imperial warlords remain scattered throughout the galaxy. As the fledgling New Republic works to protect everything the Re…",
     "poster": "https://image.tmdb.org/t/p/w1280/MJcERawyqGqJdPsOBc0C449hQ9.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/MJcERawyqGqJdPsOBc0C449hQ9.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "the-mandalorian-and-grogu-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-mandalorian-and-grogu-2026",
+    "imdbId": "tt30825738"
   },
   {
     "id": "movie-the-last-house-2026",
@@ -12525,14 +4593,12 @@
     "description": "A family suddenly sealed inside their home must work together to survive against dwindling resources and the ominous threat keeping them trapped.",
     "poster": "https://image.tmdb.org/t/p/w1280/2mPmccLg8QCD4ZF6v8kSsUijPPW.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2mPmccLg8QCD4ZF6v8kSsUijPPW.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "the-last-house-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-last-house-2026",
+    "imdbId": "tt32268156"
   },
   {
     "id": "movie-lockbox-2026",
@@ -12553,14 +4619,12 @@
     "description": "A woman puts her life on the line to protect her troubled, enigmatic cousin, Winthrop, who has been targeted and hunted by a powerful supernatural force.",
     "poster": "https://image.tmdb.org/t/p/w1280/8YRMbO0OatB5J5KPEHuLhV1ZAhj.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8YRMbO0OatB5J5KPEHuLhV1ZAhj.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "lockbox-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/lockbox-2026",
+    "imdbId": "tt37369064"
   },
   {
     "id": "movie-evil-dead-burn-2026",
@@ -12581,14 +4645,12 @@
     "description": "After her husband's abrupt death, Alice seeks solace with his remaining family — descendants of a leading researcher on demonic possession. As her in-laws…",
     "poster": "https://image.tmdb.org/t/p/w1280/yhRdgdmz5SB6X7ORJSX9lLGhZnZ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/yhRdgdmz5SB6X7ORJSX9lLGhZnZ.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "evil-dead-burn-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/evil-dead-burn-2026",
+    "imdbId": "tt31170389"
   },
   {
     "id": "movie-capps-crossing-wrong-side-of-dead-2026",
@@ -12610,14 +4672,12 @@
     "description": "When a behavioral science major investigates murders at Capps Crossing, she finds herself trapped in a twisted web of lies surrounding the local ranger an…",
     "poster": "https://image.tmdb.org/t/p/w1280/vl9OmIBWqkvcWG6X6qdQDUaTvn8.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/vl9OmIBWqkvcWG6X6qdQDUaTvn8.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "capps-crossing-wrong-side-of-dead-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/capps-crossing-wrong-side-of-dead-2026",
+    "imdbId": "tt8502306"
   },
   {
     "id": "movie-soulm8te-2026",
@@ -12639,14 +4699,12 @@
     "description": "After a ruthless tech giant acquires his company, a grieving engineer is tasked with testing their new AI companion. But when he attempts to program her t…",
     "poster": "https://image.tmdb.org/t/p/w1280/pWokAXaDOg4Rc5YLE6oW60myIl7.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pWokAXaDOg4Rc5YLE6oW60myIl7.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "soulm8te-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/soulm8te-2026",
+    "imdbId": "tt32654916"
   },
   {
     "id": "movie-nightborn-2026",
@@ -12667,14 +4725,12 @@
     "description": "In Finnish forest, Saga and her husband Jon embark on a new chapter as parents. But Saga's joy is overshadowed by a chilling suspicion about their newborn…",
     "poster": "https://image.tmdb.org/t/p/w1280/jVeYae744cR2ogx9ShQ3qXOcRiZ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/jVeYae744cR2ogx9ShQ3qXOcRiZ.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "nightborn-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/nightborn-2026",
+    "imdbId": "tt34383465"
   },
   {
     "id": "movie-shake-rattle-and-roll-evil-origins-2026",
@@ -12695,14 +4751,12 @@
     "description": "In 1775 during the Spanish colonial period in the Philippines, nuns attempts to survive the night after an unknown evil was set free in their cloister. Me…",
     "poster": "https://image.tmdb.org/t/p/w1280/90Vx3KpCXR2D9iVdxJpkjeYBq9P.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/90Vx3KpCXR2D9iVdxJpkjeYBq9P.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "shake-rattle-and-roll-evil-origins-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/shake-rattle-and-roll-evil-origins-2026",
+    "imdbId": "tt37697399"
   },
   {
     "id": "movie-the-devils-mouth-2026",
@@ -12724,14 +4778,12 @@
     "description": "Five college friends set off to explore the Devil's Mouth cave system in Thailand for one last adventure before life in the real world begins. But they so…",
     "poster": "https://image.tmdb.org/t/p/w1280/w8z3ThhLehGPJuAShostzeKxJvK.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/w8z3ThhLehGPJuAShostzeKxJvK.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "the-devils-mouth-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-devils-mouth-2026",
+    "imdbId": "tt36958312"
   },
   {
     "id": "movie-leviticus-2026",
@@ -12753,14 +4805,12 @@
     "description": "Two teenage boys must escape a violent entity that takes the form of the person they desire most — each other.",
     "poster": "https://image.tmdb.org/t/p/w1280/7y8zWGEjs7tresw4Hzkkf4TdkcL.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/7y8zWGEjs7tresw4Hzkkf4TdkcL.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "leviticus-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/leviticus-2026",
+    "imdbId": "tt39143902"
   },
   {
     "id": "movie-pay-the-ghost-2015",
@@ -12782,14 +4832,12 @@
     "description": "One year after his young son disappeared during a Halloween carnival, Mike Cole is haunted by eerie images and terrifying messages he can’t explain. Toget…",
     "poster": "https://image.tmdb.org/t/p/w1280/hHwuzYiWtwxUw5Jf1Ue3ZPn04Vt.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/hHwuzYiWtwxUw5Jf1Ue3ZPn04Vt.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "pay-the-ghost-2015",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/pay-the-ghost-2015",
+    "imdbId": "tt3733778"
   },
   {
     "id": "movie-colony-2026",
@@ -12812,14 +4860,12 @@
     "description": "Professor Se-jeong is thrust into a bloody nightmare when a rapidly mutating virus is released during a biotech conference causing authorities to seal the…",
     "poster": "https://image.tmdb.org/t/p/w1280/84FEpVVbSKYvKXDZJDZXOKBxCEm.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/84FEpVVbSKYvKXDZJDZXOKBxCEm.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "colony-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/colony-2026",
+    "imdbId": "tt34385135"
   },
   {
     "id": "movie-scary-movie-2026",
@@ -12841,14 +4887,12 @@
     "description": "Twenty-six years after outrunning a suspiciously familiar masked killer, the Core Four are back in the killer's crosshairs and no horror movie IP is safe.",
     "poster": "https://image.tmdb.org/t/p/w1280/xWBiXclrRmTggQHMRsIn84YHavs.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xWBiXclrRmTggQHMRsIn84YHavs.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "scary-movie-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/scary-movie-2026",
+    "imdbId": "tt32093575"
   },
   {
     "id": "movie-under-the-shadow-2016",
@@ -12871,14 +4915,12 @@
     "description": "After Shideh's building is hit by a missile during the Iran-Iraq War, a superstitious neighbor suggests that the missile was cursed and might be carrying…",
     "poster": "https://image.tmdb.org/t/p/w1280/ZxvwJew62hZOHXzGvQQ18WL4zQ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ZxvwJew62hZOHXzGvQQ18WL4zQ.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "under-the-shadow-2016",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/under-the-shadow-2016",
+    "imdbId": "tt4273292"
   },
   {
     "id": "movie-the-undertaker-2023",
@@ -12901,14 +4943,12 @@
     "description": "Cherd, a 25-year-old law graduate, is hesitant to take over his father's undertaker business because he is afraid of ghosts. However, his father's conditi…",
     "poster": "https://image.tmdb.org/t/p/w1280/yIrW7njln6BnttncIAyKI1TEo1X.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/yIrW7njln6BnttncIAyKI1TEo1X.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "the-undertaker-2023",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-undertaker-2023",
+    "imdbId": "tt29633446"
   },
   {
     "id": "movie-the-undertaker-2-afterlife-2026",
@@ -12931,14 +4971,12 @@
     "description": "Following the passing of Baikaow and Sak, life in the village slowly returns to normal. This calm is disrupted when Grandma Joy is suddenly struck by ligh…",
     "poster": "https://image.tmdb.org/t/p/w1280/f7KI2Jt1NA0KGaaH8z1wWFJ6RXG.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/f7KI2Jt1NA0KGaaH8z1wWFJ6RXG.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "the-undertaker-2-afterlife-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-undertaker-2-afterlife-2026",
+    "imdbId": "tt39762779"
   },
   {
     "id": "movie-ghost-board-2026",
@@ -12960,14 +4998,12 @@
     "description": "A group of friends stumbles upon an ancient board game hidden in a remote temple. Once the die is cast, a vengeful spirit is unleashed, turning the game i…",
     "poster": "https://image.tmdb.org/t/p/w1280/nGbiKpQ4O9TQV9hpathwAEh18V4.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/nGbiKpQ4O9TQV9hpathwAEh18V4.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "ghost-board-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/ghost-board-2026",
+    "imdbId": "tt40791399"
   },
   {
     "id": "movie-camp-2026",
@@ -12989,14 +5025,12 @@
     "description": "Emily is the cause of two tragedies early in her life; her dad suggests she go to a Camp for troubled youth to ease her guilt. When Emily arrives, she is…",
     "poster": "https://image.tmdb.org/t/p/w1280/eCLS2vvfyXfG64FZocHs9baVvKA.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/eCLS2vvfyXfG64FZocHs9baVvKA.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "camp-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/camp-2026",
+    "imdbId": "tt6743524"
   },
   {
     "id": "movie-backrooms-2026",
@@ -13018,14 +5052,12 @@
     "description": "A strange doorway appears in the basement of a furniture showroom.",
     "poster": "https://image.tmdb.org/t/p/w1280/fcNGQZxPBywCH6dy95T9Aq0MjwU.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fcNGQZxPBywCH6dy95T9Aq0MjwU.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "backrooms-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/backrooms-2026",
+    "imdbId": "tt26657236"
   },
   {
     "id": "movie-deleter-2022",
@@ -13047,14 +5079,12 @@
     "description": "An online content moderator deletes a suicide video made by her co-worker. But the otherwise desensitized woman cannot escape from either her own troubled…",
     "poster": "https://image.tmdb.org/t/p/w1280/mNjwodAKNVw5zramhb22s0A6TWY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mNjwodAKNVw5zramhb22s0A6TWY.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "deleter-2022",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/deleter-2022",
+    "imdbId": "tt21237578"
   },
   {
     "id": "movie-grave-encounters-2-2012",
@@ -13075,14 +5105,12 @@
     "description": "Tortured by the ghosts of the demonized insane asylum that killed the crew of GRAVE ENCOUNTERS, film students fight to escape death as their own paranorma…",
     "poster": "https://image.tmdb.org/t/p/w1280/fNLVYtHuN3QsmG1B0F2xbFACwj7.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fNLVYtHuN3QsmG1B0F2xbFACwj7.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "grave-encounters-2-2012",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/grave-encounters-2-2012",
+    "imdbId": "tt2231554"
   },
   {
     "id": "movie-grave-encounters-2011",
@@ -13104,14 +5132,12 @@
     "description": "A crew from a paranormal reality television show lock themselves in a haunted psychiatric hospital. They search for evidence of paranormal activity as the…",
     "poster": "https://image.tmdb.org/t/p/w1280/mZdvVaC59aYRKKcl96hiia2nQp2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mZdvVaC59aYRKKcl96hiia2nQp2.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🌸",
     "slug": "grave-encounters-2011",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/grave-encounters-2011",
+    "imdbId": "tt1703199"
   },
   {
     "id": "movie-doctor-x-the-movie-final-2024",
@@ -13133,14 +5159,12 @@
     "description": "The star-studded casts of the drama series come together for the highly anticipated movie adaptation of \"Doctor X\"! The secret of Michiko Daimon is finall…",
     "poster": "https://image.tmdb.org/t/p/w1280/el1tyjM5cGStDtmiDz0NUUIlT0n.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/el1tyjM5cGStDtmiDz0NUUIlT0n.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "📻",
     "slug": "doctor-x-the-movie-final-2024",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/doctor-x-the-movie-final-2024",
+    "imdbId": "tt32758080"
   },
   {
     "id": "series-possession-2026",
@@ -13161,101 +5185,12 @@
     "description": "Claudia, a bi-racial lawyer, journeys to Jamaica's haunted Connaught plantation to fight an inheritance claim. Uncovering dark historical secrets intertwi…",
     "poster": "https://image.tmdb.org/t/p/w1280/2ZZ1jvZi6UOQW11p4X6XxaB8SJg.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2ZZ1jvZi6UOQW11p4X6XxaB8SJg.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🍄",
     "slug": "possession-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Possession — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Possession — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Possession — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Possession — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Possession — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Possession — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Possession — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Possession — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Possession — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Possession — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Possession — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Possession — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Possession — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Possession — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Possession — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Possession — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/possession-2026",
+    "imdbId": "tt34883857"
   },
   {
     "id": "series-the-shards-2026",
@@ -13276,101 +5211,12 @@
     "description": "17-year-old Bret Easton Ellis is in his final year at the elite Buckley prep school. Upending his world is the arrival of a mysterious new student, Robert…",
     "poster": "https://image.tmdb.org/t/p/w1280/3DQywpq8hzHOkGNgDVL96QKrvF9.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/3DQywpq8hzHOkGNgDVL96QKrvF9.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🏛️",
     "slug": "the-shards-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Shards — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Shards — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Shards — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Shards — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Shards — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Shards — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Shards — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Shards — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Shards — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Shards — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Shards — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Shards — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Shards — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Shards — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Shards — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Shards — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-shards-2026",
+    "imdbId": "tt27543562"
   },
   {
     "id": "series-sterling-point-2026",
@@ -13391,101 +5237,12 @@
     "description": "After discovering she's inherited a remote island in Canada from the estranged grandfather she was never allowed to meet, 17-year-old Annie Jacobson decid…",
     "poster": "https://image.tmdb.org/t/p/w1280/ebLym6w04CzYJBLZScB1rrzm6uY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ebLym6w04CzYJBLZScB1rrzm6uY.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🖤",
     "slug": "sterling-point-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Sterling Point — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Sterling Point — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Sterling Point — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Sterling Point — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Sterling Point — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Sterling Point — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Sterling Point — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Sterling Point — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Sterling Point — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Sterling Point — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Sterling Point — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Sterling Point — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Sterling Point — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Sterling Point — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Sterling Point — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Sterling Point — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/sterling-point-2026",
+    "imdbId": "tt35618070"
   },
   {
     "id": "movie-the-neighbors-2012",
@@ -13507,14 +5264,12 @@
     "description": "A serial killer murders a girl from his neighborhood. The residents begin to suspect him one by one, as he tries to cover his tracks and plans another kil…",
     "poster": "https://image.tmdb.org/t/p/w1280/893UjyF5QIOzNpXP94ZArpKmYHD.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/893UjyF5QIOzNpXP94ZArpKmYHD.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "👽",
     "slug": "the-neighbors-2012",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-neighbors-2012",
+    "imdbId": "tt2195490"
   },
   {
     "id": "series-criminal-2026",
@@ -13535,101 +5290,12 @@
     "description": "A random mass stabbing, major food company Titus Foods, and a mysterious infant disease. These three things have as much in common as Detective Soma, hack…",
     "poster": "https://image.tmdb.org/t/p/w1280/o7RE5L858qgDhrAAs5gJOjbvNIQ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/o7RE5L858qgDhrAAs5gJOjbvNIQ.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🏜️",
     "slug": "criminal-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Criminal — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Criminal — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Criminal — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Criminal — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Criminal — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Criminal — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Criminal — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Criminal — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Criminal — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Criminal — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Criminal — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Criminal — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Criminal — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Criminal — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Criminal — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Criminal — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/criminal-2026",
+    "imdbId": "tt27493572"
   },
   {
     "id": "series-bloody-smart-2026",
@@ -13650,101 +5316,12 @@
     "description": "In a town where strict rules shape students into their “best selves,” a hidden Bloodfruit Tree bears crimson fruit. A mysterious boy in black delivers the…",
     "poster": "https://image.tmdb.org/t/p/w1280/gp01i35kvgpJLarGIGopnBWuzKE.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gp01i35kvgpJLarGIGopnBWuzKE.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🦍",
     "slug": "bloody-smart-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Bloody Smart — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Bloody Smart — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Bloody Smart — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Bloody Smart — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Bloody Smart — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Bloody Smart — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Bloody Smart — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Bloody Smart — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Bloody Smart — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Bloody Smart — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Bloody Smart — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Bloody Smart — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Bloody Smart — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Bloody Smart — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Bloody Smart — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Bloody Smart — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/bloody-smart-2026",
+    "imdbId": "tt39496157"
   },
   {
     "id": "series-who-are-you-school-2015-2015",
@@ -13765,101 +5342,12 @@
     "description": "After losing her memory in an accident, a bullied high school orphan finds herself in the place of an identical-looking girl who's gone missing.",
     "poster": "https://image.tmdb.org/t/p/w1280/eFDyOwB5x0QJBwUXAyUGROqQlFv.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/eFDyOwB5x0QJBwUXAyUGROqQlFv.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🧅",
     "slug": "who-are-you-school-2015-2015",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Who Are You: School 2015 — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Who Are You: School 2015 — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Who Are You: School 2015 — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Who Are You: School 2015 — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Who Are You: School 2015 — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Who Are You: School 2015 — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Who Are You: School 2015 — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Who Are You: School 2015 — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Who Are You: School 2015 — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Who Are You: School 2015 — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Who Are You: School 2015 — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Who Are You: School 2015 — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Who Are You: School 2015 — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Who Are You: School 2015 — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Who Are You: School 2015 — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Who Are You: School 2015 — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/who-are-you-school-2015-2015",
+    "imdbId": "tt5087824"
   },
   {
     "id": "series-the-forbidden-land-2026",
@@ -13880,101 +5368,12 @@
     "description": "Zhang Chao, a quiet and withdrawn student, finds himself at odds with a school bully while seeking the truth behind his roommate’s mysterious death. As he…",
     "poster": "https://image.tmdb.org/t/p/w1280/1OIpjsitqdawBjZu99xsMJHHUXp.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1OIpjsitqdawBjZu99xsMJHHUXp.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🤠",
     "slug": "the-forbidden-land-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Forbidden Land — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Forbidden Land — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Forbidden Land — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Forbidden Land — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Forbidden Land — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Forbidden Land — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Forbidden Land — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Forbidden Land — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Forbidden Land — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Forbidden Land — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Forbidden Land — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Forbidden Land — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Forbidden Land — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Forbidden Land — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Forbidden Land — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Forbidden Land — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-forbidden-land-2026",
+    "imdbId": "tt38225211"
   },
   {
     "id": "movie-desire-2026",
@@ -13996,14 +5395,12 @@
     "description": "Lucero’s life appears immaculate: a wealthy household, a devoted husband, and two children who embody the promise of a perfect family. Yet beneath this su…",
     "poster": "https://image.tmdb.org/t/p/w1280/oBter8Y5p2ZFUwWgQ1T9pulGFTJ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/oBter8Y5p2ZFUwWgQ1T9pulGFTJ.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🐉",
     "slug": "desire-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/desire-2026",
+    "imdbId": "tt41617470"
   },
   {
     "id": "series-the-east-palace-2026",
@@ -14024,101 +5421,12 @@
     "description": "A man who walks the spirit world and a court lady who hears the dead enter the East Palace by the king's orders — can they unravel its dark secrets?",
     "poster": "https://image.tmdb.org/t/p/w1280/8PHBAdPyfIwS5W6cfKLhItEb875.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8PHBAdPyfIwS5W6cfKLhItEb875.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "the-east-palace-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The East Palace — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The East Palace — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The East Palace — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The East Palace — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The East Palace — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The East Palace — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The East Palace — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The East Palace — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The East Palace — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The East Palace — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The East Palace — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The East Palace — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The East Palace — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The East Palace — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The East Palace — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The East Palace — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-east-palace-2026",
+    "imdbId": "tt35051401"
   },
   {
     "id": "movie-15-coming-of-age-2017",
@@ -14140,14 +5448,12 @@
     "description": "With their teen hormones raging, three high school boys help one another explore their curiosity about the opposite sex and love in this raunchy comedy.",
     "poster": "https://image.tmdb.org/t/p/w1280/qn528bAa7rgKZY1uktWNayNrqVW.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/qn528bAa7rgKZY1uktWNayNrqVW.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "15-coming-of-age-2017",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/15-coming-of-age-2017",
+    "imdbId": "tt8414126"
   },
   {
     "id": "movie-jenny-juno-2005",
@@ -14169,14 +5475,12 @@
     "description": "Jenny, Juno centers on the title characters of Jenny and Juno, two fifteen year old middle school students whose one night of romance has dramatic consequ…",
     "poster": "https://image.tmdb.org/t/p/w1280/xqyIEuHYPvurCdSN3amEwV3MgnM.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xqyIEuHYPvurCdSN3amEwV3MgnM.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "jenny-juno-2005",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/jenny-juno-2005",
+    "imdbId": "tt0453115"
   },
   {
     "id": "movie-love-in-slow-motion-2026",
@@ -14198,14 +5502,12 @@
     "description": "When Haya's best friend Jawad gets engaged, her chronically-single world unravels — because who knew true love could be hiding in the friend zone?",
     "poster": "https://image.tmdb.org/t/p/w1280/rivKhEJWZirF7UtnCnaN44YaJ69.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/rivKhEJWZirF7UtnCnaN44YaJ69.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "love-in-slow-motion-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/love-in-slow-motion-2026",
+    "imdbId": "tt43617119"
   },
   {
     "id": "movie-unmarry-2025",
@@ -14227,14 +5529,12 @@
     "description": "In the middle of annulment cases and custody battles, Celine and Ivan meet at the law office of a lawyer and YouTube host of “Walang Butas Ang Batas”. Wha…",
     "poster": "https://image.tmdb.org/t/p/w1280/wXep06PZjZd9kBmylo3GS6Sry3K.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/wXep06PZjZd9kBmylo3GS6Sry3K.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "unmarry-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/unmarry-2025",
+    "imdbId": "tt38779673"
   },
   {
     "id": "movie-girls-like-girls-2026",
@@ -14256,14 +5556,12 @@
     "description": "Coley, 17, from rural Oregon, navigates intimacy after her mother's passing. Meeting Sonya sparks new feelings, but self-doubt hinders their connection. S…",
     "poster": "https://image.tmdb.org/t/p/w1280/f1L2n701wbcjlJ80vx9acAWLRdY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/f1L2n701wbcjlJ80vx9acAWLRdY.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "girls-like-girls-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/girls-like-girls-2026",
+    "imdbId": "tt32432654"
   },
   {
     "id": "movie-heartstopper-forever-2026",
@@ -14285,14 +5583,12 @@
     "description": "It's a new school year for the Truham-Higgs gang. As Nick and Charlie's relationship deepens, their thoughts turn to life after the last bell rings.",
     "poster": "https://image.tmdb.org/t/p/w1280/vvE7zc2aie3ozZcy5xYbg5QTFrF.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/vvE7zc2aie3ozZcy5xYbg5QTFrF.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "heartstopper-forever-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/heartstopper-forever-2026",
+    "imdbId": "tt36619926"
   },
   {
     "id": "movie-love-you-so-bad-2025",
@@ -14314,14 +5610,12 @@
     "description": "Confident college senior Savannah must choose between wild bad boy L.A. and ambitious Vic while facing personal growth and past hurts, all while staying t…",
     "poster": "https://image.tmdb.org/t/p/w1280/5DtVoKUmQt1Ylf5VwwticS9G1vt.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5DtVoKUmQt1Ylf5VwwticS9G1vt.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "love-you-so-bad-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/love-you-so-bad-2025",
+    "imdbId": "tt37982738"
   },
   {
     "id": "movie-boulevard-2026",
@@ -14343,14 +5637,12 @@
     "description": "Hasley, a girl with a list of unfulfilled dreams, and Luke, a complex and vulnerable boy marked by a tragic past, find refuge on the boulevard, where they…",
     "poster": "https://image.tmdb.org/t/p/w1280/98uiDns59GUw26SQSCFmuSHTki3.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/98uiDns59GUw26SQSCFmuSHTki3.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "boulevard-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/boulevard-2026",
+    "imdbId": "tt38235625"
   },
   {
     "id": "movie-finding-emily-2026",
@@ -14372,14 +5664,12 @@
     "description": "When a lovesick musician is given the wrong number for his dream girl, he teams up with a driven psychology student to find her. Together, they spark a hi…",
     "poster": "https://image.tmdb.org/t/p/w1280/7Ja28gO6OwncmCA94q2qPyeRrsA.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/7Ja28gO6OwncmCA94q2qPyeRrsA.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "finding-emily-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/finding-emily-2026",
+    "imdbId": "tt32499466"
   },
   {
     "id": "movie-a-special-memory-2026",
@@ -14401,14 +5691,12 @@
     "description": "The illness challenges the couple's love in a way they never anticipated, shifting the narrative from a sweet romance to an emotional journey.",
     "poster": "https://image.tmdb.org/t/p/w1280/yllJJooNG1PEptw4yoy6OpTyoyS.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/yllJJooNG1PEptw4yoy6OpTyoyS.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "a-special-memory-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-special-memory-2026",
+    "imdbId": "tt40269077"
   },
   {
     "id": "movie-carolina-caroline-2026",
@@ -14430,14 +5718,12 @@
     "description": "A young woman, desperate to leave her small town, runs away with a charming con man, embarking on a crime and passion-filled journey through the Southeast…",
     "poster": "https://image.tmdb.org/t/p/w1280/112sW296vEx3d71C8fzOqoFIomN.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/112sW296vEx3d71C8fzOqoFIomN.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "carolina-caroline-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/carolina-caroline-2026",
+    "imdbId": "tt33365126"
   },
   {
     "id": "movie-chao-2025",
@@ -14459,14 +5745,12 @@
     "description": "In a futuristic world where humans and mermaids coexist, the life of mild-mannered office worker Stephan is upended when he is suddenly proposed to by Cha…",
     "poster": "https://image.tmdb.org/t/p/w1280/f0YrSKFU8Vkr1h8zO4YFeolsMU8.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/f0YrSKFU8Vkr1h8zO4YFeolsMU8.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "chao-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/chao-2025",
+    "imdbId": "tt36592916"
   },
   {
     "id": "movie-palm-trees-in-the-snow-2015",
@@ -14488,14 +5772,12 @@
     "description": "Spain, 2003. An accidental discovery leads Clarence to travel from the snowy mountains of Huesca to Equatorial Guinea, to visit the land where her father…",
     "poster": "https://image.tmdb.org/t/p/w1280/s3pniDBtG52O26WySm6HY0YLVWh.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/s3pniDBtG52O26WySm6HY0YLVWh.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "palm-trees-in-the-snow-2015",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/palm-trees-in-the-snow-2015",
+    "imdbId": "tt3202202"
   },
   {
     "id": "movie-voicemails-for-isabelle-2026",
@@ -14517,14 +5799,12 @@
     "description": "A young woman's hilariously confessional voicemails to her late sister are unknowingly redirected to a stranger, who begins to fall in love from afar.",
     "poster": "https://image.tmdb.org/t/p/w1280/2WU6Y6aonzD6uAaCmNnEFlesxxJ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2WU6Y6aonzD6uAaCmNnEFlesxxJ.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "voicemails-for-isabelle-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/voicemails-for-isabelle-2026",
+    "imdbId": "tt10375624"
   },
   {
     "id": "movie-going-the-distance-2010",
@@ -14546,14 +5826,12 @@
     "description": "Erin and Garrett are very much in love. When Erin moves to San Francisco to finish her journalism degree and Garrett stays behind in New York to work in t…",
     "poster": "https://image.tmdb.org/t/p/w1280/yIG329hXOMJq1O1O2ubd9xoweHm.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/yIG329hXOMJq1O1O2ubd9xoweHm.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "going-the-distance-2010",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/going-the-distance-2010",
+    "imdbId": "tt1322312"
   },
   {
     "id": "movie-until-she-remembers-2026",
@@ -14575,14 +5853,12 @@
     "description": "When a struggling high school student is confronted with the painful fracture of her family, she seeks refuge far from the noise of her parents’ world. In…",
     "poster": "https://image.tmdb.org/t/p/w1280/eprseNQDNyxQgsWHGEbJ78fdE4y.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/eprseNQDNyxQgsWHGEbJ78fdE4y.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "until-she-remembers-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/until-she-remembers-2026",
+    "imdbId": "tt39310310"
   },
   {
     "id": "movie-office-romance-2026",
@@ -14604,14 +5880,12 @@
     "description": "Jackie, President and CEO of Air Cruz, runs a tight ship in her business, including a rigid anti-fraternization policy for all her employees. When a new s…",
     "poster": "https://image.tmdb.org/t/p/w1280/1zX8OT7Gd521HPG8LRU0DjR3tnt.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1zX8OT7Gd521HPG8LRU0DjR3tnt.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "office-romance-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/office-romance-2026",
+    "imdbId": "tt33397980"
   },
   {
     "id": "movie-bunny-2026",
@@ -14633,14 +5907,12 @@
     "description": "A host of a relationship advice television programme starts to see cracks in her own marriage after the appearance of a mysterious guest.",
     "poster": "https://image.tmdb.org/t/p/w1280/wDUrTRRXh7DzhZtTI1YkAkTc89S.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/wDUrTRRXh7DzhZtTI1YkAkTc89S.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "bunny-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/bunny-2026",
+    "imdbId": "tt23172090"
   },
   {
     "id": "movie-food-truck-stolen-love-and-moo-deng-2025",
@@ -14662,14 +5934,12 @@
     "description": "Jake and Bobby, with the art director by the truck, don't know their vehicle will force Mamiew to face his past once more.",
     "poster": "https://image.tmdb.org/t/p/w1280/hyl6es0MyJ1tEmziR293GxdIQKZ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/hyl6es0MyJ1tEmziR293GxdIQKZ.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "food-truck-stolen-love-and-moo-deng-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/food-truck-stolen-love-and-moo-deng-2025",
+    "imdbId": "tt38079900"
   },
   {
     "id": "movie-mile-end-kicks-2026",
@@ -14691,14 +5961,12 @@
     "description": "Grace Pine, a 22-year-old music critic, moves to Montreal to write a book on Alanis Morissette's Jagged Little Pill, but her plans are complicated when sh…",
     "poster": "https://image.tmdb.org/t/p/w1280/iN2YkEkgnjVO4YZGlqBQRvoJQmO.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/iN2YkEkgnjVO4YZGlqBQRvoJQmO.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "mile-end-kicks-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/mile-end-kicks-2026",
+    "imdbId": "tt33301434"
   },
   {
     "id": "movie-heartman-rock-and-love-2026",
@@ -14720,14 +5988,12 @@
     "description": "Once known as the frontman of the rock band Ambulance during his college days, Seung-min now lives a quiet life running a small instrument shop. One day,…",
     "poster": "https://image.tmdb.org/t/p/w1280/xCZP9h6PNQmYwhSZZTdY0Qbw6Nj.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xCZP9h6PNQmYwhSZZTdY0Qbw6Nj.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "heartman-rock-and-love-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/heartman-rock-and-love-2026",
+    "imdbId": "tt39308490"
   },
   {
     "id": "movie-the-loved-one-2026",
@@ -14749,14 +6015,12 @@
     "description": "Ten years later, former lovers Ellie and Eric meet again to trace the memories of a love and sorrow that never went away.",
     "poster": "https://image.tmdb.org/t/p/w1280/3pY5oAJXvnMQJrUxOJzR8HvFtk5.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/3pY5oAJXvnMQJrUxOJzR8HvFtk5.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "the-loved-one-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-loved-one-2026",
+    "imdbId": "tt39398162"
   },
   {
     "id": "movie-euphoria-a-look-back-2026",
@@ -14777,14 +6041,12 @@
     "description": "The cast and crew of HBO's Euphoria take an exclusive look back at the critically acclaimed series' origins, evolution, and influences.",
     "poster": "https://image.tmdb.org/t/p/w1280/fQiNGtgo9gEpyOIxX29FtUHpcaD.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fQiNGtgo9gEpyOIxX29FtUHpcaD.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "euphoria-a-look-back-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/euphoria-a-look-back-2026",
+    "imdbId": "tt43683795"
   },
   {
     "id": "series-mourinho-2026",
@@ -14805,101 +6067,12 @@
     "description": "This trophy-packed, insider-fuelled documentary charts José Mourinho's iconic rise as one of the world's top footballing managers of the most elite clubs.",
     "poster": "https://image.tmdb.org/t/p/w1280/tUd9QHKQJG2vZUfyPtelZqgBIq1.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/tUd9QHKQJG2vZUfyPtelZqgBIq1.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "mourinho-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "MOURINHO — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "MOURINHO — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "MOURINHO — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "MOURINHO — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "MOURINHO — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "MOURINHO — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "MOURINHO — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "MOURINHO — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "MOURINHO — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "MOURINHO — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "MOURINHO — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "MOURINHO — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "MOURINHO — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "MOURINHO — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "MOURINHO — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "MOURINHO — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/mourinho-2026",
+    "imdbId": "tt43673968"
   },
   {
     "id": "series-the-house-that-dragons-built-2023",
@@ -14920,191 +6093,12 @@
     "description": "The House That Dragons Built is a 10-part docuseries diving into the making-of the first season of House of the Dragon. With over 100 interviews, the seri…",
     "poster": "https://image.tmdb.org/t/p/w1280/tCOLizNv8jZkD5dX2Z55gohaowG.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/tCOLizNv8jZkD5dX2Z55gohaowG.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "the-house-that-dragons-built-2023",
-    "episode": "S3 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The House That Dragons Built — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The House That Dragons Built — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The House That Dragons Built — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The House That Dragons Built — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The House That Dragons Built — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The House That Dragons Built — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The House That Dragons Built — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The House That Dragons Built — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The House That Dragons Built — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The House That Dragons Built — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The House That Dragons Built — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The House That Dragons Built — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The House That Dragons Built — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The House That Dragons Built — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The House That Dragons Built — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The House That Dragons Built — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The House That Dragons Built — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The House That Dragons Built — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The House That Dragons Built — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The House That Dragons Built — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The House That Dragons Built — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The House That Dragons Built — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The House That Dragons Built — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The House That Dragons Built — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The House That Dragons Built — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The House That Dragons Built — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The House That Dragons Built — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The House That Dragons Built — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The House That Dragons Built — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The House That Dragons Built — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The House That Dragons Built — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The House That Dragons Built — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 3,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-house-that-dragons-built-2023",
+    "imdbId": "tt26761151"
   },
   {
     "id": "series-pompeii-out-of-time-with-tom-hiddleston-2026",
@@ -15125,101 +6119,12 @@
     "description": "A historical exploration about the eruption of Vesuvius in 79 A.D. and the preserved Roman city it left behind.",
     "poster": "https://image.tmdb.org/t/p/w1280/pSFJys8tIv7mll6Fv1LqMbrWxLt.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pSFJys8tIv7mll6Fv1LqMbrWxLt.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "pompeii-out-of-time-with-tom-hiddleston-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Pompeii: Out of Time with Tom Hiddleston — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/pompeii-out-of-time-with-tom-hiddleston-2026",
+    "imdbId": "tt34688214"
   },
   {
     "id": "movie-the-odyssey-the-making-of-an-epic-2026",
@@ -15240,14 +6145,12 @@
     "description": "Go behind the scenes of Christopher Nolan's mythic action epic, The Odyssey. This special documentary explores the monumental undertaking of adapting Home…",
     "poster": "https://image.tmdb.org/t/p/w1280/fXUxAL8w724dI9yT5UbwJuk29K9.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fXUxAL8w724dI9yT5UbwJuk29K9.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "the-odyssey-the-making-of-an-epic-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-odyssey-the-making-of-an-epic-2026",
+    "imdbId": "tt43677301"
   },
   {
     "id": "movie-billie-eilish-hit-me-hard-and-soft-the-tour-live-in-3d-2026",
@@ -15269,14 +6172,12 @@
     "description": "Captured during Billie Eilish's sold-out world tour, a concert experience from one of the most celebrated and successful artists of her generation, presen…",
     "poster": "https://image.tmdb.org/t/p/w1280/uRs7s4CowsDqium4ses8tc5QNO5.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/uRs7s4CowsDqium4ses8tc5QNO5.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "billie-eilish-hit-me-hard-and-soft-the-tour-live-in-3d-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/billie-eilish-hit-me-hard-and-soft-the-tour-live-in-3d-2026",
+    "imdbId": "tt39018643"
   },
   {
     "id": "series-michael-jackson-the-verdict-2026",
@@ -15297,101 +6198,12 @@
     "description": "Told by key players who were inside the courtroom, this comprehensive documentary dissects the trial of Michael Jackson and his complex legacy.",
     "poster": "https://image.tmdb.org/t/p/w1280/jaT8cc5VhOXO1JCbuNt8cgeu3ah.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/jaT8cc5VhOXO1JCbuNt8cgeu3ah.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🌸",
     "slug": "michael-jackson-the-verdict-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Michael Jackson: The Verdict — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Michael Jackson: The Verdict — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Michael Jackson: The Verdict — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Michael Jackson: The Verdict — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Michael Jackson: The Verdict — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Michael Jackson: The Verdict — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Michael Jackson: The Verdict — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Michael Jackson: The Verdict — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Michael Jackson: The Verdict — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Michael Jackson: The Verdict — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Michael Jackson: The Verdict — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Michael Jackson: The Verdict — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Michael Jackson: The Verdict — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Michael Jackson: The Verdict — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Michael Jackson: The Verdict — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Michael Jackson: The Verdict — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/michael-jackson-the-verdict-2026",
+    "imdbId": "tt42873612"
   },
   {
     "id": "series-rafa-2026",
@@ -15412,101 +6224,12 @@
     "description": "One of the greatest tennis players of all time, Rafael Nadal, reflects on his career, legacy and final season on the court.",
     "poster": "https://image.tmdb.org/t/p/w1280/lD3YdWYvFaDI52g9gentsvjB1w5.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/lD3YdWYvFaDI52g9gentsvjB1w5.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "📻",
     "slug": "rafa-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Rafa — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Rafa — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Rafa — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Rafa — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Rafa — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Rafa — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Rafa — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Rafa — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Rafa — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Rafa — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Rafa — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Rafa — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Rafa — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Rafa — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Rafa — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Rafa — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/rafa-2026",
+    "imdbId": "tt35052852"
   },
   {
     "id": "series-world-war-ii-with-tom-hanks-2026",
@@ -15527,101 +6250,12 @@
     "description": "Explores WWII from Germany's invasion of Poland through the atomic age, examining pivotal battles, wartime leaders like Churchill and Roosevelt, and the h…",
     "poster": "https://image.tmdb.org/t/p/w1280/xD2ycK1qGTwTBOejSMtTw7A5nUv.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xD2ycK1qGTwTBOejSMtTw7A5nUv.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🍄",
     "slug": "world-war-ii-with-tom-hanks-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "World War II with Tom Hanks — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "World War II with Tom Hanks — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "World War II with Tom Hanks — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "World War II with Tom Hanks — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "World War II with Tom Hanks — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "World War II with Tom Hanks — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "World War II with Tom Hanks — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "World War II with Tom Hanks — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "World War II with Tom Hanks — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "World War II with Tom Hanks — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "World War II with Tom Hanks — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "World War II with Tom Hanks — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "World War II with Tom Hanks — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "World War II with Tom Hanks — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "World War II with Tom Hanks — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "World War II with Tom Hanks — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/world-war-ii-with-tom-hanks-2026",
+    "imdbId": "tt40385200"
   },
   {
     "id": "series-james-2026",
@@ -15642,101 +6276,12 @@
     "description": "James Rodríguez, Colombia's legendary No. 10, shares details of his journey to football's elite and the game's biggest stage.",
     "poster": "https://image.tmdb.org/t/p/w1280/cWF3mmOsx7qxbyZlZ9nEvlGpwW7.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cWF3mmOsx7qxbyZlZ9nEvlGpwW7.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🏛️",
     "slug": "james-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "James. — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "James. — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "James. — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "James. — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "James. — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "James. — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "James. — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "James. — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "James. — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "James. — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "James. — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "James. — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "James. — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "James. — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "James. — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "James. — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/james-2026",
+    "imdbId": "tt35636900"
   },
   {
     "id": "movie-untold-uk-liverpools-miracle-of-lstanbul-2026",
@@ -15758,14 +6303,12 @@
     "description": "At half-time in the 2005 champion league final Liverpool were 3-0 down. What happened next made football history -​ as players recall in this documentary.",
     "poster": "https://image.tmdb.org/t/p/w1280/54SeexavwTPRSYtkkGks93LaR62.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/54SeexavwTPRSYtkkGks93LaR62.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🖤",
     "slug": "untold-uk-liverpools-miracle-of-lstanbul-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/untold-uk-liverpools-miracle-of-lstanbul-2026",
+    "imdbId": "tt15024220"
   },
   {
     "id": "movie-untold-uk-jamie-vardy-2026",
@@ -15786,14 +6329,12 @@
     "description": "From part-time footballer to prime league legends, this is the story of Jamie Vardy's unprecedented path and his rise to the top against all odds.",
     "poster": "https://image.tmdb.org/t/p/w1280/y4ZBXUc8vxr9lTfTeWAORkYIDOO.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/y4ZBXUc8vxr9lTfTeWAORkYIDOO.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "👽",
     "slug": "untold-uk-jamie-vardy-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/untold-uk-jamie-vardy-2026",
+    "imdbId": "tt15024220"
   },
   {
     "id": "movie-marty-life-is-short-2026",
@@ -15814,14 +6355,12 @@
     "description": "Martin Short looks back on a life fueled by joy in this documentary with classic clips, fresh interviews and star-studded, never-before-seen home movies.",
     "poster": "https://image.tmdb.org/t/p/w1280/cSjhFNOmjYSH5n0JrirtvD95wVS.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cSjhFNOmjYSH5n0JrirtvD95wVS.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🏜️",
     "slug": "marty-life-is-short-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/marty-life-is-short-2026",
+    "imdbId": "tt39382052"
   },
   {
     "id": "series-bini-docuseries-2024",
@@ -15842,101 +6381,12 @@
     "description": "The nation's girl group BINI truly lives up to its name, taking the country by storm. Follow their journey from humble beginnings to massive success in th…",
     "poster": "https://image.tmdb.org/t/p/w1280/9xNwaa5hsnXZGJYCUBIGYmm5W9P.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/9xNwaa5hsnXZGJYCUBIGYmm5W9P.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🦍",
     "slug": "bini-docuseries-2024",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "BINI Docuseries — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "BINI Docuseries — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "BINI Docuseries — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "BINI Docuseries — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "BINI Docuseries — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "BINI Docuseries — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "BINI Docuseries — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "BINI Docuseries — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "BINI Docuseries — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "BINI Docuseries — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "BINI Docuseries — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "BINI Docuseries — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "BINI Docuseries — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "BINI Docuseries — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "BINI Docuseries — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "BINI Docuseries — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/bini-docuseries-2024",
+    "imdbId": "tt33034179"
   },
   {
     "id": "movie-a-gorilla-story-told-by-david-attenborough-2026",
@@ -15957,14 +6407,12 @@
     "description": "David Attenborough tells the remarkable story of his first encounter with the baby gorilla Pablo, how that gorilla grew up to be a top Silverback and how…",
     "poster": "https://image.tmdb.org/t/p/w1280/hQFl9Ph7KXcRDc3BbN9mGkNivNh.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/hQFl9Ph7KXcRDc3BbN9mGkNivNh.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🧅",
     "slug": "a-gorilla-story-told-by-david-attenborough-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-gorilla-story-told-by-david-attenborough-2026",
+    "imdbId": "tt39314348"
   },
   {
     "id": "series-ronaldinho-the-one-and-only-2026",
@@ -15985,101 +6433,12 @@
     "description": "The life and career of Brazilian soccer star Ronaldinho, tracing his journey from young prodigy to global sports icon.",
     "poster": "https://image.tmdb.org/t/p/w1280/eBna9nTSwL89wsR3fmA5AVDxzxR.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/eBna9nTSwL89wsR3fmA5AVDxzxR.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🤠",
     "slug": "ronaldinho-the-one-and-only-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Ronaldinho: The One and Only — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Ronaldinho: The One and Only — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Ronaldinho: The One and Only — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Ronaldinho: The One and Only — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Ronaldinho: The One and Only — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Ronaldinho: The One and Only — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Ronaldinho: The One and Only — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Ronaldinho: The One and Only — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Ronaldinho: The One and Only — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Ronaldinho: The One and Only — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Ronaldinho: The One and Only — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Ronaldinho: The One and Only — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Ronaldinho: The One and Only — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Ronaldinho: The One and Only — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Ronaldinho: The One and Only — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Ronaldinho: The One and Only — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/ronaldinho-the-one-and-only-2026",
+    "imdbId": "tt37041367"
   },
   {
     "id": "series-trust-me-the-false-prophet-2026",
@@ -16100,101 +6459,12 @@
     "description": "Chronicles the rise of Samuel Bateman, the self-proclaimed heir to Warren Jeffs’ Fundamentalist Church of Jesus Christ of Latter-Day Saints (FLDS), throug…",
     "poster": "https://image.tmdb.org/t/p/w1280/80oigWVd0S0s3JQ0y49O4SA0fIv.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/80oigWVd0S0s3JQ0y49O4SA0fIv.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🐉",
     "slug": "trust-me-the-false-prophet-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Trust Me: The False Prophet — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Trust Me: The False Prophet — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Trust Me: The False Prophet — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Trust Me: The False Prophet — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Trust Me: The False Prophet — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Trust Me: The False Prophet — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Trust Me: The False Prophet — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Trust Me: The False Prophet — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Trust Me: The False Prophet — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Trust Me: The False Prophet — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Trust Me: The False Prophet — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Trust Me: The False Prophet — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Trust Me: The False Prophet — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Trust Me: The False Prophet — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Trust Me: The False Prophet — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Trust Me: The False Prophet — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/trust-me-the-false-prophet-2026",
+    "imdbId": "tt40826311"
   },
   {
     "id": "series-at-home-with-the-furys-2023",
@@ -16215,146 +6485,12 @@
     "description": "Undefeated heavyweight champion Tyson Fury retires from boxing to embrace the eccentricities of family life in this hilarious and heartfelt docusoap.",
     "poster": "https://image.tmdb.org/t/p/w1280/d8IcxEi0Pzg3TmeMNzhjZ5GvUhf.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/d8IcxEi0Pzg3TmeMNzhjZ5GvUhf.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "at-home-with-the-furys-2023",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "At Home with the Furys — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "At Home with the Furys — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "At Home with the Furys — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "At Home with the Furys — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "At Home with the Furys — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "At Home with the Furys — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "At Home with the Furys — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "At Home with the Furys — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "At Home with the Furys — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "At Home with the Furys — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "At Home with the Furys — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "At Home with the Furys — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "At Home with the Furys — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "At Home with the Furys — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "At Home with the Furys — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "At Home with the Furys — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "At Home with the Furys — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "At Home with the Furys — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "At Home with the Furys — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "At Home with the Furys — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "At Home with the Furys — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "At Home with the Furys — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "At Home with the Furys — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "At Home with the Furys — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/at-home-with-the-furys-2023",
+    "imdbId": "tt21875120"
   },
   {
     "id": "movie-the-plastic-detox-2026",
@@ -16375,14 +6511,12 @@
     "description": "This eye-opening documentary follows six couples with unexplained infertility as they lower their exposure to plastics in hopes it helps them conceive.",
     "poster": "https://image.tmdb.org/t/p/w1280/q3VkiqQi7syrVANAK8PjgIry0Vx.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/q3VkiqQi7syrVANAK8PjgIry0Vx.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "the-plastic-detox-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-plastic-detox-2026",
+    "imdbId": "tt39345599"
   },
   {
     "id": "series-money-heist-from-tokyo-to-berlin-2021",
@@ -16403,101 +6537,12 @@
     "description": "The filmmakers and actors behind \"Money Heist\" characters like Tokyo and the Professor talk about the emotional and artistic process of filming Money Heis…",
     "poster": "https://image.tmdb.org/t/p/w1280/gk1enrMtCVABqJd4ujVwIIeswTT.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gk1enrMtCVABqJd4ujVwIIeswTT.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "money-heist-from-tokyo-to-berlin-2021",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Money Heist: From Tokyo to Berlin — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Money Heist: From Tokyo to Berlin — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Money Heist: From Tokyo to Berlin — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Money Heist: From Tokyo to Berlin — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Money Heist: From Tokyo to Berlin — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Money Heist: From Tokyo to Berlin — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Money Heist: From Tokyo to Berlin — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Money Heist: From Tokyo to Berlin — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Money Heist: From Tokyo to Berlin — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Money Heist: From Tokyo to Berlin — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Money Heist: From Tokyo to Berlin — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Money Heist: From Tokyo to Berlin — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Money Heist: From Tokyo to Berlin — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Money Heist: From Tokyo to Berlin — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Money Heist: From Tokyo to Berlin — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Money Heist: From Tokyo to Berlin — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/money-heist-from-tokyo-to-berlin-2021",
+    "imdbId": "tt15384346"
   },
   {
     "id": "movie-untold-chess-mates-2026",
@@ -16518,14 +6563,12 @@
     "description": "Magnus Carlsen, widely regarded as the greatest chess player of all time, is challenged by Hans Niemann, a rising star who capitalizes on the meteoric gro…",
     "poster": "https://image.tmdb.org/t/p/w1280/6sTORLEGSi0qfqrsBiJ6u4a3y2O.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/6sTORLEGSi0qfqrsBiJ6u4a3y2O.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "untold-chess-mates-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/untold-chess-mates-2026",
+    "imdbId": "tt15024220"
   },
   {
     "id": "movie-epic-elvis-presley-in-concert-2026",
@@ -16547,14 +6590,12 @@
     "description": "Long-lost footage from Elvis Presley's legendary Las Vegas residency in the 1970s woven together with rare 16mm footage from Elvis on Tour, and 8mm from t…",
     "poster": "https://image.tmdb.org/t/p/w1280/ttOBvac1oW0OCCfFzZlXh3NeKyl.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ttOBvac1oW0OCCfFzZlXh3NeKyl.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "epic-elvis-presley-in-concert-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/epic-elvis-presley-in-concert-2026",
+    "imdbId": "tt35003538"
   },
   {
     "id": "movie-finding-harry-the-craft-behind-the-magic-2026",
@@ -16575,14 +6616,12 @@
     "description": "Featuring interviews from members of the casting, production design, costume design, and creature effects teams, follow the behind-the-scenes journey of b…",
     "poster": "https://image.tmdb.org/t/p/w1280/4KvkiRVWsLJf4ifIDfvxSbupu2M.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/4KvkiRVWsLJf4ifIDfvxSbupu2M.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "finding-harry-the-craft-behind-the-magic-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/finding-harry-the-craft-behind-the-magic-2026",
+    "imdbId": "tt41368989"
   },
   {
     "id": "series-the-lost-pirate-kingdom-2021",
@@ -16603,101 +6642,12 @@
     "description": "The real-life pirates of the Caribbean violently plunder the world's riches and form a surprisingly egalitarian republic in this documentary series.",
     "poster": "https://image.tmdb.org/t/p/w1280/61AZhYnjayWHld2ocdYtX9k6PKH.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/61AZhYnjayWHld2ocdYtX9k6PKH.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "the-lost-pirate-kingdom-2021",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Lost Pirate Kingdom — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Lost Pirate Kingdom — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Lost Pirate Kingdom — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Lost Pirate Kingdom — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Lost Pirate Kingdom — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Lost Pirate Kingdom — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Lost Pirate Kingdom — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Lost Pirate Kingdom — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Lost Pirate Kingdom — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Lost Pirate Kingdom — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Lost Pirate Kingdom — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Lost Pirate Kingdom — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Lost Pirate Kingdom — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Lost Pirate Kingdom — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Lost Pirate Kingdom — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Lost Pirate Kingdom — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-lost-pirate-kingdom-2021",
+    "imdbId": "tt14057360"
   },
   {
     "id": "series-high-score-2020",
@@ -16718,101 +6668,12 @@
     "description": "This docuseries traces the history of classic video games, featuring insights from the innovators who brought these worlds and characters to life.",
     "poster": "https://image.tmdb.org/t/p/w1280/6iCMnvcqY8ogqyhsl3S8P07ye9M.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/6iCMnvcqY8ogqyhsl3S8P07ye9M.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "high-score-2020",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "High Score — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "High Score — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "High Score — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "High Score — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "High Score — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "High Score — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "High Score — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "High Score — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "High Score — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "High Score — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "High Score — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "High Score — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "High Score — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "High Score — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "High Score — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "High Score — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/high-score-2020",
+    "imdbId": "tt12759400"
   },
   {
     "id": "series-xiao-fang-2026",
@@ -16833,101 +6694,12 @@
     "description": "It tells the story of Yang Xiaofang and Qi Xiaowei from the same village, who become pregnant before marriage. Yang's family rushes back to the village to…",
     "poster": "https://image.tmdb.org/t/p/w1280/zz1ehIIZwpkO0GrCkmbrArYFlYj.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zz1ehIIZwpkO0GrCkmbrArYFlYj.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "xiao-fang-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Xiao Fang — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Xiao Fang — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Xiao Fang — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Xiao Fang — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Xiao Fang — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Xiao Fang — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Xiao Fang — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Xiao Fang — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Xiao Fang — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Xiao Fang — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Xiao Fang — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Xiao Fang — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Xiao Fang — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Xiao Fang — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Xiao Fang — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Xiao Fang — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/xiao-fang-2026",
+    "imdbId": "tt35418163"
   },
   {
     "id": "movie-descendants-wicked-wonderland-2026",
@@ -16950,14 +6722,12 @@
     "description": "Now that the Queen of Hearts is nice and Cinderella is safe, things seem perfect for Red and Chloe… But little do they know that changing the past created…",
     "poster": "https://image.tmdb.org/t/p/w1280/o6LK4vO1wvPDMvwWxZ79p04hjzC.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/o6LK4vO1wvPDMvwWxZ79p04hjzC.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "descendants-wicked-wonderland-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/descendants-wicked-wonderland-2026",
+    "imdbId": "tt34477910"
   },
   {
     "id": "movie-the-breadwinner-2026",
@@ -16979,14 +6749,12 @@
     "description": "After his wife Katie lands a once-in-a-lifetime deal on Shark Tank that takes her on a prolonged business trip - lifelong breadwinner Nate Wilcox now has…",
     "poster": "https://image.tmdb.org/t/p/w1280/jelsrPGIPjXMWdV94LdB8bBu4B9.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/jelsrPGIPjXMWdV94LdB8bBu4B9.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "the-breadwinner-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-breadwinner-2026",
+    "imdbId": "tt34459219"
   },
   {
     "id": "movie-rekonek-2025",
@@ -17008,14 +6776,12 @@
     "description": "A multi-story film that centers on six different Filipino families during a Christmas Eve when the internet goes out worldwide, forcing them to reconnect…",
     "poster": "https://image.tmdb.org/t/p/w1280/zgqEC85KAoVxixEjtrDBXBzFZ6v.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zgqEC85KAoVxixEjtrDBXBzFZ6v.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "rekonek-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/rekonek-2025",
+    "imdbId": "tt38779509"
   },
   {
     "id": "series-little-house-on-the-prairie-2026",
@@ -17037,101 +6803,12 @@
     "description": "The close-knit Ingalls family builds a new life on the Western frontier, where the joys of nature and the struggle for survival are deeply intertwined.",
     "poster": "https://image.tmdb.org/t/p/w1280/fBieUo3SdItUrXZE16YxbpjwXIe.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fBieUo3SdItUrXZE16YxbpjwXIe.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "little-house-on-the-prairie-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Little House on the Prairie — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Little House on the Prairie — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Little House on the Prairie — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Little House on the Prairie — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Little House on the Prairie — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Little House on the Prairie — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Little House on the Prairie — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Little House on the Prairie — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Little House on the Prairie — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Little House on the Prairie — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Little House on the Prairie — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Little House on the Prairie — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Little House on the Prairie — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Little House on the Prairie — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Little House on the Prairie — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Little House on the Prairie — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/little-house-on-the-prairie-2026",
+    "imdbId": "tt2431250"
   },
   {
     "id": "movie-heidi-rescue-of-the-lynx-2025",
@@ -17153,14 +6830,12 @@
     "description": "When eight-year-old Heidi saves a lynx family and their home from a greedy businessman, she gets her grandfather to come clean with the village community,…",
     "poster": "https://image.tmdb.org/t/p/w1280/8XIMmWRKazYvlKCPDu8BVLlyAi4.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8XIMmWRKazYvlKCPDu8BVLlyAi4.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "heidi-rescue-of-the-lynx-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/heidi-rescue-of-the-lynx-2025",
+    "imdbId": "tt14260876"
   },
   {
     "id": "movie-tom-and-jerry-forbidden-compass-2025",
@@ -17182,14 +6857,12 @@
     "description": "During a chase inside a museum, Tom and Jerry find an ancient magical compass and end up being transported through time. Lost in a distant era, they will…",
     "poster": "https://image.tmdb.org/t/p/w1280/9VM1KI9sVZETl0d00FK7CnBzxiw.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/9VM1KI9sVZETl0d00FK7CnBzxiw.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "tom-and-jerry-forbidden-compass-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/tom-and-jerry-forbidden-compass-2025",
+    "imdbId": "tt37185884"
   },
   {
     "id": "series-lost-in-oz-2015",
@@ -17210,101 +6883,12 @@
     "description": "When 12-year-old Dorothy Gale discovers her mother's mysterious journal in her Kansas home, she and her dog, Toto, are transported into a bustling, modern…",
     "poster": "https://image.tmdb.org/t/p/w1280/3UTaz1bscMoXH4GO1NTFzgxGQZa.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/3UTaz1bscMoXH4GO1NTFzgxGQZa.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "lost-in-oz-2015",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Lost in Oz — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Lost in Oz — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Lost in Oz — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Lost in Oz — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Lost in Oz — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Lost in Oz — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Lost in Oz — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Lost in Oz — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Lost in Oz — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Lost in Oz — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Lost in Oz — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Lost in Oz — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Lost in Oz — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Lost in Oz — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Lost in Oz — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Lost in Oz — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/lost-in-oz-2015",
+    "imdbId": "tt4677846"
   },
   {
     "id": "movie-the-iron-giant-1999",
@@ -17326,14 +6910,12 @@
     "description": "In the small town of Rockwell, Maine in October 1957, a giant metal machine befriends a nine-year-old boy and ultimately finds its humanity by unselfishly…",
     "poster": "https://image.tmdb.org/t/p/w1280/gZ78dyRH9hXeH94ASjuvD9Vw4b5.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gZ78dyRH9hXeH94ASjuvD9Vw4b5.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "the-iron-giant-1999",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-iron-giant-1999",
+    "imdbId": "tt0129167"
   },
   {
     "id": "movie-i-am-frankelda-2025",
@@ -17355,14 +6937,12 @@
     "description": "A gifted young writer in 19th-century Mexico journeys into her subconscious and comes face to face with characters from her own spooky stories.",
     "poster": "https://image.tmdb.org/t/p/w1280/pme7D46PxaOdNWika46q5VUS2CR.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pme7D46PxaOdNWika46q5VUS2CR.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "i-am-frankelda-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/i-am-frankelda-2025",
+    "imdbId": "tt36639986"
   },
   {
     "id": "series-dragon-striker-2026",
@@ -17383,101 +6963,12 @@
     "description": "In a world where sports and magic combine, farm boy Key discovers his ultrapowerful natural talent and learns he could be the legendary Dragon Striker.",
     "poster": "https://image.tmdb.org/t/p/w1280/hoLPJjPfYdEWJXG1y7OCgOeipaF.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/hoLPJjPfYdEWJXG1y7OCgOeipaF.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "dragon-striker-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Dragon Striker — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Dragon Striker — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Dragon Striker — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Dragon Striker — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Dragon Striker — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Dragon Striker — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Dragon Striker — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Dragon Striker — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Dragon Striker — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Dragon Striker — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Dragon Striker — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Dragon Striker — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Dragon Striker — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Dragon Striker — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Dragon Striker — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Dragon Striker — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/dragon-striker-2026",
+    "imdbId": "tt21056976"
   },
   {
     "id": "movie-omaha-2025",
@@ -17499,14 +6990,12 @@
     "description": "A father conceals the truth about his family’s seemingly spontaneous road trip across the American West.",
     "poster": "https://image.tmdb.org/t/p/w1280/rf8V9z28gJre58U9ObHN3NJph4A.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/rf8V9z28gJre58U9ObHN3NJph4A.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "omaha-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/omaha-2025",
+    "imdbId": "tt29253299"
   },
   {
     "id": "movie-full-of-it-2007",
@@ -17528,14 +7017,12 @@
     "description": "A teenager tells outrageous lies at his new high school, only to have them suddenly come true.",
     "poster": "https://image.tmdb.org/t/p/w1280/DQIuVJmZmly58CQQw4bgo9T22L.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/DQIuVJmZmly58CQQw4bgo9T22L.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "full-of-it-2007",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/full-of-it-2007",
+    "imdbId": "tt0446752"
   },
   {
     "id": "movie-inkheart-2008",
@@ -17557,14 +7044,12 @@
     "description": "The adventures of a father and his young daughter, in their search for a long lost book that will help reunite a missing, close relative.",
     "poster": "https://image.tmdb.org/t/p/w1280/dA1IWByfIvTktERGU4bzQqD3Xu8.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dA1IWByfIvTktERGU4bzQqD3Xu8.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "inkheart-2008",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/inkheart-2008",
+    "imdbId": "tt0494238"
   },
   {
     "id": "movie-the-ant-bully-2006",
@@ -17586,14 +7071,12 @@
     "description": "Fed up with being targeted by the neighborhood bully, 10-year-old Lucas Nickle vents his frustrations on the anthill in his front yard ... until the insec…",
     "poster": "https://image.tmdb.org/t/p/w1280/bSAFxs1REUSNk50yjuiVugDKDxz.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/bSAFxs1REUSNk50yjuiVugDKDxz.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "the-ant-bully-2006",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-ant-bully-2006",
+    "imdbId": "tt0429589"
   },
   {
     "id": "series-our-golden-days-2025",
@@ -17614,101 +7097,12 @@
     "description": "'Everyone has their own glorious days. Whether now, in the past, or in the future.' A family melodrama that resonates with generations about glorious days…",
     "poster": "https://image.tmdb.org/t/p/w1280/mFyXE2EK6qgEd5KP8nor5DVy1Fp.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mFyXE2EK6qgEd5KP8nor5DVy1Fp.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "our-golden-days-2025",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Our Golden Days — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Our Golden Days — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Our Golden Days — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Our Golden Days — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Our Golden Days — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Our Golden Days — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Our Golden Days — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Our Golden Days — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Our Golden Days — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Our Golden Days — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Our Golden Days — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Our Golden Days — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Our Golden Days — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Our Golden Days — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Our Golden Days — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Our Golden Days — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/our-golden-days-2025",
+    "imdbId": "tt37876545"
   },
   {
     "id": "movie-propeller-one-way-night-coach-2026",
@@ -17730,14 +7124,12 @@
     "description": "During the golden age of aviation, a young airplane enthusiast and his mother embark on a cross-country journey to Hollywood—and their simple flight trans…",
     "poster": "https://image.tmdb.org/t/p/w1280/ldUVeDfA5ID2vchHGejrEltoBSN.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ldUVeDfA5ID2vchHGejrEltoBSN.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "propeller-one-way-night-coach-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/propeller-one-way-night-coach-2026",
+    "imdbId": "tt41367695"
   },
   {
     "id": "movie-the-lotto-winner-2026",
@@ -17759,14 +7151,12 @@
     "description": "It follows an ordinary family whose lives are abruptly transformed by extraordinary luck—unraveling how money can both bind people together and quietly pu…",
     "poster": "https://image.tmdb.org/t/p/w1280/1YOiNo5vY63ITI5kIHVKcPjmqWe.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1YOiNo5vY63ITI5kIHVKcPjmqWe.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "the-lotto-winner-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-lotto-winner-2026",
+    "imdbId": "tt39377509"
   },
   {
     "id": "movie-animal-farm-2026",
@@ -17788,14 +7178,12 @@
     "description": "A group of farm animals rise up against their neglectful owner, dreaming of equality and freedom. But as the pigs take control, the revolution turns into…",
     "poster": "https://image.tmdb.org/t/p/w1280/plDfFp8LWIh8c8WK5Xlgvwytgqs.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/plDfFp8LWIh8c8WK5Xlgvwytgqs.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "animal-farm-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/animal-farm-2026",
+    "imdbId": "tt2467700"
   },
   {
     "id": "movie-panda-plan-2-the-magical-tribe-2026",
@@ -17817,14 +7205,12 @@
     "description": "The panda \"Huhu\" is about to move into a brand new panda enclosure when he's suddenly confronted by international robbers. Huhu falls off a cliff while ba…",
     "poster": "https://image.tmdb.org/t/p/w1280/bnXeBvYaurIqP0ESAAHUIZjIB0o.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/bnXeBvYaurIqP0ESAAHUIZjIB0o.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "panda-plan-2-the-magical-tribe-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/panda-plan-2-the-magical-tribe-2026",
+    "imdbId": "tt35514520"
   },
   {
     "id": "series-the-epoch-of-miyu-2026",
@@ -17845,101 +7231,12 @@
     "description": "Xu Miyu’s perfect marriage shatters on her 10th anniversary, prompting her to rediscover herself and choose divorce. Starting over as a hotel cleaner at P…",
     "poster": "https://image.tmdb.org/t/p/w1280/prYJ8pqjylUAyY8PukxPp1WoMg5.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/prYJ8pqjylUAyY8PukxPp1WoMg5.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "the-epoch-of-miyu-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Epoch of Miyu — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Epoch of Miyu — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Epoch of Miyu — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Epoch of Miyu — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Epoch of Miyu — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Epoch of Miyu — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Epoch of Miyu — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Epoch of Miyu — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Epoch of Miyu — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Epoch of Miyu — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Epoch of Miyu — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Epoch of Miyu — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Epoch of Miyu — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Epoch of Miyu — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Epoch of Miyu — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Epoch of Miyu — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-epoch-of-miyu-2026",
+    "imdbId": "tt35288198"
   },
   {
     "id": "movie-fireflies-at-el-mozote-2025",
@@ -17962,14 +7259,12 @@
     "description": "A boy seeks revenge after surviving El Mozote massacre in El Salvador, where government forces killed his family and destroyed his village - the deadliest…",
     "poster": "https://image.tmdb.org/t/p/w1280/i0YlPmyAfjxWJczVqK0MP88XKU4.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/i0YlPmyAfjxWJczVqK0MP88XKU4.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🌸",
     "slug": "fireflies-at-el-mozote-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/fireflies-at-el-mozote-2025",
+    "imdbId": "tt2090499"
   },
   {
     "id": "movie-feng-shui-2018",
@@ -17991,14 +7286,12 @@
     "description": "Park Jae-sang was a royal geomancer, who helps people designate propitious site for houses, store and even graves under the belief that a grave in a good…",
     "poster": "https://image.tmdb.org/t/p/w1280/sFiQYvoMYdI7soXoaCcgXCbQA9N.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/sFiQYvoMYdI7soXoaCcgXCbQA9N.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "📻",
     "slug": "feng-shui-2018",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/feng-shui-2018",
+    "imdbId": "tt7046524"
   },
   {
     "id": "movie-golden-kamuy-the-abashiri-prison-raid-2026",
@@ -18020,14 +7313,12 @@
     "description": "As each group pursues their mission, a fierce battle unfolds over the tattooed prisoners. Who is friend, and who is foe?  The fight leads them all to Abas…",
     "poster": "https://image.tmdb.org/t/p/w1280/eeiZikJBrnx5H5AQOaTD9Lt6DU3.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/eeiZikJBrnx5H5AQOaTD9Lt6DU3.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🍄",
     "slug": "golden-kamuy-the-abashiri-prison-raid-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/golden-kamuy-the-abashiri-prison-raid-2026",
+    "imdbId": "tt38109660"
   },
   {
     "id": "movie-pressure-2026",
@@ -18049,14 +7340,12 @@
     "description": "In the tense 72 hours before D-Day, and the fate of the free world hanging in the balance, General Dwight D. Eisenhower and Captain James Stagg face an im…",
     "poster": "https://image.tmdb.org/t/p/w1280/apfyLCPVFttB8oXcsLJ7q0NSFLx.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/apfyLCPVFttB8oXcsLJ7q0NSFLx.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🏛️",
     "slug": "pressure-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/pressure-2026",
+    "imdbId": "tt32547691"
   },
   {
     "id": "movie-blades-of-the-guardians-2026",
@@ -18079,14 +7368,12 @@
     "description": "Dao Ma, the \"second most wanted fugitive,\" is entrusted by his benefactor, the chief of Mo family clan, to take on a mysterious escort mission-escorting t…",
     "poster": "https://image.tmdb.org/t/p/w1280/cYyNJzwhaj7aC4uTlUctrfaERbf.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cYyNJzwhaj7aC4uTlUctrfaERbf.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🖤",
     "slug": "blades-of-the-guardians-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/blades-of-the-guardians-2026",
+    "imdbId": "tt32649961"
   },
   {
     "id": "movie-battle-of-jangsari-2019",
@@ -18109,14 +7396,12 @@
     "description": "Korean War, September 1950. In order to fight the enemy forces based in the South of the peninsula, General MacArthur orders the start of the Incheon Land…",
     "poster": "https://image.tmdb.org/t/p/w1280/9Z8olJDr2myWLt6UuyFkZWRMO4D.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/9Z8olJDr2myWLt6UuyFkZWRMO4D.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "👽",
     "slug": "battle-of-jangsari-2019",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/battle-of-jangsari-2019",
+    "imdbId": "tt9018916"
   },
   {
     "id": "movie-operation-chromite-2016",
@@ -18139,14 +7424,12 @@
     "description": "A squad of soldiers fight in the Korean War's crucial Battle of Incheon.",
     "poster": "https://image.tmdb.org/t/p/w1280/61fTz1JnqsWm5a8wV3bUnw6IoQk.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/61fTz1JnqsWm5a8wV3bUnw6IoQk.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🏜️",
     "slug": "operation-chromite-2016",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/operation-chromite-2016",
+    "imdbId": "tt4939066"
   },
   {
     "id": "movie-mexico-86-2026",
@@ -18168,14 +7451,12 @@
     "description": "When a last-minute chance to host the 1986 World Cup appears, a cunning Mexican bureaucrat, armed with nothing but guts and audacity, cons his way through…",
     "poster": "https://image.tmdb.org/t/p/w1280/5Dkv39CuytJDnJeZjkepFtOWqBr.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5Dkv39CuytJDnJeZjkepFtOWqBr.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🦍",
     "slug": "mexico-86-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/mexico-86-2026",
+    "imdbId": "tt37961742"
   },
   {
     "id": "movie-duse-2025",
@@ -18197,14 +7478,12 @@
     "description": "In the years between WWI and the rise of Fascism, legendary thespian Eleonora Duse shocks everyone by getting back onstage at over 60 years of age. Strugg…",
     "poster": "https://image.tmdb.org/t/p/w1280/91yMEHiOfzMv0Lq7uV9MPKTpTJC.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/91yMEHiOfzMv0Lq7uV9MPKTpTJC.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🧅",
     "slug": "duse-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/duse-2025",
+    "imdbId": "tt31415482"
   },
   {
     "id": "movie-only-the-brave-2017",
@@ -18226,14 +7505,12 @@
     "description": "Members of the Granite Mountain Hotshots battle deadly wildfires to save an Arizona town.",
     "poster": "https://image.tmdb.org/t/p/w1280/zaX6d5GCtb2CmOH9jrHBl58xxBY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zaX6d5GCtb2CmOH9jrHBl58xxBY.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🤠",
     "slug": "only-the-brave-2017",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/only-the-brave-2017",
+    "imdbId": "tt3829920"
   },
   {
     "id": "movie-the-kings-warden-2026",
@@ -18255,14 +7532,12 @@
     "description": "In a remote mountain village of 15th-century Joseon, humble headman Heung-do hears a rumor that any village hosting an exiled nobleman will be blessed wit…",
     "poster": "https://image.tmdb.org/t/p/w1280/jpU8G7YVjlWyrajF6RD7X21xdCn.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/jpU8G7YVjlWyrajF6RD7X21xdCn.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🐉",
     "slug": "the-kings-warden-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-kings-warden-2026",
+    "imdbId": "tt38626703"
   },
   {
     "id": "movie-a-magnificent-life-2025",
@@ -18284,14 +7559,12 @@
     "description": "In 1955, 60-year-old Marcel Pagnol is a well-known and acclaimed playwright and filmmaker. When the editor-in-chief of ELLE magazine commissions a weekly…",
     "poster": "https://image.tmdb.org/t/p/w1280/xPquMr2qgZcpV31dZl5T2Td1nBN.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xPquMr2qgZcpV31dZl5T2Td1nBN.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "a-magnificent-life-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-magnificent-life-2025",
+    "imdbId": "tt13968662"
   },
   {
     "id": "movie-the-fire-inside-2024",
@@ -18313,14 +7586,12 @@
     "description": "Claressa Shields, a high school junior from Flint, Michigan, aided by her tough-love coach, Jason Crutchfield, pushes past all limitations to become the f…",
     "poster": "https://image.tmdb.org/t/p/w1280/GtWV2PAAFZYYHAy788RI6xOMJ8.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/GtWV2PAAFZYYHAy788RI6xOMJ8.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "the-fire-inside-2024",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-fire-inside-2024",
+    "imdbId": "tt6133444"
   },
   {
     "id": "movie-blitz-2024",
@@ -18343,14 +7614,12 @@
     "description": "In World War II London, nine-year-old George is evacuated to the countryside by his mother, Rita, to escape the bombings. Defiant and determined to return…",
     "poster": "https://image.tmdb.org/t/p/w1280/qRSMoh9EMlQ9uywMpLulWBkIma9.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/qRSMoh9EMlQ9uywMpLulWBkIma9.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "blitz-2024",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/blitz-2024",
+    "imdbId": "tt15939198"
   },
   {
     "id": "movie-bob-marley-one-love-2024",
@@ -18373,14 +7642,12 @@
     "description": "Jamaican singer-songwriter Bob Marley overcomes adversity to become the most famous reggae musician in the world.",
     "poster": "https://image.tmdb.org/t/p/w1280/lHPap2xBR7DgWLiu6RsfKESgzAi.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/lHPap2xBR7DgWLiu6RsfKESgzAi.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "bob-marley-one-love-2024",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/bob-marley-one-love-2024",
+    "imdbId": "tt8521778"
   },
   {
     "id": "movie-dumb-money-2023",
@@ -18402,14 +7669,12 @@
     "description": "Vlogger Keith Gill sinks his life savings into GameStop stock and posts about it. When social media starts blowing up, so do his life and the lives of eve…",
     "poster": "https://image.tmdb.org/t/p/w1280/dTOQaHP4PjDXU2JwDF6UYqGqRT0.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dTOQaHP4PjDXU2JwDF6UYqGqRT0.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "dumb-money-2023",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/dumb-money-2023",
+    "imdbId": "tt13957560"
   },
   {
     "id": "movie-descendant-2022",
@@ -18431,14 +7696,12 @@
     "description": "History exists beyond what is written. The Africatown residents in Mobile, Alabama, have shared stories about their origins for generations. Their communi…",
     "poster": "https://image.tmdb.org/t/p/w1280/bd1ppZC3g3ctHwP2pCwbHDMr1Op.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/bd1ppZC3g3ctHwP2pCwbHDMr1Op.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "descendant-2022",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/descendant-2022",
+    "imdbId": "tt16376494"
   },
   {
     "id": "movie-ip-man-the-awakening-2021",
@@ -18461,14 +7724,12 @@
     "description": "When a young Master Ip stops a kidnapping, he ignites a turf war with a ruthless human-trafficking ring. In retaliation, the gang kidnaps one of Ip Man's…",
     "poster": "https://image.tmdb.org/t/p/w1280/Xfn9eDOaZKSz5W3PRoJI928I9c.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/Xfn9eDOaZKSz5W3PRoJI928I9c.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "ip-man-the-awakening-2021",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/ip-man-the-awakening-2021",
+    "imdbId": "tt21028848"
   },
   {
     "id": "movie-judas-and-the-black-messiah-2021",
@@ -18490,14 +7751,12 @@
     "description": "Bill O'Neal infiltrates the Black Panthers on the orders of FBI Agent Mitchell and J. Edgar Hoover. As Black Panther Chairman Fred Hampton ascends—falling…",
     "poster": "https://image.tmdb.org/t/p/w1280/fatz1aegtBGh7KS0gipcsw9MqUn.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/fatz1aegtBGh7KS0gipcsw9MqUn.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "judas-and-the-black-messiah-2021",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/judas-and-the-black-messiah-2021",
+    "imdbId": "tt9784798"
   },
   {
     "id": "movie-the-impossible-2012",
@@ -18519,14 +7778,12 @@
     "description": "In December 2004, close-knit family Maria, Henry and their three sons begin their winter vacation in Thailand. But the day after Christmas, the idyllic ho…",
     "poster": "https://image.tmdb.org/t/p/w1280/3NfM0sRwVLnsQkCd5YBPGvM9a5v.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/3NfM0sRwVLnsQkCd5YBPGvM9a5v.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "the-impossible-2012",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-impossible-2012",
+    "imdbId": "tt1649419"
   },
   {
     "id": "movie-the-dig-2021",
@@ -18548,14 +7805,12 @@
     "description": "As WWII looms, a wealthy widow hires an amateur archaeologist to excavate the burial mounds on her estate. When they make a historic discovery, the echoes…",
     "poster": "https://image.tmdb.org/t/p/w1280/wQhe2YJnB9AAS08RqwMeKN2ywUr.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/wQhe2YJnB9AAS08RqwMeKN2ywUr.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "the-dig-2021",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-dig-2021",
+    "imdbId": "tt3661210"
   },
   {
     "id": "movie-safety-2020",
@@ -18578,14 +7833,12 @@
     "description": "The story of Ray-Ray McElrathbey, a freshman football player for Clemson University, who secretly raised his younger brother on campus after his home life…",
     "poster": "https://image.tmdb.org/t/p/w1280/pYp4rYNHp3n1dSUbPh3aHtf60wX.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pYp4rYNHp3n1dSUbPh3aHtf60wX.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "safety-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/safety-2020",
+    "imdbId": "tt10649016"
   },
   {
     "id": "movie-the-swordsman-2020",
@@ -18608,14 +7861,12 @@
     "description": "After being blinded in a coup against the king, Joseon's greatest swordsman goes into hiding, far removed from his city's anguish. But when traffickers ki…",
     "poster": "https://image.tmdb.org/t/p/w1280/5lmhjGvg5ddXbTXzeNJfU4qpIeh.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5lmhjGvg5ddXbTXzeNJfU4qpIeh.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "the-swordsman-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-swordsman-2020",
+    "imdbId": "tt7035004"
   },
   {
     "id": "movie-kalashnikov-ak-47-2020",
@@ -18638,14 +7889,12 @@
     "description": "A Russian military propaganda film about the tank commander Kalashnikov, severely injured in battle in 1941. The accident leaves him incapacitated and una…",
     "poster": "https://image.tmdb.org/t/p/w1280/dUasP5TGFk1dhTgtNhk5uLRPRx6.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dUasP5TGFk1dhTgtNhk5uLRPRx6.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "kalashnikov-ak-47-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/kalashnikov-ak-47-2020",
+    "imdbId": "tt11547520"
   },
   {
     "id": "movie-the-secrets-we-keep-2020",
@@ -18667,14 +7916,12 @@
     "description": "In post-World War II America, a woman, rebuilding her life in the suburbs with her husband, kidnaps her neighbor and seeks vengeance for the heinous war c…",
     "poster": "https://image.tmdb.org/t/p/w1280/2ldAA1P4byx3aUdKDBT4mmSwYsK.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2ldAA1P4byx3aUdKDBT4mmSwYsK.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "the-secrets-we-keep-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-secrets-we-keep-2020",
+    "imdbId": "tt9252488"
   },
   {
     "id": "movie-the-trial-of-the-chicago-7-2020",
@@ -18696,14 +7943,12 @@
     "description": "What was supposed to be a peaceful protest turned into a violent clash with the police. What followed was one of the most notorious trials in history.",
     "poster": "https://image.tmdb.org/t/p/w1280/v8Nf6Y1qL1Q3PWTBezXNPPaXqza.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/v8Nf6Y1qL1Q3PWTBezXNPPaXqza.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "the-trial-of-the-chicago-7-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-trial-of-the-chicago-7-2020",
+    "imdbId": "tt1070874"
   },
   {
     "id": "movie-the-legend-of-tomiris-2019",
@@ -18726,14 +7971,12 @@
     "description": "This is the story of the life of the great queen of the steppe - legendary Tomiris. She is destined to become a skillful warrior, survive the loss of clos…",
     "poster": "https://image.tmdb.org/t/p/w1280/2S0J4PWNY95uLodCAfY7rhAVKla.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2S0J4PWNY95uLodCAfY7rhAVKla.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "the-legend-of-tomiris-2019",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-legend-of-tomiris-2019",
+    "imdbId": "tt7985648"
   },
   {
     "id": "movie-wild-sing-2026",
@@ -18755,14 +7998,12 @@
     "description": "Twenty years after a scandal tears apart a popular 2000s K‑pop trio, the three reunite for a one-off gig — if they can overcome one snag after another.",
     "poster": "https://image.tmdb.org/t/p/w1280/wuqlB1rgHlGKf33rMu3QpRzb15o.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/wuqlB1rgHlGKf33rMu3QpRzb15o.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "wild-sing-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/wild-sing-2026",
+    "imdbId": "tt40815155"
   },
   {
     "id": "movie-love-live-hasunosora-girls-high-school-idol-club-bloom-garden-party-2026",
@@ -18784,14 +8025,12 @@
     "description": "A 3DCG movie for Love Live! Hasunosora Jogakuin School Idol Club.",
     "poster": "https://image.tmdb.org/t/p/w1280/2janTKwWSg8F4h6HHqUaeqZnVfK.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/2janTKwWSg8F4h6HHqUaeqZnVfK.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "love-live-hasunosora-girls-high-school-idol-club-bloom-garden-party-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/love-live-hasunosora-girls-high-school-idol-club-bloom-garden-party-2026",
+    "imdbId": "tt39123173"
   },
   {
     "id": "movie-power-ballad-2026",
@@ -18813,14 +8052,12 @@
     "description": "When Rick, a past-his-prime wedding singer, meets fading boy-band star Danny during a gig, the two bond over music and a late-night jam session. But when…",
     "poster": "https://image.tmdb.org/t/p/w1280/Aa24UFgdGFHWhSq4YjtIhdmblpb.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/Aa24UFgdGFHWhSq4YjtIhdmblpb.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "power-ballad-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/power-ballad-2026",
+    "imdbId": "tt32267691"
   },
   {
     "id": "movie-zombie-land-saga-yumeginga-paradise-2025",
@@ -18843,14 +8080,12 @@
     "description": "It’s an alien vs. zombie showdown! Zombie idol group Franchouchou is ready to rock the upcoming Saga Expo—until an alien spaceship appears and rains destr…",
     "poster": "https://image.tmdb.org/t/p/w1280/xjbBigW2eq8uUll75aPOjQiK71t.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xjbBigW2eq8uUll75aPOjQiK71t.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "zombie-land-saga-yumeginga-paradise-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/zombie-land-saga-yumeginga-paradise-2025",
+    "imdbId": "tt35658228"
   },
   {
     "id": "movie-michael-2026",
@@ -18872,14 +8107,12 @@
     "description": "The story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music. His journey from the discovery…",
     "poster": "https://image.tmdb.org/t/p/w1280/lRg80r08ure2a4rrcvmAe9ij3nv.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/lRg80r08ure2a4rrcvmAe9ij3nv.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "michael-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/michael-2026",
+    "imdbId": "tt11378946"
   },
   {
     "id": "movie-mother-mary-2026",
@@ -18901,14 +8134,12 @@
     "description": "Long-buried wounds rise to the surface when iconic pop star Mother Mary reunites with her estranged best friend and former costume designer Sam Anselm on…",
     "poster": "https://image.tmdb.org/t/p/w1280/4R47iCjnTgwICFPxAJOxzE99Wzj.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/4R47iCjnTgwICFPxAJOxzE99Wzj.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "mother-mary-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/mother-mary-2026",
+    "imdbId": "tt27200708"
   },
   {
     "id": "movie-beauty-and-the-beat-2025",
@@ -18930,14 +8161,12 @@
     "description": "Imagine the excitement when four rival divas are brought together to perform on the same stage. But remember, when two ride on a horse, one must sit behin…",
     "poster": "https://image.tmdb.org/t/p/w1280/jijKnQUI8CbK2J05zelxrSoYE7d.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/jijKnQUI8CbK2J05zelxrSoYE7d.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "beauty-and-the-beat-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/beauty-and-the-beat-2025",
+    "imdbId": "tt39045344"
   },
   {
     "id": "movie-feel-my-voice-2026",
@@ -18959,14 +8188,12 @@
     "description": "A teenager, the only hearing member of a deaf family, finds her voice and learns to believe in herself through her passion for singing.",
     "poster": "https://image.tmdb.org/t/p/w1280/Ary1sG0AHn4V1DFrwV7g72Fomq0.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/Ary1sG0AHn4V1DFrwV7g72Fomq0.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "feel-my-voice-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/feel-my-voice-2026",
+    "imdbId": "tt38589464"
   },
   {
     "id": "movie-the-singers-2026",
@@ -18988,14 +8215,12 @@
     "description": "An impromptu singing contest at a dive bar turns a lonely night into a soul-baring moment of shared harmony.",
     "poster": "https://image.tmdb.org/t/p/w1280/oTWgvLnMjjsVNdVTZjf5CEnihhw.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/oTWgvLnMjjsVNdVTZjf5CEnihhw.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "the-singers-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-singers-2026",
+    "imdbId": "tt33508491"
   },
   {
     "id": "movie-american-symphony-2023",
@@ -19017,14 +8242,12 @@
     "description": "Musician Jon Batiste attempts to compose a symphony as his wife, writer Suleika Jaouad, undergoes cancer treatment.",
     "poster": "https://image.tmdb.org/t/p/w1280/5UlQDjIuJ0t8q4anVxzkW06FrDM.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/5UlQDjIuJ0t8q4anVxzkW06FrDM.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "american-symphony-2023",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/american-symphony-2023",
+    "imdbId": "tt28865980"
   },
   {
     "id": "movie-the-weeknd-live-at-sofi-stadium-2023",
@@ -19045,14 +8268,12 @@
     "description": "Filmed at LA's SoFi Stadium, The Weeknd brings down the house – and your living room – in this epic concert event.",
     "poster": "https://image.tmdb.org/t/p/w1280/8crvpRbKCIPzhCTLqFDdudHgdz7.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8crvpRbKCIPzhCTLqFDdudHgdz7.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "the-weeknd-live-at-sofi-stadium-2023",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-weeknd-live-at-sofi-stadium-2023",
+    "imdbId": "tt26685153"
   },
   {
     "id": "movie-one-direction-this-is-us-2013",
@@ -19074,14 +8295,12 @@
     "description": "\"One Direction: This Is Us\" is a captivating and intimate all-access look at life on the road for the global music phenomenon. Weaved with stunning live c…",
     "poster": "https://image.tmdb.org/t/p/w1280/7e9uENnSM93CQXyzLSuzBUgxm4P.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/7e9uENnSM93CQXyzLSuzBUgxm4P.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "one-direction-this-is-us-2013",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/one-direction-this-is-us-2013",
+    "imdbId": "tt2515086"
   },
   {
     "id": "movie-ma-raineys-black-bottom-2020",
@@ -19103,14 +8322,12 @@
     "description": "Tensions rise when the trailblazing Mother of the Blues and her band gather at a Chicago recording studio in 1927. Adapted from August Wilson's play.",
     "poster": "https://image.tmdb.org/t/p/w1280/4mK222kB3vyrNjYl8eHliYacvJS.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/4mK222kB3vyrNjYl8eHliYacvJS.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "ma-raineys-black-bottom-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/ma-raineys-black-bottom-2020",
+    "imdbId": "tt10514222"
   },
   {
     "id": "movie-ariana-grande-excuse-me-i-love-you-2020",
@@ -19132,14 +8349,12 @@
     "description": "Ariana Grande takes the stage in London for her Sweetener World Tour and shares a behind-the-scenes look at her life in rehearsal and on the road.",
     "poster": "https://image.tmdb.org/t/p/w1280/pgsxHZO2Tf7nHpRnBoQZitAPguA.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pgsxHZO2Tf7nHpRnBoQZitAPguA.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🌸",
     "slug": "ariana-grande-excuse-me-i-love-you-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/ariana-grande-excuse-me-i-love-you-2020",
+    "imdbId": "tt13615386"
   },
   {
     "id": "movie-high-school-musical-the-musical-the-holiday-special-2020",
@@ -19161,14 +8376,12 @@
     "description": "The cast of “High School Musical: The Musical: The Series” delivers an abundance of feel-good holiday cheer as they perform their favorite Christmas, Hanu…",
     "poster": "https://image.tmdb.org/t/p/w1280/axC0IisTJn7xpppPOOVMUlvBAaA.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/axC0IisTJn7xpppPOOVMUlvBAaA.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "📻",
     "slug": "high-school-musical-the-musical-the-holiday-special-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/high-school-musical-the-musical-the-holiday-special-2020",
+    "imdbId": "tt13290168"
   },
   {
     "id": "movie-folklore-the-long-pond-studio-sessions-2020",
@@ -19190,14 +8403,12 @@
     "description": "An intimate concert film, in which Taylor Swift performs each song from her album 'folklore' in order, as she reveals the meaning and the stories behind a…",
     "poster": "https://image.tmdb.org/t/p/w1280/xndolqiw6jMhDDkkw1UPuD1xfrT.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xndolqiw6jMhDDkkw1UPuD1xfrT.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🍄",
     "slug": "folklore-the-long-pond-studio-sessions-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/folklore-the-long-pond-studio-sessions-2020",
+    "imdbId": "tt13524234"
   },
   {
     "id": "movie-shawn-mendes-in-wonder-2020",
@@ -19219,14 +8430,12 @@
     "description": "A portrait of singer-songwriter Shawn Mendes' life, chronicling the past few years of his rise and journey.",
     "poster": "https://image.tmdb.org/t/p/w1280/6POBC9eiJBYDfE6bidjrthKB6eC.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/6POBC9eiJBYDfE6bidjrthKB6eC.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🏛️",
     "slug": "shawn-mendes-in-wonder-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/shawn-mendes-in-wonder-2020",
+    "imdbId": "tt13276386"
   },
   {
     "id": "movie-stardust-2020",
@@ -19248,14 +8457,12 @@
     "description": "In 1971, rock star David Bowie travels to America for the first time to promote his third album, The Man Who Sold the World. There, he embarks on a coast-…",
     "poster": "https://image.tmdb.org/t/p/w1280/md5KiBEC3D9vszDka53uroJT9ak.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/md5KiBEC3D9vszDka53uroJT9ak.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🖤",
     "slug": "stardust-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/stardust-2020",
+    "imdbId": "tt9694312"
   },
   {
     "id": "movie-the-muppet-christmas-carol-1992",
@@ -19278,14 +8485,12 @@
     "description": "A retelling of the classic Dickens tale of Ebenezer Scrooge, miser extraordinaire. He is held accountable for his dastardly ways during night-time visitat…",
     "poster": "https://image.tmdb.org/t/p/w1280/kLVWvnUdqQ07WjbAYGpmiD2ZFQa.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kLVWvnUdqQ07WjbAYGpmiD2ZFQa.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "👽",
     "slug": "the-muppet-christmas-carol-1992",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-muppet-christmas-carol-1992",
+    "imdbId": "tt0104940"
   },
   {
     "id": "movie-lucky-strike-2026",
@@ -19307,14 +8512,12 @@
     "description": "A wounded American soldier fights to survive behind enemy lines during WWII's Battle of the Bulge against the Germans, relying on his instinct, spy craft…",
     "poster": "https://image.tmdb.org/t/p/w1280/7FivR6OVr56calRq8UyZjmPsVE2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/7FivR6OVr56calRq8UyZjmPsVE2.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🏜️",
     "slug": "lucky-strike-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/lucky-strike-2026",
+    "imdbId": "tt19035928"
   },
   {
     "id": "series-shine-2025",
@@ -19335,101 +8538,12 @@
     "description": "In 1969 Bangkok, idealistic economist Trin meets carefree musician Tanwa amid political unrest, sparking a forbidden romance that tests their beliefs.",
     "poster": "https://image.tmdb.org/t/p/w1280/bnsm6aeVDxXRg39uJZLjDhQvxyz.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/bnsm6aeVDxXRg39uJZLjDhQvxyz.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🦍",
     "slug": "shine-2025",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Shine — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Shine — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Shine — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Shine — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Shine — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Shine — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Shine — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Shine — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Shine — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Shine — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Shine — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Shine — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Shine — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Shine — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Shine — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Shine — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/shine-2025",
+    "imdbId": "tt31116964"
   },
   {
     "id": "movie-the-silent-service-the-battle-of-arctic-ocean-2025",
@@ -19450,14 +8564,12 @@
     "description": "In the freezing northern seas, the Yamato nuclear submarine begins its deep underwater voyage to the tune of Mozart, heading for the United Nations headqu…",
     "poster": "https://image.tmdb.org/t/p/w1280/lA7RH5XBULBrs6T22ZC2t92ohOy.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/lA7RH5XBULBrs6T22ZC2t92ohOy.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🧅",
     "slug": "the-silent-service-the-battle-of-arctic-ocean-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-silent-service-the-battle-of-arctic-ocean-2025",
+    "imdbId": "tt38580081"
   },
   {
     "id": "movie-omukade-2026",
@@ -19479,14 +8591,12 @@
     "description": "Thailand, 1941 — a handful of Japanese soldiers and their prisoners are trapped in a cursed mine. As tensions between enemies reach a breaking point, they…",
     "poster": "https://image.tmdb.org/t/p/w1280/i5c2Tvhn2mZWT43zdwHEliau58j.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/i5c2Tvhn2mZWT43zdwHEliau58j.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🤠",
     "slug": "omukade-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/omukade-2026",
+    "imdbId": "tt38223449"
   },
   {
     "id": "series-greatest-events-of-world-war-ii-in-colour-2019",
@@ -19507,101 +8617,12 @@
     "description": "Using highly advanced colourisation techniques, critical moments from World War II, from Stalingrad to The Battle of Britain, are shown in a whole new lig…",
     "poster": "https://image.tmdb.org/t/p/w1280/39pBDj2HRiUXKXXEaxWFk7Q4hGz.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/39pBDj2HRiUXKXXEaxWFk7Q4hGz.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🐉",
     "slug": "greatest-events-of-world-war-ii-in-colour-2019",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Greatest Events of World War II in Colour — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Greatest Events of World War II in Colour — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Greatest Events of World War II in Colour — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Greatest Events of World War II in Colour — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Greatest Events of World War II in Colour — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Greatest Events of World War II in Colour — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Greatest Events of World War II in Colour — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Greatest Events of World War II in Colour — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Greatest Events of World War II in Colour — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Greatest Events of World War II in Colour — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Greatest Events of World War II in Colour — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Greatest Events of World War II in Colour — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Greatest Events of World War II in Colour — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Greatest Events of World War II in Colour — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Greatest Events of World War II in Colour — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Greatest Events of World War II in Colour — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/greatest-events-of-world-war-ii-in-colour-2019",
+    "imdbId": "tt9103932"
   },
   {
     "id": "series-world-on-fire-2019",
@@ -19622,101 +8643,12 @@
     "description": "The story of World War II told through the intertwining fates of ordinary people from all sides of this global conflict as they grapple with the effect of…",
     "poster": "https://image.tmdb.org/t/p/w1280/7EljsQNh2DiOCmu9HnQIHEXpO9E.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/7EljsQNh2DiOCmu9HnQIHEXpO9E.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "world-on-fire-2019",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "World on Fire — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "World on Fire — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "World on Fire — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "World on Fire — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "World on Fire — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "World on Fire — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "World on Fire — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "World on Fire — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "World on Fire — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "World on Fire — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "World on Fire — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "World on Fire — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "World on Fire — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "World on Fire — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "World on Fire — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "World on Fire — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/world-on-fire-2019",
+    "imdbId": "tt8001092"
   },
   {
     "id": "series-the-pacific-2010",
@@ -19737,101 +8669,12 @@
     "description": "Track the intertwined real-life stories of three U.S. Marines – Robert Leckie, John Basilone, and Eugene Sledge – across the vast canvas of the Pacific Th…",
     "poster": "https://image.tmdb.org/t/p/w1280/nWfpVLgioDXQsAbfL6UJxYz6d3d.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/nWfpVLgioDXQsAbfL6UJxYz6d3d.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "the-pacific-2010",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Pacific — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Pacific — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Pacific — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Pacific — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Pacific — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Pacific — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Pacific — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Pacific — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Pacific — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Pacific — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Pacific — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Pacific — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Pacific — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Pacific — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Pacific — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Pacific — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-pacific-2010",
+    "imdbId": "tt0374463"
   },
   {
     "id": "movie-13-days-13-nights-2025",
@@ -19853,14 +8696,12 @@
     "description": "Kabul, August 15, 2021. US troops are preparing to withdraw from Afghanistan, while the Taliban are marching on the capital to seize power. Amid the chaos…",
     "poster": "https://image.tmdb.org/t/p/w1280/1zlHZDtV5KsX5VcBahNy5GDqUVt.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1zlHZDtV5KsX5VcBahNy5GDqUVt.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "13-days-13-nights-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/13-days-13-nights-2025",
+    "imdbId": "tt28291010"
   },
   {
     "id": "movie-the-hurt-locker-2008",
@@ -19882,14 +8723,12 @@
     "description": "During the Iraq War, a Sergeant recently assigned to an army bomb squad is put at odds with his squad mates due to his maverick way of handling his work.",
     "poster": "https://image.tmdb.org/t/p/w1280/nKieVGBCZQfcylwO7mOMPaug8f2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/nKieVGBCZQfcylwO7mOMPaug8f2.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "the-hurt-locker-2008",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-hurt-locker-2008",
+    "imdbId": "tt0887912"
   },
   {
     "id": "movie-redemption-day-2021",
@@ -19911,14 +8750,12 @@
     "description": "When his wife is kidnapped by terrorists for ransom, veteran war hero Brad Paxton races against the clock to rescue her in a daring and deadly operation t…",
     "poster": "https://image.tmdb.org/t/p/w1280/7vCOBYP52Mm8Nlc09hLUtWfxHjJ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/7vCOBYP52Mm8Nlc09hLUtWfxHjJ.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "redemption-day-2021",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/redemption-day-2021",
+    "imdbId": "tt4439620"
   },
   {
     "id": "movie-shadow-in-the-cloud-2021",
@@ -19940,14 +8777,12 @@
     "description": "A WWII pilot traveling with top secret documents on a B-17 Flying Fortress encounters an evil presence on board the flight.",
     "poster": "https://image.tmdb.org/t/p/w1280/aHYUj0hICtWZ5tPiCIm6pWUcjYK.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/aHYUj0hICtWZ5tPiCIm6pWUcjYK.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "shadow-in-the-cloud-2021",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/shadow-in-the-cloud-2021",
+    "imdbId": "tt9691136"
   },
   {
     "id": "movie-mosul-2019",
@@ -19969,14 +8804,12 @@
     "description": "When ISIS took their homes, families and city, one group of men fought to take it all back. Based on true events, this is the story of the Nineveh SWAT te…",
     "poster": "https://image.tmdb.org/t/p/w1280/hBPV18ocvkYbiD9kOJRgorPo5O8.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/hBPV18ocvkYbiD9kOJRgorPo5O8.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "mosul-2019",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/mosul-2019",
+    "imdbId": "tt9252468"
   },
   {
     "id": "movie-the-outpost-2020",
@@ -19998,14 +8831,12 @@
     "description": "A small unit of U.S. soldiers, alone at the remote Combat Outpost Keating, located deep in the valley of three mountains in Afghanistan, battles to defend…",
     "poster": "https://image.tmdb.org/t/p/w1280/n1RohH2VoK1CdVI2fXvcP19dSlm.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/n1RohH2VoK1CdVI2fXvcP19dSlm.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "the-outpost-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-outpost-2020",
+    "imdbId": "tt3833480"
   },
   {
     "id": "movie-balkan-line-2019",
@@ -20027,14 +8858,12 @@
     "description": "After the NATO bombing of Yugoslavia in 1999, the Yugoslav army pulls out of Kosovo region, leaving Serbian people at the mercy of the Albanian UCK. A sma…",
     "poster": "https://image.tmdb.org/t/p/w1280/gh9YcpJ01IsrwGkB3IK8K3LWQ25.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gh9YcpJ01IsrwGkB3IK8K3LWQ25.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "balkan-line-2019",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/balkan-line-2019",
+    "imdbId": "tt5951188"
   },
   {
     "id": "movie-the-king-2019",
@@ -20056,14 +8885,12 @@
     "description": "England, 15th century. Hal, a capricious prince who lives among the populace far from court, is forced by circumstances to reluctantly accept the throne a…",
     "poster": "https://image.tmdb.org/t/p/w1280/pmwTANjISHvxOmO3iz5kRGAArso.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pmwTANjISHvxOmO3iz5kRGAArso.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "the-king-2019",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-king-2019",
+    "imdbId": "tt7984766"
   },
   {
     "id": "movie-greyhound-2020",
@@ -20085,14 +8912,12 @@
     "description": "A first-time captain leads a convoy of allied ships carrying thousands of soldiers across the treacherous waters of the \"Black Pit\" to the front lines of…",
     "poster": "https://image.tmdb.org/t/p/w1280/xXBnM6uSTk6qqCf0SRZKXcga9Ba.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/xXBnM6uSTk6qqCf0SRZKXcga9Ba.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "greyhound-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/greyhound-2020",
+    "imdbId": "tt6048922"
   },
   {
     "id": "movie-tropic-thunder-2008",
@@ -20114,14 +8939,12 @@
     "description": "A group of self-absorbed actors set out to make the most expensive war film ever. After ballooning costs force the studio to cancel the movie, the frustra…",
     "poster": "https://image.tmdb.org/t/p/w1280/4pLi4QMm0MZ9TSoF3l8qQmY9HNO.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/4pLi4QMm0MZ9TSoF3l8qQmY9HNO.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "tropic-thunder-2008",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/tropic-thunder-2008",
+    "imdbId": "tt0942385"
   },
   {
     "id": "movie-pearl-harbor-2001",
@@ -20143,14 +8966,12 @@
     "description": "The lifelong friendship between Rafe McCawley and Danny Walker is put to the ultimate test when the two ace fighter pilots become entangled in a love tria…",
     "poster": "https://image.tmdb.org/t/p/w1280/kBqhOUi8gCL0jYgRIQdcl3BguVW.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kBqhOUi8gCL0jYgRIQdcl3BguVW.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "pearl-harbor-2001",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/pearl-harbor-2001",
+    "imdbId": "tt0213149"
   },
   {
     "id": "movie-12-strong-2018",
@@ -20172,14 +8993,12 @@
     "description": "A team of special forces head into Afghanistan in the aftermath of the September 11th attacks in an attempt to dismantle the Taliban.",
     "poster": "https://image.tmdb.org/t/p/w1280/x5EUEv1N9g4BCX9GQXKvv3nqMVo.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/x5EUEv1N9g4BCX9GQXKvv3nqMVo.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "12-strong-2018",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/12-strong-2018",
+    "imdbId": "tt1413492"
   },
   {
     "id": "movie-downfall-2004",
@@ -20201,14 +9020,12 @@
     "description": "In April of 1945, Germany stands at the brink of defeat with the Russian Army closing in from the east and the Allied Expeditionary Force attacking from t…",
     "poster": "https://image.tmdb.org/t/p/w1280/cT80aGpjWZLn8rd7cLtsbktFMhf.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cT80aGpjWZLn8rd7cLtsbktFMhf.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "downfall-2004",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/downfall-2004",
+    "imdbId": "tt0363163"
   },
   {
     "id": "movie-the-isolate-thief-2026",
@@ -20230,14 +9047,12 @@
     "description": "A young woman struggles to conceal the gold she stole from a group of violent outlaws who have seized control of her remote outpost.",
     "poster": "https://image.tmdb.org/t/p/w1280/mwqxKmbW6ssqa5CKHrgocqbkL0C.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mwqxKmbW6ssqa5CKHrgocqbkL0C.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "the-isolate-thief-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-isolate-thief-2026",
+    "imdbId": "tt35051162"
   },
   {
     "id": "movie-bone-tomahawk-2015",
@@ -20259,14 +9074,12 @@
     "description": "During a shootout in a saloon, Sheriff Hunt injures a suspicious stranger. The doctor's assistant, wife of the local foreman, tends to him in prison. That…",
     "poster": "https://image.tmdb.org/t/p/w1280/orXMq2jZy8wFmePv7zXS2Kor7Ug.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/orXMq2jZy8wFmePv7zXS2Kor7Ug.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "bone-tomahawk-2015",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/bone-tomahawk-2015",
+    "imdbId": "tt2494362"
   },
   {
     "id": "series-dutton-ranch-2026",
@@ -20287,101 +9100,12 @@
     "description": "Rip Wheeler and Beth Dutton gamble everything on a new life in South Texas, but the promise of building a future far from the ghosts of Yellowstone quickl…",
     "poster": "https://image.tmdb.org/t/p/w1280/ewlmL0nxo2lLqBj69upgp2gjHpV.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ewlmL0nxo2lLqBj69upgp2gjHpV.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "dutton-ranch-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Dutton Ranch — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Dutton Ranch — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Dutton Ranch — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Dutton Ranch — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Dutton Ranch — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Dutton Ranch — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Dutton Ranch — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Dutton Ranch — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Dutton Ranch — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Dutton Ranch — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Dutton Ranch — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Dutton Ranch — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Dutton Ranch — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Dutton Ranch — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Dutton Ranch — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Dutton Ranch — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/dutton-ranch-2026",
+    "imdbId": "tt34991493"
   },
   {
     "id": "movie-news-of-the-world-2020",
@@ -20403,14 +9127,12 @@
     "description": "A Texan traveling across the wild West bringing the news of the world to local townspeople, agrees to help rescue a young girl who was kidnapped.",
     "poster": "https://image.tmdb.org/t/p/w1280/57dG6BzU2RcPtLgoA3oyHUIb2rI.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/57dG6BzU2RcPtLgoA3oyHUIb2rI.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "news-of-the-world-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/news-of-the-world-2020",
+    "imdbId": "tt6878306"
   },
   {
     "id": "movie-let-him-go-2020",
@@ -20432,14 +9154,12 @@
     "description": "Following the loss of their son, a retired sheriff and his wife leave their Montana ranch to rescue their young grandson from the clutches of a dangerous…",
     "poster": "https://image.tmdb.org/t/p/w1280/ZLD4pjmMLt9I3t1a7SFJBekIh1.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ZLD4pjmMLt9I3t1a7SFJBekIh1.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "let-him-go-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/let-him-go-2020",
+    "imdbId": "tt9340860"
   },
   {
     "id": "movie-the-revenant-2015",
@@ -20461,14 +9181,12 @@
     "description": "In the 1820s, a frontiersman, Hugh Glass, sets out on a path of vengeance against those who left him for dead after a bear mauling.",
     "poster": "https://image.tmdb.org/t/p/w1280/mNQtUJv1F3u0uSKILFrGjIHqkxx.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mNQtUJv1F3u0uSKILFrGjIHqkxx.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "the-revenant-2015",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-revenant-2015",
+    "imdbId": "tt1663202"
   },
   {
     "id": "series-lucky-luke-2026",
@@ -20489,101 +9207,12 @@
     "description": "Lucky Luke, the legendary lone cowboy, must team up with Louise, a fearless young woman searching for her missing mother. Together, they face the dangers…",
     "poster": "https://image.tmdb.org/t/p/w1280/hOMZxshNfGgnrrJ2BsD74If6BQP.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/hOMZxshNfGgnrrJ2BsD74If6BQP.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "lucky-luke-2026",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Lucky Luke — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Lucky Luke — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Lucky Luke — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Lucky Luke — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Lucky Luke — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Lucky Luke — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Lucky Luke — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Lucky Luke — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Lucky Luke — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Lucky Luke — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Lucky Luke — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Lucky Luke — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Lucky Luke — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Lucky Luke — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Lucky Luke — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Lucky Luke — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/lucky-luke-2026",
+    "imdbId": "tt33560536"
   },
   {
     "id": "series-territory-2024",
@@ -20604,101 +9233,12 @@
     "description": "When the world's largest cattle station is left without a clear heir, rival factions descend as a fierce generational struggle upends the land's future.",
     "poster": "https://image.tmdb.org/t/p/w1280/dfRvmXp4sdMd052ZV9jYZkuLpc2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dfRvmXp4sdMd052ZV9jYZkuLpc2.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "territory-2024",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Territory — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Territory — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Territory — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Territory — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Territory — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Territory — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Territory — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Territory — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Territory — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Territory — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Territory — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Territory — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Territory — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Territory — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Territory — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Territory — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/territory-2024",
+    "imdbId": "tt28703559"
   },
   {
     "id": "series-ransom-canyon-2025",
@@ -20719,146 +9259,12 @@
     "description": "Passions run deep in a small Texas town, as three ranching dynasties fight for their land, their legacies and the people they love.",
     "poster": "https://image.tmdb.org/t/p/w1280/29P64FqDp0UVa9oJsIl49PHn5tH.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/29P64FqDp0UVa9oJsIl49PHn5tH.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "ransom-canyon-2025",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Ransom Canyon — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Ransom Canyon — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Ransom Canyon — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Ransom Canyon — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Ransom Canyon — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Ransom Canyon — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Ransom Canyon — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Ransom Canyon — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Ransom Canyon — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Ransom Canyon — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Ransom Canyon — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Ransom Canyon — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Ransom Canyon — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Ransom Canyon — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Ransom Canyon — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Ransom Canyon — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Ransom Canyon — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Ransom Canyon — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Ransom Canyon — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Ransom Canyon — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Ransom Canyon — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Ransom Canyon — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Ransom Canyon — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Ransom Canyon — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/ransom-canyon-2025",
+    "imdbId": "tt28088031"
   },
   {
     "id": "series-the-abandons-2025",
@@ -20879,101 +9285,12 @@
     "description": "In 1850s Washington, two families led by powerful matriarchs — one wealthy, one poor but deeply loyal — battle for supremacy on the lawless frontier.",
     "poster": "https://image.tmdb.org/t/p/w1280/dHCr5HgldBavJPzAYFYmM0rEdQo.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/dHCr5HgldBavJPzAYFYmM0rEdQo.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "the-abandons-2025",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Abandons — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Abandons — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Abandons — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Abandons — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Abandons — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Abandons — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Abandons — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Abandons — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Abandons — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Abandons — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Abandons — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Abandons — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Abandons — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Abandons — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Abandons — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Abandons — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-abandons-2025",
+    "imdbId": "tt16280546"
   },
   {
     "id": "series-american-primeval-2025",
@@ -20994,101 +9311,12 @@
     "description": "A mother and son fleeing from their past form a found family while confronting a harsh landscape of freedom and cruelty in the American West.",
     "poster": "https://image.tmdb.org/t/p/w1280/1FxG2lmDYsCM1svJf7H79HNNwu2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1FxG2lmDYsCM1svJf7H79HNNwu2.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "american-primeval-2025",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "American Primeval — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "American Primeval — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "American Primeval — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "American Primeval — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "American Primeval — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "American Primeval — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "American Primeval — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "American Primeval — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "American Primeval — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "American Primeval — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "American Primeval — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "American Primeval — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "American Primeval — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "American Primeval — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "American Primeval — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "American Primeval — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/american-primeval-2025",
+    "imdbId": "tt24069848"
   },
   {
     "id": "series-1923-2022",
@@ -21109,146 +9337,12 @@
     "description": "Follow a new generation of the Dutton family during the early twentieth century when pandemics, historic drought, the end of Prohibition and the Great Dep…",
     "poster": "https://image.tmdb.org/t/p/w1280/vIioWssbxRtEkIzgj8r0pCWYkYM.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/vIioWssbxRtEkIzgj8r0pCWYkYM.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "1923-2022",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "1923 — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "1923 — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "1923 — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "1923 — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "1923 — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "1923 — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "1923 — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "1923 — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "1923 — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "1923 — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "1923 — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "1923 — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "1923 — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "1923 — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "1923 — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "1923 — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "1923 — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "1923 — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "1923 — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "1923 — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "1923 — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "1923 — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "1923 — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "1923 — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/1923-2022",
+    "imdbId": "tt18335752"
   },
   {
     "id": "series-billy-the-kid-2022",
@@ -21269,191 +9363,12 @@
     "description": "An epic romantic adventure series based on the life of famous American outlaw Billy the Kid — from his humble Irish roots, to his early days as a cowboy a…",
     "poster": "https://image.tmdb.org/t/p/w1280/wk00DBQ4hmAInKSDw4s7eX3jCAj.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/wk00DBQ4hmAInKSDw4s7eX3jCAj.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "billy-the-kid-2022",
-    "episode": "S3 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Billy the Kid — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Billy the Kid — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Billy the Kid — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Billy the Kid — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Billy the Kid — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Billy the Kid — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Billy the Kid — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Billy the Kid — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Billy the Kid — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Billy the Kid — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Billy the Kid — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Billy the Kid — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Billy the Kid — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Billy the Kid — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Billy the Kid — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Billy the Kid — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Billy the Kid — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Billy the Kid — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Billy the Kid — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Billy the Kid — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Billy the Kid — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Billy the Kid — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Billy the Kid — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Billy the Kid — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Billy the Kid — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Billy the Kid — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Billy the Kid — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Billy the Kid — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Billy the Kid — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Billy the Kid — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Billy the Kid — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Billy the Kid — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 3,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/billy-the-kid-2022",
+    "imdbId": "tt14586544"
   },
   {
     "id": "series-new-bandits-2023",
@@ -21474,146 +9389,12 @@
     "description": "Adrift and desperately needing money to pay for his ailing adoptive father's care, Ubaldo, a bank clerk who's unable to remember his childhood, receives a…",
     "poster": "https://image.tmdb.org/t/p/w1280/uHoCuilwOnH0BWX9IO3aYv8Fd9q.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/uHoCuilwOnH0BWX9IO3aYv8Fd9q.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "new-bandits-2023",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "New Bandits — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "New Bandits — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "New Bandits — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "New Bandits — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "New Bandits — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "New Bandits — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "New Bandits — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "New Bandits — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "New Bandits — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "New Bandits — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "New Bandits — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "New Bandits — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "New Bandits — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "New Bandits — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "New Bandits — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "New Bandits — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "New Bandits — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "New Bandits — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "New Bandits — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "New Bandits — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "New Bandits — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "New Bandits — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "New Bandits — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "New Bandits — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/new-bandits-2023",
+    "imdbId": "tt27208330"
   },
   {
     "id": "series-the-head-of-joaquin-murrieta-2023",
@@ -21634,101 +9415,12 @@
     "description": "Greed took over California because of the gold rush. It made people thirsty for wealth and land. There, in the newly drawn border between Mexico and the U…",
     "poster": "https://image.tmdb.org/t/p/w1280/Ap1qqXyZmAEaTA8gCMi0qb7xBHd.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/Ap1qqXyZmAEaTA8gCMi0qb7xBHd.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🌸",
     "slug": "the-head-of-joaquin-murrieta-2023",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The Head of Joaquín Murrieta — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The Head of Joaquín Murrieta — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The Head of Joaquín Murrieta — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The Head of Joaquín Murrieta — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The Head of Joaquín Murrieta — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The Head of Joaquín Murrieta — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The Head of Joaquín Murrieta — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The Head of Joaquín Murrieta — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The Head of Joaquín Murrieta — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The Head of Joaquín Murrieta — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The Head of Joaquín Murrieta — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The Head of Joaquín Murrieta — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The Head of Joaquín Murrieta — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The Head of Joaquín Murrieta — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The Head of Joaquín Murrieta — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The Head of Joaquín Murrieta — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-head-of-joaquin-murrieta-2023",
+    "imdbId": "tt15383758"
   },
   {
     "id": "series-django-2023",
@@ -21749,101 +9441,12 @@
     "description": "In the Wild West in the 1860s and 1870s, Sarah and John have founded New Babylon, a city of outcasts of all backgrounds. Haunted by the murder of his fami…",
     "poster": "https://image.tmdb.org/t/p/w1280/gXdTX8TojqqBr2DhwdNS0NjdZer.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gXdTX8TojqqBr2DhwdNS0NjdZer.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "📻",
     "slug": "django-2023",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Django — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Django — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Django — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Django — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Django — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Django — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Django — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Django — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Django — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Django — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Django — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Django — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Django — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Django — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Django — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Django — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/django-2023",
+    "imdbId": "tt14084828"
   },
   {
     "id": "series-joe-pickett-2021",
@@ -21864,146 +9467,12 @@
     "description": "A game warden and his family navigate the changing political and socio-economic climate in a small rural town in Wyoming on the verge of economic collapse…",
     "poster": "https://image.tmdb.org/t/p/w1280/gazijGFhqouUBvrTiFE9f0ZqF07.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gazijGFhqouUBvrTiFE9f0ZqF07.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🍄",
     "slug": "joe-pickett-2021",
-    "episode": "S2 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Joe Pickett — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Joe Pickett — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Joe Pickett — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Joe Pickett — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Joe Pickett — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Joe Pickett — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Joe Pickett — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Joe Pickett — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Joe Pickett — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Joe Pickett — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Joe Pickett — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Joe Pickett — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Joe Pickett — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Joe Pickett — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Joe Pickett — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Joe Pickett — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Joe Pickett — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Joe Pickett — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Joe Pickett — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Joe Pickett — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Joe Pickett — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Joe Pickett — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Joe Pickett — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Joe Pickett — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 2,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/joe-pickett-2021",
+    "imdbId": "tt14271652"
   },
   {
     "id": "series-1883-2021",
@@ -22024,101 +9493,12 @@
     "description": "Follow the Dutton family as they embark on a journey west through the Great Plains toward the last bastion of untamed America. A stark retelling of Wester…",
     "poster": "https://image.tmdb.org/t/p/w1280/uQUHCqxHsG9blvtCoL7vluMG9Jp.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/uQUHCqxHsG9blvtCoL7vluMG9Jp.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🏛️",
     "slug": "1883-2021",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "1883 — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "1883 — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "1883 — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "1883 — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "1883 — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "1883 — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "1883 — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "1883 — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "1883 — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "1883 — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "1883 — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "1883 — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "1883 — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "1883 — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "1883 — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "1883 — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/1883-2021",
+    "imdbId": "tt13991232"
   },
   {
     "id": "series-the-english-2022",
@@ -22139,101 +9519,12 @@
     "description": "An aristocratic Englishwoman, Lady Cornelia Locke, arrives into the new and wild landscape of the American West to wreak revenge on the man she sees as re…",
     "poster": "https://image.tmdb.org/t/p/w1280/eenxjEAPwPbkjN6W5ZzTbfLA4GM.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/eenxjEAPwPbkjN6W5ZzTbfLA4GM.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🖤",
     "slug": "the-english-2022",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "The English — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "The English — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "The English — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "The English — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "The English — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "The English — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "The English — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "The English — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "The English — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "The English — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "The English — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "The English — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "The English — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "The English — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "The English — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "The English — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/the-english-2022",
+    "imdbId": "tt11771270"
   },
   {
     "id": "series-yellowstone-2018",
@@ -22254,281 +9545,12 @@
     "description": "Follow the violent world of the Dutton family, who controls the largest contiguous ranch in the United States. Led by their patriarch John Dutton, the fam…",
     "poster": "https://image.tmdb.org/t/p/w1280/ynSOcgDLZfdLCZfRSYZGiTgYJVo.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ynSOcgDLZfdLCZfRSYZGiTgYJVo.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "👽",
     "slug": "yellowstone-2018",
-    "episode": "S5 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Yellowstone — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Yellowstone — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Yellowstone — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Yellowstone — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Yellowstone — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Yellowstone — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Yellowstone — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Yellowstone — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Yellowstone — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Yellowstone — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Yellowstone — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Yellowstone — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Yellowstone — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Yellowstone — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Yellowstone — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Yellowstone — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Yellowstone — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Yellowstone — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Yellowstone — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Yellowstone — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Yellowstone — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Yellowstone — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Yellowstone — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Yellowstone — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 4,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Yellowstone — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Yellowstone — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Yellowstone — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Yellowstone — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Yellowstone — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Yellowstone — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Yellowstone — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Yellowstone — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 5,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Yellowstone — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Yellowstone — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Yellowstone — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Yellowstone — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Yellowstone — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Yellowstone — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Yellowstone — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Yellowstone — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Yellowstone — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Yellowstone — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Yellowstone — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Yellowstone — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Yellowstone — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Yellowstone — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Yellowstone — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Yellowstone — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 5,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/yellowstone-2018",
+    "imdbId": "tt4236770"
   },
   {
     "id": "series-warrior-2019",
@@ -22549,191 +9571,12 @@
     "description": "A gritty, action-packed crime drama set during the brutal Tong Wars of San Francisco’s Chinatown in the second half of the 19th century. The series follow…",
     "poster": "https://image.tmdb.org/t/p/w1280/akshc6F3VmhJpvniRRlgqDt1ndT.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/akshc6F3VmhJpvniRRlgqDt1ndT.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🏜️",
     "slug": "warrior-2019",
-    "episode": "S3 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Warrior — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Warrior — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Warrior — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Warrior — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Warrior — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Warrior — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Warrior — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Warrior — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Warrior — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Warrior — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Warrior — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Warrior — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Warrior — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Warrior — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Warrior — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Warrior — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Warrior — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Warrior — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Warrior — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Warrior — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Warrior — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Warrior — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Warrior — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Warrior — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Warrior — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Warrior — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Warrior — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Warrior — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Warrior — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Warrior — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Warrior — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Warrior — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 3,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/warrior-2019",
+    "imdbId": "tt5743796"
   },
   {
     "id": "series-godless-2017",
@@ -22754,101 +9597,12 @@
     "description": "A ruthless outlaw terrorizes the West in search of a former member of his gang, who’s found a new life in a quiet town populated only by women.",
     "poster": "https://image.tmdb.org/t/p/w1280/8iHVVdQUYPU0QIm2d2r7sEgQAFE.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8iHVVdQUYPU0QIm2d2r7sEgQAFE.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🦍",
     "slug": "godless-2017",
-    "episode": "S1 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Godless — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Godless — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Godless — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Godless — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Godless — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Godless — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Godless — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Godless — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Godless — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Godless — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Godless — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Godless — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Godless — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Godless — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Godless — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Godless — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/godless-2017",
+    "imdbId": "tt5516154"
   },
   {
     "id": "series-westworld-2016",
@@ -22869,236 +9623,12 @@
     "description": "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it…",
     "poster": "https://image.tmdb.org/t/p/w1280/rX5hvSRB2k4YoIvRg6Zky52rWk0.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/rX5hvSRB2k4YoIvRg6Zky52rWk0.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🧅",
     "slug": "westworld-2016",
-    "episode": "S4 EP8",
-    "seasons": [
-      {
-        "season": 1,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Westworld — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Westworld — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Westworld — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Westworld — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Westworld — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Westworld — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Westworld — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Westworld — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 2,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Westworld — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Westworld — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Westworld — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Westworld — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Westworld — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Westworld — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Westworld — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Westworld — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 3,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Westworld — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Westworld — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Westworld — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Westworld — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Westworld — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Westworld — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Westworld — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Westworld — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      },
-      {
-        "season": 4,
-        "episodes": [
-          {
-            "number": 1,
-            "title": "Westworld — Episode 1",
-            "duration": "42m"
-          },
-          {
-            "number": 2,
-            "title": "Westworld — Episode 2",
-            "duration": "45m"
-          },
-          {
-            "number": 3,
-            "title": "Westworld — Episode 3",
-            "duration": "48m"
-          },
-          {
-            "number": 4,
-            "title": "Westworld — Episode 4",
-            "duration": "51m"
-          },
-          {
-            "number": 5,
-            "title": "Westworld — Episode 5",
-            "duration": "54m"
-          },
-          {
-            "number": 6,
-            "title": "Westworld — Episode 6",
-            "duration": "42m"
-          },
-          {
-            "number": 7,
-            "title": "Westworld — Episode 7",
-            "duration": "45m"
-          },
-          {
-            "number": 8,
-            "title": "Westworld — Episode 8",
-            "duration": "48m"
-          }
-        ]
-      }
-    ],
-    "episodes": [
-      {
-        "number": 1,
-        "title": "Westworld — Episode 1",
-        "duration": "42m"
-      },
-      {
-        "number": 2,
-        "title": "Westworld — Episode 2",
-        "duration": "45m"
-      },
-      {
-        "number": 3,
-        "title": "Westworld — Episode 3",
-        "duration": "48m"
-      },
-      {
-        "number": 4,
-        "title": "Westworld — Episode 4",
-        "duration": "51m"
-      },
-      {
-        "number": 5,
-        "title": "Westworld — Episode 5",
-        "duration": "54m"
-      },
-      {
-        "number": 6,
-        "title": "Westworld — Episode 6",
-        "duration": "42m"
-      },
-      {
-        "number": 7,
-        "title": "Westworld — Episode 7",
-        "duration": "45m"
-      },
-      {
-        "number": 8,
-        "title": "Westworld — Episode 8",
-        "duration": "48m"
-      }
-    ],
+    "seasonCount": 4,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/series/westworld-2016",
+    "imdbId": "tt0475784"
   },
   {
     "id": "movie-oscar-shaw-2026",
@@ -23120,14 +9650,12 @@
     "description": "After retiring from the police force, a relentless detective haunted by the tragic loss of his closest friend sets out on a perilous quest for vengeance,…",
     "poster": "https://image.tmdb.org/t/p/w1280/6D6M5z4reppUxo2cnBEKI02Csp1.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/6D6M5z4reppUxo2cnBEKI02Csp1.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🤠",
     "slug": "oscar-shaw-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/oscar-shaw-2026",
+    "imdbId": "tt27674706"
   },
   {
     "id": "movie-gold-rush-gang-2025",
@@ -23149,14 +9677,12 @@
     "description": "At the tail end of World War II, a bandit leader and his crew go up against his sworn enemy and the Japanese army to rob a train full of gold.",
     "poster": "https://image.tmdb.org/t/p/w1280/kYsU56QEcwEr8jAQ6Vm3M8bXTWz.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kYsU56QEcwEr8jAQ6Vm3M8bXTWz.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🐉",
     "slug": "gold-rush-gang-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/gold-rush-gang-2025",
+    "imdbId": "tt36711248"
   },
   {
     "id": "movie-day-of-reckoning-2025",
@@ -23178,14 +9704,12 @@
     "description": "Put-upon lawman John Dorsey is on the verge of losing his wife and his job as sheriff, so he posses up with bullish U.S. Marshall Butch Hayden to hold out…",
     "poster": "https://image.tmdb.org/t/p/w1280/gIm5sjPSm973yKf6sbvd5lOkg3X.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gIm5sjPSm973yKf6sbvd5lOkg3X.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "👑",
     "slug": "day-of-reckoning-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/day-of-reckoning-2025",
+    "imdbId": "tt35317668"
   },
   {
     "id": "movie-ghosts-of-red-ridge-2024",
@@ -23207,14 +9731,12 @@
     "description": "After foiling a good ol' fashioned stickup in the gold bust town of Red Ridge, Texas, the town sheriff jails a mysterious stranger suspected of ties to th…",
     "poster": "https://image.tmdb.org/t/p/w1280/3IrF1QxYEl4GMlzgW7OhgWOld8X.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/3IrF1QxYEl4GMlzgW7OhgWOld8X.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "🔥",
     "slug": "ghosts-of-red-ridge-2024",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/ghosts-of-red-ridge-2024",
+    "imdbId": "tt31040456"
   },
   {
     "id": "movie-gunslingers-2025",
@@ -23235,14 +9757,12 @@
     "description": "When the most wanted man in America surfaces in a small Kentucky town, his violent history -- and a blood-thirsty mob seeking vengeance and a king’s ranso…",
     "poster": "https://image.tmdb.org/t/p/w1280/zksO4lVnRKRoaSYzh2EDn2Z3Pel.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zksO4lVnRKRoaSYzh2EDn2Z3Pel.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🦸",
     "slug": "gunslingers-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/gunslingers-2025",
+    "imdbId": "tt24850708"
   },
   {
     "id": "movie-gto-revival-2024",
@@ -23265,14 +9785,12 @@
     "description": "Onizuka, a former motorcycle gang member turned high-school teacher is assigned to a private academy full of troubled students. The issue at this high sch…",
     "poster": "https://image.tmdb.org/t/p/w1280/lxWkUzGK3XrMoBQGZxcCZFK0m1L.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/lxWkUzGK3XrMoBQGZxcCZFK0m1L.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "🚀",
     "slug": "gto-revival-2024",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/gto-revival-2024",
+    "imdbId": "tt37535705"
   },
   {
     "id": "movie-lake-placid-legacy-2018",
@@ -23295,14 +9813,12 @@
     "description": "A group of young explorers discover a secret area hidden from all maps and GPS devices. When they reach the center of the lake, they discover an abandoned…",
     "poster": "https://image.tmdb.org/t/p/w1280/3rIocL2KDm8d2sCVmqDI0IEK2vF.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/3rIocL2KDm8d2sCVmqDI0IEK2vF.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🌌",
     "slug": "lake-placid-legacy-2018",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/lake-placid-legacy-2018",
+    "imdbId": "tt7875948"
   },
   {
     "id": "movie-invader-zim-enter-the-florpus-2019",
@@ -23325,14 +9841,12 @@
     "description": "ZIM discovers his almighty leaders never had any intention of coming to Earth and he loses confidence in himself for the first time in his life, which is…",
     "poster": "https://image.tmdb.org/t/p/w1280/1CDdClx0DGembBYjRWFH7HB2uff.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1CDdClx0DGembBYjRWFH7HB2uff.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "⚔️",
     "slug": "invader-zim-enter-the-florpus-2019",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/invader-zim-enter-the-florpus-2019",
+    "imdbId": "tt6739094"
   },
   {
     "id": "movie-the-pure-memories-of-my-heart-2019",
@@ -23355,14 +9869,12 @@
     "description": "Seo Rin who was recognized for her directing skills abroad, returns to Korea and will be the director of a green drama \"Natural Romance\". She will also be…",
     "poster": "https://image.tmdb.org/t/p/w1280/8VR8ynH0Ri2g0Saa7G1WuJMRy8P.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8VR8ynH0Ri2g0Saa7G1WuJMRy8P.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "👹",
     "slug": "the-pure-memories-of-my-heart-2019",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-pure-memories-of-my-heart-2019",
+    "imdbId": "tt8589788"
   },
   {
     "id": "movie-who-killed-santa-a-murderville-murder-mystery-2022",
@@ -23385,14 +9897,12 @@
     "description": "A holiday-hating detective is forced to solve a murder — and save Christmas — with help from famous trainees who must improv their way through the case.",
     "poster": "https://image.tmdb.org/t/p/w1280/oo4Qn2q2MRpWVXeZnlIGYk38HPh.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/oo4Qn2q2MRpWVXeZnlIGYk38HPh.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "🦖",
     "slug": "who-killed-santa-a-murderville-murder-mystery-2022",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/who-killed-santa-a-murderville-murder-mystery-2022",
+    "imdbId": "tt23747062"
   },
   {
     "id": "movie-girl-in-the-box-2016",
@@ -23415,14 +9925,12 @@
     "description": "The true story of 20-year-old Colleen Stan, a hitchhiking woman abducted by a young couple and held captive for seven years, during which time she's tortu…",
     "poster": "https://image.tmdb.org/t/p/w1280/910LNi2Fm47Bb8hCWW5nXXy5065.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/910LNi2Fm47Bb8hCWW5nXXy5065.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🧪",
     "slug": "girl-in-the-box-2016",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/girl-in-the-box-2016",
+    "imdbId": "tt5957584"
   },
   {
     "id": "movie-uncle-frank-2020",
@@ -23445,14 +9953,12 @@
     "description": "In 1973, when Frank Bledsoe and his 18-year-old niece Beth take a road trip from Manhattan to Creekville, South Carolina for the family patriarch's funera…",
     "poster": "https://image.tmdb.org/t/p/w1280/bfnUoHV9IPDGmxQmGAEOKIBNIWM.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/bfnUoHV9IPDGmxQmGAEOKIBNIWM.jpg",
-    "gradient": "linear-gradient(135deg, #200122 0%, #6f0000 100%)",
-    "emoji": "🦇",
     "slug": "uncle-frank-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/uncle-frank-2020",
+    "imdbId": "tt11327514"
   },
   {
     "id": "movie-a-charlie-brown-christmas-1965",
@@ -23475,14 +9981,12 @@
     "description": "When Charlie Brown complains about the overwhelming materialism that he sees amongst everyone during the Christmas season, Lucy suggests that he become di…",
     "poster": "https://image.tmdb.org/t/p/w1280/ucWnzjWWWd6CmRal8J3tWz6m1A7.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ucWnzjWWWd6CmRal8J3tWz6m1A7.jpg",
-    "gradient": "linear-gradient(135deg, #1a002e 0%, #4a0e4e 50%, #340e0e 100%)",
-    "emoji": "🕷️",
     "slug": "a-charlie-brown-christmas-1965",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-charlie-brown-christmas-1965",
+    "imdbId": "tt0059026"
   },
   {
     "id": "movie-a-christmas-princess-2019",
@@ -23505,14 +10009,12 @@
     "description": "A struggling chef living in a trendy New York borough, Jessica took over a small restaurant where she used to work as a waitress, but it’s growing tough t…",
     "poster": "https://image.tmdb.org/t/p/w1280/iihf4ACgehzZtHSS6bu2IC61vXP.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/iihf4ACgehzZtHSS6bu2IC61vXP.jpg",
-    "gradient": "linear-gradient(135deg, #000428 0%, #004e92 100%)",
-    "emoji": "🧟",
     "slug": "a-christmas-princess-2019",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-christmas-princess-2019",
+    "imdbId": "tt10177634"
   },
   {
     "id": "movie-marry-me-at-christmas-2017",
@@ -23535,14 +10037,12 @@
     "description": "Organizing a Christmas wedding is a true treat for bridal boutique owner Madeline Krug. She loves the challenge of finding the perfect dress for the bride…",
     "poster": "https://image.tmdb.org/t/p/w1280/1nMWPC9DEW7fTnakxhHoDAwGsvi.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/1nMWPC9DEW7fTnakxhHoDAwGsvi.jpg",
-    "gradient": "linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)",
-    "emoji": "🕵️",
     "slug": "marry-me-at-christmas-2017",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/marry-me-at-christmas-2017",
+    "imdbId": "tt6791000"
   },
   {
     "id": "movie-never-kiss-a-man-in-a-christmas-sweater-2020",
@@ -23565,14 +10065,12 @@
     "description": "Single mom Maggie is facing Christmas alone until Lucas crashes into her life and becomes an unexpected house guest. Together they overcome Christmas whil…",
     "poster": "https://image.tmdb.org/t/p/w1280/cJb04VJ0dmb49UKRfvmTEZMh7Gj.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cJb04VJ0dmb49UKRfvmTEZMh7Gj.jpg",
-    "gradient": "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
-    "emoji": "🌊",
     "slug": "never-kiss-a-man-in-a-christmas-sweater-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/never-kiss-a-man-in-a-christmas-sweater-2020",
+    "imdbId": "tt13192538"
   },
   {
     "id": "movie-the-sweetest-christmas-2017",
@@ -23595,14 +10093,12 @@
     "description": "After breaking up with her long-term boyfriend just before the holidays, passionate baker Kylie reconnects with her high school sweetheart, Nick. Thanks t…",
     "poster": "https://image.tmdb.org/t/p/w1280/pfuLljw9tNNIPABwYgHo30cQhLH.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pfuLljw9tNNIPABwYgHo30cQhLH.jpg",
-    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)",
-    "emoji": "💍",
     "slug": "the-sweetest-christmas-2017",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-sweetest-christmas-2017",
+    "imdbId": "tt7030432"
   },
   {
     "id": "movie-the-princess-switch-switched-again-2020",
@@ -23625,14 +10121,12 @@
     "description": "When Duchess Margaret unexpectedly inherits the throne & hits a rough patch with Kevin, it’s up to Stacy to save the day before a new lookalike — party gi…",
     "poster": "https://image.tmdb.org/t/p/w1280/zCHe8ckyufHVUZaoHu2DiF8evET.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/zCHe8ckyufHVUZaoHu2DiF8evET.jpg",
-    "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-    "emoji": "🎭",
     "slug": "the-princess-switch-switched-again-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-princess-switch-switched-again-2020",
+    "imdbId": "tt11199410"
   },
   {
     "id": "movie-kidnapped-by-a-classmate-2020",
@@ -23655,14 +10149,12 @@
     "description": "Shortly after her family moves to a new town, a teenage girl vanishes. Her mother takes it upon herself to search for her daughter, which puts her on a co…",
     "poster": "https://image.tmdb.org/t/p/w1280/ypvsotsEfxbeGrlTKRdPfbQennm.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/ypvsotsEfxbeGrlTKRdPfbQennm.jpg",
-    "gradient": "linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%)",
-    "emoji": "🥊",
     "slug": "kidnapped-by-a-classmate-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/kidnapped-by-a-classmate-2020",
+    "imdbId": "tt10238708"
   },
   {
     "id": "movie-killer-dream-home-2020",
@@ -23685,14 +10177,12 @@
     "description": "When happy couple Jules and Josh buy their dream house on a magnificent estate, they recruit beautiful Morgan to help them with the interior design, unawa…",
     "poster": "https://image.tmdb.org/t/p/w1280/kdY8H6yoPXfnSGX7pxzs4yHfCSm.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kdY8H6yoPXfnSGX7pxzs4yHfCSm.jpg",
-    "gradient": "linear-gradient(135deg, #00b4db 0%, #0083b0 100%)",
-    "emoji": "🤖",
     "slug": "killer-dream-home-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/killer-dream-home-2020",
+    "imdbId": "tt11922698"
   },
   {
     "id": "movie-a-west-wing-special-to-benefit-when-we-all-vote-2020",
@@ -23715,14 +10205,12 @@
     "description": "Taped at Los Angeles’ iconic Orpheum Theatre, this staged presentation of The West Wing’s “Hartsfield’s Landing” episode stars core cast members along wit…",
     "poster": "https://image.tmdb.org/t/p/w1280/r8xZ7dJVFhQqsFeVg1EL40fjtsr.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/r8xZ7dJVFhQqsFeVg1EL40fjtsr.jpg",
-    "gradient": "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
-    "emoji": "🩸",
     "slug": "a-west-wing-special-to-benefit-when-we-all-vote-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-west-wing-special-to-benefit-when-we-all-vote-2020",
+    "imdbId": "tt13180026"
   },
   {
     "id": "movie-killer-mountain-2011",
@@ -23745,14 +10233,12 @@
     "description": "A team of  climbers is assembled by a rich and eccentric man to rescue a missing expedition he sent up to a forbidden mountain who disappeared after sendi…",
     "poster": "https://image.tmdb.org/t/p/w1280/yh6pkHkubZiLgMHlCcV8MP4PEs9.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/yh6pkHkubZiLgMHlCcV8MP4PEs9.jpg",
-    "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    "emoji": "🔮",
     "slug": "killer-mountain-2011",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/killer-mountain-2011",
+    "imdbId": "tt1728638"
   },
   {
     "id": "movie-we-bare-bears-the-movie-2020",
@@ -23775,14 +10261,12 @@
     "description": "When Grizz, Panda, and Ice Bear's love of food trucks and viral videos get out of hand, the brothers are now chased away from their home and embark on a t…",
     "poster": "https://image.tmdb.org/t/p/w1280/pO1SnM5a1fEsYrFaVZW78Wb0zRJ.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pO1SnM5a1fEsYrFaVZW78Wb0zRJ.jpg",
-    "gradient": "linear-gradient(135deg, #0575e6 0%, #00f260 100%)",
-    "emoji": "🔔",
     "slug": "we-bare-bears-the-movie-2020",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/we-bare-bears-the-movie-2020",
+    "imdbId": "tt10474606"
   },
   {
     "id": "movie-a-christmas-prince-the-royal-baby-2019",
@@ -23805,14 +10289,12 @@
     "description": "Christmas brings the ultimate gift to Aldovia: a royal baby. But first, Queen Amber must help her family and kingdom by finding a missing peace treaty.",
     "poster": "https://image.tmdb.org/t/p/w1280/uuCj46exjP6UOo976MAWACWFv1X.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/uuCj46exjP6UOo976MAWACWFv1X.jpg",
-    "gradient": "linear-gradient(135deg, #e50914 0%, #b20710 50%, #4a0e17 100%)",
-    "emoji": "💀",
     "slug": "a-christmas-prince-the-royal-baby-2019",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-christmas-prince-the-royal-baby-2019",
+    "imdbId": "tt10006006"
   },
   {
     "id": "movie-a-christmas-prince-the-royal-wedding-2018",
@@ -23835,14 +10317,12 @@
     "description": "A year after Amber helped Richard secure the crown. The two are set to tie the knot in a royal Christmas wedding — but their plans are jeopardized when Am…",
     "poster": "https://image.tmdb.org/t/p/w1280/8oybDLEOvFdUprK8BkFLN2ZwBC1.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8oybDLEOvFdUprK8BkFLN2ZwBC1.jpg",
-    "gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-    "emoji": "🐍",
     "slug": "a-christmas-prince-the-royal-wedding-2018",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-christmas-prince-the-royal-wedding-2018",
+    "imdbId": "tt8709036"
   },
   {
     "id": "movie-a-christmas-prince-2017",
@@ -23865,14 +10345,12 @@
     "description": "When a reporter goes undercover as a nanny to get the inside scoop on a playboy prince, she gets tangled in some royal intrigue and ends up finding love -…",
     "poster": "https://image.tmdb.org/t/p/w1280/mNjoA9jDNbxPJqeYmeETLStpYZF.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mNjoA9jDNbxPJqeYmeETLStpYZF.jpg",
-    "gradient": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)",
-    "emoji": "⚡",
     "slug": "a-christmas-prince-2017",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/a-christmas-prince-2017",
+    "imdbId": "tt7608418"
   },
   {
     "id": "movie-kevin-hart-what-now-2016",
@@ -23895,14 +10373,12 @@
     "description": "Comedian Kevin Hart performs in front of a crowd of 50,000 people at Philadelphia's outdoor venue, Lincoln Financial Field.",
     "poster": "https://image.tmdb.org/t/p/w1280/d4pIsjOiPz8CUhkBCXFJVxSwNDY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/d4pIsjOiPz8CUhkBCXFJVxSwNDY.jpg",
-    "gradient": "linear-gradient(135deg, #360033 0%, #0b8793 100%)",
-    "emoji": "🎒",
     "slug": "kevin-hart-what-now-2016",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/kevin-hart-what-now-2016",
+    "imdbId": "tt4669186"
   },
   {
     "id": "movie-the-muppet-show-2026",
@@ -23925,14 +10401,12 @@
     "description": "Music, comedy, and a whole lot of chaos is bound to ensue when The Muppets once again take the stage of the original Muppet Theatre with their very specia…",
     "poster": "https://image.tmdb.org/t/p/w1280/qz7B5uDspnkoz068wLbLnleotwV.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/qz7B5uDspnkoz068wLbLnleotwV.jpg",
-    "gradient": "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
-    "emoji": "🛵",
     "slug": "the-muppet-show-2026",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/the-muppet-show-2026",
+    "imdbId": "tt37969426"
   },
   {
     "id": "movie-before-your-father-finds-us-2025",
@@ -23955,14 +10429,12 @@
     "description": "Sophia and baby daughter, Emily, are forced to go into witness protection after she has to testify against her ex-husband Mason for his crimes. After year…",
     "poster": "https://image.tmdb.org/t/p/w1280/rg2NplwhNS4e4OfGLenWj93CwU2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/rg2NplwhNS4e4OfGLenWj93CwU2.jpg",
-    "gradient": "linear-gradient(135deg, #0c0c1d 0%, #3a1c71 50%, #d76d77 100%)",
-    "emoji": "🐘",
     "slug": "before-your-father-finds-us-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/before-your-father-finds-us-2025",
+    "imdbId": "tt37359791"
   },
   {
     "id": "movie-welcome-now-get-lost-2025",
@@ -23985,14 +10457,12 @@
     "description": "Facing a whirlwind of emotions, comedians endure relentless insults from angry villagers. Can they turn hostility into laughter?",
     "poster": "https://image.tmdb.org/t/p/w1280/pesChmWgGtZosOpg8rop9MetIsw.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pesChmWgGtZosOpg8rop9MetIsw.jpg",
-    "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
-    "emoji": "👻",
     "slug": "welcome-now-get-lost-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/welcome-now-get-lost-2025",
+    "imdbId": "tt35804779"
   },
   {
     "id": "movie-mountainhead-2025",
@@ -24015,14 +10485,11 @@
     "description": "A group of billionaire friends get together against the backdrop of a rolling international crisis.",
     "poster": "https://image.tmdb.org/t/p/w1280/8LjN496M9Mo0b5M6uvlVObz81bn.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8LjN496M9Mo0b5M6uvlVObz81bn.jpg",
-    "gradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
-    "emoji": "🩺",
     "slug": "mountainhead-2025",
-    "episode": null,
-    "seasons": null,
-    "episodes": null,
+    "seasonCount": 1,
     "isUnavailable": false,
-    "trailerUrl": null
+    "trailerUrl": null,
+    "idlixUrl": "https://z2.idlixku.com/movie/mountainhead-2025",
+    "imdbId": "tt35396529"
   }
 ];
-}));
