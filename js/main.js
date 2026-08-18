@@ -637,16 +637,54 @@ function getPosterForMovie(title, slug) {
 }
 
 // Generates and stores movie objects into movieRegistry
-function generateMovies(category, count = 14) {
-  const list = TOP_VIEW_DATABASE[category] || TOP_VIEW_DATABASE.topview;
+function generateMovies(category, count = 20) {
+  let list = TOP_VIEW_DATABASE[category] || TOP_VIEW_DATABASE.topview;
+
+  // Augment category list with items from IDLIX_DATABASE if available
+  if (window.IDLIX_DATABASE && Array.isArray(window.IDLIX_DATABASE)) {
+    let idlixFiltered = [];
+    if (category === 'series') {
+      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.type === 'series');
+    } else if (category === 'anime') {
+      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.genres.includes('Animation') || m.country === 'Jepang');
+    } else if (category === 'kdrama') {
+      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.country === 'Korea Selatan' || m.genres.includes('Romance') || m.description.toLowerCase().includes('korea'));
+    } else if (category === 'indonesia') {
+      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.country === 'Indonesia' || m.genres.includes('Horror'));
+    } else if (category === 'latest') {
+      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.year >= 2025).concat(window.IDLIX_DATABASE.filter(m => m.year === 2024));
+    } else if (category === 'topview' || category === 'popular') {
+      idlixFiltered = window.IDLIX_DATABASE.filter(m => parseFloat(m.rating) >= 8.6);
+    } else if (category === 'trending') {
+      idlixFiltered = window.IDLIX_DATABASE.slice(0, 40);
+    }
+
+    if (idlixFiltered.length > 0) {
+      const titleMap = new Set(list.map(i => i.title.toLowerCase()));
+      idlixFiltered.forEach(m => {
+        if (!titleMap.has(m.title.toLowerCase())) {
+          list = list.concat(m);
+          titleMap.add(m.title.toLowerCase());
+        }
+      });
+    }
+  }
 
   return list.slice(0, count).map((item, i) => {
-    if (item.title.toLowerCase().includes('rick and morty')) {
+    if (item.title && item.title.toLowerCase().includes('rick and morty')) {
       return rickAndMorty;
     }
 
-    const movieId = `${category}-${i}-${slugify(item.title)}`;
-    const slug = slugify(item.title);
+    // If item is already a fully formed movie object from IDLIX_DATABASE
+    if (item.id && item.originalTitle && item.genres && item.gradient) {
+      movieRegistry.set(item.id, item);
+      movieRegistry.set(item.slug, item);
+      movieRegistry.set(slugify(item.title), item);
+      return item;
+    }
+
+    const movieId = item.id || `${category}-${i}-${slugify(item.title)}`;
+    const slug = item.slug || slugify(item.title);
     const gradientIndex = (Object.keys(TOP_VIEW_DATABASE).indexOf(category) * 4 + i) % GRADIENTS.length;
     const isSeries = item.type === 'series';
     const epCount = item.episodeCount || (isSeries ? 8 : null);
@@ -657,45 +695,63 @@ function generateMovies(category, count = 14) {
       duration: `${45 + (epI % 15)}m`
     })) : null;
 
-    const poster = getPosterForMovie(item.title, slug);
-    const backdrop = poster || 'assets/hero/hero-1.jpg';
+    const poster = item.poster || getPosterForMovie(item.title, slug);
+    const backdrop = item.backdrop || poster || 'assets/hero/hero-1.jpg';
 
     const movieObj = {
       id: movieId,
       title: item.title,
-      originalTitle: `${item.title} (${item.year})`,
+      originalTitle: item.originalTitle || `${item.title} (${item.year})`,
       year: item.year,
-      rating: item.rating,
-      genre: item.genre,
-      genres: [item.genre, 'Action', 'Drama'].filter((v, idx, arr) => arr.indexOf(v) === idx),
-      quality: item.quality === '4K' ? '4K Ultra HD' : (item.quality === '1080p' ? '1080p FHD' : 'HD'),
-      type: item.type,
+      rating: item.rating || '8.8',
+      genre: item.genre || (item.genres && item.genres[0]) || 'Film',
+      genres: item.genres || [item.genre || 'Action', 'Drama'].filter((v, idx, arr) => arr.indexOf(v) === idx),
+      quality: item.quality === '4K' ? '4K Ultra HD' : (item.quality === '1080p' ? '1080p FHD' : (item.quality || 'HD')),
+      type: item.type || 'movie',
       episode: isSeries ? `S1 EP${epCount}` : null,
       episodes,
       poster,
       backdrop,
-      gradient: GRADIENTS[gradientIndex],
+      gradient: item.gradient || GRADIENTS[gradientIndex],
       emoji: item.emoji || '🎬',
       country: item.country || 'United States',
       director: item.director || 'Christopher Nolan',
       cast: item.cast || 'Star Ensemble Cast',
-      description: item.desc || `Saksikan film blockbuster ${item.title} (${item.year}) dengan kualitas visual jernih dan subtitle Indonesia resmi di Cinelax.`,
-      slug: `${slug}-${item.year}`,
+      description: item.desc || item.description || `Saksikan film blockbuster ${item.title} (${item.year}) dengan kualitas visual jernih dan subtitle Indonesia resmi di Cinelax.`,
+      slug: item.slug || `${slug}-${item.year}`,
       imdbId: item.imdbId,
       tmdbId: item.tmdbId,
       idlixUrl: isSeries ? `https://z2.idlixku.com/series/${slug}-${item.year}` : `https://z2.idlixku.com/movie/${slug}-${item.year}`,
-      isUnavailable: Boolean(item.unavailable || (item.year && item.year >= 2026)),
+      isUnavailable: Boolean(item.unavailable || (item.year && item.year >= 2027)),
       trailerUrl: item.trailerUrl || (item.unavailable ? 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ' : null)
     };
 
     movieRegistry.set(movieId, movieObj);
     movieRegistry.set(movieObj.slug, movieObj);
+    movieRegistry.set(slugify(movieObj.title), movieObj);
     return movieObj;
   });
 }
 
 // Prepopulate all categories into registry
 function initRegistry() {
+  // Pre-load all IDLIX movies into the registry map
+  if (window.IDLIX_DATABASE && Array.isArray(window.IDLIX_DATABASE)) {
+    window.IDLIX_DATABASE.forEach(m => {
+      movieRegistry.set(m.id, m);
+      movieRegistry.set(m.slug, m);
+      movieRegistry.set(slugify(m.title), m);
+    });
+  }
+
+  // Pre-load hero slides
+  heroSlides.forEach(slide => {
+    movieRegistry.set(slide.id, slide);
+    movieRegistry.set(slide.slug, slide);
+    movieRegistry.set(slugify(slide.title), slide);
+  });
+
+  // Prepopulate all categories
   Object.keys(TOP_VIEW_DATABASE).forEach(cat => generateMovies(cat, 50));
 }
 
@@ -739,7 +795,7 @@ function renderMovieCard(movie) {
   `;
 }
 
-function renderContentSection(containerId, category, count = 14) {
+function renderContentSection(containerId, category, count = 20) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
@@ -748,14 +804,14 @@ function renderContentSection(containerId, category, count = 14) {
 }
 
 function renderAllSections() {
-  renderContentSection('topview-row', 'topview', 14);
-  renderContentSection('trending-row', 'trending', 14);
-  renderContentSection('latest-row', 'latest', 14);
-  renderContentSection('popular-row', 'popular', 14);
-  renderContentSection('series-row', 'series', 14);
-  renderContentSection('kdrama-row', 'kdrama', 14);
-  renderContentSection('anime-row', 'anime', 14);
-  renderContentSection('indonesia-row', 'indonesia', 14);
+  renderContentSection('topview-row', 'topview', 24);
+  renderContentSection('trending-row', 'trending', 24);
+  renderContentSection('latest-row', 'latest', 24);
+  renderContentSection('popular-row', 'popular', 24);
+  renderContentSection('series-row', 'series', 24);
+  renderContentSection('kdrama-row', 'kdrama', 24);
+  renderContentSection('anime-row', 'anime', 24);
+  renderContentSection('indonesia-row', 'indonesia', 24);
 }
 
 // Open modal player or standalone detail
@@ -874,7 +930,7 @@ function initHeroSlider() {
 // ==========================================
 
 const STREAM_SERVERS = [
-  { id: 'server-1', name: 'Server 1 (IDLIX HD)', quality: '1080p Ultra Fast' },
+  { id: 'server-1', name: 'Server 1 (Cinelax Ultra HD)', quality: '1080p Ultra Fast' },
   { id: 'server-2', name: 'Server 2 (VidSrc VIP)', quality: 'Multi-Sub Indo' },
   { id: 'server-3', name: 'Server 3 (Filemoon)', quality: 'Super Buffer' },
   { id: 'server-4', name: 'Server 4 (Backup Cloud)', quality: '720p HD Clean' }
@@ -1059,7 +1115,6 @@ function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
   const titleEl = document.getElementById('modal-movie-title');
   const typeBadge = document.getElementById('modal-type-badge');
   const qualityBadge = document.getElementById('modal-quality-badge');
-  const idlixBtn = document.getElementById('btn-open-idlix');
 
   if (titleEl) {
     if (movie.type === 'series') {
@@ -1078,10 +1133,6 @@ function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
   }
 
   if (qualityBadge) qualityBadge.textContent = movie.quality || '4K';
-
-  if (idlixBtn) {
-    idlixBtn.href = movie.idlixUrl || 'https://z2.idlixku.com/';
-  }
 
   const posterBox = document.getElementById('modal-poster-box');
   const posterEmoji = document.getElementById('modal-poster-emoji');
@@ -1423,11 +1474,14 @@ window.navigate = navigate;
 
 function getFilteredMovies() {
   let list = Array.from(movieRegistry.values());
-  // Remove duplicates by ID
+  // Remove duplicates by normalized title
   const uniqueMap = new Map();
   list.forEach(item => {
-    if (!uniqueMap.has(item.title)) {
-      uniqueMap.set(item.title, item);
+    if (item && item.title) {
+      const key = item.title.trim().toLowerCase();
+      if (!uniqueMap.has(key)) {
+        uniqueMap.set(key, item);
+      }
     }
   });
   list = Array.from(uniqueMap.values());
@@ -1751,9 +1805,7 @@ function renderDedicatedDetailView(movie, seasonIdx = 0, episodeIdx = 0) {
   const synopsisEl = document.getElementById('detail-synopsis');
   const genresList = document.getElementById('detail-genres-list');
   const posterBox = document.getElementById('detail-poster-box');
-  const posterEmoji = document.getElementById('detail-poster-emoji');
   const backdropBg = document.getElementById('detail-backdrop-bg');
-  const idlixBtn = document.getElementById('btn-detail-idlix');
 
   if (titleEl) titleEl.textContent = movie.title;
   if (typeBadge) typeBadge.textContent = movie.type === 'series' ? 'SERIES' : 'MOVIE';
@@ -1774,7 +1826,6 @@ function renderDedicatedDetailView(movie, seasonIdx = 0, episodeIdx = 0) {
     }
   }
   if (backdropBg) backdropBg.style.backgroundImage = `url('${movie.backdrop || movie.poster || 'assets/hero/hero-1.jpg'}')`;
-  if (idlixBtn) idlixBtn.href = movie.idlixUrl || 'https://z2.idlixku.com/';
 
   if (genresList) {
     const list = movie.genres || [movie.genre || 'Action'];
