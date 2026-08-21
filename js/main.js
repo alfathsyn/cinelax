@@ -36,10 +36,7 @@ const EMOJIS = ['👑', '🔥', '🦸', '🚀', '🌌', '⚔️', '👹', '🦖'
 const movieRegistry = new Map();
 
 function slugify(text) {
-  return text.toString().toLowerCase().trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w\-]+/g, '')
-    .replace(/\-\-+/g, '-');
+  return TmdbMap.slugify(text);
 }
 
 // ==========================================
@@ -706,26 +703,26 @@ function generateMovies(category, count = 20) {
   });
 }
 
-// Prepopulate all categories into registry
 function initRegistry() {
-  // Pre-load all IDLIX movies into the registry map
-  if (window.IDLIX_DATABASE && Array.isArray(window.IDLIX_DATABASE)) {
-    window.IDLIX_DATABASE.forEach(m => {
-      movieRegistry.set(m.id, m);
-      movieRegistry.set(m.slug, m);
-      movieRegistry.set(slugify(m.title), m);
-    });
-  }
-
-  // Pre-load hero slides
-  heroSlides.forEach(slide => {
+  heroSlides.forEach((slide) => {
     movieRegistry.set(slide.id, slide);
     movieRegistry.set(slide.slug, slide);
     movieRegistry.set(slugify(slide.title), slide);
   });
+}
 
-  // Prepopulate all categories
-  Object.keys(TOP_VIEW_DATABASE).forEach(cat => generateMovies(cat, 50));
+// Melengkapi objek hasil TMDB dengan gradient dan emoji, lalu mendaftarkannya
+function decorateMovie(movie) {
+  if (!movie) return movie;
+
+  movie.gradient = GRADIENTS[movie.gradientIndex % GRADIENTS.length];
+  movie.emoji = EMOJIS[movie.emojiIndex % EMOJIS.length];
+
+  movieRegistry.set(movie.id, movie);
+  movieRegistry.set(movie.slug, movie);
+  movieRegistry.set(slugify(movie.title), movie);
+
+  return movie;
 }
 
 // ==========================================
@@ -768,23 +765,53 @@ function renderMovieCard(movie) {
   `;
 }
 
-function renderContentSection(containerId, category, count = 20) {
+function renderSkeletonRow(container, count) {
+  container.innerHTML = Array.from({ length: count || 8 }, () => `
+    <div class="movie-card skeleton-card">
+      <div class="card-poster skeleton-block"></div>
+      <div class="card-info">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function renderContentSection(containerId, rowKind, options) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const movies = generateMovies(category, count);
-  container.innerHTML = movies.map(m => renderMovieCard(m)).join('');
+  const settings = options || {};
+  renderSkeletonRow(container, 8);
+
+  try {
+    const movies = await Tmdb.getRow(rowKind, settings);
+    const decorated = movies.map(decorateMovie);
+
+    if (decorated.length === 0) {
+      container.closest('.content-section')?.classList.add('hidden');
+      return;
+    }
+
+    container.innerHTML = decorated.map((m) => renderMovieCard(m)).join('');
+  } catch (error) {
+    container.closest('.content-section')?.classList.add('hidden');
+    console.warn(`Baris ${containerId} gagal dimuat:`, error.message);
+  }
 }
 
+// ID genre TMDB
+const GENRE_IDS = { action: 28, horror: 27, animation: 16, drama: 18 };
+
 function renderAllSections() {
-  renderContentSection('topview-row', 'topview', 24);
-  renderContentSection('trending-row', 'trending', 24);
-  renderContentSection('latest-row', 'latest', 24);
-  renderContentSection('popular-row', 'popular', 24);
-  renderContentSection('series-row', 'series', 24);
-  renderContentSection('kdrama-row', 'kdrama', 24);
-  renderContentSection('anime-row', 'anime', 24);
-  renderContentSection('indonesia-row', 'indonesia', 24);
+  renderContentSection('topview-row', 'trending');
+  renderContentSection('trending-row', 'trending', { page: 2 });
+  renderContentSection('latest-row', 'top_rated');
+  renderContentSection('popular-row', 'genre', { genreId: GENRE_IDS.action });
+  renderContentSection('series-row', 'genre', { genreId: GENRE_IDS.drama });
+  renderContentSection('kdrama-row', 'genre', { genreId: GENRE_IDS.horror });
+  renderContentSection('anime-row', 'genre', { genreId: GENRE_IDS.animation });
+  renderContentSection('indonesia-row', 'top_rated', { page: 2 });
 }
 
 // Open modal player or standalone detail

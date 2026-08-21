@@ -10,7 +10,7 @@
   'use strict';
 
   const IMAGE_BASE = 'https://image.tmdb.org/t/p/';
-  const GRADIENT_COUNT = 12;
+  const GRADIENT_COUNT = 20;
   const EMOJI_COUNT = 40;
 
   function slugify(text) {

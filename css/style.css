@@ -3300,3 +3300,26 @@ body.cinema-mode-active .player-related-section:hover {
   }
 }
 
+/* Skeleton pemuatan baris konten */
+.skeleton-card { pointer-events: none; }
+
+.skeleton-block,
+.skeleton-line {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.10) 37%, rgba(255,255,255,0.04) 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease infinite;
+  border-radius: 8px;
+}
+
+.skeleton-block { width: 100%; aspect-ratio: 2 / 3; }
+
+.skeleton-line { height: 12px; margin-top: 10px; }
+.skeleton-line.short { width: 60%; }
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+.content-section.hidden { display: none; }
+

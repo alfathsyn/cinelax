@@ -169,3 +169,11 @@ test('mapTitle membawa popularity untuk keperluan pemeringkatan', () => {
   assert.strictEqual(map.mapTitle({ id: 1, popularity: 42.5 }, {}).popularity, 42.5);
   assert.strictEqual(map.mapTitle({ id: 2 }, {}).popularity, 0);
 });
+
+test('mapTitle menjaga gradientIndex tetap dalam rentang GRADIENTS (0-19)', () => {
+  const ids = [0, 1, 2, 11, 12, 13, 19, 20, 21, 550, 60625, 999999, 123456789];
+  ids.forEach((id) => {
+    const result = map.mapTitle({ id }, {});
+    assert.ok(result.gradientIndex >= 0 && result.gradientIndex <= 19, `gradientIndex untuk id ${id} di luar rentang: ${result.gradientIndex}`);
+  });
+});
