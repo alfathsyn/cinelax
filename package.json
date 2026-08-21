@@ -1,0 +1,9 @@
+{
+  "name": "cinelax",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website streaming film dan serial TV",
+  "scripts": {
+    "test": "node --test test/**/*.test.js"
+  }
+}
