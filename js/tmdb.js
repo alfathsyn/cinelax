@@ -187,6 +187,7 @@
     let path;
     let params;
     let isMixedMedia = false;
+    let isTv = false;
 
     if (kind === 'trending') {
       path = 'trending/all/week';
@@ -197,14 +198,30 @@
       params = { sort_by: 'vote_average.desc', 'vote_count.gte': MIN_VOTES, page: settings.page || 1 };
     } else if (kind === 'genre') {
       path = 'discover/movie';
-      params = { with_genres: settings.genreId, sort_by: 'popularity.desc', page: settings.page || 1 };
+      params = {
+        with_genres: settings.genreId,
+        sort_by: 'popularity.desc',
+        page: settings.page || 1,
+        with_origin_country: settings.with_origin_country,
+        with_original_language: settings.with_original_language
+      };
+    } else if (kind === 'tv') {
+      path = 'discover/tv';
+      params = {
+        with_genres: settings.genreId,
+        sort_by: 'popularity.desc',
+        page: settings.page || 1,
+        with_origin_country: settings.with_origin_country,
+        with_original_language: settings.with_original_language
+      };
+      isTv = true;
     } else {
       throw new Error(`Jenis baris tidak dikenal: ${kind}`);
     }
 
     const [data, genreLookup] = await Promise.all([
       fetchTmdb(path, params),
-      isMixedMedia ? getCombinedGenreLookup() : getGenreLookup('movie')
+      isMixedMedia ? getCombinedGenreLookup() : getGenreLookup(isTv ? 'tv' : 'movie')
     ]);
 
     return (data.results || [])

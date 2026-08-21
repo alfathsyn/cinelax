@@ -20,7 +20,9 @@ const ALLOWED_PARAMS = [
   'sort_by',
   'primary_release_year',
   'year',
-  'vote_count.gte'
+  'vote_count.gte',
+  'with_origin_country',
+  'with_original_language'
 ];
 
 function isAllowedPath(path) {

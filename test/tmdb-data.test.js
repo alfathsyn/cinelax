@@ -138,6 +138,36 @@ test('getRow mengambil trending, rating tertinggi, dan genre', async () => {
   assert.ok(stub.calls.some((url) => url.includes('with_genres=28')));
 });
 
+test('getRow("tv") meminta discover/tv', async () => {
+  tmdb.clearCache();
+  const stub = stubFetch((url) => {
+    if (url.includes('genre/')) return { genres: [{ id: 18, name: 'Drama' }] };
+    return { results: [movieDetail] };
+  });
+
+  const rows = await tmdb.getRow('tv');
+  stub.restore();
+
+  assert.strictEqual(rows.length, 1);
+  assert.ok(stub.calls.some((url) => url.includes('discover/tv')));
+  assert.ok(stub.calls.some((url) => url.includes('genre/tv/list')), 'harus memakai genre lookup TV, bukan movie');
+});
+
+test('getRow meneruskan with_origin_country ke query string untuk kind genre dan tv', async () => {
+  tmdb.clearCache();
+  const stub = stubFetch((url) => {
+    if (url.includes('genre/')) return { genres: [] };
+    return { results: [movieDetail] };
+  });
+
+  await tmdb.getRow('tv', { with_origin_country: 'KR' });
+  await tmdb.getRow('genre', { genreId: 16, with_original_language: 'id' });
+  stub.restore();
+
+  assert.ok(stub.calls.some((url) => url.includes('discover/tv') && url.includes('with_origin_country=KR')));
+  assert.ok(stub.calls.some((url) => url.includes('discover/movie') && url.includes('with_original_language=id')));
+});
+
 test('findBySlug memilih kecocokan slug beserta tahun lebih dulu', async () => {
   tmdb.clearCache();
   const stub = stubFetch((url) => {

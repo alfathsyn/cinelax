@@ -59,6 +59,16 @@ test('filterQuery membuang nilai kosong', () => {
   assert.deepStrictEqual(filterQuery({ query: '', page: '1' }), { page: '1' });
 });
 
+test('filterQuery meneruskan with_origin_country dan with_original_language, membuang parameter tak dikenal', () => {
+  const result = filterQuery({
+    with_origin_country: 'KR',
+    with_original_language: 'id',
+    with_unknown_param: 'harus-hilang',
+    api_key: 'bocor'
+  });
+  assert.deepStrictEqual(result, { with_origin_country: 'KR', with_original_language: 'id' });
+});
+
 test('cacheControlFor memberi umur berbeda per jenis endpoint', () => {
   assert.match(cacheControlFor('search/multi'), /s-maxage=600/);
   assert.match(cacheControlFor('discover/movie'), /s-maxage=1800/);

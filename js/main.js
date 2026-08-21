@@ -748,8 +748,7 @@ function renderMovieCard(movie) {
         <div class="card-overlay">
           <div class="card-play-btn">▶</div>
         </div>
-        <span class="card-badge-quality">${movie.quality}</span>
-        <span class="card-badge-rating"><span class="star">⭐</span> ${movie.rating}</span>
+        ${movie.rating ? `<span class="card-badge-quality">⭐ ${movie.rating}</span>` : ''}
         ${movie.type === 'series' ? `<span class="card-badge-type">Series</span>` : ''}
         ${movie.episode ? `<span class="card-badge-episode">${movie.episode}</span>` : ''}
       </div>
@@ -808,10 +807,10 @@ function renderAllSections() {
   renderContentSection('trending-row', 'trending', { page: 2 });
   renderContentSection('latest-row', 'top_rated');
   renderContentSection('popular-row', 'genre', { genreId: GENRE_IDS.action });
-  renderContentSection('series-row', 'genre', { genreId: GENRE_IDS.drama });
-  renderContentSection('kdrama-row', 'genre', { genreId: GENRE_IDS.horror });
+  renderContentSection('series-row', 'tv');
+  renderContentSection('kdrama-row', 'tv', { with_origin_country: 'KR' });
   renderContentSection('anime-row', 'genre', { genreId: GENRE_IDS.animation });
-  renderContentSection('indonesia-row', 'top_rated', { page: 2 });
+  renderContentSection('indonesia-row', 'genre', { with_original_language: 'id' });
 }
 
 // Open modal player or standalone detail
@@ -2296,7 +2295,7 @@ function initFilterTabs() {
         const seriesOnly = generateMovies('series', 20);
         latestRow.innerHTML = seriesOnly.map(m => renderMovieCard(m)).join('');
       } else {
-        renderContentSection('latest-row', 'latest', 14);
+        renderContentSection('latest-row', 'top_rated');
       }
     });
   });
