@@ -1,0 +1,13 @@
+{
+  "id": 550,
+  "title": "Contoh Film",
+  "original_title": "Example Film",
+  "overview": "Sinopsis contoh untuk pengujian.",
+  "release_date": "2024-03-15",
+  "vote_average": 7.86,
+  "runtime": 139,
+  "poster_path": "/poster.jpg",
+  "backdrop_path": "/backdrop.jpg",
+  "genres": [{ "id": 18, "name": "Drama" }, { "id": 53, "name": "Thriller" }],
+  "production_countries": [{ "iso_3166_1": "US", "name": "United States of America" }]
+}

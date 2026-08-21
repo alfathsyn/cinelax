@@ -1,0 +1,20 @@
+{
+  "id": 550,
+  "results": {
+    "ID": {
+      "link": "https://www.themoviedb.org/movie/550/watch?locale=ID",
+      "flatrate": [
+        { "provider_id": 8, "provider_name": "Netflix", "logo_path": "/netflix.jpg" }
+      ],
+      "rent": [
+        { "provider_id": 3, "provider_name": "Google Play Movies", "logo_path": "/gplay.jpg" }
+      ]
+    },
+    "US": {
+      "link": "https://www.themoviedb.org/movie/550/watch?locale=US",
+      "flatrate": [
+        { "provider_id": 15, "provider_name": "Hulu", "logo_path": "/hulu.jpg" }
+      ]
+    }
+  }
+}
