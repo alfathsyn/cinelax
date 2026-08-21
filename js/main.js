@@ -2119,44 +2119,72 @@ function initSearch() {
     }
   });
 
-  // Live autocomplete
+  // Live autocomplete lewat TMDB
+  let searchTimer = null;
+  let searchSequence = 0;
+
   input?.addEventListener('input', (e) => {
-    const query = e.target.value.trim().toLowerCase();
+    const raw = e.target.value;
+    const query = raw.trim();
+
+    clearTimeout(searchTimer);
 
     if (query.length < 2) {
       suggestions?.classList.remove('active');
       return;
     }
 
-    const allMovies = Array.from(movieRegistry.values());
-    const results = allMovies.filter(m =>
-      m.title.toLowerCase().includes(query) ||
-      (m.genre && m.genre.toLowerCase().includes(query)) ||
-      (m.country && m.country.toLowerCase().includes(query)) ||
-      (m.cast && m.cast.toLowerCase().includes(query))
-    ).slice(0, 6);
+    const sequence = ++searchSequence;
 
-    if (results.length && suggestions) {
-      suggestions.classList.add('active');
-      suggestions.innerHTML = results.map(m => `
-        <div class="suggestion-item" onclick="openPlayer('${m.id}'); document.getElementById('search-close').click();">
-          <div class="suggestion-poster">
-            ${m.poster ? `<img src="${m.poster}" alt="${m.title}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : `<div style="width:100%;height:100%;background:${m.gradient};border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">${m.emoji}</div>`}
-          </div>
-          <div class="suggestion-info">
-            <h4>${m.title}</h4>
-            <span>${m.year} · ${m.genre || (m.genres && m.genres[0]) || 'Film'} · ⭐ ${m.rating}</span>
-          </div>
-        </div>
-      `).join('');
-    } else if (suggestions) {
+    searchTimer = setTimeout(async () => {
+      if (!suggestions) return;
+
       suggestions.classList.add('active');
       suggestions.innerHTML = `
         <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
-          Tidak ditemukan judul untuk "${e.target.value}"
+          Mencari "${raw}"...
         </div>
       `;
-    }
+
+      try {
+        const results = await Tmdb.searchTitles(query);
+
+        // Abaikan respons yang sudah kedaluwarsa
+        if (sequence !== searchSequence) return;
+
+        const top = results.slice(0, 6).map(decorateMovie);
+
+        if (top.length === 0) {
+          suggestions.innerHTML = `
+            <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
+              Tidak ditemukan judul untuk "${raw}"
+            </div>
+          `;
+          return;
+        }
+
+        suggestions.innerHTML = top.map((m) => `
+          <div class="suggestion-item" onclick="openPlayer('${m.id}'); document.getElementById('search-close').click();">
+            <div class="suggestion-poster">
+              ${m.poster
+                ? `<img src="${m.poster}" alt="${m.title}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">`
+                : `<div style="width:100%;height:100%;background:${m.gradient};border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">${m.emoji}</div>`}
+            </div>
+            <div class="suggestion-info">
+              <h4>${m.title}</h4>
+              <span>${m.year || '—'} · ${m.genre || 'Film'} · ⭐ ${m.rating || '—'}</span>
+            </div>
+          </div>
+        `).join('');
+      } catch (error) {
+        if (sequence !== searchSequence) return;
+        suggestions.innerHTML = `
+          <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
+            Pencarian gagal. Periksa koneksi lalu coba lagi.
+          </div>
+        `;
+      }
+    }, 300);
   });
 }
 
