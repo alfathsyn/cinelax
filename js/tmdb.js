@@ -137,12 +137,20 @@
     return lookup;
   }
 
+  async function getCombinedGenreLookup() {
+    const [movieGenres, tvGenres] = await Promise.all([
+      getGenreLookup('movie'),
+      getGenreLookup('tv')
+    ]);
+    return Object.assign({}, movieGenres, tvGenres);
+  }
+
   async function searchTitles(query, page) {
     if (!query || query.trim().length < 2) return [];
 
     const [data, genreLookup] = await Promise.all([
       fetchTmdb('search/multi', { query: query.trim(), page: page || 1 }),
-      getGenreLookup('movie')
+      getCombinedGenreLookup()
     ]);
 
     return (data.results || [])
@@ -178,10 +186,12 @@
     const settings = options || {};
     let path;
     let params;
+    let isMixedMedia = false;
 
     if (kind === 'trending') {
       path = 'trending/all/week';
       params = { page: settings.page || 1 };
+      isMixedMedia = true;
     } else if (kind === 'top_rated') {
       path = 'discover/movie';
       params = { sort_by: 'vote_average.desc', 'vote_count.gte': MIN_VOTES, page: settings.page || 1 };
@@ -194,7 +204,7 @@
 
     const [data, genreLookup] = await Promise.all([
       fetchTmdb(path, params),
-      getGenreLookup('movie')
+      isMixedMedia ? getCombinedGenreLookup() : getGenreLookup('movie')
     ]);
 
     return (data.results || [])

@@ -70,6 +70,22 @@ test('searchTitles membuang hasil bertipe person', async () => {
   assert.ok(results.every((item) => item.type === 'movie' || item.type === 'series'));
 });
 
+test('searchTitles menyertakan genre TV dalam hasil campuran', async () => {
+  tmdb.clearCache();
+  const stub = stubFetch((url) => {
+    if (url.includes('genre/movie/list')) return { genres: [{ id: 18, name: 'Drama' }, { id: 53, name: 'Thriller' }] };
+    if (url.includes('genre/tv/list')) return { genres: [{ id: 10765, name: 'Sci-Fi & Fantasy' }] };
+    return searchMulti;
+  });
+
+  const results = await tmdb.searchTitles('contoh');
+  stub.restore();
+
+  const tvResult = results.find((item) => item.type === 'series');
+  assert.ok(tvResult, 'harus ada hasil TV');
+  assert.strictEqual(tvResult.genre, 'Sci-Fi & Fantasy', 'genre TV harus diterjemahkan dari ID 10765');
+});
+
 test('getDetail menggabungkan detail, credits, dan videos', async () => {
   tmdb.clearCache();
   const stub = stubFetch((url) => {
