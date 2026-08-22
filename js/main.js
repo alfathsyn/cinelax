@@ -39,6 +39,16 @@ function slugify(text) {
   return TmdbMap.slugify(text);
 }
 
+// Meng-escape karakter HTML pada nilai yang tidak kita kendalikan (query
+// pencarian dari URL, judul/nama dari TMDB yang bisa disunting komunitas)
+// sebelum disisipkan ke template literal yang berakhir di innerHTML. Jangan
+// dipakai untuk nilai yang kita bangun sendiri dari kosakata tetap (slug,
+// id internal, angka) — itu tidak butuh escaping dan malah menambah noise.
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
 // ==========================================
 // TOAST NOTIFICATIONS
 // ==========================================
@@ -56,9 +66,12 @@ function showToast(message, type = 'info', duration = 3200) {
 
   const toast = document.createElement('div');
   toast.className = `toast ${type}`;
+  // message kadang menyisipkan judul film (mis. shareMovie) yang berasal
+  // dari TMDB — escape di sini, satu titik, menutup seluruh kelas bug ini
+  // untuk semua pemanggil showToast sekarang maupun nanti.
   toast.innerHTML = `
     <span class="toast-icon">${icons[type] || 'ℹ️'}</span>
-    <span>${message}</span>
+    <span>${escapeHtml(message)}</span>
   `;
 
   container.appendChild(toast);
@@ -77,7 +90,14 @@ window.showToast = showToast;
 // HERO SLIDER DATA
 // ==========================================
 
-const heroSlides = [
+// Data cadangan HANYA untuk kasus fetch trending TMDB gagal total (mis. API
+// key belum dikonfigurasi, jaringan mati). Dalam kondisi normal, heroSlides
+// (di bawah) diisi ulang dari baris trending TMDB yang sama yang dipakai
+// topview-row — lihat loadTrendingHeroSlides(). Field idlixUrl/isUnavailable/
+// quality SENGAJA tidak ada di sini: idlixUrl menunjuk ke host tak berlisensi
+// yang penghapusannya adalah alasan migrasi ini, dan quality adalah karangan
+// (lihat catatan "quality sengaja tidak ada" di listingState).
+const FALLBACK_HERO_SLIDES = [
   {
     id: 'deadpool-wolverine-hero',
     title: 'Deadpool & Wolverine',
@@ -85,7 +105,6 @@ const heroSlides = [
     year: 2024,
     rating: '8.9',
     duration: '2h 08m',
-    quality: '4K Ultra HD',
     type: 'movie',
     genre: 'Action',
     genres: ['Action', 'Comedy', 'Sci-Fi'],
@@ -101,8 +120,6 @@ const heroSlides = [
     slug: 'deadpool-wolverine-2024',
     imdbId: 'tt6263850',
     tmdbId: '533535',
-    idlixUrl: 'https://z2.idlixku.com/movie/deadpool-wolverine-2024/',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk'
   },
   {
@@ -112,7 +129,6 @@ const heroSlides = [
     year: 2024,
     rating: '8.7',
     duration: '2h 28m',
-    quality: '4K Ultra HD',
     type: 'movie',
     genre: 'Action',
     genres: ['Action', 'Drama', 'Adventure'],
@@ -128,8 +144,6 @@ const heroSlides = [
     slug: 'gladiator-2-2024',
     imdbId: 'tt9218128',
     tmdbId: '558449',
-    idlixUrl: 'https://z2.idlixku.com/movie/gladiator-2-2024/',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo'
   },
   {
@@ -139,7 +153,6 @@ const heroSlides = [
     year: 2025,
     rating: '9.3',
     duration: '6 Episode (1 Season)',
-    quality: '4K Ultra HD',
     type: 'series',
     genre: 'Thriller',
     genres: ['Thriller', 'Drama', 'Mystery'],
@@ -155,8 +168,6 @@ const heroSlides = [
     slug: 'squid-game-season-2',
     imdbId: 'tt10919420',
     tmdbId: '93405',
-    idlixUrl: 'https://z2.idlixku.com/series/squid-game-season-2',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U',
     seasons: [
       {
@@ -187,7 +198,6 @@ const heroSlides = [
     year: 2024,
     rating: '8.5',
     duration: '1h 59m',
-    quality: '4K Ultra HD',
     type: 'movie',
     genre: 'Horror',
     genres: ['Horror', 'Sci-Fi', 'Thriller'],
@@ -203,8 +213,6 @@ const heroSlides = [
     slug: 'alien-romulus-2024',
     imdbId: 'tt18412256',
     tmdbId: '945961',
-    idlixUrl: 'https://z2.idlixku.com/movie/alien-romulus-2024/',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs'
   },
   {
@@ -214,7 +222,6 @@ const heroSlides = [
     year: 2025,
     rating: '9.4',
     duration: '2h 10m',
-    quality: '1080p Full HD',
     type: 'movie',
     genre: 'Animation',
     genres: ['Animation', 'Action', 'Fantasy'],
@@ -230,8 +237,6 @@ const heroSlides = [
     slug: 'demon-slayer-infinity-castle-2025',
     imdbId: 'tt32840000',
     tmdbId: '1214484',
-    idlixUrl: 'https://z2.idlixku.com/movie/demon-slayer-infinity-castle-2025/',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y'
   },
   {
@@ -241,7 +246,6 @@ const heroSlides = [
     year: 2025,
     rating: '9.1',
     duration: '7 Seasons (71 EP)',
-    quality: '1080p Full HD',
     type: 'series',
     genre: 'Animation',
     genres: ['Animation', 'Sci-Fi', 'Comedy', 'Adventure'],
@@ -257,8 +261,6 @@ const heroSlides = [
     slug: 'rick-and-morty-2013',
     imdbId: 'tt2861424',
     tmdbId: '60625',
-    idlixUrl: 'https://z2.idlixku.com/series/rick-and-morty-2013',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8',
     seasons: [
       {
@@ -293,6 +295,12 @@ const heroSlides = [
     ]
   }
 ];
+
+// Jumlah slide hero yang diambil dari trending TMDB (§7.1). Diperbarui oleh
+// loadTrendingHeroSlides() setelah fetch trending selesai; sebelum itu (dan
+// bila fetch gagal total), tetap memakai FALLBACK_HERO_SLIDES di atas supaya
+// hero tidak pernah kosong.
+let heroSlides = FALLBACK_HERO_SLIDES;
 
 heroSlides.forEach(slide => {
   movieRegistry.set(slide.id, slide);
@@ -361,11 +369,13 @@ async function resolveMovie(idOrSlug) {
 function renderMovieCard(movie) {
   const hasPoster = Boolean(movie.poster);
 
+  const safeTitle = escapeHtml(movie.title);
+
   return `
     <div class="movie-card" data-id="${movie.id}" onclick="openDetailOrPlayer('${movie.id}')">
       <div class="card-poster">
         ${hasPoster ? `
-          <img src="${movie.poster}" alt="${movie.title}" loading="lazy" class="poster-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="${movie.poster}" alt="${safeTitle}" loading="lazy" class="poster-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="poster-gradient" style="background: ${movie.gradient}; display: none;">
             <span>${movie.emoji}</span>
           </div>
@@ -379,14 +389,14 @@ function renderMovieCard(movie) {
         </div>
         ${movie.rating ? `<span class="card-badge-quality">⭐ ${movie.rating}</span>` : ''}
         ${movie.type === 'series' ? `<span class="card-badge-type">Series</span>` : ''}
-        ${movie.episode ? `<span class="card-badge-episode">${movie.episode}</span>` : ''}
+        ${movie.episode ? `<span class="card-badge-episode">${escapeHtml(movie.episode)}</span>` : ''}
       </div>
       <div class="card-info">
-        <h3 class="card-title">${movie.title}</h3>
+        <h3 class="card-title">${safeTitle}</h3>
         <div class="card-meta">
-          <span>${movie.year}</span>
+          <span>${movie.year || '—'}</span>
           <span class="dot"></span>
-          <span>${movie.genre || (movie.genres && movie.genres[0]) || 'Film'}</span>
+          <span>${escapeHtml(movie.genre || (movie.genres && movie.genres[0]) || 'Film')}</span>
         </div>
       </div>
     </div>
@@ -501,29 +511,28 @@ function renderHeroSlider() {
   heroSlides.forEach((slide, i) => {
     const slideEl = document.createElement('div');
     slideEl.className = `hero-slide ${i === 0 ? 'active' : ''}`;
+    const detailPath = `/${slide.type === 'series' ? 'series' : 'movie'}/${slide.slug}`;
     slideEl.innerHTML = `
-      <div class="hero-slide-bg" style="background-image: url('${slide.backdrop}')"></div>
+      <div class="hero-slide-bg" style="background-image: url('${escapeHtml(slide.backdrop)}')"></div>
       <div class="hero-slide-overlay"></div>
       <div class="hero-content container">
         <div class="hero-info">
-          <div class="hero-badge">${slide.badge}</div>
-          <h1 class="hero-title">${slide.title}</h1>
+          <div class="hero-badge">${escapeHtml(slide.badge)}</div>
+          <h1 class="hero-title">${escapeHtml(slide.title)}</h1>
           <div class="hero-meta">
-            <span class="hero-rating"><span class="star">⭐</span> ${slide.rating}</span>
+            <span class="hero-rating"><span class="star">⭐</span> ${slide.rating || '—'}</span>
             <span class="hero-meta-divider"></span>
-            <span class="hero-meta-item">${slide.year}</span>
+            <span class="hero-meta-item">${slide.year || '—'}</span>
             <span class="hero-meta-divider"></span>
-            <span class="hero-meta-item">${slide.duration}</span>
-            <span class="hero-meta-divider"></span>
-            <span class="hero-meta-item">${slide.quality}</span>
+            <span class="hero-meta-item">${escapeHtml(slide.duration || '—')}</span>
           </div>
           <div class="hero-genres">
-            ${slide.genres.map(g => `<span class="hero-genre-tag">${g}</span>`).join('')}
+            ${(slide.genres || []).map(g => `<span class="hero-genre-tag">${escapeHtml(g)}</span>`).join('')}
           </div>
-          <p class="hero-description">${slide.description}</p>
+          <p class="hero-description">${escapeHtml(slide.description || '')}</p>
           <div class="hero-buttons">
             <button class="btn btn-primary" onclick="openPlayer('${slide.id}')">▶ Tonton Sekarang</button>
-            <a href="/movie/${slide.slug}" class="btn btn-secondary" data-nav="/movie/${slide.slug}">ℹ️ Detail Lengkap</a>
+            <a href="${detailPath}" class="btn btn-secondary" data-nav="${detailPath}">ℹ️ Detail Lengkap</a>
           </div>
         </div>
       </div>
@@ -537,7 +546,15 @@ function renderHeroSlider() {
   });
 }
 
+// Jumlah slide hero yang diambil dari baris trending TMDB (§7.1).
+const HERO_SLIDE_COUNT = 6;
+
 function initHeroSlider() {
+  // Render dulu dengan data yang tersedia saat ini (FALLBACK_HERO_SLIDES)
+  // supaya hero tidak pernah kosong selagi menunggu fetch trending, lalu
+  // render ulang otomatis begitu data TMDB nyata datang (lihat
+  // loadTrendingHeroSlides). Mekanisme slider (interval, dot, prev/next)
+  // tidak berubah — hanya sumber datanya.
   renderHeroSlider();
   slideInterval = setInterval(nextSlide, SLIDE_DURATION);
 
@@ -551,24 +568,88 @@ function initHeroSlider() {
       slideInterval = setInterval(nextSlide, SLIDE_DURATION);
     });
   }
+
+  loadTrendingHeroSlides();
+}
+
+// §7.1: hero diambil dari judul trending teratas yang punya backdrop, dari
+// baris trending TMDB yang sama yang dipakai topview-row. Tmdb.fetchTmdb
+// meng-cache per URL, jadi pemanggilan Tmdb.getRow('trending', {}) di sini
+// berbagi satu request jaringan dengan renderContentSection('topview-row',
+// 'trending') di renderAllSections(), bukan memicu fetch kedua yang
+// terpisah. FALLBACK_HERO_SLIDES tetap tampil kecuali fetch ini berhasil
+// dengan minimal satu judul berbackdrop.
+async function loadTrendingHeroSlides() {
+  try {
+    const trending = (await Tmdb.getRow('trending', {})).map(decorateMovie);
+    const withBackdrop = trending.filter((m) => m.backdrop).slice(0, HERO_SLIDE_COUNT);
+
+    if (withBackdrop.length === 0) return;
+
+    heroSlides = withBackdrop.map(buildHeroSlideFromTrending);
+    heroSlides.forEach((slide) => {
+      movieRegistry.set(slide.id, slide);
+      movieRegistry.set(slide.slug, slide);
+    });
+
+    currentSlide = 0;
+    renderHeroSlider();
+    resetSlideInterval();
+  } catch (error) {
+    console.warn('Hero slider: gagal memuat trending TMDB, memakai data cadangan.', error.message);
+  }
+}
+
+// Menyaring field objek TMDB penuh (movieRegistry bisa punya banyak field
+// lain) ke bentuk minimal yang dibutuhkan renderHeroSlider/sidebar. quality,
+// idlixUrl, dan isUnavailable sengaja tidak disertakan — lihat catatan di
+// FALLBACK_HERO_SLIDES.
+function buildHeroSlideFromTrending(movie) {
+  return {
+    id: movie.id,
+    title: movie.title,
+    originalTitle: movie.originalTitle,
+    year: movie.year,
+    rating: movie.rating,
+    duration: movie.duration,
+    type: movie.type,
+    genre: movie.genre,
+    genres: (movie.genres && movie.genres.length) ? movie.genres : [movie.genre || 'Trending'],
+    country: movie.country,
+    description: movie.description,
+    poster: movie.poster,
+    backdrop: movie.backdrop,
+    gradient: movie.gradient,
+    emoji: movie.emoji,
+    badge: '🔥 Trending Minggu Ini',
+    slug: movie.slug,
+    tmdbId: movie.tmdbId,
+    trailerUrl: movie.trailerUrl
+  };
 }
 
 // ==========================================
 // PANEL KETERSEDIAAN LAYANAN STREAMING
 // ==========================================
 
-function renderProviderGroup(label, list) {
+// link: URL JustWatch dari providers.link. Spec §8 minta logo provider bisa
+// diklik menuju JustWatch — TMDB hanya memberi satu link gabungan per
+// judul/region (bukan deep-link per provider), jadi setiap logo di grup ini
+// memakai link yang sama.
+function renderProviderGroup(label, list, link) {
   if (!list || list.length === 0) return '';
 
   return `
     <div class="provider-group">
-      <h4 class="provider-group-title">${label}</h4>
+      <h4 class="provider-group-title">${escapeHtml(label)}</h4>
       <div class="provider-logos">
-        ${list.map((p) => `
-          <div class="provider-logo" title="${p.name}">
-            <img src="${p.logo}" alt="${p.name}" loading="lazy">
-          </div>
-        `).join('')}
+        ${list.map((p) => {
+          const safeName = escapeHtml(p.name);
+          const inner = `<img src="${p.logo}" alt="${safeName}" loading="lazy">`;
+          return link
+            ? `<a class="provider-logo" href="${escapeHtml(link)}" title="${safeName}" target="_blank" rel="noopener noreferrer">${inner}</a>`
+            : `<div class="provider-logo" title="${safeName}">${inner}</div>`;
+        }).join('')}
       </div>
     </div>
   `;
@@ -597,15 +678,15 @@ async function renderProviderPanel(containerId, movie) {
   }
 
   const groups = [
-    renderProviderGroup('Langganan', providers.flatrate),
-    renderProviderGroup('Sewa', providers.rent),
-    renderProviderGroup('Beli', providers.buy)
+    renderProviderGroup('Langganan', providers.flatrate, providers.link),
+    renderProviderGroup('Sewa', providers.rent, providers.link),
+    renderProviderGroup('Beli', providers.buy, providers.link)
   ].join('');
 
   if (!groups) {
     container.innerHTML = `
       <p class="provider-empty">
-        "${movie.title}" belum tersedia di layanan streaming Indonesia.
+        "${escapeHtml(movie.title)}" belum tersedia di layanan streaming Indonesia.
       </p>
     `;
     return;
@@ -615,7 +696,7 @@ async function renderProviderPanel(containerId, movie) {
     <h3 class="provider-heading">Nonton di</h3>
     ${groups}
     ${providers.link ? `
-      <a class="provider-cta" href="${providers.link}" target="_blank" rel="noopener noreferrer">
+      <a class="provider-cta" href="${escapeHtml(providers.link)}" target="_blank" rel="noopener noreferrer">
         Buka opsi menonton
       </a>
     ` : ''}
@@ -684,19 +765,25 @@ function renderModalEpisodesSection(movie) {
 
   if (!section || !grid) return;
 
-  if (movie.type !== 'series') {
+  const seasons = (movie.type === 'series')
+    ? (movie.seasons || [{ season: 1, episodes: movie.episodes || [] }])
+    : [];
+  const hasAnyEpisodes = seasons.some((s) => Array.isArray(s.episodes) && s.episodes.length > 0);
+
+  // tmdb-map.js tidak memetakan episode/season TMDB sama sekali (episode:
+  // null, episodes: null, tanpa seasons) — dulu section ini tetap muncul
+  // untuk setiap serial dengan tab "Season 1" kosong. Sembunyikan total bila
+  // memang tidak ada data episode sama sekali, alih-alih menampilkan panel
+  // kosong yang menyesatkan (F4).
+  if (movie.type !== 'series' || !hasAnyEpisodes) {
     section.style.display = 'none';
     return;
   }
 
   section.style.display = 'block';
 
-  const seasons = movie.seasons || [
-    { season: 1, episodes: movie.episodes || [] }
-  ];
-
   const currentSeasonData = seasons[activeSeasonIndex] || seasons[0];
-  const episodesList = currentSeasonData.episodes || [];
+  const episodesList = (currentSeasonData && currentSeasonData.episodes) || [];
 
   if (seasonWrap) {
     seasonWrap.innerHTML = seasons.map((s, sIdx) => `
@@ -709,8 +796,8 @@ function renderModalEpisodesSection(movie) {
   grid.innerHTML = episodesList.map((ep, idx) => `
     <div class="episode-card ${idx === activeEpisodeIndex ? 'active' : ''}" onclick="selectPlayerEpisode(${idx})">
       <div class="episode-card-info">
-        <span class="ep-num">S${activeSeasonIndex + 1} EP ${ep.number} (${ep.duration})</span>
-        <span class="ep-title">${ep.title}</span>
+        <span class="ep-num">S${activeSeasonIndex + 1} EP ${ep.number} (${escapeHtml(ep.duration)})</span>
+        <span class="ep-title">${escapeHtml(ep.title)}</span>
       </div>
       <span class="ep-play-icon">${idx === activeEpisodeIndex ? '▶' : '▷'}</span>
     </div>
@@ -731,8 +818,8 @@ function renderRelatedInModal(current) {
         <span>${m.emoji}</span>
       </div>
       <div class="modal-related-info">
-        <h5 class="modal-related-title">${m.title}</h5>
-        <div class="modal-related-meta">⭐ ${m.rating} · ${m.year}</div>
+        <h5 class="modal-related-title">${escapeHtml(m.title)}</h5>
+        <div class="modal-related-meta">⭐ ${m.rating || '—'} · ${m.year || '—'}</div>
       </div>
     </div>
   `).join('');
@@ -764,10 +851,12 @@ async function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
     if (movie.type === 'series') {
       const currentSeason = movie.seasons ? movie.seasons[activeSeasonIndex] : null;
       const currentEp = currentSeason && currentSeason.episodes ? currentSeason.episodes[activeEpisodeIndex] : null;
-      const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : ` — S${activeSeasonIndex + 1} EP${activeEpisodeIndex + 1}`;
+      // Tanpa data episode nyata (kasus TMDB saat ini — lihat F4), modal ini
+      // cuma menampilkan trailer, jadi jangan karang suffix "S1 EP1".
+      const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : '';
       titleEl.textContent = `${movie.title}${epTitle}`;
     } else {
-      titleEl.textContent = `${movie.title} (${movie.year})`;
+      titleEl.textContent = `${movie.title} (${movie.year || '—'})`;
     }
   }
 
@@ -776,13 +865,22 @@ async function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
     typeBadge.className = `modal-badge-type ${movie.type === 'series' ? 'series' : ''}`;
   }
 
-  if (qualityBadge) qualityBadge.textContent = movie.quality || '4K';
+  // quality tidak lagi dipetakan dari TMDB (nilainya dulu karangan) — badge
+  // disembunyikan sepenuhnya alih-alih menampilkan default palsu (F2).
+  if (qualityBadge) {
+    if (movie.quality) {
+      qualityBadge.textContent = movie.quality;
+      qualityBadge.style.display = '';
+    } else {
+      qualityBadge.style.display = 'none';
+    }
+  }
 
   const posterBox = document.getElementById('modal-poster-box');
   const posterEmoji = document.getElementById('modal-poster-emoji');
   if (posterBox) {
     if (movie.poster) {
-      posterBox.innerHTML = `<img src="${movie.poster}" alt="${movie.title}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`;
+      posterBox.innerHTML = `<img src="${movie.poster}" alt="${escapeHtml(movie.title)}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`;
       posterBox.style.background = 'transparent';
     } else {
       posterBox.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">${movie.emoji}</div>`;
@@ -800,20 +898,34 @@ async function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
   const castEl = document.getElementById('modal-cast');
   const qualityDetailEl = document.getElementById('modal-quality-detail');
 
-  if (ratingEl) ratingEl.innerHTML = `<span class="star">⭐</span> ${movie.rating}`;
+  if (ratingEl) ratingEl.innerHTML = `<span class="star">⭐</span> ${movie.rating || '—'}`;
   if (yearEl) yearEl.textContent = movie.year;
-  if (durationEl) durationEl.textContent = movie.duration || (movie.type === 'series' ? '45m/ep' : '2h 15m');
-  if (countryEl) countryEl.textContent = movie.country || 'United States';
+  if (durationEl) durationEl.textContent = movie.duration || '-';
+  if (countryEl) countryEl.textContent = displayCountry(movie.country);
 
   if (genresEl) {
     const genreList = movie.genres || [movie.genre || 'Action'];
-    genresEl.innerHTML = genreList.map(g => `<span class="genre-pill">${g}</span>`).join('');
+    genresEl.innerHTML = genreList.map(g => `<span class="genre-pill">${escapeHtml(g)}</span>`).join('');
   }
 
   if (synopsisEl) synopsisEl.textContent = movie.description;
-  if (directorEl) directorEl.textContent = movie.director || 'James Cameron';
-  if (castEl) castEl.textContent = movie.cast || 'Hollywood Star Ensemble';
-  if (qualityDetailEl) qualityDetailEl.textContent = `${movie.quality || '4K Ultra HD'} (Subtitle Indonesia)`;
+  if (directorEl) directorEl.textContent = movie.director || '-';
+  if (castEl) castEl.textContent = movie.cast || '-';
+
+  // "Kualitas: ..." adalah baris meta-item dengan label tetap di HTML —
+  // menyembunyikan hanya nilainya akan menyisakan "Kualitas:" tanpa isi,
+  // jadi seluruh baris disembunyikan ketika tidak ada data quality (F2).
+  if (qualityDetailEl) {
+    const qualityRow = qualityDetailEl.closest('.meta-item');
+    if (movie.quality) {
+      qualityDetailEl.textContent = movie.quality;
+      if (qualityRow) qualityRow.style.display = '';
+    } else if (qualityRow) {
+      qualityRow.style.display = 'none';
+    } else {
+      qualityDetailEl.style.display = 'none';
+    }
+  }
 
   renderModalEpisodesSection(movie);
   renderRelatedInModal(movie);
@@ -853,8 +965,8 @@ function switchPlayerSeason(seasonIdx) {
   if (activeMovie) {
     const currentSeason = activeMovie.seasons ? activeMovie.seasons[activeSeasonIndex] : null;
     const currentEp = currentSeason && currentSeason.episodes ? currentSeason.episodes[0] : null;
-    const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : ` — S${activeSeasonIndex + 1} EP1`;
-    
+    const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : '';
+
     const titleEl = document.getElementById('modal-movie-title');
     if (titleEl) titleEl.textContent = `${activeMovie.title}${epTitle}`;
 
@@ -871,7 +983,7 @@ function selectPlayerEpisode(episodeIdx) {
   if (activeMovie) {
     const currentSeason = activeMovie.seasons ? activeMovie.seasons[activeSeasonIndex] : null;
     const currentEp = currentSeason && currentSeason.episodes ? currentSeason.episodes[activeEpisodeIndex] : null;
-    const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : ` — S${activeSeasonIndex + 1} EP${activeEpisodeIndex + 1}`;
+    const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : '';
 
     const titleEl = document.getElementById('modal-movie-title');
     if (titleEl) titleEl.textContent = `${activeMovie.title}${epTitle}`;
@@ -1019,14 +1131,25 @@ const COUNTRY_NAME_TO_CODE = {
   Turki: 'TR'
 };
 
-// Kebalikan dari COUNTRY_NAME_TO_CODE. listingState.country menyimpan kode ISO
+// Sumber tunggal kode->nama negara dipindah ke TmdbMap.COUNTRY_CODE_TO_NAME
+// (js/tmdb-map.js) supaya main.js dan tmdb-map.js tidak punya dua tabel yang
+// bisa saling menyimpang (F11). listingState.country menyimpan kode ISO
 // (dipakai langsung oleh getRowPaged sebagai with_origin_country), tapi
-// <option value="..."> pada #filter-country adalah nama negara, bukan kode.
-// Tabel ini dipakai untuk menyinkronkan <select> dan label pill filter aktif
+// <option value="..."> pada #filter-country adalah nama negara, bukan kode —
+// tabel ini dipakai untuk menyinkronkan <select> dan label pill filter aktif
 // kembali ke nama yang bisa dibaca pengguna.
-const COUNTRY_CODE_TO_NAME = Object.fromEntries(
-  Object.entries(COUNTRY_NAME_TO_CODE).map(([name, code]) => [code, name])
-);
+const COUNTRY_CODE_TO_NAME = TmdbMap.COUNTRY_CODE_TO_NAME;
+
+// mapTitle() (tmdb-map.js) sengaja mengembalikan country mentah: nama penuh
+// untuk film (production_countries), tapi kode ISO mentah untuk serial
+// (origin_country tidak punya nama — lihat catatan di countryOf()). Fungsi
+// tampilan ini yang menerjemahkan kode itu ke nama pada saat merender,
+// supaya "KR" muncul sebagai "Korea Selatan" di UI tanpa mengubah kontrak
+// data mapTitle() yang dikunci test suite.
+function displayCountry(country) {
+  if (!country) return '-';
+  return COUNTRY_CODE_TO_NAME[country] || country;
+}
 
 // Kunci pilihan #filter-sort dipetakan ke parameter sort_by TMDB yang valid.
 // Nama field tanggal dan judul berbeda antara discover/movie dan discover/tv,
@@ -1296,11 +1419,18 @@ window.navigate = navigate;
 async function getFilteredMovies() {
   const state = listingState;
 
-  // Halaman hasil pencarian. TMDB search/multi tidak melaporkan total_pages
-  // yang berguna untuk paginasi lokal, jadi diperlakukan sebagai satu halaman.
+  // Halaman hasil pencarian. Tmdb.searchTitles (F6) sekarang mengembalikan
+  // bentuk pager yang sama seperti getRowPaged (items/page/totalPages/
+  // totalResults) — search/multi TMDB memang melaporkan total_pages/
+  // total_results yang valid, jadi paginasi bekerja seperti baris genre/tv.
   if (state.searchQuery) {
-    const items = (await Tmdb.searchTitles(state.searchQuery, state.page || 1)).map(decorateMovie);
-    return { items, page: state.page || 1, totalPages: 1, totalResults: items.length };
+    const searchResult = await Tmdb.searchTitles(state.searchQuery, state.page || 1);
+    return {
+      items: searchResult.items.map(decorateMovie),
+      page: searchResult.page,
+      totalPages: searchResult.totalPages,
+      totalResults: searchResult.totalResults
+    };
   }
 
   const kind = state.type === 'series' ? 'tv' : (state.rowKind || 'genre');
@@ -1322,16 +1452,11 @@ async function getFilteredMovies() {
   };
 }
 
-function renderListingView(title, subtitle, breadcrumbName) {
-  const titleEl = document.getElementById('listing-page-title');
-  const descEl = document.getElementById('listing-page-desc');
-  const breadcrumbCurrent = document.getElementById('listing-breadcrumb-current');
-
-  if (titleEl) titleEl.innerHTML = `<span class="title-accent"></span> <span>${title}</span>`;
-  if (descEl) descEl.textContent = subtitle;
-  if (breadcrumbCurrent) breadcrumbCurrent.textContent = breadcrumbName;
-
-  // Sync toolbar selects (tidak ada filter-quality lagi — lihat Task 7b)
+// Menyinkronkan <select> toolbar filter dan visibilitas toolbar itu sendiri
+// ke listingState saat ini. Diekstrak dari renderListingView supaya
+// resetListingFilters (F8) bisa memakainya kembali tanpa harus menimpa
+// title/subtitle/breadcrumb halaman dengan string generik.
+function syncFilterToolbarUI() {
   const genreSelect = document.getElementById('filter-genre');
   const countrySelect = document.getElementById('filter-country');
   const yearSelect = document.getElementById('filter-year');
@@ -1353,6 +1478,22 @@ function renderListingView(title, subtitle, breadcrumbName) {
   if (filterToolbar) {
     filterToolbar.style.display = listingState.rowKind === 'trending' ? 'none' : '';
   }
+}
+
+function renderListingView(title, subtitle, breadcrumbName) {
+  const titleEl = document.getElementById('listing-page-title');
+  const descEl = document.getElementById('listing-page-desc');
+  const breadcrumbCurrent = document.getElementById('listing-breadcrumb-current');
+
+  // title/breadcrumbName bisa membawa nilai dari URL tanpa disaring (query
+  // pencarian, slug negara/tahun yang tidak dikenal peta — lihat cabang
+  // handleRoute /search, /country/:slug, /year/:year) — escape sebelum masuk
+  // innerHTML (F1). breadcrumbName lewat textContent, sudah aman dari HTML.
+  if (titleEl) titleEl.innerHTML = `<span class="title-accent"></span> <span>${escapeHtml(title)}</span>`;
+  if (descEl) descEl.textContent = subtitle;
+  if (breadcrumbCurrent) breadcrumbCurrent.textContent = breadcrumbName;
+
+  syncFilterToolbarUI();
 
   // Render Sidebar Top Picks
   renderSidebarTopPicks();
@@ -1404,9 +1545,11 @@ async function updateListingGrid() {
     if (pillsBar && pillsContainer) {
       if (activeFilters.length > 0) {
         pillsBar.style.display = 'flex';
+        // f.label bisa membawa listingState.searchQuery mentah dari URL —
+        // escape di titik render (F1).
         pillsContainer.innerHTML = activeFilters.map(f => `
           <span class="active-pill">
-            ${f.label}
+            ${escapeHtml(f.label)}
             <span class="remove-pill" onclick="removeFilter('${f.key}')">✕</span>
           </span>
         `).join('');
@@ -1453,9 +1596,13 @@ async function updateListingGrid() {
     }
   } catch (error) {
     if (sequence !== listingRequestSeq) return;
+    // 429 bukan masalah koneksi pengguna — jangan salahkan koneksinya (F11).
+    const message = error && error.status === 429
+      ? 'Terlalu banyak permintaan ke TMDB. Silakan tunggu sebentar lalu coba lagi.'
+      : 'Gagal memuat daftar. Periksa koneksi lalu coba lagi.';
     grid.innerHTML = `
       <div class="listing-empty">
-        <p>Gagal memuat daftar. Periksa koneksi lalu coba lagi.</p>
+        <p>${message}</p>
         <button class="btn-retry" onclick="updateListingGrid()">Coba Lagi</button>
       </div>
     `;
@@ -1492,27 +1639,26 @@ function removeFilter(key) {
 
 window.removeFilter = removeFilter;
 
+// Sebelumnya fungsi ini mengganti seluruh listingState (termasuk rowKind
+// jadi 'trending'), yang membuat renderListingView menyembunyikan toolbar
+// filter tempat tombol Reset ini berada, dan diam-diam membawa pengguna ke
+// trending tanpa filter sama sekali. Sekarang hanya field FILTER yang
+// dibersihkan (genre, country, year, sort) — rowKind dan type milik rute
+// saat ini tetap dipertahankan, jadi toolbar (dan halaman) tidak berpindah
+// identitas hanya karena filternya direset (F8).
 function resetListingFilters() {
-  listingState = {
-    view: 'listing',
-    title: '',
-    subtitle: '',
-    breadcrumbName: '',
-    searchQuery: '',
-    genre: '',
-    genreId: null,
-    country: '',
-    year: '',
-    type: '',
-    sort: '',
-    rowKind: 'trending',
-    page: 1,
-    totalPages: 1,
-    totalResults: 0
-  };
+  listingState.genre = '';
+  listingState.genreId = null;
+  listingState.country = '';
+  listingState.year = '';
+  listingState.sort = '';
+  listingState.page = 1;
+
   document.querySelectorAll('.chip-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelector('.chip-btn[data-filter-chip="all"]')?.classList.add('active');
-  renderListingView('Semua Koleksi Film & Serial', 'Jelajahi seluruh koleksi film dan serial TV terbaik di Cinelax.', 'Katalog');
+
+  syncFilterToolbarUI();
+  updateListingGrid();
 }
 
 window.resetListingFilters = resetListingFilters;
@@ -1521,15 +1667,18 @@ function renderSidebarTopPicks() {
   const container = document.getElementById('sidebar-top-picks');
   if (!container) return;
 
+  // heroSlides sekarang bisa berisi judul trending TMDB nyata (F3), jadi
+  // title/poster di sini bukan lagi teks statis yang kita tulis sendiri —
+  // escape sebelum masuk innerHTML (F1).
   const topPicks = heroSlides.slice(0, 5);
   container.innerHTML = topPicks.map(m => `
     <div class="sidebar-mini-item" onclick="openPlayer('${m.id}')">
       <div class="sidebar-mini-poster" style="background: ${m.gradient}">
-        ${m.poster ? `<img src="${m.poster}" alt="${m.title}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">` : `<span>${m.emoji}</span>`}
+        ${m.poster ? `<img src="${m.poster}" alt="${escapeHtml(m.title)}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">` : `<span>${m.emoji}</span>`}
       </div>
       <div class="sidebar-mini-info">
-        <h5 class="sidebar-mini-title">${m.title}</h5>
-        <span class="sidebar-mini-meta">⭐ ${m.rating} · ${m.year}</span>
+        <h5 class="sidebar-mini-title">${escapeHtml(m.title)}</h5>
+        <span class="sidebar-mini-meta">⭐ ${m.rating || '—'} · ${m.year || '—'}</span>
       </div>
     </div>
   `).join('');
@@ -1557,9 +1706,14 @@ function initListingFilterEvents() {
   const resetBtn = document.getElementById('btn-reset-filters');
 
   const onFilterChange = () => {
+    // Jangan set listingState.genre ketika resolveGenreId gagal memetakan
+    // nilai ke ID TMDB (mis. "Superhero"/"Supernatural") — kalau tidak, pill
+    // filter aktif akan mengklaim "Genre: Superhero" padahal tidak ada
+    // filter genre yang benar-benar diterapkan ke hasil (F9).
     const genreValue = genreSelect?.value || '';
-    listingState.genre = genreValue;
-    listingState.genreId = resolveGenreId(genreValue, 'filter-genre');
+    const genreId = resolveGenreId(genreValue, 'filter-genre');
+    listingState.genre = genreId ? genreValue : '';
+    listingState.genreId = genreId;
 
     const countryValue = countrySelect?.value || '';
     listingState.country = COUNTRY_NAME_TO_CODE[countryValue] || '';
@@ -1592,8 +1746,11 @@ function initListingFilterEvents() {
       } else if (chipVal === '2026' || chipVal === '2025') {
         listingState.year = chipVal;
       } else {
-        listingState.genre = chipVal;
-        listingState.genreId = resolveGenreId(chipVal, 'quick-chip');
+        // Sama seperti onFilterChange di atas: jangan klaim filter genre
+        // yang tidak benar-benar diterapkan (F9).
+        const chipGenreId = resolveGenreId(chipVal, 'quick-chip');
+        listingState.genre = chipGenreId ? chipVal : '';
+        listingState.genreId = chipGenreId;
       }
       listingState.page = 1;
       updateListingGrid();
@@ -1638,27 +1795,36 @@ function renderDedicatedDetailView(movie, seasonIdx = 0, episodeIdx = 0) {
 
   if (titleEl) titleEl.textContent = movie.title;
   if (typeBadge) typeBadge.textContent = movie.type === 'series' ? 'SERIES' : 'MOVIE';
-  if (qualityBadge) qualityBadge.textContent = movie.quality || '4K ULTRA HD';
+  // quality tidak lagi dipetakan dari TMDB — badge disembunyikan sepenuhnya
+  // alih-alih menampilkan default palsu (F2).
+  if (qualityBadge) {
+    if (movie.quality) {
+      qualityBadge.textContent = movie.quality;
+      qualityBadge.style.display = '';
+    } else {
+      qualityBadge.style.display = 'none';
+    }
+  }
   if (ratingEl) ratingEl.textContent = movie.rating;
   if (yearEl) yearEl.textContent = movie.year;
-  if (durationEl) durationEl.textContent = movie.duration || (movie.type === 'series' ? '45m/ep' : '2h 15m');
-  if (countryEl) countryEl.textContent = movie.country || 'United States';
+  if (durationEl) durationEl.textContent = movie.duration || '-';
+  if (countryEl) countryEl.textContent = displayCountry(movie.country);
   if (synopsisEl) synopsisEl.textContent = movie.description;
 
   if (posterBox) {
     if (movie.poster) {
-      posterBox.innerHTML = `<img src="${movie.poster}" alt="${movie.title}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`;
+      posterBox.innerHTML = `<img src="${movie.poster}" alt="${escapeHtml(movie.title)}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`;
       posterBox.style.background = 'transparent';
     } else {
       posterBox.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">${movie.emoji}</div>`;
       posterBox.style.background = movie.gradient;
     }
   }
-  if (backdropBg) backdropBg.style.backgroundImage = `url('${movie.backdrop || movie.poster || 'assets/hero/hero-1.jpg'}')`;
+  if (backdropBg) backdropBg.style.backgroundImage = `url('${escapeHtml(movie.backdrop || movie.poster || 'assets/hero/hero-1.jpg')}')`;
 
   if (genresList) {
     const list = movie.genres || [movie.genre || 'Action'];
-    genresList.innerHTML = list.map(g => `<span class="hero-genre-tag">${g}</span>`).join('');
+    genresList.innerHTML = list.map(g => `<span class="hero-genre-tag">${escapeHtml(g)}</span>`).join('');
   }
 
   // Table Metadata
@@ -1668,13 +1834,30 @@ function renderDedicatedDetailView(movie, seasonIdx = 0, episodeIdx = 0) {
   };
 
   setTableVal('table-original-title', movie.originalTitle || movie.title);
-  setTableVal('table-director', movie.director || 'James Cameron');
-  setTableVal('table-cast', movie.cast || 'Star Ensemble Cast');
-  setTableVal('table-country', movie.country || 'United States');
+  setTableVal('table-director', movie.director);
+  setTableVal('table-cast', movie.cast);
+  setTableVal('table-country', displayCountry(movie.country));
   setTableVal('table-year', movie.year);
-  setTableVal('table-duration', movie.duration || (movie.type === 'series' ? '45m/ep' : '2h 15m'));
-  setTableVal('table-quality', movie.quality || '4K Ultra HD');
-  setTableVal('table-rating', `⭐ ${movie.rating} / 10 (IMDb)`);
+  setTableVal('table-duration', movie.duration);
+  // Baris "Kualitas" dihapus/disembunyikan seluruhnya ketika tidak ada data
+  // quality, bukan diisi default palsu (F2) — menyembunyikan hanya nilainya
+  // akan menyisakan label "Kualitas" tanpa isi.
+  const tableQualityEl = document.getElementById('table-quality');
+  if (tableQualityEl) {
+    const qualityRow = tableQualityEl.closest('tr');
+    if (movie.quality) {
+      tableQualityEl.textContent = movie.quality;
+      if (qualityRow) qualityRow.style.display = '';
+    } else if (qualityRow) {
+      qualityRow.style.display = 'none';
+    } else {
+      tableQualityEl.textContent = '-';
+    }
+  }
+  // Labelnya sudah bilang "Rating IMDb" tapi nilainya TMDB vote_average —
+  // ganti label jadi TMDB, bukan IMDb (F2). Fallback '—' mencegah "null"
+  // literal ketika movie.rating kosong (F11).
+  setTableVal('table-rating', `⭐ ${movie.rating || '—'} / 10 (TMDB)`);
   setTableVal('table-genre', (movie.genres || [movie.genre]).join(', '));
 
   // Player Section
@@ -1730,15 +1913,6 @@ function loadDetailPlayerIframe() {
   }, 2200);
 }
 
-// Global Action for Unavailable Overlay
-function notifyWhenAvailable() {
-  const currentMovie = detailActiveMovie || activeMovie;
-  const title = currentMovie ? currentMovie.title : 'film ini';
-  showToast(`🔔 Pengingat Diaktifkan! Anda akan diberi notifikasi saat "${title}" siap diputar di Cinelax.`, 'success');
-}
-
-window.notifyWhenAvailable = notifyWhenAvailable;
-
 function renderDetailEpisodesSection(movie) {
   const section = document.getElementById('detail-episodes-section');
   const seasonWrap = document.getElementById('detail-season-selector-wrap');
@@ -1746,19 +1920,24 @@ function renderDetailEpisodesSection(movie) {
 
   if (!section || !grid) return;
 
-  if (movie.type !== 'series') {
+  const seasons = (movie.type === 'series')
+    ? (movie.seasons || [{ season: 1, episodes: movie.episodes || [] }])
+    : [];
+  const hasAnyEpisodes = seasons.some((s) => Array.isArray(s.episodes) && s.episodes.length > 0);
+
+  // Sama seperti renderModalEpisodesSection: TMDB tidak memetakan episode/
+  // season sama sekali, jadi sembunyikan total panel "Daftar Episode Serial"
+  // ketika memang tidak ada data episode, bukan tampilkan tab "Season 1"
+  // kosong untuk setiap serial (F4).
+  if (movie.type !== 'series' || !hasAnyEpisodes) {
     section.style.display = 'none';
     return;
   }
 
   section.style.display = 'block';
 
-  const seasons = movie.seasons || [
-    { season: 1, episodes: movie.episodes || [] }
-  ];
-
   const currentSeasonData = seasons[detailSeasonIndex] || seasons[0];
-  const episodesList = currentSeasonData.episodes || [];
+  const episodesList = (currentSeasonData && currentSeasonData.episodes) || [];
 
   if (seasonWrap) {
     seasonWrap.innerHTML = seasons.map((s, sIdx) => `
@@ -1771,8 +1950,8 @@ function renderDetailEpisodesSection(movie) {
   grid.innerHTML = episodesList.map((ep, idx) => `
     <div class="episode-card ${idx === detailEpisodeIndex ? 'active' : ''}" onclick="selectDetailEpisode(${idx})">
       <div class="episode-card-info">
-        <span class="ep-num">S${detailSeasonIndex + 1} EP ${ep.number} (${ep.duration})</span>
-        <span class="ep-title">${ep.title}</span>
+        <span class="ep-num">S${detailSeasonIndex + 1} EP ${ep.number} (${escapeHtml(ep.duration)})</span>
+        <span class="ep-title">${escapeHtml(ep.title)}</span>
       </div>
       <span class="ep-play-icon">${idx === detailEpisodeIndex ? '▶' : '▷'}</span>
     </div>
@@ -1896,24 +2075,29 @@ function initSearch() {
       if (!suggestions) return;
 
       suggestions.classList.add('active');
+      // raw adalah nilai mentah dari input pencarian pengguna — escape
+      // sebelum masuk innerHTML (F1).
       suggestions.innerHTML = `
         <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
-          Mencari "${raw}"...
+          Mencari "${escapeHtml(raw)}"...
         </div>
       `;
 
       try {
+        // Tmdb.searchTitles sekarang mengembalikan bentuk pager
+        // {items, page, totalPages, totalResults} (F6) — dropdown autocomplete
+        // ini hanya butuh array item-nya.
         const results = await Tmdb.searchTitles(query);
 
         // Abaikan respons yang sudah kedaluwarsa
         if (sequence !== searchSequence) return;
 
-        const top = results.slice(0, 6).map(decorateMovie);
+        const top = results.items.slice(0, 6).map(decorateMovie);
 
         if (top.length === 0) {
           suggestions.innerHTML = `
             <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
-              Tidak ditemukan judul untuk "${raw}"
+              Tidak ditemukan judul untuk "${escapeHtml(raw)}"
             </div>
           `;
           return;
@@ -1923,12 +2107,12 @@ function initSearch() {
           <div class="suggestion-item" onclick="openPlayer('${m.id}'); document.getElementById('search-close').click();">
             <div class="suggestion-poster">
               ${m.poster
-                ? `<img src="${m.poster}" alt="${m.title}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">`
+                ? `<img src="${m.poster}" alt="${escapeHtml(m.title)}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">`
                 : `<div style="width:100%;height:100%;background:${m.gradient};border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">${m.emoji}</div>`}
             </div>
             <div class="suggestion-info">
-              <h4>${m.title}</h4>
-              <span>${m.year || '—'} · ${m.genre || 'Film'} · ⭐ ${m.rating || '—'}</span>
+              <h4>${escapeHtml(m.title)}</h4>
+              <span>${m.year || '—'} · ${escapeHtml(m.genre || 'Film')} · ⭐ ${m.rating || '—'}</span>
             </div>
           </div>
         `).join('');
