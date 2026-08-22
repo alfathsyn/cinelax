@@ -178,7 +178,13 @@
 
   async function getProviders(type, tmdbId) {
     const mediaType = type === 'series' ? 'tv' : 'movie';
-    const raw = await fetchTmdb(`${mediaType}/${tmdbId}/watch/providers`).catch(() => null);
+    // Tidak ada .catch(() => null) di sini dengan sengaja: kegagalan proxy/jaringan
+    // harus menjadi rejection nyata (ditangkap renderProviderPanel), bukan diam-diam
+    // berubah jadi { flatrate: [], rent: [], buy: [] } yang lalu ditafsirkan sebagai
+    // "judul ini memang tidak tersedia di layanan streaming manapun". mapProviders
+    // sendiri tetap toleran terhadap raw yang tak punya region ID — itu kasus sukses
+    // yang sah (TMDB merespons tapi tidak ada entri Indonesia).
+    const raw = await fetchTmdb(`${mediaType}/${tmdbId}/watch/providers`);
     return map.mapProviders(raw);
   }
 

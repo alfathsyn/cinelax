@@ -343,3 +343,34 @@ test('getRowPaged memakai first_air_date_year untuk kind tv', async () => {
   assert.ok(called.includes('first_air_date_year=2024'));
   assert.ok(!called.includes('primary_release_year'));
 });
+
+test('getProviders mengembalikan struktur kosong saat proxy sukses tanpa region ID', async () => {
+  tmdb.clearCache();
+  // Proxy merespons sukses (ok:true) tapi TMDB tidak punya entri untuk
+  // region ID — ini kasus sah "tidak tersedia di layanan streaming manapun",
+  // bukan kegagalan, jadi getProviders harus resolve, bukan reject.
+  const stub = stubFetch(() => ({ results: {} }));
+
+  const result = await tmdb.getProviders('movie', 550);
+  stub.restore();
+
+  assert.deepStrictEqual(result, { link: null, flatrate: [], rent: [], buy: [] });
+});
+
+test('getProviders menolak saat proxy gagal, bukan diam-diam mengembalikan struktur kosong', async () => {
+  tmdb.clearCache();
+  const original = globalThis.fetch;
+  globalThis.fetch = async () => ({
+    ok: false,
+    status: 500,
+    headers: { get: () => null },
+    json: async () => ({})
+  });
+
+  // Sebelum perbaikan, getProviders menelan kegagalan lewat .catch(() => null)
+  // dan mapProviders(null) tetap mengembalikan struktur kosong yang valid —
+  // membuat gangguan TMDB tak bisa dibedakan dari "memang tidak tersedia".
+  await assert.rejects(() => tmdb.getProviders('movie', 550), (error) => error.status === 500);
+
+  globalThis.fetch = original;
+});
