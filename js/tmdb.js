@@ -245,14 +245,20 @@
 
     if (kind === 'trending') {
       path = 'trending/all/week';
-    } else if (kind === 'top_rated') {
-      path = 'discover/movie';
-      params.sort_by = settings.sortBy || 'vote_average.desc';
-      params['vote_count.gte'] = MIN_VOTES;
-    } else if (kind === 'genre' || isTv) {
+    } else if (kind === 'genre' || kind === 'top_rated' || isTv) {
+      // 'top_rated' (dipakai /movies) lewat cabang discover yang sama dengan
+      // 'genre' supaya genreId/country/year benar-benar diterapkan, bukan
+      // diabaikan seperti sebelumnya. sort_by=vote_average.desc dan floor
+      // vote_count tetap jadi default "top rated" HANYA selama pengguna
+      // belum memilih sortir sendiri lewat toolbar filter.
       path = `discover/${mediaType}`;
       if (settings.genreId) params.with_genres = settings.genreId;
-      if (settings.sortBy) params.sort_by = settings.sortBy;
+      if (settings.sortBy) {
+        params.sort_by = settings.sortBy;
+      } else if (kind === 'top_rated') {
+        params.sort_by = 'vote_average.desc';
+        params['vote_count.gte'] = MIN_VOTES;
+      }
       if (settings.country) params.with_origin_country = settings.country;
       if (settings.language) params.with_original_language = settings.language;
       if (settings.year) {

@@ -710,12 +710,6 @@
                   Media ini saat ini belum dapat diputar secara streaming. Judul ini masih dalam jadwal penayangan bioskop atau menunggu rilis digital resmi.
                 </p>
                 <div class="unavailable-actions">
-                  <button class="btn-unavailable btn-watch-trailer" onclick="playOfficialTrailer('detail')">
-                    <span class="btn-icon">▶</span> Tonton Trailer Resmi
-                  </button>
-                  <button class="btn-unavailable btn-try-server" onclick="tryAlternateServer('detail')">
-                    <span class="btn-icon">🔄</span> Coba Server Cadangan
-                  </button>
                   <button class="btn-unavailable btn-remind" onclick="notifyWhenAvailable()">
                     <span class="btn-icon">🔔</span> Ingatkan Saat Rilis
                   </button>
@@ -730,9 +724,7 @@
               <span class="server-icon">⚡</span>
               <span>Pilih Server:</span>
             </div>
-            <div class="server-buttons-grid" id="detail-server-buttons">
-              <!-- Rendered by JS -->
-            </div>
+            <div class="provider-panel" id="detail-provider-panel"></div>
           </div>
 
           <!-- Series / Episode Selector (If Series) -->
@@ -1003,12 +995,6 @@
                 Media ini saat ini belum dapat diputar secara streaming. Judul ini masih dalam jadwal penayangan bioskop atau menunggu rilis digital resmi.
               </p>
               <div class="unavailable-actions">
-                <button class="btn-unavailable btn-watch-trailer" onclick="playOfficialTrailer('modal')">
-                  <span class="btn-icon">▶</span> Tonton Trailer Resmi
-                </button>
-                <button class="btn-unavailable btn-try-server" onclick="tryAlternateServer('modal')">
-                  <span class="btn-icon">🔄</span> Coba Server Cadangan
-                </button>
                 <button class="btn-unavailable btn-remind" onclick="notifyWhenAvailable()">
                   <span class="btn-icon">🔔</span> Ingatkan Saat Rilis
                 </button>
@@ -1026,9 +1012,7 @@
             <span class="server-icon">⚡</span>
             <span>Pilih Server Streaming:</span>
           </div>
-          <div class="server-buttons-grid" id="player-server-buttons">
-            <!-- Rendered dynamically by JS -->
-          </div>
+          <div class="provider-panel" id="player-provider-panel"></div>
         </div>
 
         <!-- Series / Episode Selector -->

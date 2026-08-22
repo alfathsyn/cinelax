@@ -958,64 +958,90 @@ function initHeroSlider() {
 }
 
 // ==========================================
-// STREAMING CONTROLLER & EMBED GENERATOR
+// PANEL KETERSEDIAAN LAYANAN STREAMING
 // ==========================================
 
-const STREAM_SERVERS = [
-  { id: 'server-1', name: 'Server 1 (Cinelax Ultra HD)', quality: '1080p Multi-Sub Indo' },
-  { id: 'server-2', name: 'Server 2 (AutoEmbed FHD)', quality: '1080p Ultra Fast' },
-  { id: 'server-3', name: 'Server 3 (2Embed VIP)', quality: '1080p Bufferless' },
-  { id: 'server-4', name: 'Server 4 (VidSrc Prime)', quality: '720p/1080p HD Clean' }
-];
+function renderProviderGroup(label, list) {
+  if (!list || list.length === 0) return '';
 
-function getStreamEmbedUrl(movie, serverIdx, seasonIdx, episodeIdx) {
-  if (!movie) return '';
-  const isSeries = movie.type === 'series';
-  const seasonNum = seasonIdx + 1;
-  const epNum = episodeIdx + 1;
-  const imdbId = movie.imdbId;
-
-  // If no imdbId, fallback to trailer or blank
-  if (!imdbId) {
-    if (movie.trailerUrl) return movie.trailerUrl;
-    return 'about:blank';
-  }
-
-  switch (serverIdx) {
-    case 0:
-      // Server 1: VidSrc.to
-      return isSeries 
-        ? `https://vidsrc.to/embed/tv/${imdbId}/${seasonNum}/${epNum}`
-        : `https://vidsrc.to/embed/movie/${imdbId}`;
-    case 1:
-      // Server 2: AutoEmbed
-      return isSeries 
-        ? `https://autoembed.co/tv/imdb/${imdbId}-${seasonNum}-${epNum}`
-        : `https://autoembed.co/movie/imdb/${imdbId}`;
-    case 2:
-      // Server 3: 2Embed
-      return isSeries 
-        ? `https://www.2embed.cc/embedtv/${imdbId}&s=${seasonNum}&e=${epNum}`
-        : `https://www.2embed.cc/embed/${imdbId}`;
-    case 3:
-    default:
-      // Server 4: VidSrc.in
-      return isSeries 
-        ? `https://vidsrc.in/embed/tv/${imdbId}/${seasonNum}/${epNum}`
-        : `https://vidsrc.in/embed/movie/${imdbId}`;
-  }
+  return `
+    <div class="provider-group">
+      <h4 class="provider-group-title">${label}</h4>
+      <div class="provider-logos">
+        ${list.map((p) => `
+          <div class="provider-logo" title="${p.name}">
+            <img src="${p.logo}" alt="${p.name}" loading="lazy">
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
 }
+
+async function renderProviderPanel(containerId, movie) {
+  const container = document.getElementById(containerId);
+  if (!container || !movie) return;
+
+  container.innerHTML = `<p class="provider-loading">Memeriksa ketersediaan...</p>`;
+
+  if (!movie.tmdbId) {
+    container.innerHTML = `<p class="provider-empty">Data ketersediaan tidak tersedia untuk judul ini.</p>`;
+    return;
+  }
+
+  let providers;
+  try {
+    providers = await Tmdb.getProviders(movie.type, movie.tmdbId);
+  } catch (error) {
+    container.innerHTML = `
+      <p class="provider-empty">Gagal memuat ketersediaan.</p>
+      <button class="btn-retry" onclick="renderProviderPanel('${containerId}', movieRegistry.get('${movie.id}'))">Coba Lagi</button>
+    `;
+    return;
+  }
+
+  const groups = [
+    renderProviderGroup('Langganan', providers.flatrate),
+    renderProviderGroup('Sewa', providers.rent),
+    renderProviderGroup('Beli', providers.buy)
+  ].join('');
+
+  if (!groups) {
+    container.innerHTML = `
+      <p class="provider-empty">
+        "${movie.title}" belum tersedia di layanan streaming Indonesia.
+      </p>
+    `;
+    return;
+  }
+
+  container.innerHTML = `
+    <h3 class="provider-heading">Nonton di</h3>
+    ${groups}
+    ${providers.link ? `
+      <a class="provider-cta" href="${providers.link}" target="_blank" rel="noopener noreferrer">
+        Buka opsi menonton
+      </a>
+    ` : ''}
+    <p class="provider-note">Data ketersediaan disediakan JustWatch melalui TMDB.</p>
+  `;
+}
+
+window.renderProviderPanel = renderProviderPanel;
 
 // ==========================================
 // QUICK THEATER MODAL CONTROLLER
 // ==========================================
 
 let activeMovie = null;
-let activeServerIndex = 0;
 let activeSeasonIndex = 0;
 let activeEpisodeIndex = 0;
 let isCinemaMode = false;
-let modalPlayingTrailer = false;
+// Penjaga respons basi: openPlayer() adalah async dan menunggu resolveMovie.
+// Dua klik kartu yang cepat bisa membuat respons klik pertama selesai belakangan
+// dan menimpa modal dengan film yang salah. Pola sama dipakai searchSequence,
+// listingRequestSeq, dan routeRequestSeq di bawah.
+let playerRequestSeq = 0;
 
 function loadPlayerIframe() {
   if (!activeMovie) return;
@@ -1027,32 +1053,22 @@ function loadPlayerIframe() {
 
   if (!iframe) return;
 
-  // Check if movie is marked unavailable and we're not currently previewing trailer
-  if (activeMovie.isUnavailable && !modalPlayingTrailer) {
+  if (!activeMovie.trailerUrl) {
     if (loader) loader.classList.add('hidden');
     iframe.src = 'about:blank';
     if (overlay) {
       overlay.style.display = 'flex';
       if (overlayMsg) {
-        overlayMsg.textContent = `Film "${activeMovie.title}" (${activeMovie.year}) saat ini belum dapat diputar secara streaming. Judul ini masih dalam jadwal penayangan bioskop atau menunggu rilis digital resmi. Anda dapat memutar trailer resminya di bawah ini.`;
+        overlayMsg.textContent = `Trailer resmi untuk "${activeMovie.title}" belum tersedia. Silakan lihat opsi menonton di bawah.`;
       }
     }
     return;
   }
 
-  // Hide unavailable overlay
   if (overlay) overlay.style.display = 'none';
   if (loader) loader.classList.remove('hidden');
 
-  if (modalPlayingTrailer && activeMovie.trailerUrl) {
-    const trailerSrc = activeMovie.trailerUrl.includes('?') 
-      ? `${activeMovie.trailerUrl}&autoplay=1` 
-      : `${activeMovie.trailerUrl}?autoplay=1`;
-    iframe.src = trailerSrc;
-  } else {
-    const streamUrl = getStreamEmbedUrl(activeMovie, activeServerIndex, activeSeasonIndex, activeEpisodeIndex);
-    iframe.src = streamUrl;
-  }
+  iframe.src = activeMovie.trailerUrl;
 
   iframe.onload = () => {
     setTimeout(() => {
@@ -1063,18 +1079,6 @@ function loadPlayerIframe() {
   setTimeout(() => {
     if (loader) loader.classList.add('hidden');
   }, 2200);
-}
-
-function renderModalServerButtons() {
-  const container = document.getElementById('player-server-buttons');
-  if (!container) return;
-
-  container.innerHTML = STREAM_SERVERS.map((server, idx) => `
-    <button class="server-btn ${idx === activeServerIndex ? 'active' : ''}" onclick="switchPlayerServer(${idx})">
-      <span class="server-status-dot"></span>
-      <span>${server.name}</span>
-    </button>
-  `).join('');
 }
 
 function renderModalEpisodesSection(movie) {
@@ -1139,17 +1143,19 @@ function renderRelatedInModal(current) {
 }
 
 async function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
+  // Penjaga respons basi: lihat komentar pada deklarasi playerRequestSeq.
+  const playerSequence = ++playerRequestSeq;
   const movie = await resolveMovie(movieId);
+  if (playerSequence !== playerRequestSeq) return;
+
   if (!movie) {
     showToast('Judul tidak ditemukan.', 'error');
     return;
   }
 
   activeMovie = movie;
-  activeServerIndex = 0;
   activeSeasonIndex = seasonIndex;
   activeEpisodeIndex = episodeIndex;
-  modalPlayingTrailer = false;
 
   const modal = document.getElementById('player-modal');
   if (!modal) return;
@@ -1213,11 +1219,11 @@ async function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
   if (castEl) castEl.textContent = movie.cast || 'Hollywood Star Ensemble';
   if (qualityDetailEl) qualityDetailEl.textContent = `${movie.quality || '4K Ultra HD'} (Subtitle Indonesia)`;
 
-  renderModalServerButtons();
   renderModalEpisodesSection(movie);
   renderRelatedInModal(movie);
 
   loadPlayerIframe();
+  renderProviderPanel('player-provider-panel', movie);
 
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -1235,7 +1241,6 @@ function closePlayer() {
 
   if (iframe) iframe.src = '';
   if (overlay) overlay.style.display = 'none';
-  modalPlayingTrailer = false;
 
   if (isCinemaMode) {
     isCinemaMode = false;
@@ -1245,17 +1250,6 @@ function closePlayer() {
 }
 
 window.closePlayer = closePlayer;
-
-function switchPlayerServer(serverIdx) {
-  if (activeServerIndex === serverIdx) return;
-  activeServerIndex = serverIdx;
-  modalPlayingTrailer = false;
-  renderModalServerButtons();
-  loadPlayerIframe();
-  showToast(`Mengalihkan ke ${STREAM_SERVERS[serverIdx].name}...`, 'info');
-}
-
-window.switchPlayerServer = switchPlayerServer;
 
 function switchPlayerSeason(seasonIdx) {
   activeSeasonIndex = seasonIdx;
@@ -1655,6 +1649,13 @@ async function handleRoute() {
       epNum = parseInt(parts[6], 10) || 1;
     }
 
+    // Tampilkan kerangka (skeleton) sebelum menunggu resolveMovie, seperti
+    // yang sudah dilakukan updateListingGrid — tanpa ini layar kosong total
+    // di koneksi lambat karena hideAllViews() di atas menyembunyikan semua view.
+    document.getElementById('view-detail').style.display = 'block';
+    const detailRelatedRow = document.getElementById('detail-related-row');
+    if (detailRelatedRow) renderSkeletonRow(detailRelatedRow, 6);
+
     const movie = await resolveMovie(slug);
 
     // Navigasi yang lebih baru sudah terjadi selagi resolveMovie menunggu;
@@ -1662,6 +1663,7 @@ async function handleRoute() {
     if (routeSequence !== routeRequestSeq) return;
 
     if (!movie) {
+      hideAllViews();
       renderNotFoundView();
       document.getElementById('view-404').style.display = 'block';
       updateActiveNav('/');
@@ -1746,6 +1748,15 @@ function renderListingView(title, subtitle, breadcrumbName) {
   if (yearSelect) yearSelect.value = listingState.year || '';
   if (typeSelect) typeSelect.value = listingState.type || '';
   if (sortSelect) sortSelect.value = listingState.sort || 'latest';
+
+  // /trending memakai endpoint trending/all/week TMDB, yang sama sekali tidak
+  // menerima parameter discover (genre/country/year/sort). Menampilkan toolbar
+  // di halaman ini membuat kontrolnya terlihat aktif padahal diam-diam tak
+  // berpengaruh — jadi disembunyikan total, bukan dibiarkan berpura-pura jalan.
+  const filterToolbar = document.querySelector('.filter-toolbar');
+  if (filterToolbar) {
+    filterToolbar.style.display = listingState.rowKind === 'trending' ? 'none' : '';
+  }
 
   // Render Sidebar Top Picks
   renderSidebarTopPicks();
@@ -1999,17 +2010,13 @@ function initListingFilterEvents() {
 // ==========================================
 
 let detailActiveMovie = null;
-let detailServerIndex = 0;
 let detailSeasonIndex = 0;
 let detailEpisodeIndex = 0;
-let detailPlayingTrailer = false;
 
 function renderDedicatedDetailView(movie, seasonIdx = 0, episodeIdx = 0) {
   detailActiveMovie = movie;
-  detailServerIndex = 0;
   detailSeasonIndex = seasonIdx;
   detailEpisodeIndex = episodeIdx;
-  detailPlayingTrailer = false;
 
   // Breadcrumbs
   const breadcrumbType = document.getElementById('detail-breadcrumb-type');
@@ -2075,9 +2082,9 @@ function renderDedicatedDetailView(movie, seasonIdx = 0, episodeIdx = 0) {
   setTableVal('table-genre', (movie.genres || [movie.genre]).join(', '));
 
   // Player Section
-  renderDetailServerButtons();
   renderDetailEpisodesSection(movie);
   loadDetailPlayerIframe();
+  renderProviderPanel('detail-provider-panel', movie);
 
   // Related Row
   const relatedRow = document.getElementById('detail-related-row');
@@ -2099,32 +2106,22 @@ function loadDetailPlayerIframe() {
 
   if (!iframe) return;
 
-  // Check if movie is marked unavailable and we're not currently previewing trailer
-  if (detailActiveMovie.isUnavailable && !detailPlayingTrailer) {
+  if (!detailActiveMovie.trailerUrl) {
     if (loader) loader.classList.add('hidden');
     iframe.src = 'about:blank';
     if (overlay) {
       overlay.style.display = 'flex';
       if (overlayMsg) {
-        overlayMsg.textContent = `Film "${detailActiveMovie.title}" (${detailActiveMovie.year}) saat ini belum dapat diputar secara streaming. Judul ini masih dalam jadwal penayangan bioskop atau menunggu rilis digital resmi. Anda dapat memutar trailer resminya di bawah ini.`;
+        overlayMsg.textContent = `Trailer resmi untuk "${detailActiveMovie.title}" belum tersedia. Silakan lihat opsi menonton di bawah.`;
       }
     }
     return;
   }
 
-  // Hide unavailable overlay
   if (overlay) overlay.style.display = 'none';
   if (loader) loader.classList.remove('hidden');
 
-  if (detailPlayingTrailer && detailActiveMovie.trailerUrl) {
-    const trailerSrc = detailActiveMovie.trailerUrl.includes('?') 
-      ? `${detailActiveMovie.trailerUrl}&autoplay=1` 
-      : `${detailActiveMovie.trailerUrl}?autoplay=1`;
-    iframe.src = trailerSrc;
-  } else {
-    const streamUrl = getStreamEmbedUrl(detailActiveMovie, detailServerIndex, detailSeasonIndex, detailEpisodeIndex);
-    iframe.src = streamUrl;
-  }
+  iframe.src = detailActiveMovie.trailerUrl;
 
   iframe.onload = () => {
     setTimeout(() => {
@@ -2137,71 +2134,13 @@ function loadDetailPlayerIframe() {
   }, 2200);
 }
 
-function renderDetailServerButtons() {
-  const container = document.getElementById('detail-server-buttons');
-  if (!container) return;
-
-  container.innerHTML = STREAM_SERVERS.map((server, idx) => `
-    <button class="server-btn ${idx === detailServerIndex ? 'active' : ''}" onclick="switchDetailServer(${idx})">
-      <span class="server-status-dot"></span>
-      <span>${server.name}</span>
-    </button>
-  `).join('');
-}
-
-function switchDetailServer(serverIdx) {
-  if (detailServerIndex === serverIdx) return;
-  detailServerIndex = serverIdx;
-  detailPlayingTrailer = false;
-  renderDetailServerButtons();
-  loadDetailPlayerIframe();
-  showToast(`Mengalihkan ke ${STREAM_SERVERS[serverIdx].name}...`, 'info');
-}
-
-window.switchDetailServer = switchDetailServer;
-
-// Global Actions for Unavailable Overlay & Trailer
-function playOfficialTrailer(context = 'modal') {
-  if (context === 'modal') {
-    if (!activeMovie) return;
-    modalPlayingTrailer = true;
-    showToast(`Memutar trailer resmi "${activeMovie.title}"...`, 'success');
-    loadPlayerIframe();
-  } else {
-    if (!detailActiveMovie) return;
-    detailPlayingTrailer = true;
-    showToast(`Memutar trailer resmi "${detailActiveMovie.title}"...`, 'success');
-    loadDetailPlayerIframe();
-  }
-}
-
-function tryAlternateServer(context = 'modal') {
-  const currentMovie = context === 'modal' ? activeMovie : detailActiveMovie;
-  if (!currentMovie) return;
-
-  if (currentMovie.isUnavailable) {
-    showToast(`Semua server streaming saat ini belum memiliki copy rilis untuk "${currentMovie.title}". Memutar trailer resmi...`, 'warning');
-    playOfficialTrailer(context);
-    return;
-  }
-
-  if (context === 'modal') {
-    const nextIdx = (activeServerIndex + 1) % STREAM_SERVERS.length;
-    switchPlayerServer(nextIdx);
-  } else {
-    const nextIdx = (detailServerIndex + 1) % STREAM_SERVERS.length;
-    switchDetailServer(nextIdx);
-  }
-}
-
+// Global Action for Unavailable Overlay
 function notifyWhenAvailable() {
   const currentMovie = detailActiveMovie || activeMovie;
   const title = currentMovie ? currentMovie.title : 'film ini';
   showToast(`🔔 Pengingat Diaktifkan! Anda akan diberi notifikasi saat "${title}" siap diputar di Cinelax.`, 'success');
 }
 
-window.playOfficialTrailer = playOfficialTrailer;
-window.tryAlternateServer = tryAlternateServer;
 window.notifyWhenAvailable = notifyWhenAvailable;
 
 function renderDetailEpisodesSection(movie) {
