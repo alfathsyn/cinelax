@@ -96,3 +96,21 @@ test('buildUpstreamUrl menghormati lang=en untuk fallback sinopsis', () => {
   const url = new URL(buildUpstreamUrl('movie/550', { lang: 'en' }, 'RAHASIA'));
   assert.strictEqual(url.searchParams.get('language'), 'en-US');
 });
+
+test('filterQuery meneruskan parameter filter listing', () => {
+  const result = filterQuery({
+    primary_release_year: '2024',
+    first_air_date_year: '2023',
+    with_origin_country: 'KR',
+    with_original_language: 'id',
+    sort_by: 'vote_average.desc',
+    with_genres: '28',
+    jahat: 'buang'
+  });
+
+  assert.strictEqual(result.primary_release_year, '2024');
+  assert.strictEqual(result.first_air_date_year, '2023');
+  assert.strictEqual(result.with_origin_country, 'KR');
+  assert.strictEqual(result.sort_by, 'vote_average.desc');
+  assert.strictEqual(result.jahat, undefined);
+});

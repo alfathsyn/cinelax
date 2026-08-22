@@ -275,3 +275,71 @@ test('fetchTmdb menyerah setelah batas percobaan 429 terlampaui', async () => {
   // satu percobaan awal ditambah dua percobaan ulang
   assert.strictEqual(calls, 3);
 });
+
+test('getRowPaged mengembalikan item beserta data pager', async () => {
+  tmdb.clearCache();
+  const stub = stubFetch((url) => {
+    if (url.includes('genre/')) return { genres: [{ id: 18, name: 'Drama' }] };
+    return { page: 3, total_pages: 42, total_results: 833, results: [movieDetail] };
+  });
+
+  const result = await tmdb.getRowPaged('genre', { genreId: 18, page: 3 });
+  stub.restore();
+
+  assert.strictEqual(result.page, 3);
+  assert.strictEqual(result.totalPages, 42);
+  assert.strictEqual(result.totalResults, 833);
+  assert.strictEqual(result.items.length, 1);
+  assert.strictEqual(result.items[0].title, 'Contoh Film');
+});
+
+test('getRowPaged membatasi totalPages pada batas keras TMDB', async () => {
+  tmdb.clearCache();
+  const stub = stubFetch((url) => {
+    if (url.includes('genre/')) return { genres: [] };
+    return { page: 1, total_pages: 9999, total_results: 200000, results: [] };
+  });
+
+  const result = await tmdb.getRowPaged('trending', {});
+  stub.restore();
+
+  assert.strictEqual(result.totalPages, 500);
+});
+
+test('getRowPaged meneruskan filter tahun, negara, dan sortir', async () => {
+  tmdb.clearCache();
+  const stub = stubFetch((url) => {
+    if (url.includes('genre/')) return { genres: [] };
+    return { page: 1, total_pages: 1, total_results: 0, results: [] };
+  });
+
+  await tmdb.getRowPaged('genre', {
+    genreId: 28,
+    year: 2024,
+    country: 'KR',
+    sortBy: 'vote_average.desc'
+  });
+  stub.restore();
+
+  const called = stub.calls.join(' ');
+  assert.ok(called.includes('with_genres=28'));
+  assert.ok(called.includes('primary_release_year=2024'));
+  assert.ok(called.includes('with_origin_country=KR'));
+  assert.ok(called.includes('sort_by=vote_average.desc'));
+});
+
+test('getRowPaged memakai first_air_date_year untuk kind tv', async () => {
+  tmdb.clearCache();
+  const stub = stubFetch((url) => {
+    if (url.includes('genre/')) return { genres: [] };
+    return { page: 1, total_pages: 1, total_results: 0, results: [] };
+  });
+
+  await tmdb.getRowPaged('tv', { year: 2024 });
+  stub.restore();
+
+  const called = stub.calls.join(' ');
+  assert.ok(called.includes('discover/tv'));
+  assert.ok(called.includes('first_air_date_year=2024'));
+  assert.ok(!called.includes('primary_release_year'));
+});

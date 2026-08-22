@@ -499,8 +499,10 @@
               </select>
             </div>
 
-            <!-- Filter Quality -->
-            <div class="filter-group">
+            <!-- Filter Quality: disembunyikan (Task 7b) — TMDB tidak punya padanan data
+                 kualitas video (4K/1080p/dst). Markup dipertahankan, bukan dihapus, supaya
+                 mudah dibalik bila nanti ada sumber data kualitas yang sah. -->
+            <div class="filter-group" style="display: none;">
               <label class="filter-label" for="filter-quality">Kualitas</label>
               <select class="filter-select" id="filter-quality">
                 <option value="">Semua Kualitas</option>

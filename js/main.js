@@ -1330,18 +1330,28 @@ window.shareMovie = shareMovie;
 // SPA ROUTER ENGINE & VIEW SWITCHER
 // ==========================================
 
-const ITEMS_PER_PAGE = 12;
 let listingState = {
   view: 'listing',
   title: '',
   subtitle: '',
   breadcrumbName: '',
   searchQuery: '',
+  genre: '',
   genreId: null,
+  country: '',
+  year: '',
+  type: '',
+  sort: '',
   rowKind: 'trending',
   page: 1,
-  totalPages: 1
+  totalPages: 1,
+  totalResults: 0
 };
+// quality sengaja tidak ada: TMDB tidak punya padanannya, dan field ini
+// sudah dibuang di Task 5 karena isinya karangan (lihat brief Task 7b).
+
+let listingRequestSeq = 0;
+let routeRequestSeq = 0;
 
 function hideAllViews() {
   document.querySelectorAll('.app-view').forEach(view => {
@@ -1360,7 +1370,21 @@ function updateActiveNav(path) {
   });
 }
 
-// Nama genre pada URL dipetakan ke ID genre TMDB
+// Nama genre pada URL (/genre/:slug, huruf kecil berpemisah "-") dan pada
+// toolbar filter (nilai <option>, huruf kecil) dipetakan ke ID genre TMDB.
+// Diperluas pada Task 7b agar mencakup seluruh <option> nyata di #filter-genre
+// (dibaca dari index.html): Action, Adventure, Animation, Comedy, Crime,
+// Documentary, Drama, Family, Fantasy, History, Horror, Music, Mystery,
+// Romance, Sci-Fi, Superhero, Supernatural, Thriller, TV Movie, War, Western.
+// Catatan "tv movie" vs "tv-movie": nilai <option> toolbar adalah "TV Movie"
+// (berspasi bila di-lowercase), sedangkan link navigasi memakai slug URL
+// "tv-movie" (bertanda hubung) — keduanya harus ada agar dua sumber ini
+// sama-sama cocok.
+// "Superhero" dan "Supernatural" SENGAJA tidak dipetakan: TMDB tidak punya
+// genre resmi untuk keduanya (bukan kelalaian, dan keduanya juga tidak
+// muncul sebagai link navigasi /genre/:slug). Bila dipilih di toolbar,
+// initListingFilterEvents membiarkan filter genre kosong (setara "Semua
+// Genre") dan mencatat peringatan di console, bukan memalsukan ID.
 const GENRE_SLUG_TO_ID = {
   action: 28,
   adventure: 12,
@@ -1371,15 +1395,76 @@ const GENRE_SLUG_TO_ID = {
   drama: 18,
   family: 10751,
   fantasy: 14,
+  history: 36,
   horror: 27,
+  music: 10402,
   mystery: 9648,
   romance: 10749,
   'sci-fi': 878,
   thriller: 53,
-  war: 10752
+  'tv movie': 10770,
+  'tv-movie': 10770,
+  war: 10752,
+  western: 37
 };
 
+// Nama negara pada toolbar filter (#filter-country) dan pada rute /country/:slug
+// dipetakan ke kode negara ISO 3166-1 alpha-2 yang dipahami parameter TMDB
+// with_origin_country. Dibangun dari <option value="..."> nyata di index.html.
+const COUNTRY_NAME_TO_CODE = {
+  'United States': 'US',
+  'United Kingdom': 'GB',
+  'Korea Selatan': 'KR',
+  Jepang: 'JP',
+  China: 'CN',
+  India: 'IN',
+  Thailand: 'TH',
+  Indonesia: 'ID',
+  Filipina: 'PH',
+  'Hong Kong': 'HK',
+  Taiwan: 'TW',
+  Prancis: 'FR',
+  Jerman: 'DE',
+  Spanyol: 'ES',
+  Turki: 'TR'
+};
+
+// Kebalikan dari COUNTRY_NAME_TO_CODE. listingState.country menyimpan kode ISO
+// (dipakai langsung oleh getRowPaged sebagai with_origin_country), tapi
+// <option value="..."> pada #filter-country adalah nama negara, bukan kode.
+// Tabel ini dipakai untuk menyinkronkan <select> dan label pill filter aktif
+// kembali ke nama yang bisa dibaca pengguna.
+const COUNTRY_CODE_TO_NAME = Object.fromEntries(
+  Object.entries(COUNTRY_NAME_TO_CODE).map(([name, code]) => [code, name])
+);
+
+// Kunci pilihan #filter-sort dipetakan ke parameter sort_by TMDB yang valid.
+// Nama field tanggal dan judul berbeda antara discover/movie dan discover/tv,
+// sehingga pemetaan ini butuh tahu media (isTv) di titik penggunaan (lihat
+// getFilteredMovies), bukan pada saat pengguna memilih opsi.
+function resolveSortBy(sortKey, isTv) {
+  switch (sortKey) {
+    case 'rating':
+      return 'vote_average.desc';
+    case 'popular':
+      return 'popularity.desc';
+    case 'title':
+      return isTv ? 'name.asc' : 'title.asc';
+    case 'year':
+    case 'latest':
+      return isTv ? 'first_air_date.desc' : 'primary_release_date.desc';
+    default:
+      return undefined;
+  }
+}
+
 async function handleRoute() {
+  // Penjaga respons basi: dua navigasi cepat bisa membuat sebuah
+  // `await resolveMovie(slug)` yang lambat menimpa hasil navigasi yang lebih
+  // baru. Setiap pemanggilan handleRoute menaikkan generasi ini; hasil dari
+  // generasi yang sudah kedaluwarsa dibuang sebelum dirender (lihat cabang 9).
+  const routeSequence = ++routeRequestSeq;
+
   let path = window.location.hash.replace(/^#/, '');
   if (!path) path = window.location.pathname;
   if (path === '' || path === 'index.html') path = '/';
@@ -1398,7 +1483,12 @@ async function handleRoute() {
   // 2. Movies List (/movies)
   if (path === '/movies') {
     listingState.searchQuery = '';
+    listingState.genre = '';
     listingState.genreId = null;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = 'movie';
+    listingState.sort = '';
     listingState.rowKind = 'top_rated';
     listingState.page = 1;
     renderListingView('Semua Film (Movies)', 'Jelajahi seluruh film bioskop box office terbaru dengan subtitle Indonesia.', 'Movies');
@@ -1411,7 +1501,12 @@ async function handleRoute() {
   // 3. Series List (/series)
   if (path === '/series') {
     listingState.searchQuery = '';
+    listingState.genre = '';
     listingState.genreId = null;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = 'series';
+    listingState.sort = '';
     listingState.rowKind = 'tv';
     listingState.page = 1;
     renderListingView('Serial TV & Drama', 'Koleksi serial TV Barat, Drama Korea, dan Anime terlengkap multi-season.', 'Series');
@@ -1424,7 +1519,12 @@ async function handleRoute() {
   // 4. Trending List (/trending)
   if (path === '/trending') {
     listingState.searchQuery = '';
+    listingState.genre = '';
     listingState.genreId = null;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = '';
+    listingState.sort = '';
     listingState.rowKind = 'trending';
     listingState.page = 1;
     renderListingView('🔥 Trending 2025 — 2026', 'Film dan serial paling banyak ditonton dan viral minggu ini.', 'Trending');
@@ -1447,12 +1547,18 @@ async function handleRoute() {
       return;
     }
 
+    const genreLabel = genreSlug.charAt(0).toUpperCase() + genreSlug.slice(1);
+
     listingState.searchQuery = '';
+    listingState.genre = genreLabel;
     listingState.genreId = genreId;
-    listingState.rowKind = null;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = '';
+    listingState.sort = '';
+    listingState.rowKind = 'genre';
     listingState.page = 1;
 
-    const genreLabel = genreSlug.charAt(0).toUpperCase() + genreSlug.slice(1);
     renderListingView(`Genre: ${genreLabel}`, `Koleksi film dan serial TV bertema ${genreLabel} terbaik.`, genreLabel);
     document.getElementById('view-listing').style.display = 'block';
     updateActiveNav('/genre/' + genreSlug);
@@ -1471,11 +1577,18 @@ async function handleRoute() {
       'germany': 'Jerman', 'spain': 'Spanyol', 'turkey': 'Turki'
     };
     const countryName = countryMap[countrySlug.toLowerCase()] || countrySlug;
+    const countryCode = COUNTRY_NAME_TO_CODE[countryName] || '';
 
-    // Belum ada kind TMDB khusus negara pada Task 7; tampilkan trending sebagai fallback
     listingState.searchQuery = '';
+    listingState.genre = '';
     listingState.genreId = null;
-    listingState.rowKind = 'trending';
+    listingState.country = countryCode;
+    listingState.year = '';
+    listingState.type = '';
+    listingState.sort = '';
+    // rowKind: 'genre' membuat getRowPaged benar-benar memfilter memakai
+    // with_origin_country, alih-alih jatuh ke trending tanpa filter apa pun.
+    listingState.rowKind = 'genre';
     listingState.page = 1;
 
     renderListingView(`Negara: ${countryName}`, `Daftar film dan drama produksi ${countryName}.`, countryName);
@@ -1489,10 +1602,16 @@ async function handleRoute() {
   if (path.startsWith('/year/')) {
     const year = path.replace('/year/', '').split('?')[0];
 
-    // Belum ada kind TMDB khusus tahun pada Task 7; tampilkan trending sebagai fallback
     listingState.searchQuery = '';
+    listingState.genre = '';
     listingState.genreId = null;
-    listingState.rowKind = 'trending';
+    listingState.country = '';
+    listingState.year = year;
+    listingState.type = '';
+    listingState.sort = '';
+    // rowKind: 'genre' membuat getRowPaged benar-benar memfilter memakai
+    // primary_release_year, alih-alih jatuh ke trending tanpa filter apa pun.
+    listingState.rowKind = 'genre';
     listingState.page = 1;
 
     renderListingView(`Tahun Rilis: ${year}`, `Daftar film dan serial yang dirilis pada tahun ${year}.`, year);
@@ -1508,8 +1627,13 @@ async function handleRoute() {
     const query = params.get('q') || '';
 
     listingState.searchQuery = query;
+    listingState.genre = '';
     listingState.genreId = null;
-    listingState.rowKind = null;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = '';
+    listingState.sort = '';
+    listingState.rowKind = 'trending';
     listingState.page = 1;
 
     renderListingView(`Hasil Pencarian: "${query}"`, `Menampilkan semua judul yang cocok dengan kata kunci "${query}".`, `Pencarian: ${query}`);
@@ -1532,6 +1656,11 @@ async function handleRoute() {
     }
 
     const movie = await resolveMovie(slug);
+
+    // Navigasi yang lebih baru sudah terjadi selagi resolveMovie menunggu;
+    // buang hasil ini, jangan timpa apa yang sudah dirender.
+    if (routeSequence !== routeRequestSeq) return;
+
     if (!movie) {
       renderNotFoundView();
       document.getElementById('view-404').style.display = 'block';
@@ -1569,21 +1698,30 @@ window.navigate = navigate;
 async function getFilteredMovies() {
   const state = listingState;
 
-  // Halaman hasil pencarian
+  // Halaman hasil pencarian. TMDB search/multi tidak melaporkan total_pages
+  // yang berguna untuk paginasi lokal, jadi diperlakukan sebagai satu halaman.
   if (state.searchQuery) {
-    const results = await Tmdb.searchTitles(state.searchQuery, state.page || 1);
-    return results.map(decorateMovie);
+    const items = (await Tmdb.searchTitles(state.searchQuery, state.page || 1)).map(decorateMovie);
+    return { items, page: state.page || 1, totalPages: 1, totalResults: items.length };
   }
 
-  // Halaman genre
-  if (state.genreId) {
-    const results = await Tmdb.getRow('genre', { genreId: state.genreId, page: state.page || 1 });
-    return results.map(decorateMovie);
-  }
+  const kind = state.type === 'series' ? 'tv' : (state.rowKind || 'genre');
+  const isTv = kind === 'tv';
 
-  // Halaman kategori umum
-  const results = await Tmdb.getRow(state.rowKind || 'trending', { page: state.page || 1 });
-  return results.map(decorateMovie);
+  const result = await Tmdb.getRowPaged(kind, {
+    page: state.page || 1,
+    genreId: state.genreId || undefined,
+    country: state.country || undefined,
+    year: state.year || undefined,
+    sortBy: resolveSortBy(state.sort, isTv)
+  });
+
+  return {
+    items: result.items.map(decorateMovie),
+    page: result.page,
+    totalPages: result.totalPages,
+    totalResults: result.totalResults
+  };
 }
 
 function renderListingView(title, subtitle, breadcrumbName) {
@@ -1595,18 +1733,17 @@ function renderListingView(title, subtitle, breadcrumbName) {
   if (descEl) descEl.textContent = subtitle;
   if (breadcrumbCurrent) breadcrumbCurrent.textContent = breadcrumbName;
 
-  // Sync toolbar selects
+  // Sync toolbar selects (tidak ada filter-quality lagi — lihat Task 7b)
   const genreSelect = document.getElementById('filter-genre');
   const countrySelect = document.getElementById('filter-country');
   const yearSelect = document.getElementById('filter-year');
-  const qualitySelect = document.getElementById('filter-quality');
   const typeSelect = document.getElementById('filter-type');
   const sortSelect = document.getElementById('filter-sort');
 
   if (genreSelect) genreSelect.value = listingState.genre || '';
-  if (countrySelect) countrySelect.value = listingState.country || '';
+  // listingState.country menyimpan kode ISO (mis. "KR"); <option> memakai nama negara.
+  if (countrySelect) countrySelect.value = COUNTRY_CODE_TO_NAME[listingState.country] || '';
   if (yearSelect) yearSelect.value = listingState.year || '';
-  if (qualitySelect) qualitySelect.value = listingState.quality || '';
   if (typeSelect) typeSelect.value = listingState.type || '';
   if (sortSelect) sortSelect.value = listingState.sort || 'latest';
 
@@ -1619,30 +1756,105 @@ function renderListingView(title, subtitle, breadcrumbName) {
 
 async function updateListingGrid() {
   const grid = document.getElementById('listing-grid');
+  const emptyState = document.getElementById('listing-empty-state');
+  const pagination = document.getElementById('listing-pagination');
+  const countText = document.getElementById('listing-count-text');
+  const pillsBar = document.getElementById('active-pills-bar');
+  const pillsContainer = document.getElementById('active-pills-container');
+
   if (!grid) return;
 
+  // Penjaga respons basi: dua panggilan updateListingGrid bisa tumpang
+  // tindih (mis. pengguna mengganti filter dua kali dengan cepat). Hasil
+  // dari generasi yang sudah kedaluwarsa dibuang sebelum dirender.
+  const sequence = ++listingRequestSeq;
+
   renderSkeletonRow(grid, 12);
+  if (emptyState) emptyState.style.display = 'none';
+  if (pagination) pagination.innerHTML = '';
 
   try {
-    const movies = await getFilteredMovies();
+    const result = await getFilteredMovies();
+    if (sequence !== listingRequestSeq) return;
 
-    if (movies.length === 0) {
-      grid.innerHTML = `
-        <div class="listing-empty">
-          <p>Tidak ada judul yang cocok dengan filter ini.</p>
-        </div>
-      `;
+    const { items, page, totalPages, totalResults } = result;
+    listingState.page = page;
+    listingState.totalPages = totalPages;
+    listingState.totalResults = totalResults;
+
+    if (countText) {
+      countText.textContent = totalResults > 0 ? `${totalResults} judul` : '0 judul';
+    }
+
+    // Active Pills Bar (tidak ada chip quality — lihat Task 7b)
+    const activeFilters = [];
+    if (listingState.genre) activeFilters.push({ key: 'genre', label: `Genre: ${listingState.genre}` });
+    if (listingState.country) activeFilters.push({ key: 'country', label: `Negara: ${COUNTRY_CODE_TO_NAME[listingState.country] || listingState.country}` });
+    if (listingState.year) activeFilters.push({ key: 'year', label: `Tahun: ${listingState.year}` });
+    if (listingState.type) activeFilters.push({ key: 'type', label: `Tipe: ${listingState.type === 'series' ? 'Series' : 'Movies'}` });
+    if (listingState.searchQuery) activeFilters.push({ key: 'searchQuery', label: `Cari: "${listingState.searchQuery}"` });
+
+    if (pillsBar && pillsContainer) {
+      if (activeFilters.length > 0) {
+        pillsBar.style.display = 'flex';
+        pillsContainer.innerHTML = activeFilters.map(f => `
+          <span class="active-pill">
+            ${f.label}
+            <span class="remove-pill" onclick="removeFilter('${f.key}')">✕</span>
+          </span>
+        `).join('');
+      } else {
+        pillsBar.style.display = 'none';
+      }
+    }
+
+    if (items.length === 0) {
+      grid.innerHTML = '';
+      if (emptyState) emptyState.style.display = 'block';
+      if (pagination) pagination.innerHTML = '';
       return;
     }
 
-    grid.innerHTML = movies.map((m) => renderMovieCard(m)).join('');
+    if (emptyState) emptyState.style.display = 'none';
+    grid.innerHTML = items.map((m) => renderMovieCard(m)).join('');
+
+    // Render Pagination Buttons
+    if (pagination) {
+      if (totalPages <= 1) {
+        pagination.innerHTML = '';
+      } else {
+        let pagHtml = `
+          <button class="page-btn" ${page === 1 ? 'disabled' : ''} onclick="changeListingPage(${page - 1})">« Prev</button>
+        `;
+
+        for (let p = 1; p <= totalPages; p++) {
+          if (p === 1 || p === totalPages || (p >= page - 1 && p <= page + 1)) {
+            pagHtml += `
+              <button class="page-btn ${p === page ? 'active' : ''}" onclick="changeListingPage(${p})">${p}</button>
+            `;
+          } else if (p === page - 2 || p === page + 2) {
+            pagHtml += `<span class="page-ellipsis">...</span>`;
+          }
+        }
+
+        pagHtml += `
+          <button class="page-btn" ${page === totalPages ? 'disabled' : ''} onclick="changeListingPage(${page + 1})">Next »</button>
+        `;
+
+        pagination.innerHTML = pagHtml;
+      }
+    }
   } catch (error) {
+    if (sequence !== listingRequestSeq) return;
     grid.innerHTML = `
       <div class="listing-empty">
         <p>Gagal memuat daftar. Periksa koneksi lalu coba lagi.</p>
         <button class="btn-retry" onclick="updateListingGrid()">Coba Lagi</button>
       </div>
     `;
+    if (emptyState) emptyState.style.display = 'none';
+    if (pagination) pagination.innerHTML = '';
+    console.warn('Gagal memuat listing:', error.message);
   }
 }
 
@@ -1657,7 +1869,14 @@ function changeListingPage(newPage) {
 window.changeListingPage = changeListingPage;
 
 function removeFilter(key) {
-  listingState[key] = '';
+  if (key === 'genre') {
+    // genre dan genreId selalu berpasangan — mengosongkan salah satu tanpa
+    // yang lain akan membuat getFilteredMovies tetap memfilter dengan ID lama.
+    listingState.genre = '';
+    listingState.genreId = null;
+  } else {
+    listingState[key] = '';
+  }
   listingState.page = 1;
   const el = document.getElementById(`filter-${key}`);
   if (el) el.value = '';
@@ -1668,15 +1887,21 @@ window.removeFilter = removeFilter;
 
 function resetListingFilters() {
   listingState = {
-    currentCategory: 'all',
+    view: 'listing',
+    title: '',
+    subtitle: '',
+    breadcrumbName: '',
+    searchQuery: '',
     genre: '',
+    genreId: null,
     country: '',
     year: '',
-    quality: '',
     type: '',
-    sort: 'latest',
-    searchQuery: '',
-    page: 1
+    sort: '',
+    rowKind: 'trending',
+    page: 1,
+    totalPages: 1,
+    totalResults: 0
   };
   document.querySelectorAll('.chip-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelector('.chip-btn[data-filter-chip="all"]')?.classList.add('active');
@@ -1703,22 +1928,38 @@ function renderSidebarTopPicks() {
   `).join('');
 }
 
+// Mencari ID genre TMDB dari nilai option (case-insensitive). Mengembalikan
+// null dan mencatat peringatan bila nilai tidak punya padanan (Superhero,
+// Supernatural) — filter genre lalu diabaikan, bukan dipalsukan.
+function resolveGenreId(rawValue, sourceLabel) {
+  if (!rawValue) return null;
+  const genreId = GENRE_SLUG_TO_ID[rawValue.toLowerCase()];
+  if (!genreId) {
+    console.warn(`Cinelax: tidak ada padanan genre TMDB untuk "${rawValue}" (${sourceLabel}); filter genre diabaikan.`);
+    return null;
+  }
+  return genreId;
+}
+
 function initListingFilterEvents() {
   const genreSelect = document.getElementById('filter-genre');
   const countrySelect = document.getElementById('filter-country');
   const yearSelect = document.getElementById('filter-year');
-  const qualitySelect = document.getElementById('filter-quality');
   const typeSelect = document.getElementById('filter-type');
   const sortSelect = document.getElementById('filter-sort');
   const resetBtn = document.getElementById('btn-reset-filters');
 
   const onFilterChange = () => {
-    listingState.genre = genreSelect?.value || '';
-    listingState.country = countrySelect?.value || '';
+    const genreValue = genreSelect?.value || '';
+    listingState.genre = genreValue;
+    listingState.genreId = resolveGenreId(genreValue, 'filter-genre');
+
+    const countryValue = countrySelect?.value || '';
+    listingState.country = COUNTRY_NAME_TO_CODE[countryValue] || '';
+
     listingState.year = yearSelect?.value || '';
-    listingState.quality = qualitySelect?.value || '';
     listingState.type = typeSelect?.value || '';
-    listingState.sort = sortSelect?.value || 'latest';
+    listingState.sort = sortSelect?.value || '';
     listingState.page = 1;
     updateListingGrid();
   };
@@ -1726,7 +1967,6 @@ function initListingFilterEvents() {
   genreSelect?.addEventListener('change', onFilterChange);
   countrySelect?.addEventListener('change', onFilterChange);
   yearSelect?.addEventListener('change', onFilterChange);
-  qualitySelect?.addEventListener('change', onFilterChange);
   typeSelect?.addEventListener('change', onFilterChange);
   sortSelect?.addEventListener('change', onFilterChange);
   resetBtn?.addEventListener('click', resetListingFilters);
@@ -1740,11 +1980,13 @@ function initListingFilterEvents() {
       const chipVal = chip.getAttribute('data-filter-chip');
       if (chipVal === 'all') {
         listingState.genre = '';
+        listingState.genreId = null;
         listingState.year = '';
       } else if (chipVal === '2026' || chipVal === '2025') {
         listingState.year = chipVal;
       } else {
         listingState.genre = chipVal;
+        listingState.genreId = resolveGenreId(chipVal, 'quick-chip');
       }
       listingState.page = 1;
       updateListingGrid();

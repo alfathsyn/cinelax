@@ -19,6 +19,7 @@ const ALLOWED_PARAMS = [
   'with_genres',
   'sort_by',
   'primary_release_year',
+  'first_air_date_year',
   'year',
   'vote_count.gte',
   'with_origin_country',

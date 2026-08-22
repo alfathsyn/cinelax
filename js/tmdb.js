@@ -229,6 +229,57 @@
       .map((item) => map.mapTitle(item, { genreLookup }));
   }
 
+  const MAX_TMDB_PAGE = 500;
+
+  // Versi getRow yang mengembalikan data pager (page/totalPages/totalResults)
+  // alih-alih hanya array. Ditambahkan di samping getRow, bukan menggantinya:
+  // renderContentSection (Task 5) memanggil getRow dan mengandalkan nilai
+  // kembaliannya berupa array — mengubah bentuk itu akan merusaknya diam-diam.
+  async function getRowPaged(kind, options) {
+    const settings = options || {};
+    const isTv = kind === 'tv';
+    const mediaType = isTv ? 'tv' : 'movie';
+
+    let path;
+    const params = { page: settings.page || 1 };
+
+    if (kind === 'trending') {
+      path = 'trending/all/week';
+    } else if (kind === 'top_rated') {
+      path = 'discover/movie';
+      params.sort_by = settings.sortBy || 'vote_average.desc';
+      params['vote_count.gte'] = MIN_VOTES;
+    } else if (kind === 'genre' || isTv) {
+      path = `discover/${mediaType}`;
+      if (settings.genreId) params.with_genres = settings.genreId;
+      if (settings.sortBy) params.sort_by = settings.sortBy;
+      if (settings.country) params.with_origin_country = settings.country;
+      if (settings.language) params.with_original_language = settings.language;
+      if (settings.year) {
+        if (isTv) params.first_air_date_year = settings.year;
+        else params.primary_release_year = settings.year;
+      }
+    } else {
+      throw new Error(`Jenis baris tidak dikenal: ${kind}`);
+    }
+
+    const [data, genreLookup] = await Promise.all([
+      fetchTmdb(path, params),
+      kind === 'trending' ? getCombinedGenreLookup() : getGenreLookup(mediaType)
+    ]);
+
+    const items = (data.results || [])
+      .filter((item) => item.media_type !== 'person')
+      .map((item) => map.mapTitle(item, { genreLookup }));
+
+    return {
+      items,
+      page: data.page || 1,
+      totalPages: Math.min(data.total_pages || 1, MAX_TMDB_PAGE),
+      totalResults: data.total_results || 0
+    };
+  }
+
   async function findBySlug(slug) {
     const parts = String(slug || '').split('-');
     const lastPart = parts[parts.length - 1];
@@ -258,6 +309,7 @@
     getDetail,
     getProviders,
     getRow,
+    getRowPaged,
     findBySlug,
     clearCache
   };
