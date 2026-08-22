@@ -1709,19 +1709,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-secondary);
 }
 
-.modal-action-btn.idlix-link {
-  background: rgba(229, 9, 20, 0.12);
-  border-color: rgba(229, 9, 20, 0.35);
-  color: #ff5e67;
-}
-
-.modal-action-btn.idlix-link:hover {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: #fff;
-  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
-}
-
 .modal-close-btn {
   display: flex;
   align-items: center;
@@ -1833,48 +1820,6 @@ h1, h2, h3, h4, h5, h6 {
 .server-icon {
   color: var(--accent-secondary);
   font-size: 16px;
-}
-
-.server-buttons-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.server-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  color: var(--text-secondary);
-  font-size: 12.5px;
-  font-weight: 500;
-  transition: all var(--transition-fast);
-}
-
-.server-btn:hover {
-  background: var(--bg-hover);
-  color: var(--text-primary);
-  border-color: var(--border-light);
-}
-
-.server-btn.active {
-  background: var(--accent-gradient);
-  border-color: transparent;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 2px 12px rgba(229, 9, 20, 0.4);
-}
-
-.server-btn .server-status-dot {
-  width: 7px;
-  height: 7px;
-  background: var(--success);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--success);
 }
 
 /* Series / Episode Selector */
@@ -3208,73 +3153,6 @@ body.cinema-mode-active .player-related-section:hover {
   max-width: 480px;
 }
 
-.unavailable-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
-  width: 100%;
-}
-
-.btn-unavailable {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 10px 18px;
-  border-radius: var(--radius-sm);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-unavailable .btn-icon {
-  font-size: 14px;
-}
-
-.btn-unavailable.btn-watch-trailer {
-  background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(229, 9, 20, 0.4);
-}
-
-.btn-unavailable.btn-watch-trailer:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(229, 9, 20, 0.6);
-  background: linear-gradient(135deg, #ff1a27 0%, #d40813 100%);
-}
-
-.btn-unavailable.btn-try-server {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #e2e8f0;
-}
-
-.btn-unavailable.btn-try-server:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  color: #fff;
-}
-
-.btn-unavailable.btn-remind {
-  background: rgba(59, 130, 246, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  color: #93c5fd;
-}
-
-.btn-unavailable.btn-remind:hover {
-  background: rgba(59, 130, 246, 0.22);
-  border-color: rgba(59, 130, 246, 0.55);
-  transform: translateY(-2px);
-  color: #bfdbfe;
-}
-
 @media (max-width: 480px) {
   .media-unavailable-overlay {
     padding: 16px 12px;
@@ -3289,14 +3167,105 @@ body.cinema-mode-active .player-related-section:hover {
   .unavailable-icon-wrapper .main-icon {
     font-size: 22px;
   }
-  .unavailable-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .btn-unavailable {
-    width: 100%;
-    padding: 8px 12px;
-    font-size: 12px;
-  }
+}
+
+/* Skeleton pemuatan baris konten */
+.skeleton-card { pointer-events: none; }
+
+.skeleton-block,
+.skeleton-line {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.10) 37%, rgba(255,255,255,0.04) 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease infinite;
+  border-radius: 8px;
+}
+
+.skeleton-block { width: 100%; aspect-ratio: 2 / 3; }
+
+.skeleton-line { height: 12px; margin-top: 10px; }
+.skeleton-line.short { width: 60%; }
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+.content-section.hidden { display: none; }
+
+/* Panel ketersediaan layanan streaming */
+.provider-panel { padding: 20px 0; }
+
+.provider-heading {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.provider-group { margin-bottom: 18px; }
+
+.provider-group-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.provider-logos { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.provider-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.provider-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+.provider-cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: var(--accent, #e50914);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.provider-note,
+.provider-empty,
+.provider-loading {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.btn-retry {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.tmdb-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  padding: 24px 0 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 24px;
+}
+
+.tmdb-attribution p {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
 }
 

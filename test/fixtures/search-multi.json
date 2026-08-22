@@ -1,0 +1,29 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 550,
+      "media_type": "movie",
+      "title": "Contoh Film",
+      "release_date": "2024-03-15",
+      "vote_average": 7.86,
+      "poster_path": "/poster.jpg",
+      "genre_ids": [18, 53]
+    },
+    {
+      "id": 1399,
+      "media_type": "tv",
+      "name": "Contoh Serial",
+      "first_air_date": "2022-04-17",
+      "vote_average": 8.44,
+      "poster_path": "/tv-poster.jpg",
+      "genre_ids": [10765]
+    },
+    {
+      "id": 77,
+      "media_type": "person",
+      "name": "Nama Aktor"
+    }
+  ],
+  "total_pages": 1
+}

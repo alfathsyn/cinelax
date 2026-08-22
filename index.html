@@ -499,8 +499,10 @@
               </select>
             </div>
 
-            <!-- Filter Quality -->
-            <div class="filter-group">
+            <!-- Filter Quality: disembunyikan (Task 7b) — TMDB tidak punya padanan data
+                 kualitas video (4K/1080p/dst). Markup dipertahankan, bukan dihapus, supaya
+                 mudah dibalik bila nanti ada sumber data kualitas yang sah. -->
+            <div class="filter-group" style="display: none;">
               <label class="filter-label" for="filter-quality">Kualitas</label>
               <select class="filter-select" id="filter-quality">
                 <option value="">Semua Kualitas</option>
@@ -695,7 +697,7 @@
               <div class="unavailable-backdrop-blur"></div>
               <div class="unavailable-card">
                 <div class="unavailable-badge-top">
-                  <span class="pulse-dot"></span> Status: Belum Rilis / Bioskop
+                  <span class="pulse-dot"></span> Status: Trailer Tidak Tersedia
                 </div>
                 <div class="unavailable-icon-wrapper">
                   <div class="icon-circle">
@@ -703,21 +705,10 @@
                     <span class="sub-icon">⚠️</span>
                   </div>
                 </div>
-                <h2 class="unavailable-heading">This Media is unavailable</h2>
+                <h2 class="unavailable-heading">Trailer Belum Tersedia</h2>
                 <p class="unavailable-message" id="detail-unavailable-msg">
-                  Media ini saat ini belum dapat diputar secara streaming. Judul ini masih dalam jadwal penayangan bioskop atau menunggu rilis digital resmi.
+                  TMDB belum menyediakan trailer resmi untuk judul ini. Cek panel "Tersedia di" di bawah untuk opsi menonton di layanan streaming resmi.
                 </p>
-                <div class="unavailable-actions">
-                  <button class="btn-unavailable btn-watch-trailer" onclick="playOfficialTrailer('detail')">
-                    <span class="btn-icon">▶</span> Tonton Trailer Resmi
-                  </button>
-                  <button class="btn-unavailable btn-try-server" onclick="tryAlternateServer('detail')">
-                    <span class="btn-icon">🔄</span> Coba Server Cadangan
-                  </button>
-                  <button class="btn-unavailable btn-remind" onclick="notifyWhenAvailable()">
-                    <span class="btn-icon">🔔</span> Ingatkan Saat Rilis
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -726,11 +717,9 @@
           <div class="player-servers-section" style="border-bottom:none; padding-bottom:0;">
             <div class="server-section-label">
               <span class="server-icon">⚡</span>
-              <span>Pilih Server:</span>
+              <span>Tersedia di:</span>
             </div>
-            <div class="server-buttons-grid" id="detail-server-buttons">
-              <!-- Rendered by JS -->
-            </div>
+            <div class="provider-panel" id="detail-provider-panel"></div>
           </div>
 
           <!-- Series / Episode Selector (If Series) -->
@@ -771,7 +760,7 @@
                 <tr><td>Tahun Rilis</td><td id="table-year">-</td></tr>
                 <tr><td>Durasi</td><td id="table-duration">-</td></tr>
                 <tr><td>Kualitas</td><td id="table-quality">-</td></tr>
-                <tr><td>Rating IMDb</td><td id="table-rating">-</td></tr>
+                <tr><td>Rating TMDB</td><td id="table-rating">-</td></tr>
                 <tr><td>Genre</td><td id="table-genre">-</td></tr>
                 <tr><td>Bahasa</td><td id="table-language">English</td></tr>
                 <tr><td>Subtitle</td><td style="color:var(--success); font-weight:600;">Indonesia (Hardsub)</td></tr>
@@ -930,9 +919,20 @@
       <div class="footer-bottom">
         <p>© 2026 Cinelax. All rights reserved.</p>
         <p class="footer-disclaimer">
-          Cinelax tidak menyimpan file di server kami. Semua konten disediakan oleh pihak ketiga yang tidak terafiliasi.
+          Cinelax menampilkan metadata, trailer resmi dari YouTube, dan tautan ke layanan streaming berlisensi lewat data TMDB/JustWatch. Kami tidak meng-hosting maupun menyimpan file video apa pun.
         </p>
       </div>
+    </div>
+    <div class="tmdb-attribution">
+      <img
+        src="assets/tmdb-logo.svg"
+        alt="The Movie Database"
+        width="130"
+        height="12"
+        loading="lazy">
+      <p>
+        Produk ini memakai API TMDB namun tidak didukung maupun disertifikasi oleh TMDB.
+      </p>
     </div>
   </footer>
 
@@ -988,7 +988,7 @@
             <div class="unavailable-backdrop-blur"></div>
             <div class="unavailable-card">
               <div class="unavailable-badge-top">
-                <span class="pulse-dot"></span> Status: Belum Rilis / Bioskop
+                <span class="pulse-dot"></span> Status: Trailer Tidak Tersedia
               </div>
               <div class="unavailable-icon-wrapper">
                 <div class="icon-circle">
@@ -996,21 +996,10 @@
                   <span class="sub-icon">⚠️</span>
                 </div>
               </div>
-              <h2 class="unavailable-heading">This Media is unavailable</h2>
+              <h2 class="unavailable-heading">Trailer Belum Tersedia</h2>
               <p class="unavailable-message" id="modal-unavailable-msg">
-                Media ini saat ini belum dapat diputar secara streaming. Judul ini masih dalam jadwal penayangan bioskop atau menunggu rilis digital resmi.
+                TMDB belum menyediakan trailer resmi untuk judul ini. Cek panel "Tersedia di" di bawah untuk opsi menonton di layanan streaming resmi.
               </p>
-              <div class="unavailable-actions">
-                <button class="btn-unavailable btn-watch-trailer" onclick="playOfficialTrailer('modal')">
-                  <span class="btn-icon">▶</span> Tonton Trailer Resmi
-                </button>
-                <button class="btn-unavailable btn-try-server" onclick="tryAlternateServer('modal')">
-                  <span class="btn-icon">🔄</span> Coba Server Cadangan
-                </button>
-                <button class="btn-unavailable btn-remind" onclick="notifyWhenAvailable()">
-                  <span class="btn-icon">🔔</span> Ingatkan Saat Rilis
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -1022,11 +1011,9 @@
         <div class="player-servers-section">
           <div class="server-section-label">
             <span class="server-icon">⚡</span>
-            <span>Pilih Server Streaming:</span>
+            <span>Tersedia di:</span>
           </div>
-          <div class="server-buttons-grid" id="player-server-buttons">
-            <!-- Rendered dynamically by JS -->
-          </div>
+          <div class="provider-panel" id="player-provider-panel"></div>
         </div>
 
         <!-- Series / Episode Selector -->
@@ -1130,7 +1117,8 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/movies-data.js"></script>
+  <script src="js/tmdb-map.js"></script>
+  <script src="js/tmdb.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

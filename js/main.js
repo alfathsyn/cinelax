@@ -36,10 +36,17 @@ const EMOJIS = ['👑', '🔥', '🦸', '🚀', '🌌', '⚔️', '👹', '🦖'
 const movieRegistry = new Map();
 
 function slugify(text) {
-  return text.toString().toLowerCase().trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w\-]+/g, '')
-    .replace(/\-\-+/g, '-');
+  return TmdbMap.slugify(text);
+}
+
+// Meng-escape karakter HTML pada nilai yang tidak kita kendalikan (query
+// pencarian dari URL, judul/nama dari TMDB yang bisa disunting komunitas)
+// sebelum disisipkan ke template literal yang berakhir di innerHTML. Jangan
+// dipakai untuk nilai yang kita bangun sendiri dari kosakata tetap (slug,
+// id internal, angka) — itu tidak butuh escaping dan malah menambah noise.
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
 // ==========================================
@@ -59,9 +66,12 @@ function showToast(message, type = 'info', duration = 3200) {
 
   const toast = document.createElement('div');
   toast.className = `toast ${type}`;
+  // message kadang menyisipkan judul film (mis. shareMovie) yang berasal
+  // dari TMDB — escape di sini, satu titik, menutup seluruh kelas bug ini
+  // untuk semua pemanggil showToast sekarang maupun nanti.
   toast.innerHTML = `
     <span class="toast-icon">${icons[type] || 'ℹ️'}</span>
-    <span>${message}</span>
+    <span>${escapeHtml(message)}</span>
   `;
 
   container.appendChild(toast);
@@ -77,155 +87,17 @@ function showToast(message, type = 'info', duration = 3200) {
 window.showToast = showToast;
 
 // ==========================================
-// RICK AND MORTY 7 SEASONS (COMPLETE)
-// ==========================================
-const rickAndMortySeasons = [
-  {
-    season: 1,
-    episodes: [
-      { number: 1, title: 'Pilot', duration: '22m' },
-      { number: 2, title: 'Lawnmower Dog', duration: '22m' },
-      { number: 3, title: 'Anatomy Park', duration: '22m' },
-      { number: 4, title: 'M. Night Shaym-Aliens!', duration: '21m' },
-      { number: 5, title: 'Meeseeks and Destroy', duration: '21m' },
-      { number: 6, title: 'Rick Potion #9', duration: '22m' },
-      { number: 7, title: 'Raising Gazorpazorp', duration: '22m' },
-      { number: 8, title: 'Rixty Minutes', duration: '22m' },
-      { number: 9, title: 'Something Ricked This Way Comes', duration: '22m' },
-      { number: 10, title: 'Close Rick-counters of the Rick Kind', duration: '23m' },
-      { number: 11, title: 'Ricksy Business', duration: '22m' }
-    ]
-  },
-  {
-    season: 2,
-    episodes: [
-      { number: 1, title: 'A Rickle in Time', duration: '23m' },
-      { number: 2, title: 'Mortynight Run', duration: '22m' },
-      { number: 3, title: 'Auto Erotic Assimilation', duration: '22m' },
-      { number: 4, title: 'Total Rickall', duration: '22m' },
-      { number: 5, title: 'Get Schwifty', duration: '22m' },
-      { number: 6, title: 'The Ricks Must Be Crazy', duration: '22m' },
-      { number: 7, title: 'Big Trouble in Little Sanchez', duration: '22m' },
-      { number: 8, title: 'Interdimensional Cable 2: Tempting Fate', duration: '22m' },
-      { number: 9, title: 'Look Who\'s Purging Now', duration: '22m' },
-      { number: 10, title: 'The Wedding Squanchers', duration: '23m' }
-    ]
-  },
-  {
-    season: 3,
-    episodes: [
-      { number: 1, title: 'The Rickshank Rickdemption', duration: '23m' },
-      { number: 2, title: 'Rickmancing the Stone', duration: '22m' },
-      { number: 3, title: 'Pickle Rick', duration: '23m' },
-      { number: 4, title: 'Vindicators 3: The Return of Worldender', duration: '22m' },
-      { number: 5, title: 'The Whirly Dirly Conspiracy', duration: '22m' },
-      { number: 6, title: 'Rest and Ricklaxation', duration: '22m' },
-      { number: 7, title: 'The Ricklantis Mixup', duration: '22m' },
-      { number: 8, title: 'Morty\'s Mind Blowers', duration: '22m' },
-      { number: 9, title: 'The ABC\'s of Beth', duration: '22m' },
-      { number: 10, title: 'The Rickchurian Mortydate', duration: '22m' }
-    ]
-  },
-  {
-    season: 4,
-    episodes: [
-      { number: 1, title: 'Edge of Tomorty: Rick Die Rickpeat', duration: '22m' },
-      { number: 2, title: 'The Old Man and the Seat', duration: '22m' },
-      { number: 3, title: 'One Crew over the Crewcoo\'s Morty', duration: '22m' },
-      { number: 4, title: 'Claw and Hoarder: Special Ricktim\'s Morty', duration: '22m' },
-      { number: 5, title: 'Rattlestar Ricklactica', duration: '22m' },
-      { number: 6, title: 'Never Ricking Morty', duration: '22m' },
-      { number: 7, title: 'Promortyus', duration: '22m' },
-      { number: 8, title: 'The Vat of Acid Episode', duration: '22m' },
-      { number: 9, title: 'Childrick of Mort', duration: '22m' },
-      { number: 10, title: 'Star Mort Rickturn of the Jerri', duration: '22m' }
-    ]
-  },
-  {
-    season: 5,
-    episodes: [
-      { number: 1, title: 'Mort Dinner Rick Andre', duration: '22m' },
-      { number: 2, title: 'Mortyplicity', duration: '22m' },
-      { number: 3, title: 'A Rickconvenient Mort', duration: '22m' },
-      { number: 4, title: 'Rickdependence Spray', duration: '22m' },
-      { number: 5, title: 'AmRickan Graffiti', duration: '22m' },
-      { number: 6, title: 'Rick & Morty\'s Thanksploitation Spectacular', duration: '22m' },
-      { number: 7, title: 'Gotron Jerrysis Rickvangelion', duration: '22m' },
-      { number: 8, title: 'Rickternal Friendshine of the Spotless Mort', duration: '22m' },
-      { number: 9, title: 'Forgetting Sarick Mortshall', duration: '22m' },
-      { number: 10, title: 'Rickmurai Jack', duration: '22m' }
-    ]
-  },
-  {
-    season: 6,
-    episodes: [
-      { number: 1, title: 'Solaricks', duration: '22m' },
-      { number: 2, title: 'Rick: A Mort Well Lived', duration: '22m' },
-      { number: 3, title: 'Bethic Twinstinct', duration: '22m' },
-      { number: 4, title: 'Night Family', duration: '22m' },
-      { number: 5, title: 'Final DeSmithation', duration: '22m' },
-      { number: 6, title: 'Juricksic Mort', duration: '22m' },
-      { number: 7, title: 'Full Meta Jackrick', duration: '22m' },
-      { number: 8, title: 'Analyze Piss', duration: '22m' },
-      { number: 9, title: 'A Rick in King Mortur\'s Court', duration: '22m' },
-      { number: 10, title: 'Ricktional Mortpoon\'s Rickmas Mortcation', duration: '22m' }
-    ]
-  },
-  {
-    season: 7,
-    episodes: [
-      { number: 1, title: 'How Poopy Got His Poop Back', duration: '22m' },
-      { number: 2, title: 'The Joirick Mortstrosity', duration: '22m' },
-      { number: 3, title: 'Air Force Wong', duration: '22m' },
-      { number: 4, title: 'That\'s Amorte', duration: '22m' },
-      { number: 5, title: 'Unmortricken', duration: '22m' },
-      { number: 6, title: 'Rickfending Your Mort', duration: '22m' },
-      { number: 7, title: 'Wet Kuat Amortican Summer', duration: '22m' },
-      { number: 8, title: 'Rise of the Numbericons: The Movie', duration: '22m' },
-      { number: 9, title: 'Mort: Ragnarick', duration: '22m' },
-      { number: 10, title: 'Fear No Mort', duration: '22m' }
-    ]
-  }
-];
-
-const rickAndMorty = {
-  id: 'rick-and-morty-2013',
-  title: 'Rick and Morty',
-  originalTitle: 'Rick and Morty (2013-2025)',
-  year: 2025,
-  rating: '9.1',
-  duration: '7 Seasons (71 EP)',
-  quality: '1080p Full HD',
-  type: 'series',
-  genre: 'Animation',
-  genres: ['Animation', 'Sci-Fi', 'Comedy', 'Adventure'],
-  country: 'United States',
-  director: 'Dan Harmon, Justin Roiland',
-  cast: 'Justin Roiland, Chris Parnell, Spencer Grammer, Sarah Chalke, Ian Cardoni',
-  description: 'Rick Sanchez, seorang ilmuwan sosiopat jenius dan alkoholik, menyeret cucunya yang pemalu dan canggung, Morty Smith, dalam petualangan antardimensi yang gila, berbahaya, dan penuh kekacauan di seluruh alam semesta.',
-  poster: 'assets/posters/rick-and-morty-2025.jpg',
-  backdrop: 'assets/hero/hero-rick-morty.jpg',
-  gradient: 'linear-gradient(135deg, #0575e6 0%, #00f260 100%)',
-  emoji: '🧪',
-  badge: '🔥 Animasi Sci-Fi Top View',
-  slug: 'rick-and-morty-2013',
-  imdbId: 'tt2861424',
-  tmdbId: '60625',
-  episode: 'S7 EP10',
-  idlixUrl: 'https://z2.idlixku.com/series/rick-and-morty-2013',
-  seasons: rickAndMortySeasons,
-  episodes: rickAndMortySeasons[0].episodes
-};
-
-movieRegistry.set(rickAndMorty.id, rickAndMorty);
-movieRegistry.set(rickAndMorty.slug, rickAndMorty);
-movieRegistry.set('rick-and-morty', rickAndMorty);
-
-// ==========================================
 // HERO SLIDER DATA
 // ==========================================
 
-const heroSlides = [
+// Data cadangan HANYA untuk kasus fetch trending TMDB gagal total (mis. API
+// key belum dikonfigurasi, jaringan mati). Dalam kondisi normal, heroSlides
+// (di bawah) diisi ulang dari baris trending TMDB yang sama yang dipakai
+// topview-row — lihat loadTrendingHeroSlides(). Field idlixUrl/isUnavailable/
+// quality SENGAJA tidak ada di sini: idlixUrl menunjuk ke host tak berlisensi
+// yang penghapusannya adalah alasan migrasi ini, dan quality adalah karangan
+// (lihat catatan "quality sengaja tidak ada" di listingState).
+const FALLBACK_HERO_SLIDES = [
   {
     id: 'deadpool-wolverine-hero',
     title: 'Deadpool & Wolverine',
@@ -233,7 +105,6 @@ const heroSlides = [
     year: 2024,
     rating: '8.9',
     duration: '2h 08m',
-    quality: '4K Ultra HD',
     type: 'movie',
     genre: 'Action',
     genres: ['Action', 'Comedy', 'Sci-Fi'],
@@ -249,8 +120,6 @@ const heroSlides = [
     slug: 'deadpool-wolverine-2024',
     imdbId: 'tt6263850',
     tmdbId: '533535',
-    idlixUrl: 'https://z2.idlixku.com/movie/deadpool-wolverine-2024/',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk'
   },
   {
@@ -260,7 +129,6 @@ const heroSlides = [
     year: 2024,
     rating: '8.7',
     duration: '2h 28m',
-    quality: '4K Ultra HD',
     type: 'movie',
     genre: 'Action',
     genres: ['Action', 'Drama', 'Adventure'],
@@ -276,8 +144,6 @@ const heroSlides = [
     slug: 'gladiator-2-2024',
     imdbId: 'tt9218128',
     tmdbId: '558449',
-    idlixUrl: 'https://z2.idlixku.com/movie/gladiator-2-2024/',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo'
   },
   {
@@ -287,7 +153,6 @@ const heroSlides = [
     year: 2025,
     rating: '9.3',
     duration: '6 Episode (1 Season)',
-    quality: '4K Ultra HD',
     type: 'series',
     genre: 'Thriller',
     genres: ['Thriller', 'Drama', 'Mystery'],
@@ -303,8 +168,6 @@ const heroSlides = [
     slug: 'squid-game-season-2',
     imdbId: 'tt10919420',
     tmdbId: '93405',
-    idlixUrl: 'https://z2.idlixku.com/series/squid-game-season-2',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U',
     seasons: [
       {
@@ -335,7 +198,6 @@ const heroSlides = [
     year: 2024,
     rating: '8.5',
     duration: '1h 59m',
-    quality: '4K Ultra HD',
     type: 'movie',
     genre: 'Horror',
     genres: ['Horror', 'Sci-Fi', 'Thriller'],
@@ -351,8 +213,6 @@ const heroSlides = [
     slug: 'alien-romulus-2024',
     imdbId: 'tt18412256',
     tmdbId: '945961',
-    idlixUrl: 'https://z2.idlixku.com/movie/alien-romulus-2024/',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs'
   },
   {
@@ -362,7 +222,6 @@ const heroSlides = [
     year: 2025,
     rating: '9.4',
     duration: '2h 10m',
-    quality: '1080p Full HD',
     type: 'movie',
     genre: 'Animation',
     genres: ['Animation', 'Action', 'Fantasy'],
@@ -378,8 +237,6 @@ const heroSlides = [
     slug: 'demon-slayer-infinity-castle-2025',
     imdbId: 'tt32840000',
     tmdbId: '1214484',
-    idlixUrl: 'https://z2.idlixku.com/movie/demon-slayer-infinity-castle-2025/',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y'
   },
   {
@@ -389,7 +246,6 @@ const heroSlides = [
     year: 2025,
     rating: '9.1',
     duration: '7 Seasons (71 EP)',
-    quality: '1080p Full HD',
     type: 'series',
     genre: 'Animation',
     genres: ['Animation', 'Sci-Fi', 'Comedy', 'Adventure'],
@@ -405,327 +261,105 @@ const heroSlides = [
     slug: 'rick-and-morty-2013',
     imdbId: 'tt2861424',
     tmdbId: '60625',
-    idlixUrl: 'https://z2.idlixku.com/series/rick-and-morty-2013',
-    isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8',
-    seasons: rickAndMortySeasons,
-    episodes: rickAndMortySeasons[0].episodes
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { number: 1, title: 'Pilot', duration: '22m' },
+          { number: 2, title: 'Lawnmower Dog', duration: '22m' },
+          { number: 3, title: 'Anatomy Park', duration: '22m' },
+          { number: 4, title: 'M. Night Shaym-Aliens!', duration: '21m' },
+          { number: 5, title: 'Meeseeks and Destroy', duration: '21m' },
+          { number: 6, title: 'Rick Potion #9', duration: '22m' },
+          { number: 7, title: 'Raising Gazorpazorp', duration: '22m' },
+          { number: 8, title: 'Rixty Minutes', duration: '22m' },
+          { number: 9, title: 'Something Ricked This Way Comes', duration: '22m' },
+          { number: 10, title: 'Close Rick-counters of the Rick Kind', duration: '23m' },
+          { number: 11, title: 'Ricksy Business', duration: '22m' }
+        ]
+      }
+    ],
+    episodes: [
+      { number: 1, title: 'Pilot', duration: '22m' },
+      { number: 2, title: 'Lawnmower Dog', duration: '22m' },
+      { number: 3, title: 'Anatomy Park', duration: '22m' },
+      { number: 4, title: 'M. Night Shaym-Aliens!', duration: '21m' },
+      { number: 5, title: 'Meeseeks and Destroy', duration: '21m' },
+      { number: 6, title: 'Rick Potion #9', duration: '22m' },
+      { number: 7, title: 'Raising Gazorpazorp', duration: '22m' },
+      { number: 8, title: 'Rixty Minutes', duration: '22m' },
+      { number: 9, title: 'Something Ricked This Way Comes', duration: '22m' },
+      { number: 10, title: 'Close Rick-counters of the Rick Kind', duration: '23m' },
+      { number: 11, title: 'Ricksy Business', duration: '22m' }
+    ]
   }
 ];
+
+// Jumlah slide hero yang diambil dari trending TMDB (§7.1). Diperbarui oleh
+// loadTrendingHeroSlides() setelah fetch trending selesai; sebelum itu (dan
+// bila fetch gagal total), tetap memakai FALLBACK_HERO_SLIDES di atas supaya
+// hero tidak pernah kosong.
+let heroSlides = FALLBACK_HERO_SLIDES;
 
 heroSlides.forEach(slide => {
   movieRegistry.set(slide.id, slide);
   movieRegistry.set(slide.slug, slide);
 });
 
-// ==========================================
-// MASTER MOVIE & SERIES DATABASE
-// ==========================================
-
-const TOP_VIEW_DATABASE = {
-  topview: [
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
-    { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Lee Byung-hun', episodeCount: 6, desc: 'Pembalasan dendam Gi-hun di arena maut permainan cumi-cumi.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
-    { title: 'Alien: Romulus', year: 2024, rating: '8.5', genre: 'Horror', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt18412256', tmdbId: '945961', emoji: '👽', director: 'Fede Álvarez', cast: 'Cailee Spaeny, David Jonsson', desc: 'Remaja koloni luar angkasa berhadapan dengan monster Xenomorph paling mematikan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs' },
-    { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Perang puncak di Kastil Tanpa Batas melawan Raja Iblis Muzan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' },
-    { title: 'Mission: Impossible – The Final Reckoning', year: 2025, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt9603208', tmdbId: '573435', emoji: '💣', director: 'Christopher McQuarrie', cast: 'Tom Cruise, Hayley Atwell', desc: 'Misi terakhir Ethan Hunt menghentikan kecerdasan buatan The Entity.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/NOhDy655QBs' },
-    { title: 'Captain America: Brave New World', year: 2025, rating: '8.6', genre: 'Action', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt14513804', tmdbId: '822119', emoji: '🛡️', director: 'Julius Onah', cast: 'Anthony Mackie, Harrison Ford', desc: 'Sam Wilson menghadapi krisis internasional dan transformasi Red Hulk.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1pHDWnXmK7Y' },
-    { title: 'Wicked: Part One', year: 2024, rating: '8.8', genre: 'Fantasy', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt27448866', tmdbId: '611570', emoji: '🧙‍♀️', director: 'Jon M. Chu', cast: 'Ariana Grande, Cynthia Erivo', desc: 'Kisah magis penyihir hijau Elphaba dan Glinda di negeri Oz.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/6COmYeLsz4c' },
-    { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Petualangan lintas dimensi paling kocak dan absurd di multisemesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
-    { title: 'Dune: Prophecy', year: 2024, rating: '8.6', genre: 'Sci-Fi', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt15239678', tmdbId: '124905', emoji: '🏜️', director: 'Alison Schapker', cast: 'Emily Watson, Olivia Williams', episodeCount: 6, desc: 'Kisah asal-usul persaudaraan Bene Gesserit 10.000 tahun sebelum Paul Atreides.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/p8bK4_wH8aE' },
-    { title: 'How to Train Your Dragon Live Action', year: 2025, rating: '8.8', genre: 'Adventure', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt26743210', tmdbId: '1084199', emoji: '🐉', director: 'Dean DeBlois', cast: 'Mason Thames, Nico Parker', desc: 'Adaptasi live action persahabatan Hiccup dan Toothless si naga Night Fury.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/5a09yJU-mCI' }
-  ],
-
-  trending: [
-    { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Im Si-wan', episodeCount: 6, desc: 'Kelanjutan permainan bertahan hidup berhadiah 45.6 miliar won.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Stranger Things Season 5', year: 2025, rating: '9.2', genre: 'Sci-Fi', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt4574334', tmdbId: '66732', emoji: '🚲', director: 'The Duffer Brothers', cast: 'Millie Bobby Brown, Finn Wolfhard', episodeCount: 8, desc: 'Pertempuran terakhir anak-anak Hawkins melawan Vecna dan Upside Down.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/sBEvEcpnG7k' },
-    { title: 'The Last of Us Season 2', year: 2025, rating: '9.1', genre: 'Drama', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt3581920', tmdbId: '100088', emoji: '🍄', director: 'Craig Mazin', cast: 'Pedro Pascal, Bella Ramsey, Kaitlyn Dever', episodeCount: 7, desc: 'Tragedi dan balas dendam Ellie dan Abby di reruntuhan Seattle.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/k4hy9v-fL2M' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
-    { title: 'Wednesday Season 2', year: 2025, rating: '8.8', genre: 'Comedy', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt13443470', tmdbId: '119051', emoji: '🖤', director: 'Tim Burton', cast: 'Jenna Ortega, Steve Buscemi', episodeCount: 8, desc: 'Semester baru penuh kutukan dan misteri pembunuhan di Nevermore Academy.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/Di310BC80ew' },
-    { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Petualangan lintas dimensi paling kocak dan absurd di multisemesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
-    { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Perang puncak di Kastil Tanpa Batas melawan Raja Iblis Muzan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' },
-    { title: 'Alien: Romulus', year: 2024, rating: '8.5', genre: 'Horror', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt18412256', tmdbId: '945961', emoji: '👽', director: 'Fede Álvarez', cast: 'Cailee Spaeny, David Jonsson', desc: 'Remaja koloni luar angkasa berhadapan dengan monster Xenomorph paling mematikan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs' },
-    { title: 'Dune: Prophecy', year: 2024, rating: '8.6', genre: 'Sci-Fi', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt15239678', tmdbId: '124905', emoji: '🏜️', director: 'Alison Schapker', cast: 'Emily Watson, Olivia Williams', episodeCount: 6, desc: 'Kisah asal-usul persaudaraan Bene Gesserit 10.000 tahun sebelum Paul Atreides.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/p8bK4_wH8aE' }
-  ],
-
-  latest: [
-    { title: 'Captain America: Brave New World', year: 2025, rating: '8.6', genre: 'Action', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt14513804', tmdbId: '822119', emoji: '🛡️', director: 'Julius Onah', cast: 'Anthony Mackie, Harrison Ford', desc: 'Sam Wilson memimpin pertarungan melawan konspirasi dunia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1pHDWnXmK7Y' },
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
-    { title: 'Alien: Romulus', year: 2024, rating: '8.5', genre: 'Horror', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt18412256', tmdbId: '945961', emoji: '👽', director: 'Fede Álvarez', cast: 'Cailee Spaeny, David Jonsson', desc: 'Remaja koloni luar angkasa berhadapan dengan monster Xenomorph paling mematikan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs' },
-    { title: 'How to Train Your Dragon Live Action', year: 2025, rating: '8.8', genre: 'Adventure', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt26743210', tmdbId: '1084199', emoji: '🐉', director: 'Dean DeBlois', cast: 'Mason Thames, Nico Parker', desc: 'Adaptasi live action persahabatan Hiccup dan Toothless si naga Night Fury.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/5a09yJU-mCI' },
-    { title: 'Wicked: Part One', year: 2024, rating: '8.8', genre: 'Fantasy', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt27448866', tmdbId: '611570', emoji: '🧙‍♀️', director: 'Jon M. Chu', cast: 'Ariana Grande, Cynthia Erivo', desc: 'Kisah magis penyihir hijau Elphaba dan Glinda di negeri Oz.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/6COmYeLsz4c' }
-  ],
-
-  popular: [
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Kolaborasi pahlawan super terlucu dan terbrutal dalam sejarah.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Serial animasi dengan rating tertinggi dan jutaan penggemar setia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Kelanjutan epik pertempuran arena Colosseum kekaisaran Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
-    { title: 'Wicked: Part One', year: 2024, rating: '8.8', genre: 'Fantasy', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt27448866', tmdbId: '611570', emoji: '🧙‍♀️', director: 'Jon M. Chu', cast: 'Ariana Grande, Cynthia Erivo', desc: 'Kisah magis penyihir hijau Elphaba dan Glinda di negeri Oz.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/6COmYeLsz4c' },
-    { title: 'The Last of Us Season 2', year: 2025, rating: '9.1', genre: 'Drama', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt3581920', tmdbId: '100088', emoji: '🍄', director: 'Craig Mazin', cast: 'Pedro Pascal, Bella Ramsey', episodeCount: 7, desc: 'Kisah manusia di tengah kepunahan pandemi jamur Cordyceps.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/k4hy9v-fL2M' },
-    { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Animasi pertarungan pedang terindah sepanjang masa.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' }
-  ],
-
-  series: [
-    { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Petualangan antardimensi liar Rick Sanchez bersama Morty Smith.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
-    { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Im Si-wan', episodeCount: 6, desc: 'Pertarungan hidup mati permainan anak-anak berdarah di Korea.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
-    { title: 'Stranger Things Season 5', year: 2025, rating: '9.2', genre: 'Sci-Fi', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt4574334', tmdbId: '66732', emoji: '🚲', director: 'The Duffer Brothers', cast: 'Millie Bobby Brown, Finn Wolfhard', episodeCount: 8, desc: 'Musim penutup perang legendaris Hawkins melawan monster Upside Down.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/sBEvEcpnG7k' },
-    { title: 'The Last of Us Season 2', year: 2025, rating: '9.1', genre: 'Drama', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt3581920', tmdbId: '100088', emoji: '🍄', director: 'Craig Mazin', cast: 'Pedro Pascal, Bella Ramsey, Kaitlyn Dever', episodeCount: 7, desc: 'Balas dendam dan kemanusiaan di dunia pasca-apokaliptik.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/k4hy9v-fL2M' },
-    { title: 'Wednesday Season 2', year: 2025, rating: '8.8', genre: 'Comedy', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt13443470', tmdbId: '119051', emoji: '🖤', director: 'Tim Burton', cast: 'Jenna Ortega, Steve Buscemi', episodeCount: 8, desc: 'Investigasi baru Wednesday Addams di asrama Nevermore.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/Di310BC80ew' },
-    { title: 'The Boys Season 5', year: 2025, rating: '9.0', genre: 'Action', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt1190634', tmdbId: '76479', emoji: '🦸‍♂️', director: 'Eric Kripke', cast: 'Karl Urban, Antony Starr, Jack Quaid', episodeCount: 8, desc: 'Pertarungan klimaks terakhir Butcher melawan kekejaman tirani Homelander.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/EzFXDvC-6L4' },
-    { title: 'Peacemaker Season 2', year: 2025, rating: '8.7', genre: 'Action', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt13146404', tmdbId: '110492', emoji: '🦅', director: 'James Gunn', cast: 'John Cena, Danielle Brooks, Freddie Stroma', episodeCount: 8, desc: 'Misi baru pahlawan bertopeng konyol Christopher Smith di DC Universe.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/WHXq62VCaCM' },
-    { title: 'Severance Season 2', year: 2025, rating: '9.1', genre: 'Sci-Fi', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt11280740', tmdbId: '95396', emoji: '🏢', director: 'Ben Stiller', cast: 'Adam Scott, Patricia Arquette, John Turturro', episodeCount: 10, desc: 'Misteri pemisahan ingatan kerja dan pribadi di perusahaan misterius Lumon.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/xEQP4VVuyrY' },
-    { title: 'Euphoria Season 3', year: 2025, rating: '8.8', genre: 'Drama', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt8772296', tmdbId: '85552', emoji: '💊', director: 'Sam Levinson', cast: 'Zendaya, Hunter Schafer, Sydney Sweeney', episodeCount: 8, desc: 'Kisah Rue Bennett dan teman-temannya menghadapi pendewasaan hidup.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/JdwZwrs8SLQ' },
-    { title: 'All of Us Are Dead Season 2', year: 2025, rating: '8.9', genre: 'Horror', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt14169960', tmdbId: '99966', emoji: '🧟‍♂️', director: 'Lee Jae-kyoo', cast: 'Park Ji-hu, Yoon Chan-young, Cho Yi-hyun', episodeCount: 8, desc: 'Ancaman mutasi manusia setengah zombie (Hambie) menyebar di Seoul.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/IN5TD4VRcSM' },
-    { title: 'Moving Season 2', year: 2025, rating: '9.2', genre: 'Superhero', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt21609146', tmdbId: '124364', emoji: '🦸‍♀️', director: 'Park In-je', cast: 'Ryu Seung-ryong, Han Hyo-joo, Jo In-sung', episodeCount: 20, desc: 'Generasi anak berkekuatan super bersatu melindungi keluarga dari agen rahasia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1B1-18eHh04' }
-  ],
-
-  kdrama: [
-    { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Im Si-wan', episodeCount: 6, desc: 'Permainan bertahan hidup mematikan yang ditonton jutaan miliarder.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
-    { title: 'All of Us Are Dead Season 2', year: 2025, rating: '8.9', genre: 'Horror', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt14169960', tmdbId: '99966', emoji: '🧟‍♂️', director: 'Lee Jae-kyoo', cast: 'Park Ji-hu, Yoon Chan-young, Cho Yi-hyun', episodeCount: 8, desc: 'Kisah murid SMA bertahan dari wabah zombie berlanjut di kota Seoul.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/IN5TD4VRcSM' },
-    { title: 'Moving Season 2', year: 2025, rating: '9.2', genre: 'Superhero', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt21609146', tmdbId: '124364', emoji: '🦸‍♀️', director: 'Park In-je', cast: 'Ryu Seung-ryong, Han Hyo-joo, Jo In-sung', episodeCount: 20, desc: 'Agen rahasia berkekuatan super terbang dan regenerasi melindungi anaknya.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1B1-18eHh04' },
-    { title: 'Sweet Home Season 3', year: 2024, rating: '8.6', genre: 'Horror', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt11612120', tmdbId: '96580', emoji: '👹', director: 'Lee Eung-bok', cast: 'Song Kang, Lee Jin-uk, Lee Si-young', episodeCount: 8, desc: 'Babak akhir pertempuran Cha Hyun-su melawan monster hasrat manusia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/tMbgv44l-rM' },
-    { title: 'Queen of Tears', year: 2024, rating: '9.0', genre: 'Romance', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt27668559', tmdbId: '215079', emoji: '👑', director: 'Jang Young-woo', cast: 'Kim Soo-hyun, Kim Ji-won, Park Sung-hoon', episodeCount: 16, desc: 'Kisah cinta pernikahan pewaris konglomerat dan pengacara desa yang penuh haru.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/kYqjF3B5qGg' },
-    { title: 'Vincenzo', year: 2021, rating: '9.1', genre: 'Crime', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt13433812', tmdbId: '117376', emoji: '⚖️', director: 'Kim Hee-won', cast: 'Song Joong-ki, Jeon Yeo-been, Taecyeon', episodeCount: 20, desc: 'Pengacara mafia Italia pulang ke Korea membalas kejahatan konglomerat rakus.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/_J8tYxSB_LQ' },
-    { title: 'A Shop for Killers Season 2', year: 2025, rating: '8.8', genre: 'Action', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt26450613', tmdbId: '220000', emoji: '🔫', director: 'Lee Kwon', cast: 'Lee Dong-wook, Kim Hye-jun', episodeCount: 8, desc: 'Gadis muda mewarisi pusat perbelanjaan senjata rahasia milik pamannya.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/gWnLwWqCgV4' },
-    { title: 'Signal Season 2', year: 2025, rating: '9.4', genre: 'Mystery', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt5333198', tmdbId: '65942', emoji: '📻', director: 'Kim Eun-hee', cast: 'Lee Je-hoon, Kim Hye-soo, Cho Jin-woong', episodeCount: 16, desc: 'Detektif masa lalu dan masa kini terhubung melalui walkie-talkie memecahkan kasus dingin.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/n4sL8Qf2V3w' }
-  ],
-
-  anime: [
-    { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Perang puncak Korps Pembasmi Iblis di dalam Kastil Tanpa Batas.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' },
-    { title: 'Solo Leveling Season 2: Arise from the Shadow', year: 2025, rating: '9.3', genre: 'Action', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt21209876', tmdbId: '209867', emoji: '🗡️', director: 'Shunsuke Nakashige', cast: 'Taito Ban, Genta Nakamura', episodeCount: 12, desc: 'Sung Jinwoo membangkitkan pasukan bayangan Shadow Monarch tak terkalahkan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/5a24r_4w188' },
-    { title: 'Chainsaw Man: The Movie – Reze Arc', year: 2025, rating: '9.2', genre: 'Action', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt30449560', tmdbId: '1214485', emoji: '🪚', director: 'Ryu Nakayama', cast: 'Kikunosuke Toya, Reina Ueda', desc: 'Denji terpikat oleh Reze gadis misterius pemegang kekuatan Bom Iblis.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/p17i8oQ4WbE' },
-    { title: 'Jujutsu Kaisen Season 3: Culling Game', year: 2025, rating: '9.3', genre: 'Supernatural', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt12343534', tmdbId: '95479', emoji: '🔮', director: 'Sunghoo Park', cast: 'Junya Enoki, Yuma Uchida, Asami Seto', episodeCount: 24, desc: 'Yuji Itadori dan Megumi terjebak dalam ritual maut Game Pemusnahan Kenjaku.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/O6qVieflwQs' },
-    { title: 'Bleach: Thousand-Year Blood War Part 3 & 4', year: 2025, rating: '9.2', genre: 'Action', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt14995536', tmdbId: '158415', emoji: '🗡️', director: 'Tomohisa Taguchi', cast: 'Masakazu Morita, Fumiko Orikasa', episodeCount: 13, desc: 'Perang pamungkas Ichigo Kurosaki melawan Raja Quincy Yhwach di Istana Jiwa.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/z4y9T5C9b4g' },
-    { title: 'One Piece: Egghead Arc Climax', year: 2025, rating: '9.3', genre: 'Adventure', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt0388629', tmdbId: '37854', emoji: '🏴‍☠️', director: 'Megumi Ishitani', cast: 'Mayumi Tanaka, Kazuya Nakai', episodeCount: 24, desc: 'Luffy Mode Gear 5 bertarung melawan Gorosei di pulau masa depan Egghead.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/S8_YwFLCh4U' },
-    { title: 'Spy x Family Season 3', year: 2025, rating: '8.9', genre: 'Comedy', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt13706018', tmdbId: '120089', emoji: '🥜', director: 'Kazuhiro Furuhashi', cast: 'Takuya Eguchi, Atsumi Tanezaki', episodeCount: 12, desc: 'Misi rahasia keluarga Forger berlanjut dengan kelucuan telepati Anya.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/7V2Z54E5bQ0' },
-    { title: 'Kaiju No. 8 Season 2', year: 2025, rating: '8.8', genre: 'Sci-Fi', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt21609146', tmdbId: '207572', emoji: '🦖', director: 'Shigeyuki Miya', cast: 'Masaya Fukunishi, Asami Seto', episodeCount: 12, desc: 'Kafka Hibino bertarung sebagai anggota Pasukan Pertahanan sambil menyembunyikan wujud monster.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/G6jWnQG6U48' },
-    { title: 'My Hero Academia Season 8: Final War', year: 2025, rating: '9.0', genre: 'Superhero', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt5626028', tmdbId: '65930', emoji: '💥', director: 'Kenji Nagasaki', cast: 'Daiki Yamashita, Nobuhiko Okamoto', episodeCount: 14, desc: 'Pertarungan satu lawan satu Deku melawan Shigaraki Tomura dan All For One.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/7wZ8B9Z1G4k' }
-  ],
-
-  indonesia: [
-    { title: 'Petualangan Sherina 2', year: 2023, rating: '8.7', genre: 'Adventure', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt23875888', tmdbId: '1047648', emoji: '🎒', director: 'Riri Riza', cast: 'Sherina Munaf, Derby Romero', desc: 'Petualangan baru jurnalis Sherina dan Sadam melindungi hutan konservasi Indonesia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/wzX0h1hR1_A' },
-    { title: 'Bumi Manusia', year: 2019, rating: '8.8', genre: 'Drama', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt8435132', tmdbId: '527588', emoji: '📜', director: 'Hanung Bramantyo', cast: 'Iqbaal Ramadhan, Mawar de Jongh', desc: 'Perjuangan Minke menuliskan perlawanan kaum tertindas di era kolonial Hindia Belanda.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/aM_e4aV0k3E' },
-    { title: 'The Big 4', year: 2022, rating: '8.7', genre: 'Action', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt18274950', tmdbId: '912916', emoji: '💥', director: 'Timo Tjahjanto', cast: 'Abimana Aryasatya, Putri Marino, Arie Kriting', desc: 'Empat mantan pembunuh bayaran kembali beraksi dalam baku tembak komedi gila.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/bX4a7eB5c2U' },
-    { title: 'Qodrat', year: 2022, rating: '8.7', genre: 'Horror', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt21966548', tmdbId: '986056', emoji: '📖', director: 'Charles Gozali', cast: 'Vino G. Bastian, Marsha Timothy', desc: 'Ustadz Qodrat berhadapan dengan raja jin Assuala yang merasuki kota besar.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/g_pBwXGz6B0' },
-    { title: 'Agak Laen', year: 2024, rating: '8.8', genre: 'Comedy', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt30829873', tmdbId: '1218524', emoji: '👻', director: 'Muhadkly Acho', cast: 'Boris Bokir, Indra Jegel, Oki Rengga, Bene Dion', desc: 'Kekonyolan empat sekawan membuka wahana horor baru yang memakan korban.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/c0tG4a4rP2k' }
-  ]
-};
-
-// ==========================================
-// MOVIE POSTER & BACKDROP RESOLVER
-// ==========================================
-
-const MOVIE_POSTER_MAP = {
-  // Avatars
-  'avatar': 'assets/posters/avatar-fire-and-ash-2025.jpg',
-  
-  // Superheroes & Blockbusters
-  'superman': 'assets/posters/superman-2025.jpg',
-  'avengers': 'assets/posters/avengers-doomsday-2026.jpg',
-  'deadpool': 'assets/posters/deadpool-wolverine-2024.jpg',
-  'batman': 'assets/posters/the-batman-part-ii-2026.jpg',
-  'spider-man': 'assets/posters/spider-man-beyond-spider-verse-2026.jpg',
-  'fantastic four': 'assets/posters/fantastic-four-first-steps-2025.jpg',
-  'captain america': 'assets/posters/captain-america-brave-new-world-2025.jpg',
-  'jurassic world': 'assets/posters/jurassic-world-rebirth-2025.jpg',
-  'mickey 17': 'assets/posters/mickey-17-2025.jpg',
-  'ballerina': 'assets/posters/ballerina-2025.jpg',
-  '28 years later': 'assets/posters/28-years-later-2025.jpg',
-  'tron': 'assets/posters/tron-ares-2025.jpg',
-  'gladiator': 'assets/posters/gladiator-2-2024.jpg',
-  'mission: impossible': 'assets/posters/mission-impossible-final-reckoning.jpg',
-  'mission impossible': 'assets/posters/mission-impossible-final-reckoning.jpg',
-  'alien: romulus': 'assets/posters/alien-romulus-2024.jpg',
-  'alien romulus': 'assets/posters/alien-romulus-2024.jpg',
-  'dune: prophecy': 'assets/posters/dune-prophecy-2024.jpg',
-  'dune prophecy': 'assets/posters/dune-prophecy-2024.jpg',
-  'godzilla x kong': 'assets/posters/godzilla-x-kong-the-new-empire.jpg',
-  'godzilla': 'assets/posters/godzilla-x-kong-the-new-empire.jpg',
-  'wicked': 'assets/posters/wicked-part-one-2024.jpg',
-  'toy story': 'assets/posters/toy-story-4.jpg',
-  'how to train your dragon': 'assets/posters/how-to-train-your-dragon-live-action.jpg',
-  'shrek': 'assets/posters/dandadan-2024.jpg',
-
-  // Western Series
-  'squid game': 'assets/posters/squid-game-s2-2025.jpg',
-  'rick and morty': 'assets/posters/rick-and-morty-2025.jpg',
-  'stranger things': 'assets/posters/stranger-things-s5-2025.jpg',
-  'the last of us': 'assets/posters/the-last-of-us-s2-2025.jpg',
-  'last of us': 'assets/posters/the-last-of-us-s2-2025.jpg',
-  'wednesday': 'assets/posters/wednesday-s2-2025.jpg',
-  'house of the dragon': 'assets/posters/house-of-the-dragon-s3-2026.jpg',
-  'the boys': 'assets/posters/the-boys-s5-2025.jpg',
-  'peacemaker': 'assets/posters/peacemaker-s2-2025.jpg',
-  'severance': 'assets/posters/severance-s2-2025.jpg',
-  'euphoria': 'assets/posters/euphoria-s3-2025.jpg',
-
-  // Drama Korea
-  'all of us are dead': 'assets/posters/all-of-us-are-dead-s2-2025.jpg',
-  'moving': 'assets/posters/moving-s2-2025.jpg',
-  'sweet home': 'assets/posters/sweet-home-s3-2024.jpg',
-  'queen of tears': 'assets/posters/queen-of-tears-2024.jpg',
-  'vincenzo': 'assets/posters/vincenzo-2021.jpg',
-
-  // Anime
-  'demon slayer': 'assets/posters/demon-slayer-infinity-castle-2025.jpg',
-  'solo leveling': 'assets/posters/solo-leveling-s2-2025.jpg',
-  'chainsaw man': 'assets/posters/chainsaw-man-reze-arc-2025.jpg',
-  'jujutsu kaisen': 'assets/posters/jujutsu-kaisen-culling-game-2025.jpg',
-  'bleach': 'assets/posters/bleach-thousand-year-blood-war-p3-2024.jpg',
-  'one piece': 'assets/posters/one-piece-egghead-arc-2024.jpg',
-  'spy x family': 'assets/posters/spy-x-family-s3-2025.jpg',
-  'kaiju no': 'assets/posters/kaiju-no-8-s2-2025.jpg',
-  'kaiju no. 8': 'assets/posters/kaiju-no-8-s2-2025.jpg',
-  'dandadan': 'assets/posters/dandadan-2024.jpg',
-  'my hero academia': 'assets/posters/my-hero-academia-anime.jpg',
-  'attack on titan': 'assets/posters/demon-slayer-infinity-castle-2025.jpg',
-
-  // Indonesia
-  'pengabdi setan': 'assets/posters/pengabdi-setan-3-2025.jpg',
-  'siksa kubur': 'assets/posters/siksa-kubur-2024.jpg',
-  'agak laen': 'assets/posters/agak-laen-2-2025.jpg',
-  'kkn di desa penari': 'assets/posters/kkn-desa-penari-luwih-dowo-2023.jpg',
-  'kkn desa penari': 'assets/posters/kkn-desa-penari-luwih-dowo-2023.jpg',
-  'gundala': 'assets/posters/gundala-2-2025.jpg',
-  'sri asih': 'assets/posters/sri-asih-2022.jpg',
-  'petualangan sherina': 'assets/posters/petualangan-sherina-2-2023.jpg',
-  'dilan': 'assets/posters/dilan-1990.jpg',
-  'bumi manusia': 'assets/posters/bumi-manusia-film.jpg',
-  'the big 4': 'assets/posters/the-big-4-film.jpg',
-  'jumbo': 'assets/posters/petualangan-sherina-2-2023.jpg',
-  'qodrat': 'assets/posters/pengabdi-setan-3-2025.jpg'
-};
-
-function getPosterForMovie(title, slug) {
-  const clean = title.toLowerCase();
-  for (const [key, path] of Object.entries(MOVIE_POSTER_MAP)) {
-    if (clean.includes(key)) {
-      return path;
-    }
-  }
-  return null;
-}
-
-// Generates and stores movie objects into movieRegistry
-function generateMovies(category, count = 20) {
-  let list = TOP_VIEW_DATABASE[category] || TOP_VIEW_DATABASE.topview;
-
-  // Augment category list with items from IDLIX_DATABASE if available
-  if (window.IDLIX_DATABASE && Array.isArray(window.IDLIX_DATABASE)) {
-    let idlixFiltered = [];
-    if (category === 'series') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.type === 'series');
-    } else if (category === 'anime') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.genres.includes('Animation') || m.country === 'Jepang');
-    } else if (category === 'kdrama') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.country === 'Korea Selatan' || m.genres.includes('Romance') || m.description.toLowerCase().includes('korea'));
-    } else if (category === 'indonesia') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.country === 'Indonesia' || m.genres.includes('Horror'));
-    } else if (category === 'latest') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.year >= 2025).concat(window.IDLIX_DATABASE.filter(m => m.year === 2024));
-    } else if (category === 'topview' || category === 'popular') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => parseFloat(m.rating) >= 8.6);
-    } else if (category === 'trending') {
-      idlixFiltered = window.IDLIX_DATABASE.slice(0, 40);
-    }
-
-    if (idlixFiltered.length > 0) {
-      const titleMap = new Set(list.map(i => i.title.toLowerCase()));
-      idlixFiltered.forEach(m => {
-        if (!titleMap.has(m.title.toLowerCase())) {
-          list = list.concat(m);
-          titleMap.add(m.title.toLowerCase());
-        }
-      });
-    }
-  }
-
-  return list.slice(0, count).map((item, i) => {
-    if (item.title && item.title.toLowerCase().includes('rick and morty')) {
-      return rickAndMorty;
-    }
-
-    // If item is already a fully formed movie object from IDLIX_DATABASE
-    if (item.id && item.originalTitle && item.genres && item.gradient) {
-      movieRegistry.set(item.id, item);
-      movieRegistry.set(item.slug, item);
-      movieRegistry.set(slugify(item.title), item);
-      return item;
-    }
-
-    const movieId = item.id || `${category}-${i}-${slugify(item.title)}`;
-    const slug = item.slug || slugify(item.title);
-    const gradientIndex = (Object.keys(TOP_VIEW_DATABASE).indexOf(category) * 4 + i) % GRADIENTS.length;
-    const isSeries = item.type === 'series';
-    const epCount = item.episodeCount || (isSeries ? 8 : null);
-
-    const episodes = isSeries ? Array.from({ length: epCount }, (_, epI) => ({
-      number: epI + 1,
-      title: `${item.title} — Episode ${epI + 1}`,
-      duration: `${45 + (epI % 15)}m`
-    })) : null;
-
-    const poster = item.poster || getPosterForMovie(item.title, slug);
-    const backdrop = item.backdrop || poster || 'assets/hero/hero-1.jpg';
-
-    const movieObj = {
-      id: movieId,
-      title: item.title,
-      originalTitle: item.originalTitle || `${item.title} (${item.year})`,
-      year: item.year,
-      rating: item.rating || '8.8',
-      genre: item.genre || (item.genres && item.genres[0]) || 'Film',
-      genres: item.genres || [item.genre || 'Action', 'Drama'].filter((v, idx, arr) => arr.indexOf(v) === idx),
-      quality: item.quality === '4K' ? '4K Ultra HD' : (item.quality === '1080p' ? '1080p FHD' : (item.quality || 'HD')),
-      type: item.type || 'movie',
-      episode: isSeries ? `S1 EP${epCount}` : null,
-      episodes,
-      poster,
-      backdrop,
-      gradient: item.gradient || GRADIENTS[gradientIndex],
-      emoji: item.emoji || '🎬',
-      country: item.country || 'United States',
-      director: item.director || 'Christopher Nolan',
-      cast: item.cast || 'Star Ensemble Cast',
-      description: item.desc || item.description || `Saksikan film blockbuster ${item.title} (${item.year}) dengan kualitas visual jernih dan subtitle Indonesia resmi di Cinelax.`,
-      slug: item.slug || `${slug}-${item.year}`,
-      imdbId: item.imdbId,
-      tmdbId: item.tmdbId,
-      idlixUrl: isSeries ? `https://z2.idlixku.com/series/${slug}-${item.year}` : `https://z2.idlixku.com/movie/${slug}-${item.year}`,
-      isUnavailable: false,
-      trailerUrl: item.trailerUrl || null
-    };
-
-    movieRegistry.set(movieId, movieObj);
-    movieRegistry.set(movieObj.slug, movieObj);
-    movieRegistry.set(slugify(movieObj.title), movieObj);
-    return movieObj;
-  });
-}
-
-// Prepopulate all categories into registry
 function initRegistry() {
-  // Pre-load all IDLIX movies into the registry map
-  if (window.IDLIX_DATABASE && Array.isArray(window.IDLIX_DATABASE)) {
-    window.IDLIX_DATABASE.forEach(m => {
-      movieRegistry.set(m.id, m);
-      movieRegistry.set(m.slug, m);
-      movieRegistry.set(slugify(m.title), m);
-    });
-  }
-
-  // Pre-load hero slides
-  heroSlides.forEach(slide => {
+  heroSlides.forEach((slide) => {
     movieRegistry.set(slide.id, slide);
     movieRegistry.set(slide.slug, slide);
     movieRegistry.set(slugify(slide.title), slide);
   });
+}
 
-  // Prepopulate all categories
-  Object.keys(TOP_VIEW_DATABASE).forEach(cat => generateMovies(cat, 50));
+// Melengkapi objek hasil TMDB dengan gradient dan emoji, lalu mendaftarkannya
+function decorateMovie(movie) {
+  if (!movie) return movie;
+
+  movie.gradient = GRADIENTS[movie.gradientIndex % GRADIENTS.length];
+  movie.emoji = EMOJIS[movie.emojiIndex % EMOJIS.length];
+
+  movieRegistry.set(movie.id, movie);
+  movieRegistry.set(movie.slug, movie);
+  movieRegistry.set(slugify(movie.title), movie);
+
+  return movie;
+}
+
+// Mencari objek film dari registry, lalu dari TMDB bila belum ada
+async function resolveMovie(idOrSlug) {
+  if (!idOrSlug) return null;
+
+  const cached = movieRegistry.get(idOrSlug);
+  if (cached && cached.tmdbId) {
+    // Lengkapi detail bila objek berasal dari daftar ringkas
+    if (!cached.description || !cached.director) {
+      try {
+        const full = await Tmdb.getDetail(cached.type, cached.tmdbId);
+        return decorateMovie(Object.assign({}, cached, full));
+      } catch (error) {
+        return cached;
+      }
+    }
+    return cached;
+  }
+
+  if (cached) return cached;
+
+  const slug = String(idOrSlug).replace(/^(movie|series)-/, '');
+
+  try {
+    const found = await Tmdb.findBySlug(slug);
+    if (!found) return null;
+
+    const full = await Tmdb.getDetail(found.type, found.tmdbId);
+    return decorateMovie(Object.assign({}, found, full));
+  } catch (error) {
+    return null;
+  }
 }
 
 // ==========================================
@@ -735,11 +369,13 @@ function initRegistry() {
 function renderMovieCard(movie) {
   const hasPoster = Boolean(movie.poster);
 
+  const safeTitle = escapeHtml(movie.title);
+
   return `
     <div class="movie-card" data-id="${movie.id}" onclick="openDetailOrPlayer('${movie.id}')">
       <div class="card-poster">
         ${hasPoster ? `
-          <img src="${movie.poster}" alt="${movie.title}" loading="lazy" class="poster-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="${movie.poster}" alt="${safeTitle}" loading="lazy" class="poster-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="poster-gradient" style="background: ${movie.gradient}; display: none;">
             <span>${movie.emoji}</span>
           </div>
@@ -751,40 +387,69 @@ function renderMovieCard(movie) {
         <div class="card-overlay">
           <div class="card-play-btn">▶</div>
         </div>
-        <span class="card-badge-quality">${movie.quality}</span>
-        <span class="card-badge-rating"><span class="star">⭐</span> ${movie.rating}</span>
+        ${movie.rating ? `<span class="card-badge-quality">⭐ ${movie.rating}</span>` : ''}
         ${movie.type === 'series' ? `<span class="card-badge-type">Series</span>` : ''}
-        ${movie.episode ? `<span class="card-badge-episode">${movie.episode}</span>` : ''}
+        ${movie.episode ? `<span class="card-badge-episode">${escapeHtml(movie.episode)}</span>` : ''}
       </div>
       <div class="card-info">
-        <h3 class="card-title">${movie.title}</h3>
+        <h3 class="card-title">${safeTitle}</h3>
         <div class="card-meta">
-          <span>${movie.year}</span>
+          <span>${movie.year || '—'}</span>
           <span class="dot"></span>
-          <span>${movie.genre || (movie.genres && movie.genres[0]) || 'Film'}</span>
+          <span>${escapeHtml(movie.genre || (movie.genres && movie.genres[0]) || 'Film')}</span>
         </div>
       </div>
     </div>
   `;
 }
 
-function renderContentSection(containerId, category, count = 20) {
+function renderSkeletonRow(container, count) {
+  container.innerHTML = Array.from({ length: count || 8 }, () => `
+    <div class="movie-card skeleton-card">
+      <div class="card-poster skeleton-block"></div>
+      <div class="card-info">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function renderContentSection(containerId, rowKind, options) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const movies = generateMovies(category, count);
-  container.innerHTML = movies.map(m => renderMovieCard(m)).join('');
+  const settings = options || {};
+  renderSkeletonRow(container, 8);
+
+  try {
+    const movies = await Tmdb.getRow(rowKind, settings);
+    const decorated = movies.map(decorateMovie);
+
+    if (decorated.length === 0) {
+      container.closest('.content-section')?.classList.add('hidden');
+      return;
+    }
+
+    container.innerHTML = decorated.map((m) => renderMovieCard(m)).join('');
+  } catch (error) {
+    container.closest('.content-section')?.classList.add('hidden');
+    console.warn(`Baris ${containerId} gagal dimuat:`, error.message);
+  }
 }
 
+// ID genre TMDB
+const GENRE_IDS = { action: 28, animation: 16 };
+
 function renderAllSections() {
-  renderContentSection('topview-row', 'topview', 24);
-  renderContentSection('trending-row', 'trending', 24);
-  renderContentSection('latest-row', 'latest', 24);
-  renderContentSection('popular-row', 'popular', 24);
-  renderContentSection('series-row', 'series', 24);
-  renderContentSection('kdrama-row', 'kdrama', 24);
-  renderContentSection('anime-row', 'anime', 24);
-  renderContentSection('indonesia-row', 'indonesia', 24);
+  renderContentSection('topview-row', 'trending');
+  renderContentSection('trending-row', 'trending', { page: 2 });
+  renderContentSection('latest-row', 'top_rated');
+  renderContentSection('popular-row', 'genre', { genreId: GENRE_IDS.action });
+  renderContentSection('series-row', 'tv');
+  renderContentSection('kdrama-row', 'tv', { with_origin_country: 'KR' });
+  renderContentSection('anime-row', 'genre', { genreId: GENRE_IDS.animation });
+  renderContentSection('indonesia-row', 'genre', { with_original_language: 'id' });
 }
 
 // Open modal player or standalone detail
@@ -846,29 +511,28 @@ function renderHeroSlider() {
   heroSlides.forEach((slide, i) => {
     const slideEl = document.createElement('div');
     slideEl.className = `hero-slide ${i === 0 ? 'active' : ''}`;
+    const detailPath = `/${slide.type === 'series' ? 'series' : 'movie'}/${slide.slug}`;
     slideEl.innerHTML = `
-      <div class="hero-slide-bg" style="background-image: url('${slide.backdrop}')"></div>
+      <div class="hero-slide-bg" style="background-image: url('${escapeHtml(slide.backdrop)}')"></div>
       <div class="hero-slide-overlay"></div>
       <div class="hero-content container">
         <div class="hero-info">
-          <div class="hero-badge">${slide.badge}</div>
-          <h1 class="hero-title">${slide.title}</h1>
+          <div class="hero-badge">${escapeHtml(slide.badge)}</div>
+          <h1 class="hero-title">${escapeHtml(slide.title)}</h1>
           <div class="hero-meta">
-            <span class="hero-rating"><span class="star">⭐</span> ${slide.rating}</span>
+            <span class="hero-rating"><span class="star">⭐</span> ${slide.rating || '—'}</span>
             <span class="hero-meta-divider"></span>
-            <span class="hero-meta-item">${slide.year}</span>
+            <span class="hero-meta-item">${slide.year || '—'}</span>
             <span class="hero-meta-divider"></span>
-            <span class="hero-meta-item">${slide.duration}</span>
-            <span class="hero-meta-divider"></span>
-            <span class="hero-meta-item">${slide.quality}</span>
+            <span class="hero-meta-item">${escapeHtml(slide.duration || '—')}</span>
           </div>
           <div class="hero-genres">
-            ${slide.genres.map(g => `<span class="hero-genre-tag">${g}</span>`).join('')}
+            ${(slide.genres || []).map(g => `<span class="hero-genre-tag">${escapeHtml(g)}</span>`).join('')}
           </div>
-          <p class="hero-description">${slide.description}</p>
+          <p class="hero-description">${escapeHtml(slide.description || '')}</p>
           <div class="hero-buttons">
             <button class="btn btn-primary" onclick="openPlayer('${slide.id}')">▶ Tonton Sekarang</button>
-            <a href="/movie/${slide.slug}" class="btn btn-secondary" data-nav="/movie/${slide.slug}">ℹ️ Detail Lengkap</a>
+            <a href="${detailPath}" class="btn btn-secondary" data-nav="${detailPath}">ℹ️ Detail Lengkap</a>
           </div>
         </div>
       </div>
@@ -882,7 +546,15 @@ function renderHeroSlider() {
   });
 }
 
+// Jumlah slide hero yang diambil dari baris trending TMDB (§7.1).
+const HERO_SLIDE_COUNT = 6;
+
 function initHeroSlider() {
+  // Render dulu dengan data yang tersedia saat ini (FALLBACK_HERO_SLIDES)
+  // supaya hero tidak pernah kosong selagi menunggu fetch trending, lalu
+  // render ulang otomatis begitu data TMDB nyata datang (lihat
+  // loadTrendingHeroSlides). Mekanisme slider (interval, dot, prev/next)
+  // tidak berubah — hanya sumber datanya.
   renderHeroSlider();
   slideInterval = setInterval(nextSlide, SLIDE_DURATION);
 
@@ -896,67 +568,157 @@ function initHeroSlider() {
       slideInterval = setInterval(nextSlide, SLIDE_DURATION);
     });
   }
+
+  loadTrendingHeroSlides();
+}
+
+// §7.1: hero diambil dari judul trending teratas yang punya backdrop, dari
+// baris trending TMDB yang sama yang dipakai topview-row. Tmdb.fetchTmdb
+// meng-cache per URL, jadi pemanggilan Tmdb.getRow('trending', {}) di sini
+// berbagi satu request jaringan dengan renderContentSection('topview-row',
+// 'trending') di renderAllSections(), bukan memicu fetch kedua yang
+// terpisah. FALLBACK_HERO_SLIDES tetap tampil kecuali fetch ini berhasil
+// dengan minimal satu judul berbackdrop.
+async function loadTrendingHeroSlides() {
+  try {
+    const trending = (await Tmdb.getRow('trending', {})).map(decorateMovie);
+    const withBackdrop = trending.filter((m) => m.backdrop).slice(0, HERO_SLIDE_COUNT);
+
+    if (withBackdrop.length === 0) return;
+
+    heroSlides = withBackdrop.map(buildHeroSlideFromTrending);
+    heroSlides.forEach((slide) => {
+      movieRegistry.set(slide.id, slide);
+      movieRegistry.set(slide.slug, slide);
+    });
+
+    currentSlide = 0;
+    renderHeroSlider();
+    resetSlideInterval();
+  } catch (error) {
+    console.warn('Hero slider: gagal memuat trending TMDB, memakai data cadangan.', error.message);
+  }
+}
+
+// Menyaring field objek TMDB penuh (movieRegistry bisa punya banyak field
+// lain) ke bentuk minimal yang dibutuhkan renderHeroSlider/sidebar. quality,
+// idlixUrl, dan isUnavailable sengaja tidak disertakan — lihat catatan di
+// FALLBACK_HERO_SLIDES.
+function buildHeroSlideFromTrending(movie) {
+  return {
+    id: movie.id,
+    title: movie.title,
+    originalTitle: movie.originalTitle,
+    year: movie.year,
+    rating: movie.rating,
+    duration: movie.duration,
+    type: movie.type,
+    genre: movie.genre,
+    genres: (movie.genres && movie.genres.length) ? movie.genres : [movie.genre || 'Trending'],
+    country: movie.country,
+    description: movie.description,
+    poster: movie.poster,
+    backdrop: movie.backdrop,
+    gradient: movie.gradient,
+    emoji: movie.emoji,
+    badge: '🔥 Trending Minggu Ini',
+    slug: movie.slug,
+    tmdbId: movie.tmdbId,
+    trailerUrl: movie.trailerUrl
+  };
 }
 
 // ==========================================
-// STREAMING CONTROLLER & EMBED GENERATOR
+// PANEL KETERSEDIAAN LAYANAN STREAMING
 // ==========================================
 
-const STREAM_SERVERS = [
-  { id: 'server-1', name: 'Server 1 (Cinelax Ultra HD)', quality: '1080p Multi-Sub Indo' },
-  { id: 'server-2', name: 'Server 2 (AutoEmbed FHD)', quality: '1080p Ultra Fast' },
-  { id: 'server-3', name: 'Server 3 (2Embed VIP)', quality: '1080p Bufferless' },
-  { id: 'server-4', name: 'Server 4 (VidSrc Prime)', quality: '720p/1080p HD Clean' }
-];
+// link: URL JustWatch dari providers.link. Spec §8 minta logo provider bisa
+// diklik menuju JustWatch — TMDB hanya memberi satu link gabungan per
+// judul/region (bukan deep-link per provider), jadi setiap logo di grup ini
+// memakai link yang sama.
+function renderProviderGroup(label, list, link) {
+  if (!list || list.length === 0) return '';
 
-function getStreamEmbedUrl(movie, serverIdx, seasonIdx, episodeIdx) {
-  if (!movie) return '';
-  const isSeries = movie.type === 'series';
-  const seasonNum = seasonIdx + 1;
-  const epNum = episodeIdx + 1;
-  const imdbId = movie.imdbId;
-
-  // If no imdbId, fallback to trailer or blank
-  if (!imdbId) {
-    if (movie.trailerUrl) return movie.trailerUrl;
-    return 'about:blank';
-  }
-
-  switch (serverIdx) {
-    case 0:
-      // Server 1: VidSrc.to
-      return isSeries 
-        ? `https://vidsrc.to/embed/tv/${imdbId}/${seasonNum}/${epNum}`
-        : `https://vidsrc.to/embed/movie/${imdbId}`;
-    case 1:
-      // Server 2: AutoEmbed
-      return isSeries 
-        ? `https://autoembed.co/tv/imdb/${imdbId}-${seasonNum}-${epNum}`
-        : `https://autoembed.co/movie/imdb/${imdbId}`;
-    case 2:
-      // Server 3: 2Embed
-      return isSeries 
-        ? `https://www.2embed.cc/embedtv/${imdbId}&s=${seasonNum}&e=${epNum}`
-        : `https://www.2embed.cc/embed/${imdbId}`;
-    case 3:
-    default:
-      // Server 4: VidSrc.in
-      return isSeries 
-        ? `https://vidsrc.in/embed/tv/${imdbId}/${seasonNum}/${epNum}`
-        : `https://vidsrc.in/embed/movie/${imdbId}`;
-  }
+  return `
+    <div class="provider-group">
+      <h4 class="provider-group-title">${escapeHtml(label)}</h4>
+      <div class="provider-logos">
+        ${list.map((p) => {
+          const safeName = escapeHtml(p.name);
+          const inner = `<img src="${p.logo}" alt="${safeName}" loading="lazy">`;
+          return link
+            ? `<a class="provider-logo" href="${escapeHtml(link)}" title="${safeName}" target="_blank" rel="noopener noreferrer">${inner}</a>`
+            : `<div class="provider-logo" title="${safeName}">${inner}</div>`;
+        }).join('')}
+      </div>
+    </div>
+  `;
 }
+
+async function renderProviderPanel(containerId, movie) {
+  const container = document.getElementById(containerId);
+  if (!container || !movie) return;
+
+  container.innerHTML = `<p class="provider-loading">Memeriksa ketersediaan...</p>`;
+
+  if (!movie.tmdbId) {
+    container.innerHTML = `<p class="provider-empty">Data ketersediaan tidak tersedia untuk judul ini.</p>`;
+    return;
+  }
+
+  let providers;
+  try {
+    providers = await Tmdb.getProviders(movie.type, movie.tmdbId);
+  } catch (error) {
+    container.innerHTML = `
+      <p class="provider-empty">Gagal memuat ketersediaan.</p>
+      <button class="btn-retry" onclick="renderProviderPanel('${containerId}', movieRegistry.get('${movie.id}'))">Coba Lagi</button>
+    `;
+    return;
+  }
+
+  const groups = [
+    renderProviderGroup('Langganan', providers.flatrate, providers.link),
+    renderProviderGroup('Sewa', providers.rent, providers.link),
+    renderProviderGroup('Beli', providers.buy, providers.link)
+  ].join('');
+
+  if (!groups) {
+    container.innerHTML = `
+      <p class="provider-empty">
+        "${escapeHtml(movie.title)}" belum tersedia di layanan streaming Indonesia.
+      </p>
+    `;
+    return;
+  }
+
+  container.innerHTML = `
+    <h3 class="provider-heading">Nonton di</h3>
+    ${groups}
+    ${providers.link ? `
+      <a class="provider-cta" href="${escapeHtml(providers.link)}" target="_blank" rel="noopener noreferrer">
+        Buka opsi menonton
+      </a>
+    ` : ''}
+    <p class="provider-note">Data ketersediaan disediakan JustWatch melalui TMDB.</p>
+  `;
+}
+
+window.renderProviderPanel = renderProviderPanel;
 
 // ==========================================
 // QUICK THEATER MODAL CONTROLLER
 // ==========================================
 
 let activeMovie = null;
-let activeServerIndex = 0;
 let activeSeasonIndex = 0;
 let activeEpisodeIndex = 0;
 let isCinemaMode = false;
-let modalPlayingTrailer = false;
+// Penjaga respons basi: openPlayer() adalah async dan menunggu resolveMovie.
+// Dua klik kartu yang cepat bisa membuat respons klik pertama selesai belakangan
+// dan menimpa modal dengan film yang salah. Pola sama dipakai searchSequence,
+// listingRequestSeq, dan routeRequestSeq di bawah.
+let playerRequestSeq = 0;
 
 function loadPlayerIframe() {
   if (!activeMovie) return;
@@ -968,32 +730,22 @@ function loadPlayerIframe() {
 
   if (!iframe) return;
 
-  // Check if movie is marked unavailable and we're not currently previewing trailer
-  if (activeMovie.isUnavailable && !modalPlayingTrailer) {
+  if (!activeMovie.trailerUrl) {
     if (loader) loader.classList.add('hidden');
     iframe.src = 'about:blank';
     if (overlay) {
       overlay.style.display = 'flex';
       if (overlayMsg) {
-        overlayMsg.textContent = `Film "${activeMovie.title}" (${activeMovie.year}) saat ini belum dapat diputar secara streaming. Judul ini masih dalam jadwal penayangan bioskop atau menunggu rilis digital resmi. Anda dapat memutar trailer resminya di bawah ini.`;
+        overlayMsg.textContent = `Trailer resmi untuk "${activeMovie.title}" belum tersedia. Silakan lihat opsi menonton di bawah.`;
       }
     }
     return;
   }
 
-  // Hide unavailable overlay
   if (overlay) overlay.style.display = 'none';
   if (loader) loader.classList.remove('hidden');
 
-  if (modalPlayingTrailer && activeMovie.trailerUrl) {
-    const trailerSrc = activeMovie.trailerUrl.includes('?') 
-      ? `${activeMovie.trailerUrl}&autoplay=1` 
-      : `${activeMovie.trailerUrl}?autoplay=1`;
-    iframe.src = trailerSrc;
-  } else {
-    const streamUrl = getStreamEmbedUrl(activeMovie, activeServerIndex, activeSeasonIndex, activeEpisodeIndex);
-    iframe.src = streamUrl;
-  }
+  iframe.src = activeMovie.trailerUrl;
 
   iframe.onload = () => {
     setTimeout(() => {
@@ -1006,18 +758,6 @@ function loadPlayerIframe() {
   }, 2200);
 }
 
-function renderModalServerButtons() {
-  const container = document.getElementById('player-server-buttons');
-  if (!container) return;
-
-  container.innerHTML = STREAM_SERVERS.map((server, idx) => `
-    <button class="server-btn ${idx === activeServerIndex ? 'active' : ''}" onclick="switchPlayerServer(${idx})">
-      <span class="server-status-dot"></span>
-      <span>${server.name}</span>
-    </button>
-  `).join('');
-}
-
 function renderModalEpisodesSection(movie) {
   const section = document.getElementById('player-episodes-section');
   const seasonWrap = document.getElementById('season-selector-wrap');
@@ -1025,19 +765,25 @@ function renderModalEpisodesSection(movie) {
 
   if (!section || !grid) return;
 
-  if (movie.type !== 'series') {
+  const seasons = (movie.type === 'series')
+    ? (movie.seasons || [{ season: 1, episodes: movie.episodes || [] }])
+    : [];
+  const hasAnyEpisodes = seasons.some((s) => Array.isArray(s.episodes) && s.episodes.length > 0);
+
+  // tmdb-map.js tidak memetakan episode/season TMDB sama sekali (episode:
+  // null, episodes: null, tanpa seasons) — dulu section ini tetap muncul
+  // untuk setiap serial dengan tab "Season 1" kosong. Sembunyikan total bila
+  // memang tidak ada data episode sama sekali, alih-alih menampilkan panel
+  // kosong yang menyesatkan (F4).
+  if (movie.type !== 'series' || !hasAnyEpisodes) {
     section.style.display = 'none';
     return;
   }
 
   section.style.display = 'block';
 
-  const seasons = movie.seasons || [
-    { season: 1, episodes: movie.episodes || [] }
-  ];
-
   const currentSeasonData = seasons[activeSeasonIndex] || seasons[0];
-  const episodesList = currentSeasonData.episodes || [];
+  const episodesList = (currentSeasonData && currentSeasonData.episodes) || [];
 
   if (seasonWrap) {
     seasonWrap.innerHTML = seasons.map((s, sIdx) => `
@@ -1050,8 +796,8 @@ function renderModalEpisodesSection(movie) {
   grid.innerHTML = episodesList.map((ep, idx) => `
     <div class="episode-card ${idx === activeEpisodeIndex ? 'active' : ''}" onclick="selectPlayerEpisode(${idx})">
       <div class="episode-card-info">
-        <span class="ep-num">S${activeSeasonIndex + 1} EP ${ep.number} (${ep.duration})</span>
-        <span class="ep-title">${ep.title}</span>
+        <span class="ep-num">S${activeSeasonIndex + 1} EP ${ep.number} (${escapeHtml(ep.duration)})</span>
+        <span class="ep-title">${escapeHtml(ep.title)}</span>
       </div>
       <span class="ep-play-icon">${idx === activeEpisodeIndex ? '▶' : '▷'}</span>
     </div>
@@ -1072,25 +818,27 @@ function renderRelatedInModal(current) {
         <span>${m.emoji}</span>
       </div>
       <div class="modal-related-info">
-        <h5 class="modal-related-title">${m.title}</h5>
-        <div class="modal-related-meta">⭐ ${m.rating} · ${m.year}</div>
+        <h5 class="modal-related-title">${escapeHtml(m.title)}</h5>
+        <div class="modal-related-meta">⭐ ${m.rating || '—'} · ${m.year || '—'}</div>
       </div>
     </div>
   `).join('');
 }
 
-function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
-  let movie = movieRegistry.get(movieId);
+async function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
+  // Penjaga respons basi: lihat komentar pada deklarasi playerRequestSeq.
+  const playerSequence = ++playerRequestSeq;
+  const movie = await resolveMovie(movieId);
+  if (playerSequence !== playerRequestSeq) return;
+
   if (!movie) {
-    movie = Array.from(movieRegistry.values()).find(m => m.slug === movieId || slugify(m.title) === movieId);
+    showToast('Judul tidak ditemukan.', 'error');
+    return;
   }
-  if (!movie) return;
 
   activeMovie = movie;
-  activeServerIndex = 0;
   activeSeasonIndex = seasonIndex;
   activeEpisodeIndex = episodeIndex;
-  modalPlayingTrailer = false;
 
   const modal = document.getElementById('player-modal');
   if (!modal) return;
@@ -1103,10 +851,12 @@ function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
     if (movie.type === 'series') {
       const currentSeason = movie.seasons ? movie.seasons[activeSeasonIndex] : null;
       const currentEp = currentSeason && currentSeason.episodes ? currentSeason.episodes[activeEpisodeIndex] : null;
-      const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : ` — S${activeSeasonIndex + 1} EP${activeEpisodeIndex + 1}`;
+      // Tanpa data episode nyata (kasus TMDB saat ini — lihat F4), modal ini
+      // cuma menampilkan trailer, jadi jangan karang suffix "S1 EP1".
+      const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : '';
       titleEl.textContent = `${movie.title}${epTitle}`;
     } else {
-      titleEl.textContent = `${movie.title} (${movie.year})`;
+      titleEl.textContent = `${movie.title} (${movie.year || '—'})`;
     }
   }
 
@@ -1115,13 +865,22 @@ function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
     typeBadge.className = `modal-badge-type ${movie.type === 'series' ? 'series' : ''}`;
   }
 
-  if (qualityBadge) qualityBadge.textContent = movie.quality || '4K';
+  // quality tidak lagi dipetakan dari TMDB (nilainya dulu karangan) — badge
+  // disembunyikan sepenuhnya alih-alih menampilkan default palsu (F2).
+  if (qualityBadge) {
+    if (movie.quality) {
+      qualityBadge.textContent = movie.quality;
+      qualityBadge.style.display = '';
+    } else {
+      qualityBadge.style.display = 'none';
+    }
+  }
 
   const posterBox = document.getElementById('modal-poster-box');
   const posterEmoji = document.getElementById('modal-poster-emoji');
   if (posterBox) {
     if (movie.poster) {
-      posterBox.innerHTML = `<img src="${movie.poster}" alt="${movie.title}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`;
+      posterBox.innerHTML = `<img src="${movie.poster}" alt="${escapeHtml(movie.title)}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`;
       posterBox.style.background = 'transparent';
     } else {
       posterBox.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">${movie.emoji}</div>`;
@@ -1139,26 +898,40 @@ function openPlayer(movieId, episodeIndex = 0, seasonIndex = 0) {
   const castEl = document.getElementById('modal-cast');
   const qualityDetailEl = document.getElementById('modal-quality-detail');
 
-  if (ratingEl) ratingEl.innerHTML = `<span class="star">⭐</span> ${movie.rating}`;
+  if (ratingEl) ratingEl.innerHTML = `<span class="star">⭐</span> ${movie.rating || '—'}`;
   if (yearEl) yearEl.textContent = movie.year;
-  if (durationEl) durationEl.textContent = movie.duration || (movie.type === 'series' ? '45m/ep' : '2h 15m');
-  if (countryEl) countryEl.textContent = movie.country || 'United States';
+  if (durationEl) durationEl.textContent = movie.duration || '-';
+  if (countryEl) countryEl.textContent = displayCountry(movie.country);
 
   if (genresEl) {
     const genreList = movie.genres || [movie.genre || 'Action'];
-    genresEl.innerHTML = genreList.map(g => `<span class="genre-pill">${g}</span>`).join('');
+    genresEl.innerHTML = genreList.map(g => `<span class="genre-pill">${escapeHtml(g)}</span>`).join('');
   }
 
   if (synopsisEl) synopsisEl.textContent = movie.description;
-  if (directorEl) directorEl.textContent = movie.director || 'James Cameron';
-  if (castEl) castEl.textContent = movie.cast || 'Hollywood Star Ensemble';
-  if (qualityDetailEl) qualityDetailEl.textContent = `${movie.quality || '4K Ultra HD'} (Subtitle Indonesia)`;
+  if (directorEl) directorEl.textContent = movie.director || '-';
+  if (castEl) castEl.textContent = movie.cast || '-';
 
-  renderModalServerButtons();
+  // "Kualitas: ..." adalah baris meta-item dengan label tetap di HTML —
+  // menyembunyikan hanya nilainya akan menyisakan "Kualitas:" tanpa isi,
+  // jadi seluruh baris disembunyikan ketika tidak ada data quality (F2).
+  if (qualityDetailEl) {
+    const qualityRow = qualityDetailEl.closest('.meta-item');
+    if (movie.quality) {
+      qualityDetailEl.textContent = movie.quality;
+      if (qualityRow) qualityRow.style.display = '';
+    } else if (qualityRow) {
+      qualityRow.style.display = 'none';
+    } else {
+      qualityDetailEl.style.display = 'none';
+    }
+  }
+
   renderModalEpisodesSection(movie);
   renderRelatedInModal(movie);
 
   loadPlayerIframe();
+  renderProviderPanel('player-provider-panel', movie);
 
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -1176,7 +949,6 @@ function closePlayer() {
 
   if (iframe) iframe.src = '';
   if (overlay) overlay.style.display = 'none';
-  modalPlayingTrailer = false;
 
   if (isCinemaMode) {
     isCinemaMode = false;
@@ -1187,25 +959,14 @@ function closePlayer() {
 
 window.closePlayer = closePlayer;
 
-function switchPlayerServer(serverIdx) {
-  if (activeServerIndex === serverIdx) return;
-  activeServerIndex = serverIdx;
-  modalPlayingTrailer = false;
-  renderModalServerButtons();
-  loadPlayerIframe();
-  showToast(`Mengalihkan ke ${STREAM_SERVERS[serverIdx].name}...`, 'info');
-}
-
-window.switchPlayerServer = switchPlayerServer;
-
 function switchPlayerSeason(seasonIdx) {
   activeSeasonIndex = seasonIdx;
   activeEpisodeIndex = 0;
   if (activeMovie) {
     const currentSeason = activeMovie.seasons ? activeMovie.seasons[activeSeasonIndex] : null;
     const currentEp = currentSeason && currentSeason.episodes ? currentSeason.episodes[0] : null;
-    const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : ` — S${activeSeasonIndex + 1} EP1`;
-    
+    const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : '';
+
     const titleEl = document.getElementById('modal-movie-title');
     if (titleEl) titleEl.textContent = `${activeMovie.title}${epTitle}`;
 
@@ -1222,7 +983,7 @@ function selectPlayerEpisode(episodeIdx) {
   if (activeMovie) {
     const currentSeason = activeMovie.seasons ? activeMovie.seasons[activeSeasonIndex] : null;
     const currentEp = currentSeason && currentSeason.episodes ? currentSeason.episodes[activeEpisodeIndex] : null;
-    const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : ` — S${activeSeasonIndex + 1} EP${activeEpisodeIndex + 1}`;
+    const epTitle = currentEp ? ` — S${activeSeasonIndex + 1} EP${currentEp.number}: ${currentEp.title}` : '';
 
     const titleEl = document.getElementById('modal-movie-title');
     if (titleEl) titleEl.textContent = `${activeMovie.title}${epTitle}`;
@@ -1271,18 +1032,28 @@ window.shareMovie = shareMovie;
 // SPA ROUTER ENGINE & VIEW SWITCHER
 // ==========================================
 
-const ITEMS_PER_PAGE = 12;
 let listingState = {
-  currentCategory: 'all',
+  view: 'listing',
+  title: '',
+  subtitle: '',
+  breadcrumbName: '',
+  searchQuery: '',
   genre: '',
+  genreId: null,
   country: '',
   year: '',
-  quality: '',
   type: '',
-  sort: 'latest',
-  searchQuery: '',
-  page: 1
+  sort: '',
+  rowKind: 'trending',
+  page: 1,
+  totalPages: 1,
+  totalResults: 0
 };
+// quality sengaja tidak ada: TMDB tidak punya padanannya, dan field ini
+// sudah dibuang di Task 5 karena isinya karangan (lihat brief Task 7b).
+
+let listingRequestSeq = 0;
+let routeRequestSeq = 0;
 
 function hideAllViews() {
   document.querySelectorAll('.app-view').forEach(view => {
@@ -1301,7 +1072,112 @@ function updateActiveNav(path) {
   });
 }
 
-function handleRoute() {
+// Nama genre pada URL (/genre/:slug, huruf kecil berpemisah "-") dan pada
+// toolbar filter (nilai <option>, huruf kecil) dipetakan ke ID genre TMDB.
+// Diperluas pada Task 7b agar mencakup seluruh <option> nyata di #filter-genre
+// (dibaca dari index.html): Action, Adventure, Animation, Comedy, Crime,
+// Documentary, Drama, Family, Fantasy, History, Horror, Music, Mystery,
+// Romance, Sci-Fi, Superhero, Supernatural, Thriller, TV Movie, War, Western.
+// Catatan "tv movie" vs "tv-movie": nilai <option> toolbar adalah "TV Movie"
+// (berspasi bila di-lowercase), sedangkan link navigasi memakai slug URL
+// "tv-movie" (bertanda hubung) — keduanya harus ada agar dua sumber ini
+// sama-sama cocok.
+// "Superhero" dan "Supernatural" SENGAJA tidak dipetakan: TMDB tidak punya
+// genre resmi untuk keduanya (bukan kelalaian, dan keduanya juga tidak
+// muncul sebagai link navigasi /genre/:slug). Bila dipilih di toolbar,
+// initListingFilterEvents membiarkan filter genre kosong (setara "Semua
+// Genre") dan mencatat peringatan di console, bukan memalsukan ID.
+const GENRE_SLUG_TO_ID = {
+  action: 28,
+  adventure: 12,
+  animation: 16,
+  comedy: 35,
+  crime: 80,
+  documentary: 99,
+  drama: 18,
+  family: 10751,
+  fantasy: 14,
+  history: 36,
+  horror: 27,
+  music: 10402,
+  mystery: 9648,
+  romance: 10749,
+  'sci-fi': 878,
+  thriller: 53,
+  'tv movie': 10770,
+  'tv-movie': 10770,
+  war: 10752,
+  western: 37
+};
+
+// Nama negara pada toolbar filter (#filter-country) dan pada rute /country/:slug
+// dipetakan ke kode negara ISO 3166-1 alpha-2 yang dipahami parameter TMDB
+// with_origin_country. Dibangun dari <option value="..."> nyata di index.html.
+const COUNTRY_NAME_TO_CODE = {
+  'United States': 'US',
+  'United Kingdom': 'GB',
+  'Korea Selatan': 'KR',
+  Jepang: 'JP',
+  China: 'CN',
+  India: 'IN',
+  Thailand: 'TH',
+  Indonesia: 'ID',
+  Filipina: 'PH',
+  'Hong Kong': 'HK',
+  Taiwan: 'TW',
+  Prancis: 'FR',
+  Jerman: 'DE',
+  Spanyol: 'ES',
+  Turki: 'TR'
+};
+
+// Sumber tunggal kode->nama negara dipindah ke TmdbMap.COUNTRY_CODE_TO_NAME
+// (js/tmdb-map.js) supaya main.js dan tmdb-map.js tidak punya dua tabel yang
+// bisa saling menyimpang (F11). listingState.country menyimpan kode ISO
+// (dipakai langsung oleh getRowPaged sebagai with_origin_country), tapi
+// <option value="..."> pada #filter-country adalah nama negara, bukan kode —
+// tabel ini dipakai untuk menyinkronkan <select> dan label pill filter aktif
+// kembali ke nama yang bisa dibaca pengguna.
+const COUNTRY_CODE_TO_NAME = TmdbMap.COUNTRY_CODE_TO_NAME;
+
+// mapTitle() (tmdb-map.js) sengaja mengembalikan country mentah: nama penuh
+// untuk film (production_countries), tapi kode ISO mentah untuk serial
+// (origin_country tidak punya nama — lihat catatan di countryOf()). Fungsi
+// tampilan ini yang menerjemahkan kode itu ke nama pada saat merender,
+// supaya "KR" muncul sebagai "Korea Selatan" di UI tanpa mengubah kontrak
+// data mapTitle() yang dikunci test suite.
+function displayCountry(country) {
+  if (!country) return '-';
+  return COUNTRY_CODE_TO_NAME[country] || country;
+}
+
+// Kunci pilihan #filter-sort dipetakan ke parameter sort_by TMDB yang valid.
+// Nama field tanggal dan judul berbeda antara discover/movie dan discover/tv,
+// sehingga pemetaan ini butuh tahu media (isTv) di titik penggunaan (lihat
+// getFilteredMovies), bukan pada saat pengguna memilih opsi.
+function resolveSortBy(sortKey, isTv) {
+  switch (sortKey) {
+    case 'rating':
+      return 'vote_average.desc';
+    case 'popular':
+      return 'popularity.desc';
+    case 'title':
+      return isTv ? 'name.asc' : 'title.asc';
+    case 'year':
+    case 'latest':
+      return isTv ? 'first_air_date.desc' : 'primary_release_date.desc';
+    default:
+      return undefined;
+  }
+}
+
+async function handleRoute() {
+  // Penjaga respons basi: dua navigasi cepat bisa membuat sebuah
+  // `await resolveMovie(slug)` yang lambat menimpa hasil navigasi yang lebih
+  // baru. Setiap pemanggilan handleRoute menaikkan generasi ini; hasil dari
+  // generasi yang sudah kedaluwarsa dibuang sebelum dirender (lihat cabang 9).
+  const routeSequence = ++routeRequestSeq;
+
   let path = window.location.hash.replace(/^#/, '');
   if (!path) path = window.location.pathname;
   if (path === '' || path === 'index.html') path = '/';
@@ -1319,7 +1195,15 @@ function handleRoute() {
 
   // 2. Movies List (/movies)
   if (path === '/movies') {
-    listingState = { ...listingState, type: 'movie', searchQuery: '', page: 1 };
+    listingState.searchQuery = '';
+    listingState.genre = '';
+    listingState.genreId = null;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = 'movie';
+    listingState.sort = '';
+    listingState.rowKind = 'top_rated';
+    listingState.page = 1;
     renderListingView('Semua Film (Movies)', 'Jelajahi seluruh film bioskop box office terbaru dengan subtitle Indonesia.', 'Movies');
     document.getElementById('view-listing').style.display = 'block';
     updateActiveNav('/movies');
@@ -1329,7 +1213,15 @@ function handleRoute() {
 
   // 3. Series List (/series)
   if (path === '/series') {
-    listingState = { ...listingState, type: 'series', searchQuery: '', page: 1 };
+    listingState.searchQuery = '';
+    listingState.genre = '';
+    listingState.genreId = null;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = 'series';
+    listingState.sort = '';
+    listingState.rowKind = 'tv';
+    listingState.page = 1;
     renderListingView('Serial TV & Drama', 'Koleksi serial TV Barat, Drama Korea, dan Anime terlengkap multi-season.', 'Series');
     document.getElementById('view-listing').style.display = 'block';
     updateActiveNav('/series');
@@ -1339,7 +1231,15 @@ function handleRoute() {
 
   // 4. Trending List (/trending)
   if (path === '/trending') {
-    listingState = { ...listingState, sort: 'popular', searchQuery: '', page: 1 };
+    listingState.searchQuery = '';
+    listingState.genre = '';
+    listingState.genreId = null;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = '';
+    listingState.sort = '';
+    listingState.rowKind = 'trending';
+    listingState.page = 1;
     renderListingView('🔥 Trending 2025 — 2026', 'Film dan serial paling banyak ditonton dan viral minggu ini.', 'Trending');
     document.getElementById('view-listing').style.display = 'block';
     updateActiveNav('/');
@@ -1349,22 +1249,33 @@ function handleRoute() {
 
   // 5. Genre Filter (/genre/:slug)
   if (path.startsWith('/genre/')) {
-    const genreSlug = path.replace('/genre/', '').split('?')[0];
-    const genreMap = {
-      'action': 'Action', 'adventure': 'Adventure', 'animation': 'Animation',
-      'comedy': 'Comedy', 'crime': 'Crime', 'documentary': 'Documentary',
-      'drama': 'Drama', 'family': 'Family', 'fantasy': 'Fantasy',
-      'history': 'History', 'horror': 'Horror', 'music': 'Music',
-      'mystery': 'Mystery', 'romance': 'Romance', 'sci-fi': 'Sci-Fi',
-      'superhero': 'Superhero', 'thriller': 'Thriller', 'tv-movie': 'TV Movie',
-      'war': 'War', 'western': 'Western'
-    };
-    const genreName = genreMap[genreSlug.toLowerCase()] || genreSlug;
-    listingState = { ...listingState, genre: genreName, searchQuery: '', page: 1 };
-    renderListingView(`Genre: ${genreName}`, `Koleksi film dan serial TV bertema ${genreName} terbaik.`, genreName);
+    const genreSlug = path.replace('/genre/', '').split('?')[0].toLowerCase();
+    const genreId = GENRE_SLUG_TO_ID[genreSlug] || null;
+
+    if (!genreId) {
+      renderNotFoundView();
+      document.getElementById('view-404').style.display = 'block';
+      updateActiveNav('/');
+      document.title = '404 — Halaman Tidak Ditemukan — Cinelax';
+      return;
+    }
+
+    const genreLabel = genreSlug.charAt(0).toUpperCase() + genreSlug.slice(1);
+
+    listingState.searchQuery = '';
+    listingState.genre = genreLabel;
+    listingState.genreId = genreId;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = '';
+    listingState.sort = '';
+    listingState.rowKind = 'genre';
+    listingState.page = 1;
+
+    renderListingView(`Genre: ${genreLabel}`, `Koleksi film dan serial TV bertema ${genreLabel} terbaik.`, genreLabel);
     document.getElementById('view-listing').style.display = 'block';
     updateActiveNav('/genre/' + genreSlug);
-    document.title = `Film ${genreName} Terbaik — Cinelax`;
+    document.title = `Film ${genreLabel} Terbaik — Cinelax`;
     return;
   }
 
@@ -1379,7 +1290,20 @@ function handleRoute() {
       'germany': 'Jerman', 'spain': 'Spanyol', 'turkey': 'Turki'
     };
     const countryName = countryMap[countrySlug.toLowerCase()] || countrySlug;
-    listingState = { ...listingState, country: countryName, searchQuery: '', page: 1 };
+    const countryCode = COUNTRY_NAME_TO_CODE[countryName] || '';
+
+    listingState.searchQuery = '';
+    listingState.genre = '';
+    listingState.genreId = null;
+    listingState.country = countryCode;
+    listingState.year = '';
+    listingState.type = '';
+    listingState.sort = '';
+    // rowKind: 'genre' membuat getRowPaged benar-benar memfilter memakai
+    // with_origin_country, alih-alih jatuh ke trending tanpa filter apa pun.
+    listingState.rowKind = 'genre';
+    listingState.page = 1;
+
     renderListingView(`Negara: ${countryName}`, `Daftar film dan drama produksi ${countryName}.`, countryName);
     document.getElementById('view-listing').style.display = 'block';
     updateActiveNav('/country/' + countrySlug);
@@ -1390,7 +1314,19 @@ function handleRoute() {
   // 7. Year Filter (/year/:year)
   if (path.startsWith('/year/')) {
     const year = path.replace('/year/', '').split('?')[0];
-    listingState = { ...listingState, year: year, searchQuery: '', page: 1 };
+
+    listingState.searchQuery = '';
+    listingState.genre = '';
+    listingState.genreId = null;
+    listingState.country = '';
+    listingState.year = year;
+    listingState.type = '';
+    listingState.sort = '';
+    // rowKind: 'genre' membuat getRowPaged benar-benar memfilter memakai
+    // primary_release_year, alih-alih jatuh ke trending tanpa filter apa pun.
+    listingState.rowKind = 'genre';
+    listingState.page = 1;
+
     renderListingView(`Tahun Rilis: ${year}`, `Daftar film dan serial yang dirilis pada tahun ${year}.`, year);
     document.getElementById('view-listing').style.display = 'block';
     updateActiveNav('/year/' + year);
@@ -1402,7 +1338,17 @@ function handleRoute() {
   if (path.startsWith('/search')) {
     const params = new URLSearchParams(path.split('?')[1] || window.location.search);
     const query = params.get('q') || '';
-    listingState = { ...listingState, searchQuery: query, page: 1 };
+
+    listingState.searchQuery = query;
+    listingState.genre = '';
+    listingState.genreId = null;
+    listingState.country = '';
+    listingState.year = '';
+    listingState.type = '';
+    listingState.sort = '';
+    listingState.rowKind = 'trending';
+    listingState.page = 1;
+
     renderListingView(`Hasil Pencarian: "${query}"`, `Menampilkan semua judul yang cocok dengan kata kunci "${query}".`, `Pencarian: ${query}`);
     document.getElementById('view-listing').style.display = 'block';
     updateActiveNav('/');
@@ -1422,18 +1368,33 @@ function handleRoute() {
       epNum = parseInt(parts[6], 10) || 1;
     }
 
-    let movie = movieRegistry.get(slug);
-    if (!movie) {
-      movie = Array.from(movieRegistry.values()).find(m => m.slug === slug || slugify(m.title) === slug);
-    }
+    // Tampilkan kerangka (skeleton) sebelum menunggu resolveMovie, seperti
+    // yang sudah dilakukan updateListingGrid — tanpa ini layar kosong total
+    // di koneksi lambat karena hideAllViews() di atas menyembunyikan semua view.
+    document.getElementById('view-detail').style.display = 'block';
+    const detailRelatedRow = document.getElementById('detail-related-row');
+    if (detailRelatedRow) renderSkeletonRow(detailRelatedRow, 6);
 
-    if (movie) {
-      renderDedicatedDetailView(movie, seasonNum - 1, epNum - 1);
-      document.getElementById('view-detail').style.display = 'block';
-      updateActiveNav(movie.type === 'series' ? '/series' : '/movies');
-      document.title = `Nonton ${movie.title} (${movie.year}) Sub Indo — Cinelax`;
+    const movie = await resolveMovie(slug);
+
+    // Navigasi yang lebih baru sudah terjadi selagi resolveMovie menunggu;
+    // buang hasil ini, jangan timpa apa yang sudah dirender.
+    if (routeSequence !== routeRequestSeq) return;
+
+    if (!movie) {
+      hideAllViews();
+      renderNotFoundView();
+      document.getElementById('view-404').style.display = 'block';
+      updateActiveNav('/');
+      document.title = '404 — Halaman Tidak Ditemukan — Cinelax';
       return;
     }
+
+    renderDedicatedDetailView(movie, seasonNum - 1, epNum - 1);
+    document.getElementById('view-detail').style.display = 'block';
+    updateActiveNav(movie.type === 'series' ? '/series' : '/movies');
+    document.title = `Nonton ${movie.title} (${movie.year}) Sub Indo — Cinelax`;
+    return;
   }
 
   // 10. 404 Page (Catch-all)
@@ -1455,81 +1416,68 @@ window.navigate = navigate;
 // LISTING VIEW CONTROLLER
 // ==========================================
 
-function getFilteredMovies() {
-  let list = Array.from(movieRegistry.values());
-  // Remove duplicates by normalized title
-  const uniqueMap = new Map();
-  list.forEach(item => {
-    if (item && item.title) {
-      const key = item.title.trim().toLowerCase();
-      if (!uniqueMap.has(key)) {
-        uniqueMap.set(key, item);
-      }
-    }
+async function getFilteredMovies() {
+  const state = listingState;
+
+  // Halaman hasil pencarian. Tmdb.searchTitles (F6) sekarang mengembalikan
+  // bentuk pager yang sama seperti getRowPaged (items/page/totalPages/
+  // totalResults) — search/multi TMDB memang melaporkan total_pages/
+  // total_results yang valid, jadi paginasi bekerja seperti baris genre/tv.
+  if (state.searchQuery) {
+    const searchResult = await Tmdb.searchTitles(state.searchQuery, state.page || 1);
+    return {
+      items: searchResult.items.map(decorateMovie),
+      page: searchResult.page,
+      totalPages: searchResult.totalPages,
+      totalResults: searchResult.totalResults
+    };
+  }
+
+  const kind = state.type === 'series' ? 'tv' : (state.rowKind || 'genre');
+  const isTv = kind === 'tv';
+
+  const result = await Tmdb.getRowPaged(kind, {
+    page: state.page || 1,
+    genreId: state.genreId || undefined,
+    country: state.country || undefined,
+    year: state.year || undefined,
+    sortBy: resolveSortBy(state.sort, isTv)
   });
-  list = Array.from(uniqueMap.values());
 
-  // Search Filter
-  if (listingState.searchQuery) {
-    const q = listingState.searchQuery.toLowerCase();
-    list = list.filter(m => 
-      m.title.toLowerCase().includes(q) ||
-      (m.genre && m.genre.toLowerCase().includes(q)) ||
-      (m.cast && m.cast.toLowerCase().includes(q)) ||
-      (m.director && m.director.toLowerCase().includes(q)) ||
-      (m.country && m.country.toLowerCase().includes(q))
-    );
+  return {
+    items: result.items.map(decorateMovie),
+    page: result.page,
+    totalPages: result.totalPages,
+    totalResults: result.totalResults
+  };
+}
+
+// Menyinkronkan <select> toolbar filter dan visibilitas toolbar itu sendiri
+// ke listingState saat ini. Diekstrak dari renderListingView supaya
+// resetListingFilters (F8) bisa memakainya kembali tanpa harus menimpa
+// title/subtitle/breadcrumb halaman dengan string generik.
+function syncFilterToolbarUI() {
+  const genreSelect = document.getElementById('filter-genre');
+  const countrySelect = document.getElementById('filter-country');
+  const yearSelect = document.getElementById('filter-year');
+  const typeSelect = document.getElementById('filter-type');
+  const sortSelect = document.getElementById('filter-sort');
+
+  if (genreSelect) genreSelect.value = listingState.genre || '';
+  // listingState.country menyimpan kode ISO (mis. "KR"); <option> memakai nama negara.
+  if (countrySelect) countrySelect.value = COUNTRY_CODE_TO_NAME[listingState.country] || '';
+  if (yearSelect) yearSelect.value = listingState.year || '';
+  if (typeSelect) typeSelect.value = listingState.type || '';
+  if (sortSelect) sortSelect.value = listingState.sort || 'latest';
+
+  // /trending memakai endpoint trending/all/week TMDB, yang sama sekali tidak
+  // menerima parameter discover (genre/country/year/sort). Menampilkan toolbar
+  // di halaman ini membuat kontrolnya terlihat aktif padahal diam-diam tak
+  // berpengaruh — jadi disembunyikan total, bukan dibiarkan berpura-pura jalan.
+  const filterToolbar = document.querySelector('.filter-toolbar');
+  if (filterToolbar) {
+    filterToolbar.style.display = listingState.rowKind === 'trending' ? 'none' : '';
   }
-
-  // Type Filter
-  if (listingState.type) {
-    list = list.filter(m => m.type === listingState.type);
-  }
-
-  // Genre Filter
-  if (listingState.genre) {
-    list = list.filter(m => 
-      (m.genre && m.genre.toLowerCase() === listingState.genre.toLowerCase()) ||
-      (m.genres && m.genres.some(g => g.toLowerCase() === listingState.genre.toLowerCase()))
-    );
-  }
-
-  // Country Filter
-  if (listingState.country) {
-    list = list.filter(m => m.country && m.country.toLowerCase().includes(listingState.country.toLowerCase()));
-  }
-
-  // Year Filter
-  if (listingState.year) {
-    list = list.filter(m => String(m.year) === String(listingState.year));
-  }
-
-  // Quality Filter
-  if (listingState.quality) {
-    list = list.filter(m => m.quality && m.quality.toLowerCase().includes(listingState.quality.toLowerCase()));
-  }
-
-  // Sorting
-  switch (listingState.sort) {
-    case 'rating':
-      list.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
-      break;
-    case 'popular':
-      list.sort((a, b) => (b.year * 10 + parseFloat(b.rating)) - (a.year * 10 + parseFloat(a.rating)));
-      break;
-    case 'title':
-      list.sort((a, b) => a.title.localeCompare(b.title));
-      break;
-    case 'year':
-      list.sort((a, b) => b.year - a.year);
-      break;
-    case 'latest':
-    default:
-      list.sort((a, b) => (b.year === a.year ? parseFloat(b.rating) - parseFloat(a.rating) : b.year - a.year));
-      break;
-  }
-
-  return list;
 }
 
 function renderListingView(title, subtitle, breadcrumbName) {
@@ -1537,24 +1485,15 @@ function renderListingView(title, subtitle, breadcrumbName) {
   const descEl = document.getElementById('listing-page-desc');
   const breadcrumbCurrent = document.getElementById('listing-breadcrumb-current');
 
-  if (titleEl) titleEl.innerHTML = `<span class="title-accent"></span> <span>${title}</span>`;
+  // title/breadcrumbName bisa membawa nilai dari URL tanpa disaring (query
+  // pencarian, slug negara/tahun yang tidak dikenal peta — lihat cabang
+  // handleRoute /search, /country/:slug, /year/:year) — escape sebelum masuk
+  // innerHTML (F1). breadcrumbName lewat textContent, sudah aman dari HTML.
+  if (titleEl) titleEl.innerHTML = `<span class="title-accent"></span> <span>${escapeHtml(title)}</span>`;
   if (descEl) descEl.textContent = subtitle;
   if (breadcrumbCurrent) breadcrumbCurrent.textContent = breadcrumbName;
 
-  // Sync toolbar selects
-  const genreSelect = document.getElementById('filter-genre');
-  const countrySelect = document.getElementById('filter-country');
-  const yearSelect = document.getElementById('filter-year');
-  const qualitySelect = document.getElementById('filter-quality');
-  const typeSelect = document.getElementById('filter-type');
-  const sortSelect = document.getElementById('filter-sort');
-
-  if (genreSelect) genreSelect.value = listingState.genre || '';
-  if (countrySelect) countrySelect.value = listingState.country || '';
-  if (yearSelect) yearSelect.value = listingState.year || '';
-  if (qualitySelect) qualitySelect.value = listingState.quality || '';
-  if (typeSelect) typeSelect.value = listingState.type || '';
-  if (sortSelect) sortSelect.value = listingState.sort || 'latest';
+  syncFilterToolbarUI();
 
   // Render Sidebar Top Picks
   renderSidebarTopPicks();
@@ -1563,7 +1502,7 @@ function renderListingView(title, subtitle, breadcrumbName) {
   updateListingGrid();
 }
 
-function updateListingGrid() {
+async function updateListingGrid() {
   const grid = document.getElementById('listing-grid');
   const emptyState = document.getElementById('listing-empty-state');
   const pagination = document.getElementById('listing-pagination');
@@ -1573,79 +1512,107 @@ function updateListingGrid() {
 
   if (!grid) return;
 
-  const allFiltered = getFilteredMovies();
-  const totalCount = allFiltered.length;
-  const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE) || 1;
+  // Penjaga respons basi: dua panggilan updateListingGrid bisa tumpang
+  // tindih (mis. pengguna mengganti filter dua kali dengan cepat). Hasil
+  // dari generasi yang sudah kedaluwarsa dibuang sebelum dirender.
+  const sequence = ++listingRequestSeq;
 
-  if (listingState.page > totalPages) listingState.page = 1;
-
-  const startIdx = (listingState.page - 1) * ITEMS_PER_PAGE;
-  const pageItems = allFiltered.slice(startIdx, startIdx + ITEMS_PER_PAGE);
-
-  if (countText) {
-    countText.textContent = totalCount > 0 ? `${startIdx + 1}–${Math.min(startIdx + ITEMS_PER_PAGE, totalCount)} dari ${totalCount} judul` : '0 judul';
-  }
-
-  // Active Pills Bar
-  const activeFilters = [];
-  if (listingState.genre) activeFilters.push({ key: 'genre', label: `Genre: ${listingState.genre}` });
-  if (listingState.country) activeFilters.push({ key: 'country', label: `Negara: ${listingState.country}` });
-  if (listingState.year) activeFilters.push({ key: 'year', label: `Tahun: ${listingState.year}` });
-  if (listingState.quality) activeFilters.push({ key: 'quality', label: `Kualitas: ${listingState.quality}` });
-  if (listingState.type) activeFilters.push({ key: 'type', label: `Tipe: ${listingState.type === 'series' ? 'Series' : 'Movies'}` });
-  if (listingState.searchQuery) activeFilters.push({ key: 'searchQuery', label: `Cari: "${listingState.searchQuery}"` });
-
-  if (pillsBar && pillsContainer) {
-    if (activeFilters.length > 0) {
-      pillsBar.style.display = 'flex';
-      pillsContainer.innerHTML = activeFilters.map(f => `
-        <span class="active-pill">
-          ${f.label}
-          <span class="remove-pill" onclick="removeFilter('${f.key}')">✕</span>
-        </span>
-      `).join('');
-    } else {
-      pillsBar.style.display = 'none';
-    }
-  }
-
-  if (totalCount === 0) {
-    grid.innerHTML = '';
-    if (emptyState) emptyState.style.display = 'block';
-    if (pagination) pagination.innerHTML = '';
-    return;
-  }
-
+  renderSkeletonRow(grid, 12);
   if (emptyState) emptyState.style.display = 'none';
-  grid.innerHTML = pageItems.map(m => renderMovieCard(m)).join('');
+  if (pagination) pagination.innerHTML = '';
 
-  // Render Pagination Buttons
-  if (pagination) {
-    if (totalPages <= 1) {
-      pagination.innerHTML = '';
-    } else {
-      let pagHtml = `
-        <button class="page-btn" ${listingState.page === 1 ? 'disabled' : ''} onclick="changeListingPage(${listingState.page - 1})">« Prev</button>
-      `;
+  try {
+    const result = await getFilteredMovies();
+    if (sequence !== listingRequestSeq) return;
 
-      for (let p = 1; p <= totalPages; p++) {
-        if (p === 1 || p === totalPages || (p >= listingState.page - 1 && p <= listingState.page + 1)) {
-          pagHtml += `
-            <button class="page-btn ${p === listingState.page ? 'active' : ''}" onclick="changeListingPage(${p})">${p}</button>
-          `;
-        } else if (p === listingState.page - 2 || p === listingState.page + 2) {
-          pagHtml += `<span class="page-ellipsis">...</span>`;
-        }
-      }
+    const { items, page, totalPages, totalResults } = result;
+    listingState.page = page;
+    listingState.totalPages = totalPages;
+    listingState.totalResults = totalResults;
 
-      pagHtml += `
-        <button class="page-btn" ${listingState.page === totalPages ? 'disabled' : ''} onclick="changeListingPage(${listingState.page + 1})">Next »</button>
-      `;
-
-      pagination.innerHTML = pagHtml;
+    if (countText) {
+      countText.textContent = totalResults > 0 ? `${totalResults} judul` : '0 judul';
     }
+
+    // Active Pills Bar (tidak ada chip quality — lihat Task 7b)
+    const activeFilters = [];
+    if (listingState.genre) activeFilters.push({ key: 'genre', label: `Genre: ${listingState.genre}` });
+    if (listingState.country) activeFilters.push({ key: 'country', label: `Negara: ${COUNTRY_CODE_TO_NAME[listingState.country] || listingState.country}` });
+    if (listingState.year) activeFilters.push({ key: 'year', label: `Tahun: ${listingState.year}` });
+    if (listingState.type) activeFilters.push({ key: 'type', label: `Tipe: ${listingState.type === 'series' ? 'Series' : 'Movies'}` });
+    if (listingState.searchQuery) activeFilters.push({ key: 'searchQuery', label: `Cari: "${listingState.searchQuery}"` });
+
+    if (pillsBar && pillsContainer) {
+      if (activeFilters.length > 0) {
+        pillsBar.style.display = 'flex';
+        // f.label bisa membawa listingState.searchQuery mentah dari URL —
+        // escape di titik render (F1).
+        pillsContainer.innerHTML = activeFilters.map(f => `
+          <span class="active-pill">
+            ${escapeHtml(f.label)}
+            <span class="remove-pill" onclick="removeFilter('${f.key}')">✕</span>
+          </span>
+        `).join('');
+      } else {
+        pillsBar.style.display = 'none';
+      }
+    }
+
+    if (items.length === 0) {
+      grid.innerHTML = '';
+      if (emptyState) emptyState.style.display = 'block';
+      if (pagination) pagination.innerHTML = '';
+      return;
+    }
+
+    if (emptyState) emptyState.style.display = 'none';
+    grid.innerHTML = items.map((m) => renderMovieCard(m)).join('');
+
+    // Render Pagination Buttons
+    if (pagination) {
+      if (totalPages <= 1) {
+        pagination.innerHTML = '';
+      } else {
+        let pagHtml = `
+          <button class="page-btn" ${page === 1 ? 'disabled' : ''} onclick="changeListingPage(${page - 1})">« Prev</button>
+        `;
+
+        for (let p = 1; p <= totalPages; p++) {
+          if (p === 1 || p === totalPages || (p >= page - 1 && p <= page + 1)) {
+            pagHtml += `
+              <button class="page-btn ${p === page ? 'active' : ''}" onclick="changeListingPage(${p})">${p}</button>
+            `;
+          } else if (p === page - 2 || p === page + 2) {
+            pagHtml += `<span class="page-ellipsis">...</span>`;
+          }
+        }
+
+        pagHtml += `
+          <button class="page-btn" ${page === totalPages ? 'disabled' : ''} onclick="changeListingPage(${page + 1})">Next »</button>
+        `;
+
+        pagination.innerHTML = pagHtml;
+      }
+    }
+  } catch (error) {
+    if (sequence !== listingRequestSeq) return;
+    // 429 bukan masalah koneksi pengguna — jangan salahkan koneksinya (F11).
+    const message = error && error.status === 429
+      ? 'Terlalu banyak permintaan ke TMDB. Silakan tunggu sebentar lalu coba lagi.'
+      : 'Gagal memuat daftar. Periksa koneksi lalu coba lagi.';
+    grid.innerHTML = `
+      <div class="listing-empty">
+        <p>${message}</p>
+        <button class="btn-retry" onclick="updateListingGrid()">Coba Lagi</button>
+      </div>
+    `;
+    if (emptyState) emptyState.style.display = 'none';
+    if (pagination) pagination.innerHTML = '';
+    console.warn('Gagal memuat listing:', error.message);
   }
 }
+
+window.updateListingGrid = updateListingGrid;
 
 function changeListingPage(newPage) {
   listingState.page = newPage;
@@ -1656,7 +1623,14 @@ function changeListingPage(newPage) {
 window.changeListingPage = changeListingPage;
 
 function removeFilter(key) {
-  listingState[key] = '';
+  if (key === 'genre') {
+    // genre dan genreId selalu berpasangan — mengosongkan salah satu tanpa
+    // yang lain akan membuat getFilteredMovies tetap memfilter dengan ID lama.
+    listingState.genre = '';
+    listingState.genreId = null;
+  } else {
+    listingState[key] = '';
+  }
   listingState.page = 1;
   const el = document.getElementById(`filter-${key}`);
   if (el) el.value = '';
@@ -1665,21 +1639,26 @@ function removeFilter(key) {
 
 window.removeFilter = removeFilter;
 
+// Sebelumnya fungsi ini mengganti seluruh listingState (termasuk rowKind
+// jadi 'trending'), yang membuat renderListingView menyembunyikan toolbar
+// filter tempat tombol Reset ini berada, dan diam-diam membawa pengguna ke
+// trending tanpa filter sama sekali. Sekarang hanya field FILTER yang
+// dibersihkan (genre, country, year, sort) — rowKind dan type milik rute
+// saat ini tetap dipertahankan, jadi toolbar (dan halaman) tidak berpindah
+// identitas hanya karena filternya direset (F8).
 function resetListingFilters() {
-  listingState = {
-    currentCategory: 'all',
-    genre: '',
-    country: '',
-    year: '',
-    quality: '',
-    type: '',
-    sort: 'latest',
-    searchQuery: '',
-    page: 1
-  };
+  listingState.genre = '';
+  listingState.genreId = null;
+  listingState.country = '';
+  listingState.year = '';
+  listingState.sort = '';
+  listingState.page = 1;
+
   document.querySelectorAll('.chip-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelector('.chip-btn[data-filter-chip="all"]')?.classList.add('active');
-  renderListingView('Semua Koleksi Film & Serial', 'Jelajahi seluruh koleksi film dan serial TV terbaik di Cinelax.', 'Katalog');
+
+  syncFilterToolbarUI();
+  updateListingGrid();
 }
 
 window.resetListingFilters = resetListingFilters;
@@ -1688,36 +1667,60 @@ function renderSidebarTopPicks() {
   const container = document.getElementById('sidebar-top-picks');
   if (!container) return;
 
+  // heroSlides sekarang bisa berisi judul trending TMDB nyata (F3), jadi
+  // title/poster di sini bukan lagi teks statis yang kita tulis sendiri —
+  // escape sebelum masuk innerHTML (F1).
   const topPicks = heroSlides.slice(0, 5);
   container.innerHTML = topPicks.map(m => `
     <div class="sidebar-mini-item" onclick="openPlayer('${m.id}')">
       <div class="sidebar-mini-poster" style="background: ${m.gradient}">
-        ${m.poster ? `<img src="${m.poster}" alt="${m.title}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">` : `<span>${m.emoji}</span>`}
+        ${m.poster ? `<img src="${m.poster}" alt="${escapeHtml(m.title)}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">` : `<span>${m.emoji}</span>`}
       </div>
       <div class="sidebar-mini-info">
-        <h5 class="sidebar-mini-title">${m.title}</h5>
-        <span class="sidebar-mini-meta">⭐ ${m.rating} · ${m.year}</span>
+        <h5 class="sidebar-mini-title">${escapeHtml(m.title)}</h5>
+        <span class="sidebar-mini-meta">⭐ ${m.rating || '—'} · ${m.year || '—'}</span>
       </div>
     </div>
   `).join('');
+}
+
+// Mencari ID genre TMDB dari nilai option (case-insensitive). Mengembalikan
+// null dan mencatat peringatan bila nilai tidak punya padanan (Superhero,
+// Supernatural) — filter genre lalu diabaikan, bukan dipalsukan.
+function resolveGenreId(rawValue, sourceLabel) {
+  if (!rawValue) return null;
+  const genreId = GENRE_SLUG_TO_ID[rawValue.toLowerCase()];
+  if (!genreId) {
+    console.warn(`Cinelax: tidak ada padanan genre TMDB untuk "${rawValue}" (${sourceLabel}); filter genre diabaikan.`);
+    return null;
+  }
+  return genreId;
 }
 
 function initListingFilterEvents() {
   const genreSelect = document.getElementById('filter-genre');
   const countrySelect = document.getElementById('filter-country');
   const yearSelect = document.getElementById('filter-year');
-  const qualitySelect = document.getElementById('filter-quality');
   const typeSelect = document.getElementById('filter-type');
   const sortSelect = document.getElementById('filter-sort');
   const resetBtn = document.getElementById('btn-reset-filters');
 
   const onFilterChange = () => {
-    listingState.genre = genreSelect?.value || '';
-    listingState.country = countrySelect?.value || '';
+    // Jangan set listingState.genre ketika resolveGenreId gagal memetakan
+    // nilai ke ID TMDB (mis. "Superhero"/"Supernatural") — kalau tidak, pill
+    // filter aktif akan mengklaim "Genre: Superhero" padahal tidak ada
+    // filter genre yang benar-benar diterapkan ke hasil (F9).
+    const genreValue = genreSelect?.value || '';
+    const genreId = resolveGenreId(genreValue, 'filter-genre');
+    listingState.genre = genreId ? genreValue : '';
+    listingState.genreId = genreId;
+
+    const countryValue = countrySelect?.value || '';
+    listingState.country = COUNTRY_NAME_TO_CODE[countryValue] || '';
+
     listingState.year = yearSelect?.value || '';
-    listingState.quality = qualitySelect?.value || '';
     listingState.type = typeSelect?.value || '';
-    listingState.sort = sortSelect?.value || 'latest';
+    listingState.sort = sortSelect?.value || '';
     listingState.page = 1;
     updateListingGrid();
   };
@@ -1725,7 +1728,6 @@ function initListingFilterEvents() {
   genreSelect?.addEventListener('change', onFilterChange);
   countrySelect?.addEventListener('change', onFilterChange);
   yearSelect?.addEventListener('change', onFilterChange);
-  qualitySelect?.addEventListener('change', onFilterChange);
   typeSelect?.addEventListener('change', onFilterChange);
   sortSelect?.addEventListener('change', onFilterChange);
   resetBtn?.addEventListener('click', resetListingFilters);
@@ -1739,11 +1741,16 @@ function initListingFilterEvents() {
       const chipVal = chip.getAttribute('data-filter-chip');
       if (chipVal === 'all') {
         listingState.genre = '';
+        listingState.genreId = null;
         listingState.year = '';
       } else if (chipVal === '2026' || chipVal === '2025') {
         listingState.year = chipVal;
       } else {
-        listingState.genre = chipVal;
+        // Sama seperti onFilterChange di atas: jangan klaim filter genre
+        // yang tidak benar-benar diterapkan (F9).
+        const chipGenreId = resolveGenreId(chipVal, 'quick-chip');
+        listingState.genre = chipGenreId ? chipVal : '';
+        listingState.genreId = chipGenreId;
       }
       listingState.page = 1;
       updateListingGrid();
@@ -1756,17 +1763,13 @@ function initListingFilterEvents() {
 // ==========================================
 
 let detailActiveMovie = null;
-let detailServerIndex = 0;
 let detailSeasonIndex = 0;
 let detailEpisodeIndex = 0;
-let detailPlayingTrailer = false;
 
 function renderDedicatedDetailView(movie, seasonIdx = 0, episodeIdx = 0) {
   detailActiveMovie = movie;
-  detailServerIndex = 0;
   detailSeasonIndex = seasonIdx;
   detailEpisodeIndex = episodeIdx;
-  detailPlayingTrailer = false;
 
   // Breadcrumbs
   const breadcrumbType = document.getElementById('detail-breadcrumb-type');
@@ -1792,27 +1795,36 @@ function renderDedicatedDetailView(movie, seasonIdx = 0, episodeIdx = 0) {
 
   if (titleEl) titleEl.textContent = movie.title;
   if (typeBadge) typeBadge.textContent = movie.type === 'series' ? 'SERIES' : 'MOVIE';
-  if (qualityBadge) qualityBadge.textContent = movie.quality || '4K ULTRA HD';
+  // quality tidak lagi dipetakan dari TMDB — badge disembunyikan sepenuhnya
+  // alih-alih menampilkan default palsu (F2).
+  if (qualityBadge) {
+    if (movie.quality) {
+      qualityBadge.textContent = movie.quality;
+      qualityBadge.style.display = '';
+    } else {
+      qualityBadge.style.display = 'none';
+    }
+  }
   if (ratingEl) ratingEl.textContent = movie.rating;
   if (yearEl) yearEl.textContent = movie.year;
-  if (durationEl) durationEl.textContent = movie.duration || (movie.type === 'series' ? '45m/ep' : '2h 15m');
-  if (countryEl) countryEl.textContent = movie.country || 'United States';
+  if (durationEl) durationEl.textContent = movie.duration || '-';
+  if (countryEl) countryEl.textContent = displayCountry(movie.country);
   if (synopsisEl) synopsisEl.textContent = movie.description;
 
   if (posterBox) {
     if (movie.poster) {
-      posterBox.innerHTML = `<img src="${movie.poster}" alt="${movie.title}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`;
+      posterBox.innerHTML = `<img src="${movie.poster}" alt="${escapeHtml(movie.title)}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`;
       posterBox.style.background = 'transparent';
     } else {
       posterBox.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">${movie.emoji}</div>`;
       posterBox.style.background = movie.gradient;
     }
   }
-  if (backdropBg) backdropBg.style.backgroundImage = `url('${movie.backdrop || movie.poster || 'assets/hero/hero-1.jpg'}')`;
+  if (backdropBg) backdropBg.style.backgroundImage = `url('${escapeHtml(movie.backdrop || movie.poster || 'assets/hero/hero-1.jpg')}')`;
 
   if (genresList) {
     const list = movie.genres || [movie.genre || 'Action'];
-    genresList.innerHTML = list.map(g => `<span class="hero-genre-tag">${g}</span>`).join('');
+    genresList.innerHTML = list.map(g => `<span class="hero-genre-tag">${escapeHtml(g)}</span>`).join('');
   }
 
   // Table Metadata
@@ -1822,19 +1834,36 @@ function renderDedicatedDetailView(movie, seasonIdx = 0, episodeIdx = 0) {
   };
 
   setTableVal('table-original-title', movie.originalTitle || movie.title);
-  setTableVal('table-director', movie.director || 'James Cameron');
-  setTableVal('table-cast', movie.cast || 'Star Ensemble Cast');
-  setTableVal('table-country', movie.country || 'United States');
+  setTableVal('table-director', movie.director);
+  setTableVal('table-cast', movie.cast);
+  setTableVal('table-country', displayCountry(movie.country));
   setTableVal('table-year', movie.year);
-  setTableVal('table-duration', movie.duration || (movie.type === 'series' ? '45m/ep' : '2h 15m'));
-  setTableVal('table-quality', movie.quality || '4K Ultra HD');
-  setTableVal('table-rating', `⭐ ${movie.rating} / 10 (IMDb)`);
+  setTableVal('table-duration', movie.duration);
+  // Baris "Kualitas" dihapus/disembunyikan seluruhnya ketika tidak ada data
+  // quality, bukan diisi default palsu (F2) — menyembunyikan hanya nilainya
+  // akan menyisakan label "Kualitas" tanpa isi.
+  const tableQualityEl = document.getElementById('table-quality');
+  if (tableQualityEl) {
+    const qualityRow = tableQualityEl.closest('tr');
+    if (movie.quality) {
+      tableQualityEl.textContent = movie.quality;
+      if (qualityRow) qualityRow.style.display = '';
+    } else if (qualityRow) {
+      qualityRow.style.display = 'none';
+    } else {
+      tableQualityEl.textContent = '-';
+    }
+  }
+  // Labelnya sudah bilang "Rating IMDb" tapi nilainya TMDB vote_average —
+  // ganti label jadi TMDB, bukan IMDb (F2). Fallback '—' mencegah "null"
+  // literal ketika movie.rating kosong (F11).
+  setTableVal('table-rating', `⭐ ${movie.rating || '—'} / 10 (TMDB)`);
   setTableVal('table-genre', (movie.genres || [movie.genre]).join(', '));
 
   // Player Section
-  renderDetailServerButtons();
   renderDetailEpisodesSection(movie);
   loadDetailPlayerIframe();
+  renderProviderPanel('detail-provider-panel', movie);
 
   // Related Row
   const relatedRow = document.getElementById('detail-related-row');
@@ -1856,32 +1885,22 @@ function loadDetailPlayerIframe() {
 
   if (!iframe) return;
 
-  // Check if movie is marked unavailable and we're not currently previewing trailer
-  if (detailActiveMovie.isUnavailable && !detailPlayingTrailer) {
+  if (!detailActiveMovie.trailerUrl) {
     if (loader) loader.classList.add('hidden');
     iframe.src = 'about:blank';
     if (overlay) {
       overlay.style.display = 'flex';
       if (overlayMsg) {
-        overlayMsg.textContent = `Film "${detailActiveMovie.title}" (${detailActiveMovie.year}) saat ini belum dapat diputar secara streaming. Judul ini masih dalam jadwal penayangan bioskop atau menunggu rilis digital resmi. Anda dapat memutar trailer resminya di bawah ini.`;
+        overlayMsg.textContent = `Trailer resmi untuk "${detailActiveMovie.title}" belum tersedia. Silakan lihat opsi menonton di bawah.`;
       }
     }
     return;
   }
 
-  // Hide unavailable overlay
   if (overlay) overlay.style.display = 'none';
   if (loader) loader.classList.remove('hidden');
 
-  if (detailPlayingTrailer && detailActiveMovie.trailerUrl) {
-    const trailerSrc = detailActiveMovie.trailerUrl.includes('?') 
-      ? `${detailActiveMovie.trailerUrl}&autoplay=1` 
-      : `${detailActiveMovie.trailerUrl}?autoplay=1`;
-    iframe.src = trailerSrc;
-  } else {
-    const streamUrl = getStreamEmbedUrl(detailActiveMovie, detailServerIndex, detailSeasonIndex, detailEpisodeIndex);
-    iframe.src = streamUrl;
-  }
+  iframe.src = detailActiveMovie.trailerUrl;
 
   iframe.onload = () => {
     setTimeout(() => {
@@ -1894,73 +1913,6 @@ function loadDetailPlayerIframe() {
   }, 2200);
 }
 
-function renderDetailServerButtons() {
-  const container = document.getElementById('detail-server-buttons');
-  if (!container) return;
-
-  container.innerHTML = STREAM_SERVERS.map((server, idx) => `
-    <button class="server-btn ${idx === detailServerIndex ? 'active' : ''}" onclick="switchDetailServer(${idx})">
-      <span class="server-status-dot"></span>
-      <span>${server.name}</span>
-    </button>
-  `).join('');
-}
-
-function switchDetailServer(serverIdx) {
-  if (detailServerIndex === serverIdx) return;
-  detailServerIndex = serverIdx;
-  detailPlayingTrailer = false;
-  renderDetailServerButtons();
-  loadDetailPlayerIframe();
-  showToast(`Mengalihkan ke ${STREAM_SERVERS[serverIdx].name}...`, 'info');
-}
-
-window.switchDetailServer = switchDetailServer;
-
-// Global Actions for Unavailable Overlay & Trailer
-function playOfficialTrailer(context = 'modal') {
-  if (context === 'modal') {
-    if (!activeMovie) return;
-    modalPlayingTrailer = true;
-    showToast(`Memutar trailer resmi "${activeMovie.title}"...`, 'success');
-    loadPlayerIframe();
-  } else {
-    if (!detailActiveMovie) return;
-    detailPlayingTrailer = true;
-    showToast(`Memutar trailer resmi "${detailActiveMovie.title}"...`, 'success');
-    loadDetailPlayerIframe();
-  }
-}
-
-function tryAlternateServer(context = 'modal') {
-  const currentMovie = context === 'modal' ? activeMovie : detailActiveMovie;
-  if (!currentMovie) return;
-
-  if (currentMovie.isUnavailable) {
-    showToast(`Semua server streaming saat ini belum memiliki copy rilis untuk "${currentMovie.title}". Memutar trailer resmi...`, 'warning');
-    playOfficialTrailer(context);
-    return;
-  }
-
-  if (context === 'modal') {
-    const nextIdx = (activeServerIndex + 1) % STREAM_SERVERS.length;
-    switchPlayerServer(nextIdx);
-  } else {
-    const nextIdx = (detailServerIndex + 1) % STREAM_SERVERS.length;
-    switchDetailServer(nextIdx);
-  }
-}
-
-function notifyWhenAvailable() {
-  const currentMovie = detailActiveMovie || activeMovie;
-  const title = currentMovie ? currentMovie.title : 'film ini';
-  showToast(`🔔 Pengingat Diaktifkan! Anda akan diberi notifikasi saat "${title}" siap diputar di Cinelax.`, 'success');
-}
-
-window.playOfficialTrailer = playOfficialTrailer;
-window.tryAlternateServer = tryAlternateServer;
-window.notifyWhenAvailable = notifyWhenAvailable;
-
 function renderDetailEpisodesSection(movie) {
   const section = document.getElementById('detail-episodes-section');
   const seasonWrap = document.getElementById('detail-season-selector-wrap');
@@ -1968,19 +1920,24 @@ function renderDetailEpisodesSection(movie) {
 
   if (!section || !grid) return;
 
-  if (movie.type !== 'series') {
+  const seasons = (movie.type === 'series')
+    ? (movie.seasons || [{ season: 1, episodes: movie.episodes || [] }])
+    : [];
+  const hasAnyEpisodes = seasons.some((s) => Array.isArray(s.episodes) && s.episodes.length > 0);
+
+  // Sama seperti renderModalEpisodesSection: TMDB tidak memetakan episode/
+  // season sama sekali, jadi sembunyikan total panel "Daftar Episode Serial"
+  // ketika memang tidak ada data episode, bukan tampilkan tab "Season 1"
+  // kosong untuk setiap serial (F4).
+  if (movie.type !== 'series' || !hasAnyEpisodes) {
     section.style.display = 'none';
     return;
   }
 
   section.style.display = 'block';
 
-  const seasons = movie.seasons || [
-    { season: 1, episodes: movie.episodes || [] }
-  ];
-
   const currentSeasonData = seasons[detailSeasonIndex] || seasons[0];
-  const episodesList = currentSeasonData.episodes || [];
+  const episodesList = (currentSeasonData && currentSeasonData.episodes) || [];
 
   if (seasonWrap) {
     seasonWrap.innerHTML = seasons.map((s, sIdx) => `
@@ -1993,8 +1950,8 @@ function renderDetailEpisodesSection(movie) {
   grid.innerHTML = episodesList.map((ep, idx) => `
     <div class="episode-card ${idx === detailEpisodeIndex ? 'active' : ''}" onclick="selectDetailEpisode(${idx})">
       <div class="episode-card-info">
-        <span class="ep-num">S${detailSeasonIndex + 1} EP ${ep.number} (${ep.duration})</span>
-        <span class="ep-title">${ep.title}</span>
+        <span class="ep-num">S${detailSeasonIndex + 1} EP ${ep.number} (${escapeHtml(ep.duration)})</span>
+        <span class="ep-title">${escapeHtml(ep.title)}</span>
       </div>
       <span class="ep-play-icon">${idx === detailEpisodeIndex ? '▶' : '▷'}</span>
     </div>
@@ -2028,12 +1985,16 @@ window.selectDetailEpisode = selectDetailEpisode;
 // 404 NOT FOUND VIEW CONTROLLER
 // ==========================================
 
-function renderNotFoundView() {
+async function renderNotFoundView() {
   const container = document.getElementById('notfound-related-row');
   if (!container) return;
 
-  const trending = generateMovies('trending', 10);
-  container.innerHTML = trending.map(m => renderMovieCard(m)).join('');
+  try {
+    const trending = (await Tmdb.getRow('trending', {})).slice(0, 10).map(decorateMovie);
+    container.innerHTML = trending.map(m => renderMovieCard(m)).join('');
+  } catch (error) {
+    container.innerHTML = '';
+  }
 }
 
 // ==========================================
@@ -2093,44 +2054,77 @@ function initSearch() {
     }
   });
 
-  // Live autocomplete
+  // Live autocomplete lewat TMDB
+  let searchTimer = null;
+  let searchSequence = 0;
+
   input?.addEventListener('input', (e) => {
-    const query = e.target.value.trim().toLowerCase();
+    const raw = e.target.value;
+    const query = raw.trim();
+
+    clearTimeout(searchTimer);
 
     if (query.length < 2) {
       suggestions?.classList.remove('active');
       return;
     }
 
-    const allMovies = Array.from(movieRegistry.values());
-    const results = allMovies.filter(m =>
-      m.title.toLowerCase().includes(query) ||
-      (m.genre && m.genre.toLowerCase().includes(query)) ||
-      (m.country && m.country.toLowerCase().includes(query)) ||
-      (m.cast && m.cast.toLowerCase().includes(query))
-    ).slice(0, 6);
+    const sequence = ++searchSequence;
 
-    if (results.length && suggestions) {
+    searchTimer = setTimeout(async () => {
+      if (!suggestions) return;
+
       suggestions.classList.add('active');
-      suggestions.innerHTML = results.map(m => `
-        <div class="suggestion-item" onclick="openPlayer('${m.id}'); document.getElementById('search-close').click();">
-          <div class="suggestion-poster">
-            ${m.poster ? `<img src="${m.poster}" alt="${m.title}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : `<div style="width:100%;height:100%;background:${m.gradient};border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">${m.emoji}</div>`}
-          </div>
-          <div class="suggestion-info">
-            <h4>${m.title}</h4>
-            <span>${m.year} · ${m.genre || (m.genres && m.genres[0]) || 'Film'} · ⭐ ${m.rating}</span>
-          </div>
-        </div>
-      `).join('');
-    } else if (suggestions) {
-      suggestions.classList.add('active');
+      // raw adalah nilai mentah dari input pencarian pengguna — escape
+      // sebelum masuk innerHTML (F1).
       suggestions.innerHTML = `
         <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
-          Tidak ditemukan judul untuk "${e.target.value}"
+          Mencari "${escapeHtml(raw)}"...
         </div>
       `;
-    }
+
+      try {
+        // Tmdb.searchTitles sekarang mengembalikan bentuk pager
+        // {items, page, totalPages, totalResults} (F6) — dropdown autocomplete
+        // ini hanya butuh array item-nya.
+        const results = await Tmdb.searchTitles(query);
+
+        // Abaikan respons yang sudah kedaluwarsa
+        if (sequence !== searchSequence) return;
+
+        const top = results.items.slice(0, 6).map(decorateMovie);
+
+        if (top.length === 0) {
+          suggestions.innerHTML = `
+            <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
+              Tidak ditemukan judul untuk "${escapeHtml(raw)}"
+            </div>
+          `;
+          return;
+        }
+
+        suggestions.innerHTML = top.map((m) => `
+          <div class="suggestion-item" onclick="openPlayer('${m.id}'); document.getElementById('search-close').click();">
+            <div class="suggestion-poster">
+              ${m.poster
+                ? `<img src="${m.poster}" alt="${escapeHtml(m.title)}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">`
+                : `<div style="width:100%;height:100%;background:${m.gradient};border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">${m.emoji}</div>`}
+            </div>
+            <div class="suggestion-info">
+              <h4>${escapeHtml(m.title)}</h4>
+              <span>${m.year || '—'} · ${escapeHtml(m.genre || 'Film')} · ⭐ ${m.rating || '—'}</span>
+            </div>
+          </div>
+        `).join('');
+      } catch (error) {
+        if (sequence !== searchSequence) return;
+        suggestions.innerHTML = `
+          <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
+            Pencarian gagal. Periksa koneksi lalu coba lagi.
+          </div>
+        `;
+      }
+    }, 300);
   });
 }
 
@@ -2262,14 +2256,10 @@ function initFilterTabs() {
       const latestRow = document.getElementById('latest-row');
       if (!latestRow) return;
 
-      if (text === 'movies') {
-        const moviesOnly = generateMovies('latest', 20).filter(m => m.type === 'movie');
-        latestRow.innerHTML = moviesOnly.map(m => renderMovieCard(m)).join('');
-      } else if (text === 'series') {
-        const seriesOnly = generateMovies('series', 20);
-        latestRow.innerHTML = seriesOnly.map(m => renderMovieCard(m)).join('');
+      if (text === 'series') {
+        renderContentSection('latest-row', 'tv');
       } else {
-        renderContentSection('latest-row', 'latest', 14);
+        renderContentSection('latest-row', 'top_rated');
       }
     });
   });
