@@ -1835,48 +1835,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
 }
 
-.server-buttons-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.server-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  color: var(--text-secondary);
-  font-size: 12.5px;
-  font-weight: 500;
-  transition: all var(--transition-fast);
-}
-
-.server-btn:hover {
-  background: var(--bg-hover);
-  color: var(--text-primary);
-  border-color: var(--border-light);
-}
-
-.server-btn.active {
-  background: var(--accent-gradient);
-  border-color: transparent;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 2px 12px rgba(229, 9, 20, 0.4);
-}
-
-.server-btn .server-status-dot {
-  width: 7px;
-  height: 7px;
-  background: var(--success);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--success);
-}
-
 /* Series / Episode Selector */
 .player-episodes-section {
   background: var(--bg-tertiary);
@@ -3237,31 +3195,6 @@ body.cinema-mode-active .player-related-section:hover {
   font-size: 14px;
 }
 
-.btn-unavailable.btn-watch-trailer {
-  background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(229, 9, 20, 0.4);
-}
-
-.btn-unavailable.btn-watch-trailer:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(229, 9, 20, 0.6);
-  background: linear-gradient(135deg, #ff1a27 0%, #d40813 100%);
-}
-
-.btn-unavailable.btn-try-server {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #e2e8f0;
-}
-
-.btn-unavailable.btn-try-server:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  color: #fff;
-}
-
 .btn-unavailable.btn-remind {
   background: rgba(59, 130, 246, 0.12);
   border: 1px solid rgba(59, 130, 246, 0.35);
@@ -3381,5 +3314,22 @@ body.cinema-mode-active .player-related-section:hover {
   background: transparent;
   color: inherit;
   cursor: pointer;
+}
+
+.tmdb-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  padding: 24px 0 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 24px;
+}
+
+.tmdb-attribution p {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
 }
 

@@ -74,151 +74,6 @@ function showToast(message, type = 'info', duration = 3200) {
 window.showToast = showToast;
 
 // ==========================================
-// RICK AND MORTY 7 SEASONS (COMPLETE)
-// ==========================================
-const rickAndMortySeasons = [
-  {
-    season: 1,
-    episodes: [
-      { number: 1, title: 'Pilot', duration: '22m' },
-      { number: 2, title: 'Lawnmower Dog', duration: '22m' },
-      { number: 3, title: 'Anatomy Park', duration: '22m' },
-      { number: 4, title: 'M. Night Shaym-Aliens!', duration: '21m' },
-      { number: 5, title: 'Meeseeks and Destroy', duration: '21m' },
-      { number: 6, title: 'Rick Potion #9', duration: '22m' },
-      { number: 7, title: 'Raising Gazorpazorp', duration: '22m' },
-      { number: 8, title: 'Rixty Minutes', duration: '22m' },
-      { number: 9, title: 'Something Ricked This Way Comes', duration: '22m' },
-      { number: 10, title: 'Close Rick-counters of the Rick Kind', duration: '23m' },
-      { number: 11, title: 'Ricksy Business', duration: '22m' }
-    ]
-  },
-  {
-    season: 2,
-    episodes: [
-      { number: 1, title: 'A Rickle in Time', duration: '23m' },
-      { number: 2, title: 'Mortynight Run', duration: '22m' },
-      { number: 3, title: 'Auto Erotic Assimilation', duration: '22m' },
-      { number: 4, title: 'Total Rickall', duration: '22m' },
-      { number: 5, title: 'Get Schwifty', duration: '22m' },
-      { number: 6, title: 'The Ricks Must Be Crazy', duration: '22m' },
-      { number: 7, title: 'Big Trouble in Little Sanchez', duration: '22m' },
-      { number: 8, title: 'Interdimensional Cable 2: Tempting Fate', duration: '22m' },
-      { number: 9, title: 'Look Who\'s Purging Now', duration: '22m' },
-      { number: 10, title: 'The Wedding Squanchers', duration: '23m' }
-    ]
-  },
-  {
-    season: 3,
-    episodes: [
-      { number: 1, title: 'The Rickshank Rickdemption', duration: '23m' },
-      { number: 2, title: 'Rickmancing the Stone', duration: '22m' },
-      { number: 3, title: 'Pickle Rick', duration: '23m' },
-      { number: 4, title: 'Vindicators 3: The Return of Worldender', duration: '22m' },
-      { number: 5, title: 'The Whirly Dirly Conspiracy', duration: '22m' },
-      { number: 6, title: 'Rest and Ricklaxation', duration: '22m' },
-      { number: 7, title: 'The Ricklantis Mixup', duration: '22m' },
-      { number: 8, title: 'Morty\'s Mind Blowers', duration: '22m' },
-      { number: 9, title: 'The ABC\'s of Beth', duration: '22m' },
-      { number: 10, title: 'The Rickchurian Mortydate', duration: '22m' }
-    ]
-  },
-  {
-    season: 4,
-    episodes: [
-      { number: 1, title: 'Edge of Tomorty: Rick Die Rickpeat', duration: '22m' },
-      { number: 2, title: 'The Old Man and the Seat', duration: '22m' },
-      { number: 3, title: 'One Crew over the Crewcoo\'s Morty', duration: '22m' },
-      { number: 4, title: 'Claw and Hoarder: Special Ricktim\'s Morty', duration: '22m' },
-      { number: 5, title: 'Rattlestar Ricklactica', duration: '22m' },
-      { number: 6, title: 'Never Ricking Morty', duration: '22m' },
-      { number: 7, title: 'Promortyus', duration: '22m' },
-      { number: 8, title: 'The Vat of Acid Episode', duration: '22m' },
-      { number: 9, title: 'Childrick of Mort', duration: '22m' },
-      { number: 10, title: 'Star Mort Rickturn of the Jerri', duration: '22m' }
-    ]
-  },
-  {
-    season: 5,
-    episodes: [
-      { number: 1, title: 'Mort Dinner Rick Andre', duration: '22m' },
-      { number: 2, title: 'Mortyplicity', duration: '22m' },
-      { number: 3, title: 'A Rickconvenient Mort', duration: '22m' },
-      { number: 4, title: 'Rickdependence Spray', duration: '22m' },
-      { number: 5, title: 'AmRickan Graffiti', duration: '22m' },
-      { number: 6, title: 'Rick & Morty\'s Thanksploitation Spectacular', duration: '22m' },
-      { number: 7, title: 'Gotron Jerrysis Rickvangelion', duration: '22m' },
-      { number: 8, title: 'Rickternal Friendshine of the Spotless Mort', duration: '22m' },
-      { number: 9, title: 'Forgetting Sarick Mortshall', duration: '22m' },
-      { number: 10, title: 'Rickmurai Jack', duration: '22m' }
-    ]
-  },
-  {
-    season: 6,
-    episodes: [
-      { number: 1, title: 'Solaricks', duration: '22m' },
-      { number: 2, title: 'Rick: A Mort Well Lived', duration: '22m' },
-      { number: 3, title: 'Bethic Twinstinct', duration: '22m' },
-      { number: 4, title: 'Night Family', duration: '22m' },
-      { number: 5, title: 'Final DeSmithation', duration: '22m' },
-      { number: 6, title: 'Juricksic Mort', duration: '22m' },
-      { number: 7, title: 'Full Meta Jackrick', duration: '22m' },
-      { number: 8, title: 'Analyze Piss', duration: '22m' },
-      { number: 9, title: 'A Rick in King Mortur\'s Court', duration: '22m' },
-      { number: 10, title: 'Ricktional Mortpoon\'s Rickmas Mortcation', duration: '22m' }
-    ]
-  },
-  {
-    season: 7,
-    episodes: [
-      { number: 1, title: 'How Poopy Got His Poop Back', duration: '22m' },
-      { number: 2, title: 'The Joirick Mortstrosity', duration: '22m' },
-      { number: 3, title: 'Air Force Wong', duration: '22m' },
-      { number: 4, title: 'That\'s Amorte', duration: '22m' },
-      { number: 5, title: 'Unmortricken', duration: '22m' },
-      { number: 6, title: 'Rickfending Your Mort', duration: '22m' },
-      { number: 7, title: 'Wet Kuat Amortican Summer', duration: '22m' },
-      { number: 8, title: 'Rise of the Numbericons: The Movie', duration: '22m' },
-      { number: 9, title: 'Mort: Ragnarick', duration: '22m' },
-      { number: 10, title: 'Fear No Mort', duration: '22m' }
-    ]
-  }
-];
-
-const rickAndMorty = {
-  id: 'rick-and-morty-2013',
-  title: 'Rick and Morty',
-  originalTitle: 'Rick and Morty (2013-2025)',
-  year: 2025,
-  rating: '9.1',
-  duration: '7 Seasons (71 EP)',
-  quality: '1080p Full HD',
-  type: 'series',
-  genre: 'Animation',
-  genres: ['Animation', 'Sci-Fi', 'Comedy', 'Adventure'],
-  country: 'United States',
-  director: 'Dan Harmon, Justin Roiland',
-  cast: 'Justin Roiland, Chris Parnell, Spencer Grammer, Sarah Chalke, Ian Cardoni',
-  description: 'Rick Sanchez, seorang ilmuwan sosiopat jenius dan alkoholik, menyeret cucunya yang pemalu dan canggung, Morty Smith, dalam petualangan antardimensi yang gila, berbahaya, dan penuh kekacauan di seluruh alam semesta.',
-  poster: 'assets/posters/rick-and-morty-2025.jpg',
-  backdrop: 'assets/hero/hero-rick-morty.jpg',
-  gradient: 'linear-gradient(135deg, #0575e6 0%, #00f260 100%)',
-  emoji: '🧪',
-  badge: '🔥 Animasi Sci-Fi Top View',
-  slug: 'rick-and-morty-2013',
-  imdbId: 'tt2861424',
-  tmdbId: '60625',
-  episode: 'S7 EP10',
-  idlixUrl: 'https://z2.idlixku.com/series/rick-and-morty-2013',
-  seasons: rickAndMortySeasons,
-  episodes: rickAndMortySeasons[0].episodes
-};
-
-movieRegistry.set(rickAndMorty.id, rickAndMorty);
-movieRegistry.set(rickAndMorty.slug, rickAndMorty);
-movieRegistry.set('rick-and-morty', rickAndMorty);
-
-// ==========================================
 // HERO SLIDER DATA
 // ==========================================
 
@@ -405,8 +260,37 @@ const heroSlides = [
     idlixUrl: 'https://z2.idlixku.com/series/rick-and-morty-2013',
     isUnavailable: false,
     trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8',
-    seasons: rickAndMortySeasons,
-    episodes: rickAndMortySeasons[0].episodes
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { number: 1, title: 'Pilot', duration: '22m' },
+          { number: 2, title: 'Lawnmower Dog', duration: '22m' },
+          { number: 3, title: 'Anatomy Park', duration: '22m' },
+          { number: 4, title: 'M. Night Shaym-Aliens!', duration: '21m' },
+          { number: 5, title: 'Meeseeks and Destroy', duration: '21m' },
+          { number: 6, title: 'Rick Potion #9', duration: '22m' },
+          { number: 7, title: 'Raising Gazorpazorp', duration: '22m' },
+          { number: 8, title: 'Rixty Minutes', duration: '22m' },
+          { number: 9, title: 'Something Ricked This Way Comes', duration: '22m' },
+          { number: 10, title: 'Close Rick-counters of the Rick Kind', duration: '23m' },
+          { number: 11, title: 'Ricksy Business', duration: '22m' }
+        ]
+      }
+    ],
+    episodes: [
+      { number: 1, title: 'Pilot', duration: '22m' },
+      { number: 2, title: 'Lawnmower Dog', duration: '22m' },
+      { number: 3, title: 'Anatomy Park', duration: '22m' },
+      { number: 4, title: 'M. Night Shaym-Aliens!', duration: '21m' },
+      { number: 5, title: 'Meeseeks and Destroy', duration: '21m' },
+      { number: 6, title: 'Rick Potion #9', duration: '22m' },
+      { number: 7, title: 'Raising Gazorpazorp', duration: '22m' },
+      { number: 8, title: 'Rixty Minutes', duration: '22m' },
+      { number: 9, title: 'Something Ricked This Way Comes', duration: '22m' },
+      { number: 10, title: 'Close Rick-counters of the Rick Kind', duration: '23m' },
+      { number: 11, title: 'Ricksy Business', duration: '22m' }
+    ]
   }
 ];
 
@@ -414,294 +298,6 @@ heroSlides.forEach(slide => {
   movieRegistry.set(slide.id, slide);
   movieRegistry.set(slide.slug, slide);
 });
-
-// ==========================================
-// MASTER MOVIE & SERIES DATABASE
-// ==========================================
-
-const TOP_VIEW_DATABASE = {
-  topview: [
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
-    { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Lee Byung-hun', episodeCount: 6, desc: 'Pembalasan dendam Gi-hun di arena maut permainan cumi-cumi.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
-    { title: 'Alien: Romulus', year: 2024, rating: '8.5', genre: 'Horror', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt18412256', tmdbId: '945961', emoji: '👽', director: 'Fede Álvarez', cast: 'Cailee Spaeny, David Jonsson', desc: 'Remaja koloni luar angkasa berhadapan dengan monster Xenomorph paling mematikan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs' },
-    { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Perang puncak di Kastil Tanpa Batas melawan Raja Iblis Muzan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' },
-    { title: 'Mission: Impossible – The Final Reckoning', year: 2025, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt9603208', tmdbId: '573435', emoji: '💣', director: 'Christopher McQuarrie', cast: 'Tom Cruise, Hayley Atwell', desc: 'Misi terakhir Ethan Hunt menghentikan kecerdasan buatan The Entity.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/NOhDy655QBs' },
-    { title: 'Captain America: Brave New World', year: 2025, rating: '8.6', genre: 'Action', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt14513804', tmdbId: '822119', emoji: '🛡️', director: 'Julius Onah', cast: 'Anthony Mackie, Harrison Ford', desc: 'Sam Wilson menghadapi krisis internasional dan transformasi Red Hulk.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1pHDWnXmK7Y' },
-    { title: 'Wicked: Part One', year: 2024, rating: '8.8', genre: 'Fantasy', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt27448866', tmdbId: '611570', emoji: '🧙‍♀️', director: 'Jon M. Chu', cast: 'Ariana Grande, Cynthia Erivo', desc: 'Kisah magis penyihir hijau Elphaba dan Glinda di negeri Oz.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/6COmYeLsz4c' },
-    { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Petualangan lintas dimensi paling kocak dan absurd di multisemesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
-    { title: 'Dune: Prophecy', year: 2024, rating: '8.6', genre: 'Sci-Fi', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt15239678', tmdbId: '124905', emoji: '🏜️', director: 'Alison Schapker', cast: 'Emily Watson, Olivia Williams', episodeCount: 6, desc: 'Kisah asal-usul persaudaraan Bene Gesserit 10.000 tahun sebelum Paul Atreides.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/p8bK4_wH8aE' },
-    { title: 'How to Train Your Dragon Live Action', year: 2025, rating: '8.8', genre: 'Adventure', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt26743210', tmdbId: '1084199', emoji: '🐉', director: 'Dean DeBlois', cast: 'Mason Thames, Nico Parker', desc: 'Adaptasi live action persahabatan Hiccup dan Toothless si naga Night Fury.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/5a09yJU-mCI' }
-  ],
-
-  trending: [
-    { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Im Si-wan', episodeCount: 6, desc: 'Kelanjutan permainan bertahan hidup berhadiah 45.6 miliar won.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Stranger Things Season 5', year: 2025, rating: '9.2', genre: 'Sci-Fi', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt4574334', tmdbId: '66732', emoji: '🚲', director: 'The Duffer Brothers', cast: 'Millie Bobby Brown, Finn Wolfhard', episodeCount: 8, desc: 'Pertempuran terakhir anak-anak Hawkins melawan Vecna dan Upside Down.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/sBEvEcpnG7k' },
-    { title: 'The Last of Us Season 2', year: 2025, rating: '9.1', genre: 'Drama', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt3581920', tmdbId: '100088', emoji: '🍄', director: 'Craig Mazin', cast: 'Pedro Pascal, Bella Ramsey, Kaitlyn Dever', episodeCount: 7, desc: 'Tragedi dan balas dendam Ellie dan Abby di reruntuhan Seattle.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/k4hy9v-fL2M' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
-    { title: 'Wednesday Season 2', year: 2025, rating: '8.8', genre: 'Comedy', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt13443470', tmdbId: '119051', emoji: '🖤', director: 'Tim Burton', cast: 'Jenna Ortega, Steve Buscemi', episodeCount: 8, desc: 'Semester baru penuh kutukan dan misteri pembunuhan di Nevermore Academy.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/Di310BC80ew' },
-    { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Petualangan lintas dimensi paling kocak dan absurd di multisemesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
-    { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Perang puncak di Kastil Tanpa Batas melawan Raja Iblis Muzan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' },
-    { title: 'Alien: Romulus', year: 2024, rating: '8.5', genre: 'Horror', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt18412256', tmdbId: '945961', emoji: '👽', director: 'Fede Álvarez', cast: 'Cailee Spaeny, David Jonsson', desc: 'Remaja koloni luar angkasa berhadapan dengan monster Xenomorph paling mematikan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs' },
-    { title: 'Dune: Prophecy', year: 2024, rating: '8.6', genre: 'Sci-Fi', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt15239678', tmdbId: '124905', emoji: '🏜️', director: 'Alison Schapker', cast: 'Emily Watson, Olivia Williams', episodeCount: 6, desc: 'Kisah asal-usul persaudaraan Bene Gesserit 10.000 tahun sebelum Paul Atreides.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/p8bK4_wH8aE' }
-  ],
-
-  latest: [
-    { title: 'Captain America: Brave New World', year: 2025, rating: '8.6', genre: 'Action', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt14513804', tmdbId: '822119', emoji: '🛡️', director: 'Julius Onah', cast: 'Anthony Mackie, Harrison Ford', desc: 'Sam Wilson memimpin pertarungan melawan konspirasi dunia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1pHDWnXmK7Y' },
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Duet gila pahlawan mutan melintasi Void demi menyelamatkan semesta.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Lucius memasuki Colosseum demi merebut kembali kehormatan Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
-    { title: 'Alien: Romulus', year: 2024, rating: '8.5', genre: 'Horror', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt18412256', tmdbId: '945961', emoji: '👽', director: 'Fede Álvarez', cast: 'Cailee Spaeny, David Jonsson', desc: 'Remaja koloni luar angkasa berhadapan dengan monster Xenomorph paling mematikan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x0XDEhP4MQs' },
-    { title: 'How to Train Your Dragon Live Action', year: 2025, rating: '8.8', genre: 'Adventure', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt26743210', tmdbId: '1084199', emoji: '🐉', director: 'Dean DeBlois', cast: 'Mason Thames, Nico Parker', desc: 'Adaptasi live action persahabatan Hiccup dan Toothless si naga Night Fury.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/5a09yJU-mCI' },
-    { title: 'Wicked: Part One', year: 2024, rating: '8.8', genre: 'Fantasy', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt27448866', tmdbId: '611570', emoji: '🧙‍♀️', director: 'Jon M. Chu', cast: 'Ariana Grande, Cynthia Erivo', desc: 'Kisah magis penyihir hijau Elphaba dan Glinda di negeri Oz.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/6COmYeLsz4c' }
-  ],
-
-  popular: [
-    { title: 'Deadpool & Wolverine', year: 2024, rating: '8.9', genre: 'Action', quality: '4K', type: 'movie', country: 'United States', imdbId: 'tt6263850', tmdbId: '533535', emoji: '⚔️', director: 'Shawn Levy', cast: 'Ryan Reynolds, Hugh Jackman', desc: 'Kolaborasi pahlawan super terlucu dan terbrutal dalam sejarah.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/73_1biulkYk' },
-    { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Serial animasi dengan rating tertinggi dan jutaan penggemar setia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
-    { title: 'Gladiator II', year: 2024, rating: '8.7', genre: 'Action', quality: '4K', type: 'movie', country: 'United Kingdom', imdbId: 'tt9218128', tmdbId: '558449', emoji: '🏛️', director: 'Ridley Scott', cast: 'Paul Mescal, Denzel Washington', desc: 'Kelanjutan epik pertempuran arena Colosseum kekaisaran Roma.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/4rgYUipGJNo' },
-    { title: 'Wicked: Part One', year: 2024, rating: '8.8', genre: 'Fantasy', quality: '1080p', type: 'movie', country: 'United States', imdbId: 'tt27448866', tmdbId: '611570', emoji: '🧙‍♀️', director: 'Jon M. Chu', cast: 'Ariana Grande, Cynthia Erivo', desc: 'Kisah magis penyihir hijau Elphaba dan Glinda di negeri Oz.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/6COmYeLsz4c' },
-    { title: 'The Last of Us Season 2', year: 2025, rating: '9.1', genre: 'Drama', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt3581920', tmdbId: '100088', emoji: '🍄', director: 'Craig Mazin', cast: 'Pedro Pascal, Bella Ramsey', episodeCount: 7, desc: 'Kisah manusia di tengah kepunahan pandemi jamur Cordyceps.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/k4hy9v-fL2M' },
-    { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Animasi pertarungan pedang terindah sepanjang masa.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' }
-  ],
-
-  series: [
-    { title: 'Rick and Morty', year: 2025, rating: '9.1', genre: 'Animation', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt2861424', tmdbId: '60625', emoji: '🧪', director: 'Dan Harmon', cast: 'Justin Roiland, Chris Parnell', desc: 'Petualangan antardimensi liar Rick Sanchez bersama Morty Smith.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/jerFRSQW9g8' },
-    { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Im Si-wan', episodeCount: 6, desc: 'Pertarungan hidup mati permainan anak-anak berdarah di Korea.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
-    { title: 'Stranger Things Season 5', year: 2025, rating: '9.2', genre: 'Sci-Fi', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt4574334', tmdbId: '66732', emoji: '🚲', director: 'The Duffer Brothers', cast: 'Millie Bobby Brown, Finn Wolfhard', episodeCount: 8, desc: 'Musim penutup perang legendaris Hawkins melawan monster Upside Down.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/sBEvEcpnG7k' },
-    { title: 'The Last of Us Season 2', year: 2025, rating: '9.1', genre: 'Drama', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt3581920', tmdbId: '100088', emoji: '🍄', director: 'Craig Mazin', cast: 'Pedro Pascal, Bella Ramsey, Kaitlyn Dever', episodeCount: 7, desc: 'Balas dendam dan kemanusiaan di dunia pasca-apokaliptik.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/k4hy9v-fL2M' },
-    { title: 'Wednesday Season 2', year: 2025, rating: '8.8', genre: 'Comedy', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt13443470', tmdbId: '119051', emoji: '🖤', director: 'Tim Burton', cast: 'Jenna Ortega, Steve Buscemi', episodeCount: 8, desc: 'Investigasi baru Wednesday Addams di asrama Nevermore.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/Di310BC80ew' },
-    { title: 'The Boys Season 5', year: 2025, rating: '9.0', genre: 'Action', quality: '4K', type: 'series', country: 'United States', imdbId: 'tt1190634', tmdbId: '76479', emoji: '🦸‍♂️', director: 'Eric Kripke', cast: 'Karl Urban, Antony Starr, Jack Quaid', episodeCount: 8, desc: 'Pertarungan klimaks terakhir Butcher melawan kekejaman tirani Homelander.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/EzFXDvC-6L4' },
-    { title: 'Peacemaker Season 2', year: 2025, rating: '8.7', genre: 'Action', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt13146404', tmdbId: '110492', emoji: '🦅', director: 'James Gunn', cast: 'John Cena, Danielle Brooks, Freddie Stroma', episodeCount: 8, desc: 'Misi baru pahlawan bertopeng konyol Christopher Smith di DC Universe.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/WHXq62VCaCM' },
-    { title: 'Severance Season 2', year: 2025, rating: '9.1', genre: 'Sci-Fi', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt11280740', tmdbId: '95396', emoji: '🏢', director: 'Ben Stiller', cast: 'Adam Scott, Patricia Arquette, John Turturro', episodeCount: 10, desc: 'Misteri pemisahan ingatan kerja dan pribadi di perusahaan misterius Lumon.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/xEQP4VVuyrY' },
-    { title: 'Euphoria Season 3', year: 2025, rating: '8.8', genre: 'Drama', quality: '1080p', type: 'series', country: 'United States', imdbId: 'tt8772296', tmdbId: '85552', emoji: '💊', director: 'Sam Levinson', cast: 'Zendaya, Hunter Schafer, Sydney Sweeney', episodeCount: 8, desc: 'Kisah Rue Bennett dan teman-temannya menghadapi pendewasaan hidup.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/JdwZwrs8SLQ' },
-    { title: 'All of Us Are Dead Season 2', year: 2025, rating: '8.9', genre: 'Horror', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt14169960', tmdbId: '99966', emoji: '🧟‍♂️', director: 'Lee Jae-kyoo', cast: 'Park Ji-hu, Yoon Chan-young, Cho Yi-hyun', episodeCount: 8, desc: 'Ancaman mutasi manusia setengah zombie (Hambie) menyebar di Seoul.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/IN5TD4VRcSM' },
-    { title: 'Moving Season 2', year: 2025, rating: '9.2', genre: 'Superhero', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt21609146', tmdbId: '124364', emoji: '🦸‍♀️', director: 'Park In-je', cast: 'Ryu Seung-ryong, Han Hyo-joo, Jo In-sung', episodeCount: 20, desc: 'Generasi anak berkekuatan super bersatu melindungi keluarga dari agen rahasia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1B1-18eHh04' }
-  ],
-
-  kdrama: [
-    { title: 'Squid Game Season 2', year: 2025, rating: '9.3', genre: 'Thriller', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt10919420', tmdbId: '93405', emoji: '🦑', director: 'Hwang Dong-hyuk', cast: 'Lee Jung-jae, Im Si-wan', episodeCount: 6, desc: 'Permainan bertahan hidup mematikan yang ditonton jutaan miliarder.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/lQBmZBJTN4U' },
-    { title: 'All of Us Are Dead Season 2', year: 2025, rating: '8.9', genre: 'Horror', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt14169960', tmdbId: '99966', emoji: '🧟‍♂️', director: 'Lee Jae-kyoo', cast: 'Park Ji-hu, Yoon Chan-young, Cho Yi-hyun', episodeCount: 8, desc: 'Kisah murid SMA bertahan dari wabah zombie berlanjut di kota Seoul.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/IN5TD4VRcSM' },
-    { title: 'Moving Season 2', year: 2025, rating: '9.2', genre: 'Superhero', quality: '4K', type: 'series', country: 'Korea Selatan', imdbId: 'tt21609146', tmdbId: '124364', emoji: '🦸‍♀️', director: 'Park In-je', cast: 'Ryu Seung-ryong, Han Hyo-joo, Jo In-sung', episodeCount: 20, desc: 'Agen rahasia berkekuatan super terbang dan regenerasi melindungi anaknya.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/1B1-18eHh04' },
-    { title: 'Sweet Home Season 3', year: 2024, rating: '8.6', genre: 'Horror', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt11612120', tmdbId: '96580', emoji: '👹', director: 'Lee Eung-bok', cast: 'Song Kang, Lee Jin-uk, Lee Si-young', episodeCount: 8, desc: 'Babak akhir pertempuran Cha Hyun-su melawan monster hasrat manusia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/tMbgv44l-rM' },
-    { title: 'Queen of Tears', year: 2024, rating: '9.0', genre: 'Romance', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt27668559', tmdbId: '215079', emoji: '👑', director: 'Jang Young-woo', cast: 'Kim Soo-hyun, Kim Ji-won, Park Sung-hoon', episodeCount: 16, desc: 'Kisah cinta pernikahan pewaris konglomerat dan pengacara desa yang penuh haru.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/kYqjF3B5qGg' },
-    { title: 'Vincenzo', year: 2021, rating: '9.1', genre: 'Crime', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt13433812', tmdbId: '117376', emoji: '⚖️', director: 'Kim Hee-won', cast: 'Song Joong-ki, Jeon Yeo-been, Taecyeon', episodeCount: 20, desc: 'Pengacara mafia Italia pulang ke Korea membalas kejahatan konglomerat rakus.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/_J8tYxSB_LQ' },
-    { title: 'A Shop for Killers Season 2', year: 2025, rating: '8.8', genre: 'Action', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt26450613', tmdbId: '220000', emoji: '🔫', director: 'Lee Kwon', cast: 'Lee Dong-wook, Kim Hye-jun', episodeCount: 8, desc: 'Gadis muda mewarisi pusat perbelanjaan senjata rahasia milik pamannya.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/gWnLwWqCgV4' },
-    { title: 'Signal Season 2', year: 2025, rating: '9.4', genre: 'Mystery', quality: '1080p', type: 'series', country: 'Korea Selatan', imdbId: 'tt5333198', tmdbId: '65942', emoji: '📻', director: 'Kim Eun-hee', cast: 'Lee Je-hoon, Kim Hye-soo, Cho Jin-woong', episodeCount: 16, desc: 'Detektif masa lalu dan masa kini terhubung melalui walkie-talkie memecahkan kasus dingin.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/n4sL8Qf2V3w' }
-  ],
-
-  anime: [
-    { title: 'Demon Slayer: Infinity Castle', year: 2025, rating: '9.4', genre: 'Animation', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt32840000', tmdbId: '1214484', emoji: '⚔️', director: 'Haruo Sotozaki', cast: 'Natsuki Hanae, Akari Kito', desc: 'Perang puncak Korps Pembasmi Iblis di dalam Kastil Tanpa Batas.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/x7uG_F_sR4Y' },
-    { title: 'Solo Leveling Season 2: Arise from the Shadow', year: 2025, rating: '9.3', genre: 'Action', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt21209876', tmdbId: '209867', emoji: '🗡️', director: 'Shunsuke Nakashige', cast: 'Taito Ban, Genta Nakamura', episodeCount: 12, desc: 'Sung Jinwoo membangkitkan pasukan bayangan Shadow Monarch tak terkalahkan.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/5a24r_4w188' },
-    { title: 'Chainsaw Man: The Movie – Reze Arc', year: 2025, rating: '9.2', genre: 'Action', quality: '1080p', type: 'movie', country: 'Jepang', imdbId: 'tt30449560', tmdbId: '1214485', emoji: '🪚', director: 'Ryu Nakayama', cast: 'Kikunosuke Toya, Reina Ueda', desc: 'Denji terpikat oleh Reze gadis misterius pemegang kekuatan Bom Iblis.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/p17i8oQ4WbE' },
-    { title: 'Jujutsu Kaisen Season 3: Culling Game', year: 2025, rating: '9.3', genre: 'Supernatural', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt12343534', tmdbId: '95479', emoji: '🔮', director: 'Sunghoo Park', cast: 'Junya Enoki, Yuma Uchida, Asami Seto', episodeCount: 24, desc: 'Yuji Itadori dan Megumi terjebak dalam ritual maut Game Pemusnahan Kenjaku.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/O6qVieflwQs' },
-    { title: 'Bleach: Thousand-Year Blood War Part 3 & 4', year: 2025, rating: '9.2', genre: 'Action', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt14995536', tmdbId: '158415', emoji: '🗡️', director: 'Tomohisa Taguchi', cast: 'Masakazu Morita, Fumiko Orikasa', episodeCount: 13, desc: 'Perang pamungkas Ichigo Kurosaki melawan Raja Quincy Yhwach di Istana Jiwa.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/z4y9T5C9b4g' },
-    { title: 'One Piece: Egghead Arc Climax', year: 2025, rating: '9.3', genre: 'Adventure', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt0388629', tmdbId: '37854', emoji: '🏴‍☠️', director: 'Megumi Ishitani', cast: 'Mayumi Tanaka, Kazuya Nakai', episodeCount: 24, desc: 'Luffy Mode Gear 5 bertarung melawan Gorosei di pulau masa depan Egghead.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/S8_YwFLCh4U' },
-    { title: 'Spy x Family Season 3', year: 2025, rating: '8.9', genre: 'Comedy', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt13706018', tmdbId: '120089', emoji: '🥜', director: 'Kazuhiro Furuhashi', cast: 'Takuya Eguchi, Atsumi Tanezaki', episodeCount: 12, desc: 'Misi rahasia keluarga Forger berlanjut dengan kelucuan telepati Anya.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/7V2Z54E5bQ0' },
-    { title: 'Kaiju No. 8 Season 2', year: 2025, rating: '8.8', genre: 'Sci-Fi', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt21609146', tmdbId: '207572', emoji: '🦖', director: 'Shigeyuki Miya', cast: 'Masaya Fukunishi, Asami Seto', episodeCount: 12, desc: 'Kafka Hibino bertarung sebagai anggota Pasukan Pertahanan sambil menyembunyikan wujud monster.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/G6jWnQG6U48' },
-    { title: 'My Hero Academia Season 8: Final War', year: 2025, rating: '9.0', genre: 'Superhero', quality: '1080p', type: 'series', country: 'Jepang', imdbId: 'tt5626028', tmdbId: '65930', emoji: '💥', director: 'Kenji Nagasaki', cast: 'Daiki Yamashita, Nobuhiko Okamoto', episodeCount: 14, desc: 'Pertarungan satu lawan satu Deku melawan Shigaraki Tomura dan All For One.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/7wZ8B9Z1G4k' }
-  ],
-
-  indonesia: [
-    { title: 'Petualangan Sherina 2', year: 2023, rating: '8.7', genre: 'Adventure', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt23875888', tmdbId: '1047648', emoji: '🎒', director: 'Riri Riza', cast: 'Sherina Munaf, Derby Romero', desc: 'Petualangan baru jurnalis Sherina dan Sadam melindungi hutan konservasi Indonesia.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/wzX0h1hR1_A' },
-    { title: 'Bumi Manusia', year: 2019, rating: '8.8', genre: 'Drama', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt8435132', tmdbId: '527588', emoji: '📜', director: 'Hanung Bramantyo', cast: 'Iqbaal Ramadhan, Mawar de Jongh', desc: 'Perjuangan Minke menuliskan perlawanan kaum tertindas di era kolonial Hindia Belanda.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/aM_e4aV0k3E' },
-    { title: 'The Big 4', year: 2022, rating: '8.7', genre: 'Action', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt18274950', tmdbId: '912916', emoji: '💥', director: 'Timo Tjahjanto', cast: 'Abimana Aryasatya, Putri Marino, Arie Kriting', desc: 'Empat mantan pembunuh bayaran kembali beraksi dalam baku tembak komedi gila.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/bX4a7eB5c2U' },
-    { title: 'Qodrat', year: 2022, rating: '8.7', genre: 'Horror', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt21966548', tmdbId: '986056', emoji: '📖', director: 'Charles Gozali', cast: 'Vino G. Bastian, Marsha Timothy', desc: 'Ustadz Qodrat berhadapan dengan raja jin Assuala yang merasuki kota besar.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/g_pBwXGz6B0' },
-    { title: 'Agak Laen', year: 2024, rating: '8.8', genre: 'Comedy', quality: '1080p', type: 'movie', country: 'Indonesia', imdbId: 'tt30829873', tmdbId: '1218524', emoji: '👻', director: 'Muhadkly Acho', cast: 'Boris Bokir, Indra Jegel, Oki Rengga, Bene Dion', desc: 'Kekonyolan empat sekawan membuka wahana horor baru yang memakan korban.', unavailable: false, trailerUrl: 'https://www.youtube-nocookie.com/embed/c0tG4a4rP2k' }
-  ]
-};
-
-// ==========================================
-// MOVIE POSTER & BACKDROP RESOLVER
-// ==========================================
-
-const MOVIE_POSTER_MAP = {
-  // Avatars
-  'avatar': 'assets/posters/avatar-fire-and-ash-2025.jpg',
-  
-  // Superheroes & Blockbusters
-  'superman': 'assets/posters/superman-2025.jpg',
-  'avengers': 'assets/posters/avengers-doomsday-2026.jpg',
-  'deadpool': 'assets/posters/deadpool-wolverine-2024.jpg',
-  'batman': 'assets/posters/the-batman-part-ii-2026.jpg',
-  'spider-man': 'assets/posters/spider-man-beyond-spider-verse-2026.jpg',
-  'fantastic four': 'assets/posters/fantastic-four-first-steps-2025.jpg',
-  'captain america': 'assets/posters/captain-america-brave-new-world-2025.jpg',
-  'jurassic world': 'assets/posters/jurassic-world-rebirth-2025.jpg',
-  'mickey 17': 'assets/posters/mickey-17-2025.jpg',
-  'ballerina': 'assets/posters/ballerina-2025.jpg',
-  '28 years later': 'assets/posters/28-years-later-2025.jpg',
-  'tron': 'assets/posters/tron-ares-2025.jpg',
-  'gladiator': 'assets/posters/gladiator-2-2024.jpg',
-  'mission: impossible': 'assets/posters/mission-impossible-final-reckoning.jpg',
-  'mission impossible': 'assets/posters/mission-impossible-final-reckoning.jpg',
-  'alien: romulus': 'assets/posters/alien-romulus-2024.jpg',
-  'alien romulus': 'assets/posters/alien-romulus-2024.jpg',
-  'dune: prophecy': 'assets/posters/dune-prophecy-2024.jpg',
-  'dune prophecy': 'assets/posters/dune-prophecy-2024.jpg',
-  'godzilla x kong': 'assets/posters/godzilla-x-kong-the-new-empire.jpg',
-  'godzilla': 'assets/posters/godzilla-x-kong-the-new-empire.jpg',
-  'wicked': 'assets/posters/wicked-part-one-2024.jpg',
-  'toy story': 'assets/posters/toy-story-4.jpg',
-  'how to train your dragon': 'assets/posters/how-to-train-your-dragon-live-action.jpg',
-  'shrek': 'assets/posters/dandadan-2024.jpg',
-
-  // Western Series
-  'squid game': 'assets/posters/squid-game-s2-2025.jpg',
-  'rick and morty': 'assets/posters/rick-and-morty-2025.jpg',
-  'stranger things': 'assets/posters/stranger-things-s5-2025.jpg',
-  'the last of us': 'assets/posters/the-last-of-us-s2-2025.jpg',
-  'last of us': 'assets/posters/the-last-of-us-s2-2025.jpg',
-  'wednesday': 'assets/posters/wednesday-s2-2025.jpg',
-  'house of the dragon': 'assets/posters/house-of-the-dragon-s3-2026.jpg',
-  'the boys': 'assets/posters/the-boys-s5-2025.jpg',
-  'peacemaker': 'assets/posters/peacemaker-s2-2025.jpg',
-  'severance': 'assets/posters/severance-s2-2025.jpg',
-  'euphoria': 'assets/posters/euphoria-s3-2025.jpg',
-
-  // Drama Korea
-  'all of us are dead': 'assets/posters/all-of-us-are-dead-s2-2025.jpg',
-  'moving': 'assets/posters/moving-s2-2025.jpg',
-  'sweet home': 'assets/posters/sweet-home-s3-2024.jpg',
-  'queen of tears': 'assets/posters/queen-of-tears-2024.jpg',
-  'vincenzo': 'assets/posters/vincenzo-2021.jpg',
-
-  // Anime
-  'demon slayer': 'assets/posters/demon-slayer-infinity-castle-2025.jpg',
-  'solo leveling': 'assets/posters/solo-leveling-s2-2025.jpg',
-  'chainsaw man': 'assets/posters/chainsaw-man-reze-arc-2025.jpg',
-  'jujutsu kaisen': 'assets/posters/jujutsu-kaisen-culling-game-2025.jpg',
-  'bleach': 'assets/posters/bleach-thousand-year-blood-war-p3-2024.jpg',
-  'one piece': 'assets/posters/one-piece-egghead-arc-2024.jpg',
-  'spy x family': 'assets/posters/spy-x-family-s3-2025.jpg',
-  'kaiju no': 'assets/posters/kaiju-no-8-s2-2025.jpg',
-  'kaiju no. 8': 'assets/posters/kaiju-no-8-s2-2025.jpg',
-  'dandadan': 'assets/posters/dandadan-2024.jpg',
-  'my hero academia': 'assets/posters/my-hero-academia-anime.jpg',
-  'attack on titan': 'assets/posters/demon-slayer-infinity-castle-2025.jpg',
-
-  // Indonesia
-  'pengabdi setan': 'assets/posters/pengabdi-setan-3-2025.jpg',
-  'siksa kubur': 'assets/posters/siksa-kubur-2024.jpg',
-  'agak laen': 'assets/posters/agak-laen-2-2025.jpg',
-  'kkn di desa penari': 'assets/posters/kkn-desa-penari-luwih-dowo-2023.jpg',
-  'kkn desa penari': 'assets/posters/kkn-desa-penari-luwih-dowo-2023.jpg',
-  'gundala': 'assets/posters/gundala-2-2025.jpg',
-  'sri asih': 'assets/posters/sri-asih-2022.jpg',
-  'petualangan sherina': 'assets/posters/petualangan-sherina-2-2023.jpg',
-  'dilan': 'assets/posters/dilan-1990.jpg',
-  'bumi manusia': 'assets/posters/bumi-manusia-film.jpg',
-  'the big 4': 'assets/posters/the-big-4-film.jpg',
-  'jumbo': 'assets/posters/petualangan-sherina-2-2023.jpg',
-  'qodrat': 'assets/posters/pengabdi-setan-3-2025.jpg'
-};
-
-function getPosterForMovie(title, slug) {
-  const clean = title.toLowerCase();
-  for (const [key, path] of Object.entries(MOVIE_POSTER_MAP)) {
-    if (clean.includes(key)) {
-      return path;
-    }
-  }
-  return null;
-}
-
-// Generates and stores movie objects into movieRegistry
-function generateMovies(category, count = 20) {
-  let list = TOP_VIEW_DATABASE[category] || TOP_VIEW_DATABASE.topview;
-
-  // Augment category list with items from IDLIX_DATABASE if available
-  if (window.IDLIX_DATABASE && Array.isArray(window.IDLIX_DATABASE)) {
-    let idlixFiltered = [];
-    if (category === 'series') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.type === 'series');
-    } else if (category === 'anime') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.genres.includes('Animation') || m.country === 'Jepang');
-    } else if (category === 'kdrama') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.country === 'Korea Selatan' || m.genres.includes('Romance') || m.description.toLowerCase().includes('korea'));
-    } else if (category === 'indonesia') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.country === 'Indonesia' || m.genres.includes('Horror'));
-    } else if (category === 'latest') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => m.year >= 2025).concat(window.IDLIX_DATABASE.filter(m => m.year === 2024));
-    } else if (category === 'topview' || category === 'popular') {
-      idlixFiltered = window.IDLIX_DATABASE.filter(m => parseFloat(m.rating) >= 8.6);
-    } else if (category === 'trending') {
-      idlixFiltered = window.IDLIX_DATABASE.slice(0, 40);
-    }
-
-    if (idlixFiltered.length > 0) {
-      const titleMap = new Set(list.map(i => i.title.toLowerCase()));
-      idlixFiltered.forEach(m => {
-        if (!titleMap.has(m.title.toLowerCase())) {
-          list = list.concat(m);
-          titleMap.add(m.title.toLowerCase());
-        }
-      });
-    }
-  }
-
-  return list.slice(0, count).map((item, i) => {
-    if (item.title && item.title.toLowerCase().includes('rick and morty')) {
-      return rickAndMorty;
-    }
-
-    // If item is already a fully formed movie object from IDLIX_DATABASE
-    if (item.id && item.originalTitle && item.genres && item.gradient) {
-      movieRegistry.set(item.id, item);
-      movieRegistry.set(item.slug, item);
-      movieRegistry.set(slugify(item.title), item);
-      return item;
-    }
-
-    const movieId = item.id || `${category}-${i}-${slugify(item.title)}`;
-    const slug = item.slug || slugify(item.title);
-    const gradientIndex = (Object.keys(TOP_VIEW_DATABASE).indexOf(category) * 4 + i) % GRADIENTS.length;
-    const isSeries = item.type === 'series';
-    const epCount = item.episodeCount || (isSeries ? 8 : null);
-
-    const episodes = isSeries ? Array.from({ length: epCount }, (_, epI) => ({
-      number: epI + 1,
-      title: `${item.title} — Episode ${epI + 1}`,
-      duration: `${45 + (epI % 15)}m`
-    })) : null;
-
-    const poster = item.poster || getPosterForMovie(item.title, slug);
-    const backdrop = item.backdrop || poster || 'assets/hero/hero-1.jpg';
-
-    const movieObj = {
-      id: movieId,
-      title: item.title,
-      originalTitle: item.originalTitle || `${item.title} (${item.year})`,
-      year: item.year,
-      rating: item.rating || '8.8',
-      genre: item.genre || (item.genres && item.genres[0]) || 'Film',
-      genres: item.genres || [item.genre || 'Action', 'Drama'].filter((v, idx, arr) => arr.indexOf(v) === idx),
-      quality: item.quality === '4K' ? '4K Ultra HD' : (item.quality === '1080p' ? '1080p FHD' : (item.quality || 'HD')),
-      type: item.type || 'movie',
-      episode: isSeries ? `S1 EP${epCount}` : null,
-      episodes,
-      poster,
-      backdrop,
-      gradient: item.gradient || GRADIENTS[gradientIndex],
-      emoji: item.emoji || '🎬',
-      country: item.country || 'United States',
-      director: item.director || 'Christopher Nolan',
-      cast: item.cast || 'Star Ensemble Cast',
-      description: item.desc || item.description || `Saksikan film blockbuster ${item.title} (${item.year}) dengan kualitas visual jernih dan subtitle Indonesia resmi di Cinelax.`,
-      slug: item.slug || `${slug}-${item.year}`,
-      imdbId: item.imdbId,
-      tmdbId: item.tmdbId,
-      idlixUrl: isSeries ? `https://z2.idlixku.com/series/${slug}-${item.year}` : `https://z2.idlixku.com/movie/${slug}-${item.year}`,
-      isUnavailable: false,
-      trailerUrl: item.trailerUrl || null
-    };
-
-    movieRegistry.set(movieId, movieObj);
-    movieRegistry.set(movieObj.slug, movieObj);
-    movieRegistry.set(slugify(movieObj.title), movieObj);
-    return movieObj;
-  });
-}
 
 function initRegistry() {
   heroSlides.forEach((slide) => {
@@ -833,7 +429,7 @@ async function renderContentSection(containerId, rowKind, options) {
 }
 
 // ID genre TMDB
-const GENRE_IDS = { action: 28, horror: 27, animation: 16, drama: 18 };
+const GENRE_IDS = { action: 28, animation: 16 };
 
 function renderAllSections() {
   renderContentSection('topview-row', 'trending');
@@ -2210,12 +1806,16 @@ window.selectDetailEpisode = selectDetailEpisode;
 // 404 NOT FOUND VIEW CONTROLLER
 // ==========================================
 
-function renderNotFoundView() {
+async function renderNotFoundView() {
   const container = document.getElementById('notfound-related-row');
   if (!container) return;
 
-  const trending = generateMovies('trending', 10);
-  container.innerHTML = trending.map(m => renderMovieCard(m)).join('');
+  try {
+    const trending = (await Tmdb.getRow('trending', {})).slice(0, 10).map(decorateMovie);
+    container.innerHTML = trending.map(m => renderMovieCard(m)).join('');
+  } catch (error) {
+    container.innerHTML = '';
+  }
 }
 
 // ==========================================
@@ -2472,12 +2072,8 @@ function initFilterTabs() {
       const latestRow = document.getElementById('latest-row');
       if (!latestRow) return;
 
-      if (text === 'movies') {
-        const moviesOnly = generateMovies('latest', 20).filter(m => m.type === 'movie');
-        latestRow.innerHTML = moviesOnly.map(m => renderMovieCard(m)).join('');
-      } else if (text === 'series') {
-        const seriesOnly = generateMovies('series', 20);
-        latestRow.innerHTML = seriesOnly.map(m => renderMovieCard(m)).join('');
+      if (text === 'series') {
+        renderContentSection('latest-row', 'tv');
       } else {
         renderContentSection('latest-row', 'top_rated');
       }
