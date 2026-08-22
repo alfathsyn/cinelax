@@ -8,7 +8,8 @@ const {
   resolveLanguage,
   filterQuery,
   cacheControlFor,
-  buildUpstreamUrl
+  buildUpstreamUrl,
+  isTrustedOrigin
 } = require('../api/tmdb/allowlist');
 
 test('isAllowedPath menerima endpoint yang terdaftar', () => {
@@ -113,4 +114,33 @@ test('filterQuery meneruskan parameter filter listing', () => {
   assert.strictEqual(result.with_origin_country, 'KR');
   assert.strictEqual(result.sort_by, 'vote_average.desc');
   assert.strictEqual(result.jahat, undefined);
+});
+
+test('isTrustedOrigin meloloskan bila tidak ada header Origin/Referer sama sekali', () => {
+  assert.strictEqual(isTrustedOrigin({ headers: { host: 'cinelax.vercel.app' } }), true);
+  assert.strictEqual(isTrustedOrigin({}), true);
+});
+
+test('isTrustedOrigin meloloskan permintaan same-origin lewat Origin atau Referer', () => {
+  assert.strictEqual(isTrustedOrigin({
+    headers: { host: 'cinelax.vercel.app', origin: 'https://cinelax.vercel.app' }
+  }), true);
+  assert.strictEqual(isTrustedOrigin({
+    headers: { host: 'cinelax.vercel.app', referer: 'https://cinelax.vercel.app/movies' }
+  }), true);
+});
+
+test('isTrustedOrigin menolak host pihak ketiga di Origin/Referer', () => {
+  assert.strictEqual(isTrustedOrigin({
+    headers: { host: 'cinelax.vercel.app', origin: 'https://situs-lain.com' }
+  }), false);
+  assert.strictEqual(isTrustedOrigin({
+    headers: { host: 'cinelax.vercel.app', referer: 'https://situs-lain.com/curi-kuota' }
+  }), false);
+});
+
+test('isTrustedOrigin meloloskan localhost untuk pengembangan lokal', () => {
+  assert.strictEqual(isTrustedOrigin({
+    headers: { host: 'localhost:3000', origin: 'http://localhost:5173' }
+  }), true);
 });

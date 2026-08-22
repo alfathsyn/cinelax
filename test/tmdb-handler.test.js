@@ -4,6 +4,7 @@ const test = require('node:test');
 const assert = require('node:assert');
 
 const handler = require('../api/tmdb/[...path].js');
+const { buildUpstreamUrl } = require('../api/tmdb/allowlist');
 
 function createRes() {
   return {
@@ -51,6 +52,32 @@ test('menolak path di luar allowlist dengan 400', async () => {
   await handler({ query: { path: ['authentication', 'token', 'new'] } }, res);
 
   assert.strictEqual(res.statusCode, 400);
+});
+
+test('menolak permintaan dengan Origin pihak ketiga dengan 403 (F10)', async () => {
+  process.env.TMDB_API_KEY = 'kunci-uji';
+  const res = createRes();
+
+  await handler({
+    query: { path: ['search', 'multi'], query: 'batman' },
+    headers: { host: 'cinelax.vercel.app', origin: 'https://situs-lain.com' }
+  }, res);
+
+  assert.strictEqual(res.statusCode, 403);
+});
+
+test('meloloskan permintaan same-origin (F10)', async () => {
+  process.env.TMDB_API_KEY = 'kunci-uji';
+  const restore = stubFetch(async () => jsonResponse(200, { results: [] }));
+  const res = createRes();
+
+  await handler({
+    query: { path: ['search', 'multi'], query: 'batman' },
+    headers: { host: 'cinelax.vercel.app', origin: 'https://cinelax.vercel.app' }
+  }, res);
+  restore();
+
+  assert.strictEqual(res.statusCode, 200);
 });
 
 test('meneruskan data dan memasang header cache saat sukses', async () => {
@@ -113,7 +140,18 @@ test('memetakan kegagalan jaringan menjadi 502', async () => {
 
 test('tidak membocorkan API key ke dalam pesan error', async () => {
   process.env.TMDB_API_KEY = 'KUNCI-SANGAT-RAHASIA';
-  const restore = stubFetch(async () => { throw new Error('gagal'); });
+  // Pesan error di sini SENGAJA menyisipkan URL upstream asli (yang membawa
+  // api_key di query string), meniru implementasi fetch nyata (mis. undici)
+  // yang menyertakan URL request pada error jaringan. Sebelumnya test ini
+  // memakai new Error('gagal') generik yang tidak pernah bisa memuat kunci
+  // apa pun, jadi assert di bawah lolos bahkan bila handler diam-diam
+  // meng-echo error.message ke klien. Dengan URL sungguhan di pesan error,
+  // test ini baru benar-benar menguji bahwa handler TIDAK meneruskan
+  // error.message ke respons.
+  const restore = stubFetch(async () => {
+    const leakedUrl = buildUpstreamUrl('movie/550', {}, 'KUNCI-SANGAT-RAHASIA');
+    throw new Error(`fetch failed: ${leakedUrl}`);
+  });
   const res = createRes();
 
   await handler({ query: { path: ['movie', '550'] } }, res);

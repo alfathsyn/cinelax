@@ -1,12 +1,22 @@
 'use strict';
 
-const { isAllowedPath, cacheControlFor, buildUpstreamUrl } = require('./allowlist');
+const { isAllowedPath, cacheControlFor, buildUpstreamUrl, isTrustedOrigin } = require('./allowlist');
 
 module.exports = async function handler(req, res) {
   const apiKey = process.env.TMDB_API_KEY;
 
   if (!apiKey) {
     res.status(500).json({ error: 'TMDB_API_KEY belum dikonfigurasi di environment' });
+    return;
+  }
+
+  // Mitigasi kasar, bukan proteksi andal — lihat komentar isTrustedOrigin di
+  // allowlist.js. Tujuannya menahan penyalahgunaan kuota TMDB/invocation
+  // Vercel oleh pihak ketiga yang memuat endpoint ini dari situs lain, bukan
+  // menghentikan penyerang yang serius (header Origin/Referer trivial
+  // dipalsukan oleh klien non-browser).
+  if (!isTrustedOrigin(req)) {
+    res.status(403).json({ error: 'Permintaan ditolak' });
     return;
   }
 
@@ -42,6 +52,9 @@ module.exports = async function handler(req, res) {
   }
 
   if (!response.ok) {
+    // Hanya kode status yang dicatat, tidak pernah URL upstream — URL itu
+    // membawa api_key di query string (lihat buildUpstreamUrl).
+    console.error(`TMDB upstream error: status ${response.status}`);
     res.status(502).json({ error: 'TMDB mengembalikan galat' });
     return;
   }
@@ -51,6 +64,7 @@ module.exports = async function handler(req, res) {
     res.setHeader('Cache-Control', cacheControlFor(path));
     res.status(200).json(data);
   } catch (error) {
+    console.error(`TMDB upstream error: status ${response.status} (respons bukan JSON valid)`);
     res.status(502).json({ error: 'Respons TMDB tidak dapat dibaca' });
   }
 };
