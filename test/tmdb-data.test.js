@@ -63,7 +63,7 @@ test('searchTitles membuang hasil bertipe person', async () => {
     return searchMulti;
   });
 
-  const results = await tmdb.searchTitles('contoh');
+  const results = (await tmdb.searchTitles('contoh')).items;
   stub.restore();
 
   assert.strictEqual(results.length, 2);
@@ -78,12 +78,36 @@ test('searchTitles menyertakan genre TV dalam hasil campuran', async () => {
     return searchMulti;
   });
 
-  const results = await tmdb.searchTitles('contoh');
+  const results = (await tmdb.searchTitles('contoh')).items;
   stub.restore();
 
   const tvResult = results.find((item) => item.type === 'series');
   assert.ok(tvResult, 'harus ada hasil TV');
   assert.strictEqual(tvResult.genre, 'Sci-Fi & Fantasy', 'genre TV harus diterjemahkan dari ID 10765');
+});
+
+test('searchTitles mengembalikan bentuk pager seperti getRowPaged (F6)', async () => {
+  tmdb.clearCache();
+  const stub = stubFetch((url) => {
+    if (url.includes('genre/')) return { genres: [{ id: 18, name: 'Drama' }] };
+    return Object.assign({}, searchMulti, { page: 2, total_pages: 12, total_results: 230 });
+  });
+
+  const result = await tmdb.searchTitles('contoh', 2);
+  stub.restore();
+
+  assert.ok(Array.isArray(result.items), 'items harus berupa array');
+  assert.strictEqual(result.items.length, 2);
+  assert.strictEqual(result.page, 2);
+  assert.strictEqual(result.totalPages, 12);
+  assert.strictEqual(result.totalResults, 230);
+});
+
+test('searchTitles mengembalikan struktur pager kosong untuk query terlalu pendek', async () => {
+  tmdb.clearCache();
+  const result = await tmdb.searchTitles('a');
+
+  assert.deepStrictEqual(result, { items: [], page: 1, totalPages: 1, totalResults: 0 });
 });
 
 test('getDetail menggabungkan detail, credits, dan videos', async () => {

@@ -16,6 +16,7 @@
   const MIN_VOTES = 300;
   const SESSION_PREFIX = 'cinelax:tmdb:';
   const MAX_RETRY = 2;
+  const MAX_TMDB_PAGE = 500;
   const cache = new Map();
 
   // Hanya detail judul yang layak bertahan lintas navigasi mundur-maju
@@ -145,17 +146,30 @@
     return Object.assign({}, movieGenres, tvGenres);
   }
 
+  // Bentuk kembalian mengikuti getRowPaged (items/page/totalPages/totalResults)
+  // supaya listing pencarian bisa memakai mesin paginasi yang sama seperti
+  // baris genre/tv, bukan berpura-pura hasilnya selalu satu halaman.
+  // search/multi TMDB memang melaporkan total_pages/total_results yang valid.
   async function searchTitles(query, page) {
-    if (!query || query.trim().length < 2) return [];
+    if (!query || query.trim().length < 2) {
+      return { items: [], page: page || 1, totalPages: 1, totalResults: 0 };
+    }
 
     const [data, genreLookup] = await Promise.all([
       fetchTmdb('search/multi', { query: query.trim(), page: page || 1 }),
       getCombinedGenreLookup()
     ]);
 
-    return (data.results || [])
+    const items = (data.results || [])
       .filter((item) => item.media_type !== 'person')
       .map((item) => map.mapTitle(item, { genreLookup }));
+
+    return {
+      items,
+      page: data.page || 1,
+      totalPages: Math.min(data.total_pages || 1, MAX_TMDB_PAGE),
+      totalResults: data.total_results || 0
+    };
   }
 
   async function getDetail(type, tmdbId) {
@@ -235,8 +249,6 @@
       .map((item) => map.mapTitle(item, { genreLookup }));
   }
 
-  const MAX_TMDB_PAGE = 500;
-
   // Versi getRow yang mengembalikan data pager (page/totalPages/totalResults)
   // alih-alih hanya array. Ditambahkan di samping getRow, bukan menggantinya:
   // renderContentSection (Task 5) memanggil getRow dan mengandalkan nilai
@@ -301,7 +313,7 @@
 
     if (!titleGuess) return null;
 
-    const results = await searchTitles(titleGuess);
+    const { items: results } = await searchTitles(titleGuess);
     if (results.length === 0) return null;
 
     const exactWithYear = results.find((item) => item.slug === slug);

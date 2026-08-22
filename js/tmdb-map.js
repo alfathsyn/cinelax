@@ -13,6 +13,28 @@
   const GRADIENT_COUNT = 20;
   const EMOJI_COUNT = 40;
 
+  // Sumber tunggal kode negara ISO 3166-1 alpha-2 -> nama yang bisa dibaca.
+  // countryOf() di bawah memakai ini untuk serial (origin_country selalu kode
+  // mentah, mis. "KR"), dan main.js memakainya untuk toolbar filter/label pill
+  // supaya kedua sisi tidak punya dua tabel yang bisa saling menyimpang.
+  const COUNTRY_CODE_TO_NAME = {
+    US: 'United States',
+    GB: 'United Kingdom',
+    KR: 'Korea Selatan',
+    JP: 'Jepang',
+    CN: 'China',
+    IN: 'India',
+    TH: 'Thailand',
+    ID: 'Indonesia',
+    PH: 'Filipina',
+    HK: 'Hong Kong',
+    TW: 'Taiwan',
+    FR: 'Prancis',
+    DE: 'Jerman',
+    ES: 'Spanyol',
+    TR: 'Turki'
+  };
+
   function slugify(text) {
     return String(text || '')
       .toLowerCase()
@@ -89,6 +111,14 @@
     return [];
   }
 
+  // Catatan: untuk film ini mengembalikan nama negara penuh (dari TMDB
+  // production_countries), tapi untuk serial ini tetap mengembalikan KODE ISO
+  // mentah (origin_country tidak punya nama). Diagnosa sengaja dibiarkan di
+  // sini, bukan diterjemahkan ke nama di dalam fungsi ini, karena test suite
+  // (tmdb-map.test.js) sudah mengunci bentuk mentah ini sebagai kontrak
+  // mapTitle(). Konsumen tampilan (main.js) yang perlu label yang bisa dibaca
+  // untuk serial memakai COUNTRY_CODE_TO_NAME di atas pada saat merender,
+  // bukan di sini pada saat memetakan data.
   function countryOf(raw) {
     if (Array.isArray(raw.production_countries) && raw.production_countries.length > 0) {
       return raw.production_countries[0].name;
@@ -172,6 +202,7 @@
     pickCast,
     detectType,
     mapProviders,
-    mapTitle
+    mapTitle,
+    COUNTRY_CODE_TO_NAME
   };
 });
