@@ -1709,19 +1709,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-secondary);
 }
 
-.modal-action-btn.idlix-link {
-  background: rgba(229, 9, 20, 0.12);
-  border-color: rgba(229, 9, 20, 0.35);
-  color: #ff5e67;
-}
-
-.modal-action-btn.idlix-link:hover {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: #fff;
-  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
-}
-
 .modal-close-btn {
   display: flex;
   align-items: center;
@@ -3166,48 +3153,6 @@ body.cinema-mode-active .player-related-section:hover {
   max-width: 480px;
 }
 
-.unavailable-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
-  width: 100%;
-}
-
-.btn-unavailable {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 10px 18px;
-  border-radius: var(--radius-sm);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-unavailable .btn-icon {
-  font-size: 14px;
-}
-
-.btn-unavailable.btn-remind {
-  background: rgba(59, 130, 246, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  color: #93c5fd;
-}
-
-.btn-unavailable.btn-remind:hover {
-  background: rgba(59, 130, 246, 0.22);
-  border-color: rgba(59, 130, 246, 0.55);
-  transform: translateY(-2px);
-  color: #bfdbfe;
-}
-
 @media (max-width: 480px) {
   .media-unavailable-overlay {
     padding: 16px 12px;
@@ -3221,15 +3166,6 @@ body.cinema-mode-active .player-related-section:hover {
   }
   .unavailable-icon-wrapper .main-icon {
     font-size: 22px;
-  }
-  .unavailable-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .btn-unavailable {
-    width: 100%;
-    padding: 8px 12px;
-    font-size: 12px;
   }
 }
 
